@@ -1,0 +1,14 @@
+Started GET "/" for 127.0.0.1 at 2018-04-29 20:10:39 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/cristian/.rvm/gems/ruby-2.4.1/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/cristian/.rvm/gems/ruby-2.4.1/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb (2.0ms)
+Completed 200 OK in 212ms (Views: 4.3ms)
+
+
+Started GET "/bienvenida/index" for 127.0.0.1 at 2018-04-29 21:37:04 -0300
+Processing by BienvenidaController#index as HTML
+  Rendering bienvenida/index.html.erb within layouts/application
+  Rendered bienvenida/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 584ms (Views: 402.7ms)
+
+

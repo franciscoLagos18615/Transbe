@@ -1,0 +1,24 @@
+<h1>Listado de Guardias</h1>
+<%= link_to "Crear Guardia", guards_new_path %>
+<table>
+  <tr>
+    <%@guards.each do |t|%>
+    <thead>
+      <th>Nombre</th>
+      <th>Rut</th>
+    </thead>
+  </tr>
+
+  <tr>
+    <thead>
+      <th><%=t.name%></th>
+      <th><%=t.rut%></th>
+      <td><%=link_to "Detalles"%>
+        <%=link_to "Editar", edit_guard_path(t)%>
+        <%= link_to "Eliminar", t, method: :delete, data: { confirm: "Deseas eliminar este guardia?"} %>
+      </td>
+    </thead>
+  
+  </tr>
+  <%end%>
+</table>

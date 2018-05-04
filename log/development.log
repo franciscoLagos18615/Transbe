@@ -142,3 +142,2282 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.0ms)
 
 
+  [1m[35m (26.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('8255491897942701930', 0)[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateGuards (20180504140519)
+  [1m[35m (215.0ms)[0m  [1m[35mCREATE TABLE `guards` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `rut` varchar(255), `phone_number` varchar(255), `birthdate` datetime, `email` varchar(255), `nationality` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180504140519')[0m
+  [1m[35m (28.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.8ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('8255491897942701930')[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/guards/index" for 127.0.0.1 at 2018-05-04 13:45:37 -0300
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by GuardsController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `guards` (`created_at`, `updated_at`) VALUES ('2018-05-04 16:45:37', '2018-05-04 16:45:37')[0m
+  [1m[35m (26.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to 
+Completed 500 Internal Server Error in 196ms (ActiveRecord: 28.4ms)
+
+
+  
+NoMethodError (undefined method `guard_url' for #<GuardsController:0x007f62544a6498>
+Did you mean?  guards_index_url):
+  
+app/controllers/guards_controller.rb:5:in `index'
+Started GET "/guards/index" for 127.0.0.1 at 2018-05-04 13:48:58 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/guards/index"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-04 13:49:25 -0300
+Processing by GuardsController#new as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant GuardsController::Article):
+  
+app/controllers/guards_controller.rb:3:in `new'
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-04 13:49:47 -0300
+Processing by GuardsController#new as HTML
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `guards` (`created_at`, `updated_at`) VALUES ('2018-05-04 16:49:47', '2018-05-04 16:49:47')[0m
+  [1m[35m (51.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to 
+Completed 500 Internal Server Error in 216ms (ActiveRecord: 53.0ms)
+
+
+  
+NoMethodError (undefined method `guard_url' for #<GuardsController:0x007f6254572818>
+Did you mean?  guards_new_url):
+  
+app/controllers/guards_controller.rb:5:in `new'
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-04 13:50:11 -0300
+Processing by GuardsController#new as HTML
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `guards` (`created_at`, `updated_at`) VALUES ('2018-05-04 16:50:11', '2018-05-04 16:50:11')[0m
+  [1m[35m (26.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to 
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 27.8ms)
+
+
+  
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  
+app/controllers/guards_controller.rb:5:in `new'
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-04 13:50:21 -0300
+Processing by GuardsController#new as HTML
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `guards` (`created_at`, `updated_at`) VALUES ('2018-05-04 16:50:21', '2018-05-04 16:50:21')[0m
+  [1m[35m (50.2ms)[0m  [1m[35mCOMMIT[0m
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (26.2ms)
+Completed 200 OK in 344ms (Views: 275.0ms | ActiveRecord: 52.3ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-04 13:56:00 -0300
+Processing by GuardsController#new as HTML
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `guards` (`created_at`, `updated_at`) VALUES ('2018-05-04 16:56:00', '2018-05-04 16:56:00')[0m
+  [1m[35m (26.2ms)[0m  [1m[35mCOMMIT[0m
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 55ms (Views: 25.1ms | ActiveRecord: 26.7ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-04 13:59:08 -0300
+Processing by GuardsController#new as HTML
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `guards` (`created_at`, `updated_at`) VALUES ('2018-05-04 16:59:08', '2018-05-04 16:59:08')[0m
+  [1m[35m (51.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to 
+Completed 500 Internal Server Error in 218ms (ActiveRecord: 53.2ms)
+
+
+  
+NoMethodError (undefined method `guard_url' for #<GuardsController:0x007f62519dd108>
+Did you mean?  guards_new_url):
+  
+app/controllers/guards_controller.rb:5:in `new'
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-04 14:16:37 -0300
+Processing by GuardsController#new as HTML
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `guards` (`created_at`, `updated_at`) VALUES ('2018-05-04 17:16:37', '2018-05-04 17:16:37')[0m
+  [1m[35m (26.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/guards/7
+Completed 302 Found in 46ms (ActiveRecord: 27.8ms)
+
+
+Started GET "/guards/7" for 127.0.0.1 at 2018-05-04 14:16:37 -0300
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for GuardsController):
+  
+actionpack (5.1.6) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/guards/" for 127.0.0.1 at 2018-05-04 14:17:00 -0300
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for GuardsController):
+  
+actionpack (5.1.6) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-04 14:17:03 -0300
+Processing by GuardsController#new as HTML
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `guards` (`created_at`, `updated_at`) VALUES ('2018-05-04 17:17:03', '2018-05-04 17:17:03')[0m
+  [1m[35m (51.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 115ms (Views: 43.7ms | ActiveRecord: 53.2ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-04 14:17:10 -0300
+Processing by GuardsController#new as HTML
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `guards` (`created_at`, `updated_at`) VALUES ('2018-05-04 17:17:10', '2018-05-04 17:17:10')[0m
+  [1m[35m (26.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/guards/9
+Completed 302 Found in 45ms (ActiveRecord: 27.8ms)
+
+
+Started GET "/guards/9" for 127.0.0.1 at 2018-05-04 14:17:10 -0300
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for GuardsController):
+  
+actionpack (5.1.6) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/guards/" for 127.0.0.1 at 2018-05-04 14:17:22 -0300
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for GuardsController):
+  
+actionpack (5.1.6) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-04 14:17:26 -0300
+Processing by GuardsController#new as HTML
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO `guards` (`created_at`, `updated_at`) VALUES ('2018-05-04 17:17:26', '2018-05-04 17:17:26')[0m
+  [1m[35m (26.6ms)[0m  [1m[35mCOMMIT[0m
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 65ms (Views: 20.2ms | ActiveRecord: 29.2ms)
+
+
+Started GET "/guards/index" for 127.0.0.1 at 2018-05-04 14:34:20 -0300
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for GuardsController):
+  
+actionpack (5.1.6) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/guards/index" for 127.0.0.1 at 2018-05-04 14:34:39 -0300
+Processing by GuardsController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `all' for nil:NilClass):
+  
+app/controllers/guards_controller.rb:3:in `index'
+Started GET "/guards/index" for 127.0.0.1 at 2018-05-04 14:35:10 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  Rendered guards/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 18ms (Views: 16.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guards/index" for 127.0.0.1 at 2018-05-04 14:42:44 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  Rendered guards/index.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/cristian/Code/TransbeApp/Transbe/app/views/guards/index.html.erb:21: syntax error, unexpected keyword_ensure, expecting keyword_end
+          ensure
+                ^):
+  
+app/views/guards/index.html.erb:21: syntax error, unexpected keyword_ensure, expecting keyword_end
+Started GET "/guards/index" for 127.0.0.1 at 2018-05-04 14:43:21 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 39ms (Views: 36.0ms | ActiveRecord: 1.4ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35mSQL (28.6ms)[0m  [1m[31mDELETE FROM `guards`[0m
+Started GET "/guards/index" for 127.0.0.1 at 2018-05-04 14:54:59 -0300
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 225ms (Views: 212.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/guards/index" for 127.0.0.1 at 2018-05-04 14:55:02 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 24ms (Views: 22.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/guards/index" for 127.0.0.1 at 2018-05-04 14:55:03 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 45ms (Views: 43.9ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` LIMIT 11[0m
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` ORDER BY `guards`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `guards` (`name`, `rut`, `phone_number`, `birthdate`, `email`, `nationality`, `created_at`, `updated_at`) VALUES ('Cristian Fernandez', '18117016-6', '974539270', '1992-02-08 00:00:00', 'cristianfervas1992@gmail.com', 'Chileno', '2018-05-04 17:55:39', '2018-05-04 17:55:39')[0m
+  [1m[35m (26.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/guards/index" for 127.0.0.1 at 2018-05-04 14:55:51 -0300
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 197ms (Views: 185.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/guards/index" for 127.0.0.1 at 2018-05-04 14:56:21 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 31ms (Views: 29.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/guards/index" for 127.0.0.1 at 2018-05-04 14:56:57 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 27ms (Views: 25.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/guards/index" for 127.0.0.1 at 2018-05-04 15:03:34 -0300
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.8ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 215ms (Views: 204.8ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/guards/index" for 127.0.0.1 at 2018-05-04 15:07:55 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 28ms (Views: 26.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/guards/index" for 127.0.0.1 at 2018-05-04 15:09:03 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 30ms (Views: 28.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/guards/index" for 127.0.0.1 at 2018-05-04 15:09:59 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 25ms (Views: 23.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/guards/index" for 127.0.0.1 at 2018-05-04 15:12:53 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 27ms (Views: 26.1ms | ActiveRecord: 0.2ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `guards` (`name`, `rut`, `phone_number`, `birthdate`, `email`, `nationality`, `created_at`, `updated_at`) VALUES ('Facundo Grandinetti', '16113011-k', '923443212', '1990-05-01 00:00:00', 'facundito90@gmail.com', 'Argentino', '2018-05-04 18:14:40', '2018-05-04 18:14:40')[0m
+  [1m[35m (51.8ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/guards/index" for 127.0.0.1 at 2018-05-04 15:14:48 -0300
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 271ms (Views: 252.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/guards/index" for 127.0.0.1 at 2018-05-04 15:15:58 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 43ms (Views: 41.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/guards/index" for 127.0.0.1 at 2018-05-04 15:16:31 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 28ms (Views: 26.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/guards/index" for 127.0.0.1 at 2018-05-04 15:16:58 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 25ms (Views: 23.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-04 15:32:00 -0300
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 1.9ms)
+
+
+  
+SyntaxError (/home/cristian/Code/TransbeApp/Transbe/app/views/guards/new.html.erb:20: syntax error, unexpected keyword_ensure, expecting keyword_end
+          ensure
+                ^):
+  
+app/views/guards/new.html.erb:20: syntax error, unexpected keyword_ensure, expecting keyword_end
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-04 15:32:30 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (124.9ms)
+Completed 500 Internal Server Error in 128ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `guards_path' for #<#<Class:0x0000000466a6f8>:0x0000000491dff8>
+Did you mean?  guards_new_path):
+    1: <%= form_for @guards do |t| %>
+    2: 
+    3: <div>
+    4:     <%= f.label :Nombre %>
+  
+app/views/guards/new.html.erb:1:in `_app_views_guards_new_html_erb__1409296196031712592_38336800'
+Started GET "/guards/" for 127.0.0.1 at 2018-05-04 15:34:42 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 187ms (Views: 182.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/guards/index" for 127.0.0.1 at 2018-05-04 15:34:46 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/guards/index"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-04 15:35:10 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (189.1ms)
+Completed 500 Internal Server Error in 193ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00000004a9a200>:0x007f966c00c760>):
+    1: <%= form_for @guards do |t| %>
+    2: 
+    3: <div>
+    4:     <%= f.label :Nombre %>
+    5:     <%= f.text_field :name%>
+    6: </div>
+    7: <div>
+  
+app/views/guards/new.html.erb:4:in `block in _app_views_guards_new_html_erb__1409296196031712592_70142016907420'
+app/views/guards/new.html.erb:1:in `_app_views_guards_new_html_erb__1409296196031712592_70142016907420'
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-04 15:35:37 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (232.0ms)
+Completed 500 Internal Server Error in 235ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00000004a9a200>:0x007f966c5331d0>):
+    1: <%= form_for @guards do |t| %>
+    2: 
+    3: <div>
+    4:     <%= f.label :name %>
+    5:     <%= f.text_field :name%>
+    6: </div>
+    7: <div>
+  
+app/views/guards/new.html.erb:4:in `block in _app_views_guards_new_html_erb__1409296196031712592_70142019608020'
+app/views/guards/new.html.erb:1:in `_app_views_guards_new_html_erb__1409296196031712592_70142019608020'
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-04 15:38:16 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (190.2ms)
+Completed 500 Internal Server Error in 193ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00000004a9a200>:0x007f967847d1f8>):
+    1: <%= form_for @guards do |t| %>
+    2: 
+    3: <div>
+    4:     <%= f.label :name %>
+    5:     <%= f.text_field :name%>
+    6: </div>
+    7: <div>
+  
+app/views/guards/new.html.erb:4:in `block in _app_views_guards_new_html_erb__1409296196031712592_70142119898600'
+app/views/guards/new.html.erb:1:in `_app_views_guards_new_html_erb__1409296196031712592_70142119898600'
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-04 15:40:45 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 47ms (Views: 45.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-04 15:41:10 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 42ms (Views: 40.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-04 16:00:17 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 57ms (Views: 36.4ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/guards" for 127.0.0.1 at 2018-05-04 16:02:52 -0300
+  
+ActionController::RoutingError (uninitialized constant GuardController):
+  
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:269:in `const_get'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:269:in `block in constantize'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:267:in `constantize'
+actionpack (5.1.6) lib/action_dispatch/http/request.rb:85:in `controller_class_for'
+actionpack (5.1.6) lib/action_dispatch/http/request.rb:78:in `controller_class'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:43:in `controller'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:29:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/guards" for 127.0.0.1 at 2018-05-04 16:03:01 -0300
+Processing by GuardsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YJt5a6vnPrXhzxVdp1aZDrz4Vi4qZsusijP09P1vNSVAHlBAm9UkYDW0WTC6wsP2mjrmXuh27W1sEWPe8k2+Hw==", "guard"=>{"name"=>"Paulina Aburto", "rut"=>"18932892-5", "nationality"=>"Chilena", "phone_number"=>"965439876", "email"=>"paburtonavarro@gmail.com"}, "commit"=>"Create Guard"}
+  [1m[36mGuard Load (5.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = NULL LIMIT 1[0m
+Completed 404 Not Found in 15ms (ActiveRecord: 6.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Guard with 'id'={"name"=>"Paulina Aburto", "rut"=>"18932892-5", "email"=>"paburtonavarro@gmail.com", "phone_number"=>"965439876", "nationality"=>"Chilena"}):
+  
+app/controllers/guards_controller.rb:10:in `create'
+Started POST "/guards" for 127.0.0.1 at 2018-05-04 16:03:41 -0300
+Processing by GuardsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YJt5a6vnPrXhzxVdp1aZDrz4Vi4qZsusijP09P1vNSVAHlBAm9UkYDW0WTC6wsP2mjrmXuh27W1sEWPe8k2+Hw==", "guard"=>{"name"=>"Paulina Aburto", "rut"=>"18932892-5", "nationality"=>"Chilena", "phone_number"=>"965439876", "email"=>"paburtonavarro@gmail.com"}, "commit"=>"Create Guard"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `guards` (`name`, `rut`, `phone_number`, `email`, `nationality`, `created_at`, `updated_at`) VALUES ('Paulina Aburto', '18932892-5', '965439876', 'paburtonavarro@gmail.com', 'Chilena', '2018-05-04 19:03:41', '2018-05-04 19:03:41')[0m
+  [1m[35m (43.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/guards
+Completed 302 Found in 62ms (ActiveRecord: 45.1ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-04 16:03:41 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 24ms (Views: 22.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-04 16:58:39 -0300
+  
+SyntaxError (/home/cristian/Code/TransbeApp/Transbe/config/routes.rb:6: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+edit', to: 'guards#edit', as 'edit_guard'
+                              ^):
+  
+config/routes.rb:6: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+Started GET "/guards" for 127.0.0.1 at 2018-05-04 17:48:21 -0300
+  
+SyntaxError (/home/cristian/Code/TransbeApp/Transbe/config/routes.rb:6: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+/:id', to: 'guards#show', as 'guard'
+                              ^
+/home/cristian/Code/TransbeApp/Transbe/config/routes.rb:7: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+edit', to: 'guards#edit', as 'edit_guard'
+                              ^):
+  
+config/routes.rb:6: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+config/routes.rb:7: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+Started GET "/guard" for 127.0.0.1 at 2018-05-04 17:48:24 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/guard"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/guards" for 127.0.0.1 at 2018-05-04 17:48:26 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/guards"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/guards" for 127.0.0.1 at 2018-05-04 17:48:28 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/guards"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/guards/index" for 127.0.0.1 at 2018-05-04 17:48:44 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/guards/index"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/guard/index" for 127.0.0.1 at 2018-05-04 17:48:48 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/guard/index"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/guards/" for 127.0.0.1 at 2018-05-04 17:48:54 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/guards"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/guards/" for 127.0.0.1 at 2018-05-04 17:49:51 -0300
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (244.0ms)
+Completed 500 Internal Server Error in 259ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `guard' for #<#<Class:0x000000041e0dd0>:0x000000041da098>
+Did you mean?  @guards):
+    13:       <th><%=t.name%></th>
+    14:       <th><%=t.rut%></th>
+    15:       <td><%=link_to "Detalles"%>
+    16:         <%=link_to "Editar", edit_guard_path(guard)%>
+    17:         <%=link_to "Eliminar"%></td>
+    18:     </thead>
+    19:   
+  
+app/views/guards/index.html.erb:16:in `block in _app_views_guards_index_html_erb___4200733064836131369_34541920'
+app/views/guards/index.html.erb:4:in `_app_views_guards_index_html_erb___4200733064836131369_34541920'
+Started GET "/guards/" for 127.0.0.1 at 2018-05-04 17:51:21 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (188.8ms)
+Completed 500 Internal Server Error in 192ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `guards' for #<#<Class:0x000000041e0dd0>:0x00000004527e08>
+Did you mean?  @guards):
+    13:       <th><%=t.name%></th>
+    14:       <th><%=t.rut%></th>
+    15:       <td><%=link_to "Detalles"%>
+    16:         <%=link_to "Editar", edit_guard_path(guards)%>
+    17:         <%=link_to "Eliminar"%></td>
+    18:     </thead>
+    19:   
+  
+app/views/guards/index.html.erb:16:in `block in _app_views_guards_index_html_erb___4200733064836131369_36259520'
+app/views/guards/index.html.erb:4:in `_app_views_guards_index_html_erb___4200733064836131369_36259520'
+Started GET "/guards/" for 127.0.0.1 at 2018-05-04 18:06:20 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (198.7ms)
+Completed 500 Internal Server Error in 202ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `guard' for #<#<Class:0x000000041e0dd0>:0x00000002b6f3d0>
+Did you mean?  @guards):
+    13:       <th><%=t.name%></th>
+    14:       <th><%=t.rut%></th>
+    15:       <td><%=link_to "Detalles"%>
+    16:         <%=link_to "Editar", edit_guard_path(guard)%>
+    17:         <%=link_to "Eliminar"%></td>
+    18:     </thead>
+    19:   
+  
+app/views/guards/index.html.erb:16:in `block in _app_views_guards_index_html_erb___4200733064836131369_22793640'
+app/views/guards/index.html.erb:4:in `_app_views_guards_index_html_erb___4200733064836131369_22793640'
+Started GET "/guards/" for 127.0.0.1 at 2018-05-04 18:17:47 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (187.3ms)
+Completed 500 Internal Server Error in 190ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `guard' for #<#<Class:0x000000041e0dd0>:0x000000041b2bb0>
+Did you mean?  @guards):
+    13:       <th><%=t.name%></th>
+    14:       <th><%=t.rut%></th>
+    15:       <td><%=link_to "Detalles"%>
+    16:         <%=link_to "Editar", edit_path(guard)%>
+    17:         <%=link_to "Eliminar"%></td>
+    18:     </thead>
+    19:   
+  
+app/views/guards/index.html.erb:16:in `block in _app_views_guards_index_html_erb___4200733064836131369_34448060'
+app/views/guards/index.html.erb:4:in `_app_views_guards_index_html_erb___4200733064836131369_34448060'
+Started GET "/guards/" for 127.0.0.1 at 2018-05-04 18:18:07 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"guards"}, missing required keys: [:id]):
+    13:       <th><%=t.name%></th>
+    14:       <th><%=t.rut%></th>
+    15:       <td><%=link_to "Detalles"%>
+    16:         <%=link_to "Editar", edit_guard_path()%>
+    17:         <%=link_to "Eliminar"%></td>
+    18:     </thead>
+    19:   
+  
+app/views/guards/index.html.erb:16:in `block in _app_views_guards_index_html_erb___4200733064836131369_37946440'
+app/views/guards/index.html.erb:4:in `_app_views_guards_index_html_erb___4200733064836131369_37946440'
+Started GET "/guards/" for 127.0.0.1 at 2018-05-04 18:18:20 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (185.1ms)
+Completed 500 Internal Server Error in 189ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `guard' for #<#<Class:0x000000041e0dd0>:0x0000000417f0f8>
+Did you mean?  @guards):
+    13:       <th><%=t.name%></th>
+    14:       <th><%=t.rut%></th>
+    15:       <td><%=link_to "Detalles"%>
+    16:         <%=link_to "Editar", edit_guard_path(guard.id)%>
+    17:         <%=link_to "Eliminar"%></td>
+    18:     </thead>
+    19:   
+  
+app/views/guards/index.html.erb:16:in `block in _app_views_guards_index_html_erb___4200733064836131369_34368100'
+app/views/guards/index.html.erb:4:in `_app_views_guards_index_html_erb___4200733064836131369_34368100'
+Started GET "/guards/" for 127.0.0.1 at 2018-05-04 18:18:39 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 139ms (Views: 137.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/guards/12/edit" for 127.0.0.1 at 2018-05-04 18:18:43 -0300
+Processing by GuardsController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 12 LIMIT 1[0m
+  Rendering guards/edit.html.erb within layouts/application
+  Rendered guards/edit.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Editar Guardia</h1>
+    2: <%= form_for @guards do |t| %>
+    3: 
+    4: <div>
+    5:     <%= t.label :name %>
+  
+app/views/guards/edit.html.erb:2:in `_app_views_guards_edit_html_erb___2485986113914549725_70319527104840'
+Started GET "/guards/" for 127.0.0.1 at 2018-05-04 18:18:55 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 25ms (Views: 23.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/guards/" for 127.0.0.1 at 2018-05-04 18:22:26 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 27ms (Views: 24.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guards/%23%3CGuard::ActiveRecord_Relation:0x007fe91569bc60%3E/edit" for 127.0.0.1 at 2018-05-04 18:22:29 -0300
+Processing by GuardsController#edit as HTML
+  Parameters: {"id"=>"#<Guard::ActiveRecord_Relation:0x007fe91569bc60>"}
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Guard with 'id'=#<Guard::ActiveRecord_Relation:0x007fe91569bc60>):
+  
+app/controllers/guards_controller.rb:19:in `edit'
+Started GET "/guards/%23%3CGuard::ActiveRecord_Relation:0x007fe91569bc60%3E/edit" for 127.0.0.1 at 2018-05-04 18:22:46 -0300
+Processing by GuardsController#edit as HTML
+  Parameters: {"id"=>"#<Guard::ActiveRecord_Relation:0x007fe91569bc60>"}
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Guard with 'id'=#<Guard::ActiveRecord_Relation:0x007fe91569bc60>):
+  
+app/controllers/guards_controller.rb:19:in `edit'
+Started GET "/guards/" for 127.0.0.1 at 2018-05-04 18:22:54 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for #<Guard::ActiveRecord_Relation:0x007fe90c401490>
+Did you mean?  ids):
+    13:       <th><%=t.name%></th>
+    14:       <th><%=t.rut%></th>
+    15:       <td><%=link_to "Detalles"%>
+    16:         <%=link_to "Editar", edit_guard_path(@guards.id)%>
+    17:         <%=link_to "Eliminar"%></td>
+    18:     </thead>
+    19:   
+  
+app/views/guards/index.html.erb:16:in `block in _app_views_guards_index_html_erb___4200733064836131369_70319454814540'
+app/views/guards/index.html.erb:4:in `_app_views_guards_index_html_erb___4200733064836131369_70319454814540'
+Started GET "/guards/1" for 127.0.0.1 at 2018-05-04 18:24:00 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/guards/1"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/guards/show/1" for 127.0.0.1 at 2018-05-04 18:24:08 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/guards/show/1"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/guard/show/1" for 127.0.0.1 at 2018-05-04 18:32:20 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/guard/show/1"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/guards" for 127.0.0.1 at 2018-05-04 18:34:51 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (191.9ms)
+Completed 500 Internal Server Error in 196ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `guard' for #<#<Class:0x007fe915708540>:0x007fe915702848>
+Did you mean?  @guards):
+    13:       <th><%=t.name%></th>
+    14:       <th><%=t.rut%></th>
+    15:       <td><%=link_to "Detalles"%>
+    16:         <%=link_to "Editar", edit_guard_path(guard)%>
+    17:         <%=link_to "Eliminar"%></td>
+    18:     </thead>
+    19:   
+  
+app/views/guards/index.html.erb:16:in `block in _app_views_guards_index_html_erb___4200733064836131369_70319531902720'
+app/views/guards/index.html.erb:4:in `_app_views_guards_index_html_erb___4200733064836131369_70319531902720'
+Started GET "/guards" for 127.0.0.1 at 2018-05-04 18:35:19 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-04 18:35:21 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 18ms (Views: 17.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-04 18:35:23 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 20ms (Views: 18.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-04 18:35:46 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 25ms (Views: 23.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guards/show/1" for 127.0.0.1 at 2018-05-04 18:35:57 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/guards/show/1"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/guards/" for 127.0.0.1 at 2018-05-04 18:36:49 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 18ms (Views: 16.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/guards/1/edit" for 127.0.0.1 at 2018-05-04 18:36:51 -0300
+Processing by GuardsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+Completed 404 Not Found in 3ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Guard with 'id'=1):
+  
+app/controllers/guards_controller.rb:19:in `edit'
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` ORDER BY `guards`.`id` ASC LIMIT 1[0m
+Started GET "/guards/11/edit" for 127.0.0.1 at 2018-05-04 18:38:00 -0300
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by GuardsController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 11 LIMIT 1[0m
+  Rendering guards/edit.html.erb within layouts/application
+  Rendered guards/edit.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Editar Guardia</h1>
+    2: <%= form_for @guards do |t| %>
+    3: 
+    4: <div>
+    5:     <%= t.label :name %>
+  
+app/views/guards/edit.html.erb:2:in `_app_views_guards_edit_html_erb___209002155358991979_40040660'
+Started GET "/guards/11/edit" for 127.0.0.1 at 2018-05-04 18:39:28 -0300
+Processing by GuardsController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 11 LIMIT 1[0m
+  Rendering guards/edit.html.erb within layouts/application
+  Rendered guards/edit.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Editar Guardia</h1>
+    2: <%= form_for @guards do |t| %>
+    3: 
+    4: <div>
+    5:     <%= t.label :name %>
+  
+app/views/guards/edit.html.erb:2:in `_app_views_guards_edit_html_erb___209002155358991979_47047160'
+Started GET "/guards/" for 127.0.0.1 at 2018-05-04 18:39:35 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (183.6ms)
+Completed 500 Internal Server Error in 187ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `guards' for #<#<Class:0x00000004c42490>:0x0000000570e2e8>
+Did you mean?  @guards):
+    13:       <th><%=t.name%></th>
+    14:       <th><%=t.rut%></th>
+    15:       <td><%=link_to "Detalles"%>
+    16:         <%=link_to "Editar", edit_guard_path(guards)%>
+    17:         <%=link_to "Eliminar"%></td>
+    18:     </thead>
+    19:   
+  
+app/views/guards/index.html.erb:16:in `block in _app_views_guards_index_html_erb___4154383428150682499_45643660'
+app/views/guards/index.html.erb:4:in `_app_views_guards_index_html_erb___4154383428150682499_45643660'
+Started GET "/guards/" for 127.0.0.1 at 2018-05-04 18:39:49 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 172ms (Views: 170.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/guards/%23%3CGuard::ActiveRecord_Relation:0x00000005ca8aa0%3E/edit" for 127.0.0.1 at 2018-05-04 18:39:51 -0300
+Processing by GuardsController#edit as HTML
+  Parameters: {"id"=>"#<Guard::ActiveRecord_Relation:0x00000005ca8aa0>"}
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Guard with 'id'=#<Guard::ActiveRecord_Relation:0x00000005ca8aa0>):
+  
+app/controllers/guards_controller.rb:19:in `edit'
+Started GET "/guards/" for 127.0.0.1 at 2018-05-04 18:42:22 -0300
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for GuardsController):
+  
+actionpack (5.1.6) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/guards/index" for 127.0.0.1 at 2018-05-04 18:42:28 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/guards/index"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/guards/index" for 127.0.0.1 at 2018-05-04 18:42:47 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/guards/index"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/guards/index" for 127.0.0.1 at 2018-05-04 18:42:59 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/guards/index"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/guards/index" for 127.0.0.1 at 2018-05-04 18:43:01 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/guards/index"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/guards" for 127.0.0.1 at 2018-05-04 18:43:10 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (202.3ms)
+Completed 500 Internal Server Error in 210ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `guard' for #<#<Class:0x007f93343efb88>:0x007f93343eddd8>
+Did you mean?  @guards):
+    13:       <th><%=t.name%></th>
+    14:       <th><%=t.rut%></th>
+    15:       <td><%=link_to "Detalles"%>
+    16:         <%=link_to "Editar", edit_guard_path(guard)%>
+    17:         <%=link_to "Eliminar"%></td>
+    18:     </thead>
+    19:   
+  
+app/views/guards/index.html.erb:16:in `block in _app_views_guards_index_html_erb___4154383428150682499_70135106912820'
+app/views/guards/index.html.erb:4:in `_app_views_guards_index_html_erb___4154383428150682499_70135106912820'
+Started GET "/guards" for 127.0.0.1 at 2018-05-04 18:45:00 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (199.5ms)
+Completed 500 Internal Server Error in 204ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `guard' for #<#<Class:0x007f933160a560>:0x007f93315fced8>
+Did you mean?  @guards):
+    13:       <th><%=t.name%></th>
+    14:       <th><%=t.rut%></th>
+    15:       <td><%=link_to "Detalles"%>
+    16:         <%=link_to "Editar", edit_guard_path(guard)%>
+    17:         <%=link_to "Eliminar"%></td>
+    18:     </thead>
+    19:   
+  
+app/views/guards/index.html.erb:16:in `block in _app_views_guards_index_html_erb___4154383428150682499_70135082680560'
+app/views/guards/index.html.erb:4:in `_app_views_guards_index_html_erb___4154383428150682499_70135082680560'
+Started GET "/guards" for 127.0.0.1 at 2018-05-04 18:45:03 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (193.6ms)
+Completed 500 Internal Server Error in 196ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `guard' for #<#<Class:0x007f933160a560>:0x007f933178df40>
+Did you mean?  @guards):
+    13:       <th><%=t.name%></th>
+    14:       <th><%=t.rut%></th>
+    15:       <td><%=link_to "Detalles"%>
+    16:         <%=link_to "Editar", edit_guard_path(guard)%>
+    17:         <%=link_to "Eliminar"%></td>
+    18:     </thead>
+    19:   
+  
+app/views/guards/index.html.erb:16:in `block in _app_views_guards_index_html_erb___4154383428150682499_70135083464220'
+app/views/guards/index.html.erb:4:in `_app_views_guards_index_html_erb___4154383428150682499_70135083464220'
+Started GET "/guards" for 127.0.0.1 at 2018-05-04 18:45:08 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (206.3ms)
+Completed 500 Internal Server Error in 212ms (ActiveRecord: 2.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `guard' for #<#<Class:0x007f93318f8448>:0x007f93318edf48>
+Did you mean?  @guards):
+    13:       <th><%=t.name%></th>
+    14:       <th><%=t.rut%></th>
+    15:       <td><%=link_to "Detalles"%>
+    16:         <%=link_to "Editar", edit_guard_path(guard)%>
+    17:         <%=link_to "Eliminar"%></td>
+    18:     </thead>
+    19:   
+  
+app/views/guards/index.html.erb:16:in `block in _app_views_guards_index_html_erb___4154383428150682499_70135084206020'
+app/views/guards/index.html.erb:4:in `_app_views_guards_index_html_erb___4154383428150682499_70135084206020'
+Started GET "/guards" for 127.0.0.1 at 2018-05-04 18:50:31 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 29ms (Views: 28.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/guards/11/edit" for 127.0.0.1 at 2018-05-04 18:50:34 -0300
+Processing by GuardsController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 11 LIMIT 1[0m
+  Rendering guards/edit.html.erb within layouts/application
+  Rendered guards/edit.html.erb within layouts/application (4.1ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Editar Guardia</h1>
+    2: <%= form_for @guards do |t| %>
+    3: 
+    4: <div>
+    5:     <%= t.label :name %>
+  
+app/views/guards/edit.html.erb:2:in `_app_views_guards_edit_html_erb___209002155358991979_37277220'
+Started GET "/guards/" for 127.0.0.1 at 2018-05-04 18:53:10 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 30ms (Views: 28.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guards/11/edit" for 127.0.0.1 at 2018-05-04 18:53:11 -0300
+Processing by GuardsController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 11 LIMIT 1[0m
+  Rendering guards/edit.html.erb within layouts/application
+  Rendered guards/edit.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Editar Guardia</h1>
+    2: <%= form_for @guards do |f| %>
+    3: 
+    4: <div>
+    5:     <%= f.label :name %>
+  
+app/views/guards/edit.html.erb:2:in `_app_views_guards_edit_html_erb___209002155358991979_70135074195700'
+Started GET "/guards/" for 127.0.0.1 at 2018-05-04 18:56:24 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 36ms (Views: 30.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/guards/11/edit" for 127.0.0.1 at 2018-05-04 18:56:25 -0300
+Processing by GuardsController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 11 LIMIT 1[0m
+  Rendering guards/edit.html.erb within layouts/application
+  Rendered guards/edit.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 30ms (Views: 26.8ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/guard/11" for 127.0.0.1 at 2018-05-04 18:56:33 -0300
+  
+ActionController::RoutingError (No route matches [PATCH] "/guard/11"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started PATCH "/guard/11" for 127.0.0.1 at 2018-05-04 18:57:47 -0300
+  
+ActionController::RoutingError (No route matches [PATCH] "/guard/11"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started PATCH "/guard/11" for 127.0.0.1 at 2018-05-04 18:59:24 -0300
+  
+ArgumentError (Invalid route name, already in use: 'guards' 
+You may have defined two routes with the same name using the `:as` option, or you may be overriding a route already defined by a resource with the same naming. For the latter, you can restrict the routes created with `resources` as explained here: 
+http://guides.rubyonrails.org/routing.html#restricting-the-routes-created):
+  
+config/routes.rb:7:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+Started GET "/guard/" for 127.0.0.1 at 2018-05-04 19:13:05 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/guard"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/guards/" for 127.0.0.1 at 2018-05-04 19:13:09 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (207.0ms)
+Completed 500 Internal Server Error in 214ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `guard' for #<#<Class:0x007f9328ae2d70>:0x007f9328ae0fc0>
+Did you mean?  @guards):
+    15:       <th><%=t.rut%></th>
+    16:       <td><%=link_to "Detalles"%>
+    17:         <%=link_to "Editar", edit_guard_path(t)%>
+    18:         <%= link_to "Eliminar", guard, method: :delete, data: { confirm: "Deseas eliminar este guardia?"} %>
+    19:       </td>
+    20:     </thead>
+    21:   
+  
+app/views/guards/index.html.erb:18:in `block in _app_views_guards_index_html_erb___4154383428150682499_70135009713040'
+app/views/guards/index.html.erb:5:in `_app_views_guards_index_html_erb___4154383428150682499_70135009713040'
+Started GET "/guards/" for 127.0.0.1 at 2018-05-04 19:13:32 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 41ms (Views: 38.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/guards/11/edit" for 127.0.0.1 at 2018-05-04 19:13:34 -0300
+Processing by GuardsController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 11 LIMIT 1[0m
+  Rendering guards/edit.html.erb within layouts/application
+  Rendered guards/edit.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 39ms (Views: 36.2ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/guard/11" for 127.0.0.1 at 2018-05-04 19:13:41 -0300
+  
+ActionController::RoutingError (No route matches [PATCH] "/guard/11"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/guards" for 127.0.0.1 at 2018-05-04 19:16:42 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 45ms (Views: 39.9ms | ActiveRecord: 2.0ms)
+
+
+Started DELETE "/guard/13" for 127.0.0.1 at 2018-05-04 19:16:52 -0300
+Processing by GuardsController#delete as HTML
+  Parameters: {"authenticity_token"=>"ZISNn5YsbyS/fbrArIco+5sklD78NyeFGMXbFzzlXWZEAaS0ph518WsG9q2xE3IDveYkTj4nAUT+50w9M8fWXA==", "id"=>"13"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant GuardsController::Product):
+  
+app/controllers/guards_controller.rb:30:in `delete'
+Started DELETE "/guard/13" for 127.0.0.1 at 2018-05-04 19:17:16 -0300
+Processing by GuardsController#delete as HTML
+  Parameters: {"authenticity_token"=>"ZISNn5YsbyS/fbrArIco+5sklD78NyeFGMXbFzzlXWZEAaS0ph518WsG9q2xE3IDveYkTj4nAUT+50w9M8fWXA==", "id"=>"13"}
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 13 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (7.2ms)[0m  [1m[31mDELETE FROM `guards` WHERE `guards`.`id` = 13[0m
+  [1m[35m (28.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/guards
+Completed 302 Found in 51ms (ActiveRecord: 37.4ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-04 19:17:16 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 33ms (Views: 31.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/guards/12/edit" for 127.0.0.1 at 2018-05-04 19:17:21 -0300
+Processing by GuardsController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 12 LIMIT 1[0m
+  Rendering guards/edit.html.erb within layouts/application
+  Rendered guards/edit.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 28ms (Views: 26.1ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/guard/12" for 127.0.0.1 at 2018-05-04 19:17:27 -0300
+Processing by GuardsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oS8gmUkoOEy2QgBZLp2dSnczw4/a1O+Bk2gNZqLo4r2+V1AQLsfSD4/7BAWwCVXv9IB/+pekx4pDHe/nmaclJQ==", "guard"=>{"name"=>"Facundo Grandinetti", "rut"=>"16113011-k", "nationality"=>"Chileno", "phone_number"=>"923443212", "email"=>"facundito90@gmail.com"}, "commit"=>"Update Guard", "id"=>"12"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant GuardsController::Product):
+  
+app/controllers/guards_controller.rb:22:in `update'
+Started PATCH "/guard/12" for 127.0.0.1 at 2018-05-04 19:18:33 -0300
+Processing by GuardsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oS8gmUkoOEy2QgBZLp2dSnczw4/a1O+Bk2gNZqLo4r2+V1AQLsfSD4/7BAWwCVXv9IB/+pekx4pDHe/nmaclJQ==", "guard"=>{"name"=>"Facundo Grandinetti", "rut"=>"16113011-k", "nationality"=>"Chileno", "phone_number"=>"923443212", "email"=>"facundito90@gmail.com"}, "commit"=>"Update Guard", "id"=>"12"}
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 12 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (36.5ms)[0m  [1m[33mUPDATE `guards` SET `nationality` = 'Chileno', `updated_at` = '2018-05-04 22:18:33' WHERE `guards`.`id` = 12[0m
+  [1m[35m (26.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/guards
+Completed 302 Found in 79ms (ActiveRecord: 64.0ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-04 19:18:33 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 21ms (Views: 19.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/guards/12/edit" for 127.0.0.1 at 2018-05-04 19:18:40 -0300
+Processing by GuardsController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 12 LIMIT 1[0m
+  Rendering guards/edit.html.erb within layouts/application
+  Rendered guards/edit.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 29ms (Views: 26.3ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/guard/12" for 127.0.0.1 at 2018-05-04 19:19:17 -0300
+Processing by GuardsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HeYlHBU/rASREZX9bYyPYfZczua57/6slocX+kO5i4cCnlWVctBGR6iokaHzGEfEde9yk/Sf1qdG8vV7ePZMHw==", "guard"=>{"name"=>"Facundo Grandinetti", "rut"=>"16113011-k", "nationality"=>"Italiano", "phone_number"=>"923443212", "email"=>"facundito90@gmail.com"}, "commit"=>"Update Guard", "id"=>"12"}
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 12 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE `guards` SET `nationality` = 'Italiano', `updated_at` = '2018-05-04 22:19:17' WHERE `guards`.`id` = 12[0m
+  [1m[35m (52.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/guards
+Completed 302 Found in 59ms (ActiveRecord: 53.3ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-04 19:19:17 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 26ms (Views: 24.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-04 19:19:19 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 27ms (Views: 26.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/guards" for 127.0.0.1 at 2018-05-04 19:20:02 -0300
+Processing by GuardsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Oowzjx11zCgj5RrKk6OrukrnJMc0rl7nSdM/FWipR2HYNH7EhCDL96TVclXUz3Qga+LWnTIw1Piclz7Rn4zJ+w==", "guard"=>{"name"=>"Paulina Aburto", "rut"=>"123456789", "nationality"=>"Chilena", "phone_number"=>"987653556", "email"=>"izysuiudiasu@hsjadj.com"}, "commit"=>"Create Guard"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `guards` (`name`, `rut`, `phone_number`, `email`, `nationality`, `created_at`, `updated_at`) VALUES ('Paulina Aburto', '123456789', '987653556', 'izysuiudiasu@hsjadj.com', 'Chilena', '2018-05-04 22:20:02', '2018-05-04 22:20:02')[0m
+  [1m[35m (41.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/guards
+Completed 302 Found in 47ms (ActiveRecord: 42.1ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-04 19:20:02 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 31ms (Views: 29.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-04 19:20:06 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 27ms (Views: 25.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-04 19:20:09 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 29ms (Views: 27.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-04 19:20:10 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 31ms (Views: 29.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-04 19:20:12 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 26ms (Views: 24.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-04 19:20:15 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 29ms (Views: 27.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-04 19:23:30 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 30ms (Views: 28.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-04 19:23:32 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 35ms (Views: 33.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-04 19:23:33 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 28ms (Views: 26.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-04 19:23:33 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 28ms (Views: 26.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guards/show/11" for 127.0.0.1 at 2018-05-04 19:24:18 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/guards/show/11"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'

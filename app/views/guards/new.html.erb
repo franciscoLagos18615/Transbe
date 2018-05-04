@@ -1,0 +1,27 @@
+<h1>Registro de Guardia</h1>
+<%= form_for @guard do |t| %>
+
+<div>
+    <%= t.label :name %>
+    <%= t.text_field :name%>
+</div>
+<div>
+    <%= t.label :rut %>
+    <%= t.text_field :rut%>
+</div>
+<div>
+    <%= t.label :nationality %>
+    <%= t.text_field :nationality%>
+</div>
+<div>
+    <%= t.label :phone_number %>
+    <%= t.text_field :phone_number%>
+</div>
+<div>
+    <%= t.label :email %>
+    <%= t.text_field :email%>
+</div>
+<div>
+    <%=t.submit%>
+</div>
+<%end%>

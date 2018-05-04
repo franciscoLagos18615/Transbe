@@ -58,3 +58,6 @@ gem 'devise', '4.4.3'
 
 # Easy file attachment management for ActiveRecord
 gem 'paperclip', '6.0.0'
+
+# RUT/RUN Chilean validator for Rails models.
+gem 'rut_validation', '1.1.0'

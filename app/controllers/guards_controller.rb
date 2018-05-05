@@ -30,7 +30,11 @@ class GuardsController < ApplicationController
     @guard = Guard.find(params[:id])
     @guard.destroy
     redirect_to guards_path
-end
+  end
+
+  def show
+    @guard=Guard.find(params[:id])
+  end
 
   private
   def guard_params

@@ -1,13 +1,29 @@
 <h1>Registro de Guardia</h1>
 <%= form_for @guard do |t| %>
+<div>
+    <%= t.label :firstname %>
+    <%= t.text_field :firstname%>
+</div>
 
 <div>
-    <%= t.label :name %>
-    <%= t.text_field :name%>
+    <%= t.label :lastname %>
+    <%= t.text_field :lastname%>
+</div>
+<div>
+    <%= t.label :surname %>
+    <%= t.text_field :surname%>
 </div>
 <div>
     <%= t.label :rut %>
     <%= t.text_field :rut%>
+</div>
+<div>
+    <%= t.label :age %>
+    <%= t.text_field :age%>
+</div
+<div>
+    <%= t.label :sex %>
+    <%= t.text_field :sex%>
 </div>
 <div>
     <%= t.label :nationality %>
@@ -18,8 +34,28 @@
     <%= t.text_field :phone_number%>
 </div>
 <div>
+    <%= t.label :second_phone %>
+    <%= t.text_field :second_phone%>
+</div>
+<div>
     <%= t.label :email %>
     <%= t.text_field :email%>
+</div>
+<div>
+    <%= t.label :educational_level %>
+    <%= t.text_field :educational_level%>
+</div>
+<div>
+    <%= t.label :city %>
+    <%= t.text_field :city%>
+</div>
+<div>
+    <%= t.label :commune %>
+    <%= t.text_field :commune%>
+</div>
+<div>
+    <%= t.label :address %>
+    <%= t.text_field :address%>
 </div>
 <div>
     <%=t.submit%>

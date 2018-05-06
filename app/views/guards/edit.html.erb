@@ -1,13 +1,28 @@
 <h1>Editar Guardia</h1>
 <%= form_for @guard do |f| %>
-
 <div>
-    <%= f.label :name %>
-    <%= f.text_field :name%>
+    <%= f.label :firstname %>
+    <%= f.text_field :firstname%>
+</div>
+<div>
+    <%= f.label :lastname %>
+    <%= f.text_field :lastname%>
+</div>
+<div>
+    <%= f.label :surname %>
+    <%= f.text_field :surname%>
+</div>
+<div>
+    <%= f.label :age %>
+    <%= f.text_field :age%>
 </div>
 <div>
     <%= f.label :rut %>
     <%= f.text_field :rut%>
+</div>
+<div>
+    <%= f.label :sex %>
+    <%= f.text_field :sex%>
 </div>
 <div>
     <%= f.label :nationality %>
@@ -18,10 +33,29 @@
     <%= f.text_field :phone_number%>
 </div>
 <div>
+    <%= f.label :second_phone %>
+    <%= f.text_field :second_phone%>
+</div>
+<div>
     <%= f.label :email %>
     <%= f.text_field :email%>
 </div>
 <div>
+    <%= f.label :educational_level %>
+    <%= f.text_field :educational_level%>
+</div>
+<div>
+    <%= f.label :city %>
+    <%= f.text_field :city%>
+</div>
+<div>
+    <%= f.label :commune %>
+    <%= f.text_field :commune%>
+</div>
+<div>
+    <%= f.label :address %>
+    <%= f.text_field :address%>
+</div>
     <%=f.submit%>
 </div>
 <%end%>

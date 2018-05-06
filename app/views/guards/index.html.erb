@@ -11,11 +11,13 @@
 
   <tr>
     <thead>
-      <th><%=t.name%></th>
+      <th><%=t.firstname%>
+        <%=t.lastname%>
+      </th>
       <th><%=t.rut%></th>
       <td><%=link_to "Detalles", guard_path(t)%>
         <%=link_to "Editar", edit_guard_path(t)%>
-        <%= link_to "Eliminar", t, method: :delete, data: { confirm: "Deseas eliminar este guardia?"} %>
+        <%= link_to "Eliminar", t, method: :delete, data: { confirm: "¿Esta seguro que desea eliminar el registro de este guardia?"} %>
       </td>
     </thead>
   

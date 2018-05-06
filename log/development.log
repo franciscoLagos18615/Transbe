@@ -3014,3 +3014,786 @@ Processing by GuardsController#index as HTML
 Completed 200 OK in 26ms (Views: 24.4ms | ActiveRecord: 0.8ms)
 
 
+  [1m[35m (11.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('8255491897942701930', 0)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to AddAttachmentAvatarToGuards (20180506191702)
+  [1m[35m (420.0ms)[0m  [1m[35mALTER TABLE `guards` ADD `avatar_file_name` varchar(255)[0m
+  [1m[35m (417.0ms)[0m  [1m[35mALTER TABLE `guards` ADD `avatar_content_type` varchar(255)[0m
+  [1m[35m (415.6ms)[0m  [1m[35mALTER TABLE `guards` ADD `avatar_file_size` int[0m
+  [1m[35m (414.9ms)[0m  [1m[35mALTER TABLE `guards` ADD `avatar_updated_at` datetime[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180506191702')[0m
+  [1m[35m (26.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.8ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('8255491897942701930')[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/guards/" for 127.0.0.1 at 2018-05-06 16:41:51 -0300
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 242ms (Views: 229.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/guard/16" for 127.0.0.1 at 2018-05-06 16:41:54 -0300
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 16 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 48ms (Views: 24.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guard/16" for 127.0.0.1 at 2018-05-06 16:44:32 -0300
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 16 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 28ms (Views: 26.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guard/16" for 127.0.0.1 at 2018-05-06 16:44:32 -0300
+Processing by GuardsController#show as */*
+  Parameters: {"id"=>"16"}
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 16 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 32ms (Views: 26.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guards/" for 127.0.0.1 at 2018-05-06 16:45:24 -0300
+Processing by GuardsController#index as */*
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.7ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 74ms (Views: 69.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/guard/16" for 127.0.0.1 at 2018-05-06 16:45:25 -0300
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"16"}
+Started GET "/guards/" for 127.0.0.1 at 2018-05-06 16:45:25 -0300
+Processing by GuardsController#index as */*
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (6.3ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 16 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (1.6ms)
+Started GET "/guard/16" for 127.0.0.1 at 2018-05-06 16:45:25 -0300
+Processing by GuardsController#show as */*
+  Parameters: {"id"=>"16"}
+  [1m[35m (8.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.9ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mGuard Load (1.0ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (25.7ms)
+  [1m[36mGuard Load (1.2ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 16 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 81ms (Views: 66.8ms | ActiveRecord: 6.3ms)
+
+
+Completed 200 OK in 92ms (Views: 78.4ms | ActiveRecord: 9.5ms)
+
+
+Completed 200 OK in 75ms (Views: 59.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/guard/16" for 127.0.0.1 at 2018-05-06 16:45:44 -0300
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 16 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (257.0ms)
+Completed 500 Internal Server Error in 262ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `thumb' for #<#<Class:0x000000052514f8>:0x007f9b8cc62b98>):
+    13: <p>Ciudad: <%=@guard.city%></p>
+    14: <p>Comuna: <%=@guard.commune%></p>
+    15: <p>Direccion: <%=@guard.address%></p>
+    16: <%= image_tag @guard.avatar.url(thumb) %>
+    17:  <td><%=link_to "Volver", guards_path()%></td>
+  
+app/views/guards/show.html.erb:16:in `_app_views_guards_show_html_erb__2049390471524228302_70153029272220'
+Started GET "/guard/16" for 127.0.0.1 at 2018-05-06 16:46:07 -0300
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 16 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 28ms (Views: 25.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guard/16" for 127.0.0.1 at 2018-05-06 16:48:43 -0300
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 16 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 33ms (Views: 24.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guard/16" for 127.0.0.1 at 2018-05-06 16:49:07 -0300
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 16 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 33ms (Views: 29.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guards/" for 127.0.0.1 at 2018-05-06 17:00:34 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 25ms (Views: 23.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/guard/16" for 127.0.0.1 at 2018-05-06 17:00:36 -0300
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 16 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 29ms (Views: 25.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guards/16/edit" for 127.0.0.1 at 2018-05-06 17:00:38 -0300
+Processing by GuardsController#edit as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 16 LIMIT 1[0m
+  Rendering guards/edit.html.erb within layouts/application
+  Rendered guards/edit.html.erb within layouts/application (35.5ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant Información):
+    56:     <%= f.label :address %>
+    57:     <%= f.text_field :address%>
+    58: </div>
+    59:     <%=f.submit Actualizar Información%>
+    60: </div>
+    61: <%end%>
+  
+app/views/guards/edit.html.erb:59:in `block in _app_views_guards_edit_html_erb___4153735660001536243_70153035924440'
+app/views/guards/edit.html.erb:2:in `_app_views_guards_edit_html_erb___4153735660001536243_70153035924440'
+Started GET "/guards/16/edit" for 127.0.0.1 at 2018-05-06 17:00:54 -0300
+Processing by GuardsController#edit as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 16 LIMIT 1[0m
+  Rendering guards/edit.html.erb within layouts/application
+  Rendered guards/edit.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 31ms (Views: 28.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/guards/16/edit" for 127.0.0.1 at 2018-05-06 17:03:45 -0300
+Processing by GuardsController#edit as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 16 LIMIT 1[0m
+  Rendering guards/edit.html.erb within layouts/application
+  Rendered guards/edit.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.4ms)
+
+
+  
+SyntaxError (/home/cristian/Code/TransbeApp/Transbe/app/views/guards/edit.html.erb:61: syntax error, unexpected tIDENTIFIER, expecting ')'
+append=( f.text_field :Foto de perfil);@output_buffer.safe_a
+                              ^):
+  
+app/views/guards/edit.html.erb:61: syntax error, unexpected tIDENTIFIER, expecting ')'
+append=( f.text_field :Foto de perfil);@output_buffer.safe_a
+Started GET "/guards/16/edit" for 127.0.0.1 at 2018-05-06 17:04:04 -0300
+Processing by GuardsController#edit as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 16 LIMIT 1[0m
+  Rendering guards/edit.html.erb within layouts/application
+  Rendered guards/edit.html.erb within layouts/application (109.5ms)
+Completed 500 Internal Server Error in 113ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `field' for #<ActionView::Helpers::FormBuilder:0x007f9b8d832ea0>
+Did you mean?  fields):
+    57:     <%= f.text_field :address%>
+    58: </div>
+    59: <div>
+    60:     <%= f.field :avatar%>
+    61:     <%= f.text_field :avatar%>
+    62: </div>
+    63:     <%=f.submit "Actualizar Información"%>
+  
+app/views/guards/edit.html.erb:60:in `block in _app_views_guards_edit_html_erb___4153735660001536243_70153035841560'
+app/views/guards/edit.html.erb:2:in `_app_views_guards_edit_html_erb___4153735660001536243_70153035841560'
+Started GET "/guards/16/edit" for 127.0.0.1 at 2018-05-06 17:04:44 -0300
+Processing by GuardsController#edit as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 16 LIMIT 1[0m
+  Rendering guards/edit.html.erb within layouts/application
+  Rendered guards/edit.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 49ms (Views: 46.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/guards/16/edit" for 127.0.0.1 at 2018-05-06 17:05:12 -0300
+Processing by GuardsController#edit as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 16 LIMIT 1[0m
+  Rendering guards/edit.html.erb within layouts/application
+  Rendered guards/edit.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 32ms (Views: 29.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/guards/16/edit" for 127.0.0.1 at 2018-05-06 17:05:39 -0300
+Processing by GuardsController#edit as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 16 LIMIT 1[0m
+  Rendering guards/edit.html.erb within layouts/application
+  Rendered guards/edit.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 31ms (Views: 28.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guards/16/edit" for 127.0.0.1 at 2018-05-06 17:06:14 -0300
+Processing by GuardsController#edit as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 16 LIMIT 1[0m
+  Rendering guards/edit.html.erb within layouts/application
+  Rendered guards/edit.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 29ms (Views: 27.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guards/16/edit" for 127.0.0.1 at 2018-05-06 17:06:29 -0300
+Processing by GuardsController#edit as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 16 LIMIT 1[0m
+  Rendering guards/edit.html.erb within layouts/application
+  Rendered guards/edit.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 31ms (Views: 28.3ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/guard/16" for 127.0.0.1 at 2018-05-06 17:10:42 -0300
+Processing by GuardsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wm3Ox4TyFKdm0ZYEljSYOujwQuyI00gROx+1oc29Cp3XwCLb60d0bXyRd0JFGSAnsjaM2fLkRSkn68fHFVvvGw==", "guard"=>{"firstname"=>"Cristian", "lastname"=>"Fernandez", "surname"=>"Vasquez", "age"=>"26", "rut"=>"18117016-6", "sex"=>"Maculino", "nationality"=>"Chileno", "phone_number"=>"965439876", "second_phone"=>"974539270", "email"=>"cristianfervas1992@gmail.com", "educational_level"=>"Media Completa", "city"=>"Santiago", "commune"=>"Puente Alto", "address"=>"Del abasto 2894", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x007f9b8c8c5760 @tempfile=#<Tempfile:/tmp/RackMultipart20180506-6800-ctij38.jpg>, @original_filename="foto_perfil.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"guard[avatar]\"; filename=\"foto_perfil.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Actualizar Información", "id"=>"16"}
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 16 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[paperclip] Trying to link /tmp/RackMultipart20180506-6800-ctij38.jpg to /tmp/3cf520a32bc585ce01d411815de4112220180506-6800-1pgpzil.jpg
+[paperclip] Trying to link /tmp/3cf520a32bc585ce01d411815de4112220180506-6800-1pgpzil.jpg to /tmp/3cf520a32bc585ce01d411815de4112220180506-6800-j22gq5.jpg
+Command :: PATH=/usr/bin/:$PATH; file -b --mime '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-j22gq5.jpg'
+Command :: PATH=/usr/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-1pgpzil.jpg[0]' 2>/dev/null
+Command :: PATH=/usr/bin/:$PATH; identify -format %m '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-1pgpzil.jpg[0]'
+Command :: PATH=/usr/bin/:$PATH; convert '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-1pgpzil.jpg[0]' -auto-orient -resize "300x300>" '/tmp/fae9751dcc66f2f4629430b8e0b685e220180506-6800-10m9sf4'
+[paperclip] Trying to link /tmp/fae9751dcc66f2f4629430b8e0b685e220180506-6800-10m9sf4 to /tmp/9217d50d76c050ae88dd1a79af4e7dd520180506-6800-1h8xvo3
+Command :: PATH=/usr/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-1pgpzil.jpg[0]' 2>/dev/null
+Command :: PATH=/usr/bin/:$PATH; identify -format %m '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-1pgpzil.jpg[0]'
+Command :: PATH=/usr/bin/:$PATH; convert '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-1pgpzil.jpg[0]' -auto-orient -resize "100x100>" '/tmp/fae9751dcc66f2f4629430b8e0b685e220180506-6800-7lly1s'
+[paperclip] Trying to link /tmp/fae9751dcc66f2f4629430b8e0b685e220180506-6800-7lly1s to /tmp/bf18cace1ace1f2f78538e9a07d6eab520180506-6800-o8ec9r
+[paperclip] Trying to link /tmp/3cf520a32bc585ce01d411815de4112220180506-6800-1pgpzil.jpg to /tmp/3cf520a32bc585ce01d411815de4112220180506-6800-e8qqre.jpg
+Command :: PATH=/usr/bin/:$PATH; file -b --mime '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-e8qqre.jpg'
+  [1m[35mSQL (2.1ms)[0m  [1m[33mUPDATE `guards` SET `avatar_file_name` = 'foto_perfil.jpg', `avatar_content_type` = 'image/jpeg', `avatar_file_size` = 54652, `avatar_updated_at` = '2018-05-06 20:10:42', `updated_at` = '2018-05-06 20:10:42' WHERE `guards`.`id` = 16[0m
+  [1m[35m (30.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/guards
+Completed 302 Found in 417ms (ActiveRecord: 42.7ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-06 17:10:43 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.9ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 28ms (Views: 25.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/guard/16" for 127.0.0.1 at 2018-05-06 17:10:45 -0300
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 16 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 24ms (Views: 22.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guard/16" for 127.0.0.1 at 2018-05-06 17:19:47 -0300
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 16 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 50ms (Views: 24.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/guard/16" for 127.0.0.1 at 2018-05-06 17:19:57 -0300
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 16 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 59ms (Views: 31.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-06 17:24:15 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (26.5ms)
+Completed 200 OK in 59ms (Views: 56.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 17:24:18 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 37ms (Views: 35.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guard/16" for 127.0.0.1 at 2018-05-06 17:24:23 -0300
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 16 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 24ms (Views: 21.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/guard/16" for 127.0.0.1 at 2018-05-06 17:26:21 -0300
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 16 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 39ms (Views: 36.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-06 17:26:39 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 34ms (Views: 31.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 17:26:41 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 34ms (Views: 32.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 17:27:01 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/cristian/Code/TransbeApp/Transbe/app/views/guards/new.html.erb:13: syntax error, unexpected tCONSTANT, expecting ')'
+nd=( t.label :Segundo Apellido );@output_buffer.safe_append=
+                              ^):
+  
+app/views/guards/new.html.erb:13: syntax error, unexpected tCONSTANT, expecting ')'
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 17:27:54 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/cristian/Code/TransbeApp/Transbe/app/views/guards/new.html.erb:13: syntax error, unexpected ':'
+tput_buffer.append=( t.label : );@output_buffer.safe_append=
+                              ^
+/home/cristian/Code/TransbeApp/Transbe/app/views/guards/new.html.erb:65: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;end;
+            ^
+/home/cristian/Code/TransbeApp/Transbe/app/views/guards/new.html.erb:67: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/home/cristian/Code/TransbeApp/Transbe/app/views/guards/new.html.erb:69: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/guards/new.html.erb:13: syntax error, unexpected ':'
+app/views/guards/new.html.erb:65: syntax error, unexpected keyword_end, expecting ')'
+app/views/guards/new.html.erb:67: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/guards/new.html.erb:69: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 17:28:05 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (110.1ms)
+Completed 500 Internal Server Error in 114ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `label_tag' for #<ActionView::Helpers::FormBuilder:0x007f9b8d633c08>
+Did you mean?  label):
+     6: </div>
+     7: 
+     8: <div>
+     9:     <%= t.label_tag :Apellido %>
+    10:     <%= t.text_field :lastname%>
+    11: </div>
+    12: <div>
+  
+app/views/guards/new.html.erb:9:in `block in _app_views_guards_new_html_erb__247102114876055057_70153034576260'
+app/views/guards/new.html.erb:2:in `_app_views_guards_new_html_erb__247102114876055057_70153034576260'
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 17:31:36 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (28.8ms)
+Completed 200 OK in 58ms (Views: 56.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 17:33:37 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 37ms (Views: 35.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 17:36:23 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 33ms (Views: 32.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 17:37:11 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 37ms (Views: 33.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 17:37:59 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (215.9ms)
+Completed 500 Internal Server Error in 219ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x007f9ba018a5b8>:0x007f9b8d118f70>):
+    62:     <p>
+    63:         Subir foto de perfil
+    64:         <p>
+    65:                 <%= f.file_field :avatar%>
+    66:         </p>
+    67: 
+    68:     </p>
+  
+app/views/guards/new.html.erb:65:in `block in _app_views_guards_new_html_erb__247102114876055057_70153031701440'
+app/views/guards/new.html.erb:2:in `_app_views_guards_new_html_erb__247102114876055057_70153031701440'
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 17:38:12 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 30ms (Views: 28.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/guards" for 127.0.0.1 at 2018-05-06 17:57:28 -0300
+Processing by GuardsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yj0MO6VQQNmlSB4mvZI+X6wVq331LSYcoQk7Y/943KffkOAnyuUgE78I/2Buv4ZC9tNlSI8aKyS9/UkFJ545IQ==", "guard"=>{"firstname"=>"Sebastian", "lastname"=>"Fernandez", "surname"=>"Vasquez", "rut"=>"176664414-6", "age"=>"23", "sex"=>"Maculino", "nationality"=>"Argentino", "phone_number"=>"9238472983", "second_phone"=>"8748979873", "email"=>"isaias_logan@gmail.com", "educational_level"=>"Media Completa", "city"=>"Santiago", "commune"=>"Puente Alto", "address"=>"Del abasto 2894"}, "commit"=>"Registrar Guardia"}
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `attr_accessible' for #<Class:0x007f9b8cc98838>
+Did you mean?  attr_accessor):
+  
+app/models/guard.rb:6:in `<class:Guard>'
+app/models/guard.rb:1:in `<top (required)>'
+app/controllers/guards_controller.rb:10:in `create'
+Started POST "/guards" for 127.0.0.1 at 2018-05-06 18:00:52 -0300
+Processing by GuardsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yj0MO6VQQNmlSB4mvZI+X6wVq331LSYcoQk7Y/943KffkOAnyuUgE78I/2Buv4ZC9tNlSI8aKyS9/UkFJ545IQ==", "guard"=>{"firstname"=>"Sebastian", "lastname"=>"Fernandez", "surname"=>"Vasquez", "rut"=>"176664414-6", "age"=>"23", "sex"=>"Maculino", "nationality"=>"Argentino", "phone_number"=>"9238472983", "second_phone"=>"8748979873", "email"=>"isaias_logan@gmail.com", "educational_level"=>"Media Completa", "city"=>"Santiago", "commune"=>"Puente Alto", "address"=>"Del abasto 2894"}, "commit"=>"Registrar Guardia"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.5ms)[0m  [1m[31mROLLBACK[0m
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 86ms (Views: 51.4ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/guards" for 127.0.0.1 at 2018-05-06 18:00:59 -0300
+Processing by GuardsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"W+wsB+dUr2oFRzd2rjGt4/VM0kW/5aOMKC/7X2r8niNOQcAbiOHPoB8H1jB9HBX+r4occMXSrrQ024k5shp7pQ==", "guard"=>{"firstname"=>"Sebastian", "lastname"=>"Fernandez", "surname"=>"Vasquez", "rut"=>"17664414-6", "age"=>"23", "sex"=>"Maculino", "nationality"=>"Argentino", "phone_number"=>"9238472983", "second_phone"=>"8748979873", "email"=>"isaias_logan@gmail.com", "educational_level"=>"Media Completa", "city"=>"Santiago", "commune"=>"Puente Alto", "address"=>"Del abasto 2894"}, "commit"=>"Registrar Guardia"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 35ms (Views: 31.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/guards" for 127.0.0.1 at 2018-05-06 18:01:09 -0300
+Processing by GuardsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XhpRBnueXLoucEr8K1Bmmyo6MqzuFj0f1Zmea5iRqDtLt70aFCs8cDQwq7r4fd6GcPz8mZQhMCfJbewNQHdNvQ==", "guard"=>{"firstname"=>"Sebastian", "lastname"=>"Fernandez", "surname"=>"Vasquez", "rut"=>"17664414-6", "age"=>"23", "sex"=>"Maculino", "nationality"=>"Argentino", "phone_number"=>"9238472983", "second_phone"=>"8748979873", "email"=>"isaias_logan@gmail.com", "educational_level"=>"Media Completa", "city"=>"Santiago", "commune"=>"Puente Alto", "address"=>"Del abasto 2894", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x007f9b8d9d0e88 @tempfile=#<Tempfile:/tmp/RackMultipart20180506-6800-14vxsvn.jpg>, @original_filename="foto_perfil.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"guard[avatar]\"; filename=\"foto_perfil.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Registrar Guardia"}
+[paperclip] Trying to link /tmp/RackMultipart20180506-6800-14vxsvn.jpg to /tmp/3cf520a32bc585ce01d411815de4112220180506-6800-f8p0kc.jpg
+[paperclip] Trying to link /tmp/3cf520a32bc585ce01d411815de4112220180506-6800-f8p0kc.jpg to /tmp/3cf520a32bc585ce01d411815de4112220180506-6800-1exhgj8.jpg
+Command :: PATH=/usr/bin/:$PATH; file -b --mime '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-1exhgj8.jpg'
+Command :: PATH=/usr/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-f8p0kc.jpg[0]' 2>/dev/null
+Command :: PATH=/usr/bin/:$PATH; identify -format %m '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-f8p0kc.jpg[0]'
+Command :: PATH=/usr/bin/:$PATH; convert '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-f8p0kc.jpg[0]' -auto-orient -resize "300x300>" '/tmp/97cefe75bc9031f1e2f125c7f01ecd9c20180506-6800-gzc7y5'
+[paperclip] Trying to link /tmp/97cefe75bc9031f1e2f125c7f01ecd9c20180506-6800-gzc7y5 to /tmp/449f46bfac6a31e4b1ab1cafa820b22e20180506-6800-1vnwvyu
+Command :: PATH=/usr/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-f8p0kc.jpg[0]' 2>/dev/null
+Command :: PATH=/usr/bin/:$PATH; identify -format %m '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-f8p0kc.jpg[0]'
+Command :: PATH=/usr/bin/:$PATH; convert '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-f8p0kc.jpg[0]' -auto-orient -resize "100x100>" '/tmp/97cefe75bc9031f1e2f125c7f01ecd9c20180506-6800-1tgdhpi'
+[paperclip] Trying to link /tmp/97cefe75bc9031f1e2f125c7f01ecd9c20180506-6800-1tgdhpi to /tmp/ac5047073a9b2d61663688d817aef8ba20180506-6800-d3qp1s
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[paperclip] Trying to link /tmp/3cf520a32bc585ce01d411815de4112220180506-6800-f8p0kc.jpg to /tmp/3cf520a32bc585ce01d411815de4112220180506-6800-11tza02.jpg
+Command :: PATH=/usr/bin/:$PATH; file -b --mime '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-11tza02.jpg'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 305ms (Views: 35.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/guards" for 127.0.0.1 at 2018-05-06 18:03:57 -0300
+Processing by GuardsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dIXlB9gpkA2USUkKjQhJK95YL62RkAASCc1xVqXB8S5hKAkbt5zwx44JqExeJfE2hJ7hmOunDSoVOQMwfScUqA==", "guard"=>{"firstname"=>"Sebastian", "lastname"=>"Fernandez", "surname"=>"Vasquez", "rut"=>"17664414-6", "age"=>"23", "sex"=>"Maculino", "nationality"=>"Argentino", "phone_number"=>"9238472983", "second_phone"=>"8748979873", "email"=>"isaias_logan@gmail.com", "educational_level"=>"Media Completa", "city"=>"Santiago", "commune"=>"Puente Alto", "address"=>"Del abasto 2894"}, "commit"=>"Registrar Guardia"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 34ms (Views: 30.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-06 18:03:59 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 43ms (Views: 40.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 18:04:02 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 42ms (Views: 40.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/guards" for 127.0.0.1 at 2018-05-06 18:04:25 -0300
+Processing by GuardsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g+Vuf3JLXSEGq+/oZBXar4IY7ICMMnNNKD7VWvkA11ZI4ZyIijntkBLGzyvGeH15TJ4UvmrVHfAd0LeHc8gzKg==", "guard"=>{"firstname"=>"Cristian", "lastname"=>"Fernandez", "surname"=>"Vasquez", "rut"=>"17664414-6", "age"=>"23", "sex"=>"Maculino", "nationality"=>"Argentino", "phone_number"=>"9238472983", "second_phone"=>"974539270", "email"=>"cristianfervas1992@gmail.com", "educational_level"=>"Media Completa", "city"=>"Santiago", "commune"=>"Puente Alto", "address"=>"Del abasto 2894", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x007f9b8d039a50 @tempfile=#<Tempfile:/tmp/RackMultipart20180506-6800-1nxjf1r.jpg>, @original_filename="foto_perfil.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"guard[avatar]\"; filename=\"foto_perfil.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Registrar Guardia"}
+[paperclip] Trying to link /tmp/RackMultipart20180506-6800-1nxjf1r.jpg to /tmp/3cf520a32bc585ce01d411815de4112220180506-6800-12dbzrt.jpg
+[paperclip] Trying to link /tmp/3cf520a32bc585ce01d411815de4112220180506-6800-12dbzrt.jpg to /tmp/3cf520a32bc585ce01d411815de4112220180506-6800-30u9yo.jpg
+Command :: PATH=/usr/bin/:$PATH; file -b --mime '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-30u9yo.jpg'
+Command :: PATH=/usr/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-12dbzrt.jpg[0]' 2>/dev/null
+Command :: PATH=/usr/bin/:$PATH; identify -format %m '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-12dbzrt.jpg[0]'
+Command :: PATH=/usr/bin/:$PATH; convert '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-12dbzrt.jpg[0]' -auto-orient -resize "300x300>" '/tmp/8c7ce0a1d7b9dfe6c920e974f25c54c020180506-6800-s4wq6o'
+[paperclip] Trying to link /tmp/8c7ce0a1d7b9dfe6c920e974f25c54c020180506-6800-s4wq6o to /tmp/303858780e7d1c78b9507e2d24a0629f20180506-6800-uhojbx
+Command :: PATH=/usr/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-12dbzrt.jpg[0]' 2>/dev/null
+Command :: PATH=/usr/bin/:$PATH; identify -format %m '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-12dbzrt.jpg[0]'
+Command :: PATH=/usr/bin/:$PATH; convert '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-12dbzrt.jpg[0]' -auto-orient -resize "100x100>" '/tmp/8c7ce0a1d7b9dfe6c920e974f25c54c020180506-6800-1r8tgtd'
+[paperclip] Trying to link /tmp/8c7ce0a1d7b9dfe6c920e974f25c54c020180506-6800-1r8tgtd to /tmp/5f1d2b392faa1de3e7d5d48d2fa3a68720180506-6800-3wt1uk
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[paperclip] Trying to link /tmp/3cf520a32bc585ce01d411815de4112220180506-6800-12dbzrt.jpg to /tmp/3cf520a32bc585ce01d411815de4112220180506-6800-b9cuuh.jpg
+Command :: PATH=/usr/bin/:$PATH; file -b --mime '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-b9cuuh.jpg'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 276ms (Views: 57.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guards/" for 127.0.0.1 at 2018-05-06 18:04:31 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 58ms (Views: 55.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 18:04:41 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 84ms (Views: 36.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/guards" for 127.0.0.1 at 2018-05-06 18:05:05 -0300
+Processing by GuardsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yHiKYdLAATak+jBdy9dfhvLeDZu9hD66l25yKb8LjlUDfHiWKrKxh7CXEJ5puvhQPFj1pVtjUAeigBD0NcNqKQ==", "guard"=>{"firstname"=>"Sebastian", "lastname"=>"Fernandez", "surname"=>"Vasquez", "rut"=>"123456789", "age"=>"23", "sex"=>"Maculino", "nationality"=>"Chileno", "phone_number"=>"9238472983", "second_phone"=>"974539270", "email"=>"cristianfervas1992@gmail.com", "educational_level"=>"Media Completa", "city"=>"Santiago", "commune"=>"Puente Alto", "address"=>"Del abasto 2894", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x007f9ba8067bb0 @tempfile=#<Tempfile:/tmp/RackMultipart20180506-6800-3f6pxp.jpg>, @original_filename="foto_perfil.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"guard[avatar]\"; filename=\"foto_perfil.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Registrar Guardia"}
+[paperclip] Trying to link /tmp/RackMultipart20180506-6800-3f6pxp.jpg to /tmp/3cf520a32bc585ce01d411815de4112220180506-6800-nqmte7.jpg
+[paperclip] Trying to link /tmp/3cf520a32bc585ce01d411815de4112220180506-6800-nqmte7.jpg to /tmp/3cf520a32bc585ce01d411815de4112220180506-6800-yvjkys.jpg
+Command :: PATH=/usr/bin/:$PATH; file -b --mime '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-yvjkys.jpg'
+Command :: PATH=/usr/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-nqmte7.jpg[0]' 2>/dev/null
+Command :: PATH=/usr/bin/:$PATH; identify -format %m '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-nqmte7.jpg[0]'
+Command :: PATH=/usr/bin/:$PATH; convert '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-nqmte7.jpg[0]' -auto-orient -resize "300x300>" '/tmp/f6542eb15a701ab2473e79c1d39d2c0920180506-6800-rruswh'
+[paperclip] Trying to link /tmp/f6542eb15a701ab2473e79c1d39d2c0920180506-6800-rruswh to /tmp/a70f58f287ab5a196ecc5062ba2146dd20180506-6800-h7y3n7
+Command :: PATH=/usr/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-nqmte7.jpg[0]' 2>/dev/null
+Command :: PATH=/usr/bin/:$PATH; identify -format %m '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-nqmte7.jpg[0]'
+Command :: PATH=/usr/bin/:$PATH; convert '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-nqmte7.jpg[0]' -auto-orient -resize "100x100>" '/tmp/f6542eb15a701ab2473e79c1d39d2c0920180506-6800-usrvt7'
+[paperclip] Trying to link /tmp/f6542eb15a701ab2473e79c1d39d2c0920180506-6800-usrvt7 to /tmp/bdd99fe50b80f557dbe8550509935f4120180506-6800-zpq0rq
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[paperclip] Trying to link /tmp/3cf520a32bc585ce01d411815de4112220180506-6800-nqmte7.jpg to /tmp/3cf520a32bc585ce01d411815de4112220180506-6800-1m4gx6y.jpg
+Command :: PATH=/usr/bin/:$PATH; file -b --mime '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-1m4gx6y.jpg'
+  [1m[35mSQL (6.0ms)[0m  [1m[32mINSERT INTO `guards` (`rut`, `phone_number`, `email`, `nationality`, `created_at`, `updated_at`, `firstname`, `lastname`, `surname`, `age`, `sex`, `city`, `commune`, `address`, `educational_level`, `second_phone`, `avatar_file_name`, `avatar_content_type`, `avatar_file_size`, `avatar_updated_at`) VALUES ('123456789', '9238472983', 'cristianfervas1992@gmail.com', 'Chileno', '2018-05-06 21:05:05', '2018-05-06 21:05:05', 'Sebastian', 'Fernandez', 'Vasquez', 23, 'Maculino', 'Santiago', 'Puente Alto', 'Del abasto 2894', 'Media Completa', '974539270', 'foto_perfil.jpg', 'image/jpeg', 54652, '2018-05-06 21:05:05')[0m
+  [1m[35m (26.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/guards
+Completed 302 Found in 261ms (ActiveRecord: 32.8ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-06 18:05:05 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 29ms (Views: 27.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 18:07:49 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 72ms (Views: 47.5ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/guards" for 127.0.0.1 at 2018-05-06 18:08:15 -0300
+Processing by GuardsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UNp/ispzXgkirYhdtOEhHi6mvDm+3/hIvZlfNVxFGqSb3o19MgHuuDbAqJ4WjIbI4CBEB1g4lvWIdz3o1o3+2A==", "guard"=>{"firstname"=>"Cristian", "lastname"=>"Fernandez", "surname"=>"Vasquez", "rut"=>"176646444-6", "age"=>"23", "sex"=>"Maculino", "nationality"=>"Argentino", "phone_number"=>"9238472983", "second_phone"=>"8748979873", "email"=>"paburtonavarro@gmail.com", "educational_level"=>"Media Completa", "city"=>"Santiago", "commune"=>"Puente Alto", "address"=>"Del abasto 2894", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x007f9b9c05cc80 @tempfile=#<Tempfile:/tmp/RackMultipart20180506-6800-rlkwcp.jpg>, @original_filename="foto_perfil.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"guard[avatar]\"; filename=\"foto_perfil.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Registrar Guardia"}
+[paperclip] Trying to link /tmp/RackMultipart20180506-6800-rlkwcp.jpg to /tmp/3cf520a32bc585ce01d411815de4112220180506-6800-1ohe4yl.jpg
+[paperclip] Trying to link /tmp/3cf520a32bc585ce01d411815de4112220180506-6800-1ohe4yl.jpg to /tmp/3cf520a32bc585ce01d411815de4112220180506-6800-yuzn0f.jpg
+Command :: PATH=/usr/bin/:$PATH; file -b --mime '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-yuzn0f.jpg'
+Command :: PATH=/usr/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-1ohe4yl.jpg[0]' 2>/dev/null
+Command :: PATH=/usr/bin/:$PATH; identify -format %m '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-1ohe4yl.jpg[0]'
+Command :: PATH=/usr/bin/:$PATH; convert '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-1ohe4yl.jpg[0]' -auto-orient -resize "300x300>" '/tmp/16671152f8e7d24a4b4c425b7da1a81b20180506-6800-1c8m9nx'
+[paperclip] Trying to link /tmp/16671152f8e7d24a4b4c425b7da1a81b20180506-6800-1c8m9nx to /tmp/55c3e0d102fd9889ebd3838f4cd4a5f520180506-6800-1tz8bqh
+Command :: PATH=/usr/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-1ohe4yl.jpg[0]' 2>/dev/null
+Command :: PATH=/usr/bin/:$PATH; identify -format %m '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-1ohe4yl.jpg[0]'
+Command :: PATH=/usr/bin/:$PATH; convert '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-1ohe4yl.jpg[0]' -auto-orient -resize "100x100>" '/tmp/16671152f8e7d24a4b4c425b7da1a81b20180506-6800-18vlop'
+[paperclip] Trying to link /tmp/16671152f8e7d24a4b4c425b7da1a81b20180506-6800-18vlop to /tmp/f569a3cefe7b4389264adacebad9c53420180506-6800-1ms1alh
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[paperclip] Trying to link /tmp/3cf520a32bc585ce01d411815de4112220180506-6800-1ohe4yl.jpg to /tmp/3cf520a32bc585ce01d411815de4112220180506-6800-aus904.jpg
+Command :: PATH=/usr/bin/:$PATH; file -b --mime '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-aus904.jpg'
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 248ms (Views: 36.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/guards" for 127.0.0.1 at 2018-05-06 18:08:31 -0300
+Processing by GuardsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VW92W6taSHMLkfavg3B3ps0b0D5iqdQqFTsdUe/u+K9AwppHxO8ouRHRF+lQXc+7l90eCxie2RIJz283NwgdKQ==", "guard"=>{"firstname"=>"Cristian", "lastname"=>"Fernandez", "surname"=>"Vasquez", "rut"=>"17664644-6", "age"=>"23", "sex"=>"Maculino", "nationality"=>"Argentino", "phone_number"=>"9238472983", "second_phone"=>"8748979873", "email"=>"paburtonavarro@gmail.com", "educational_level"=>"Media Completa", "city"=>"Santiago", "commune"=>"Puente Alto", "address"=>"Del abasto 2894", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x007f9b8d995770 @tempfile=#<Tempfile:/tmp/RackMultipart20180506-6800-mq3qye.jpg>, @original_filename="foto_perfil.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"guard[avatar]\"; filename=\"foto_perfil.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Registrar Guardia"}
+[paperclip] Trying to link /tmp/RackMultipart20180506-6800-mq3qye.jpg to /tmp/3cf520a32bc585ce01d411815de4112220180506-6800-19mzij1.jpg
+[paperclip] Trying to link /tmp/3cf520a32bc585ce01d411815de4112220180506-6800-19mzij1.jpg to /tmp/3cf520a32bc585ce01d411815de4112220180506-6800-w6mdey.jpg
+Command :: PATH=/usr/bin/:$PATH; file -b --mime '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-w6mdey.jpg'
+Command :: PATH=/usr/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-19mzij1.jpg[0]' 2>/dev/null
+Command :: PATH=/usr/bin/:$PATH; identify -format %m '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-19mzij1.jpg[0]'
+Command :: PATH=/usr/bin/:$PATH; convert '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-19mzij1.jpg[0]' -auto-orient -resize "300x300>" '/tmp/c8fb07b36d694de8717c1b397d51294820180506-6800-13bt5x8'
+[paperclip] Trying to link /tmp/c8fb07b36d694de8717c1b397d51294820180506-6800-13bt5x8 to /tmp/cfef8b4a56cc9f238c7d28de037f0c1d20180506-6800-68pfq
+Command :: PATH=/usr/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-19mzij1.jpg[0]' 2>/dev/null
+Command :: PATH=/usr/bin/:$PATH; identify -format %m '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-19mzij1.jpg[0]'
+Command :: PATH=/usr/bin/:$PATH; convert '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-19mzij1.jpg[0]' -auto-orient -resize "100x100>" '/tmp/c8fb07b36d694de8717c1b397d51294820180506-6800-1bjsrh'
+[paperclip] Trying to link /tmp/c8fb07b36d694de8717c1b397d51294820180506-6800-1bjsrh to /tmp/c94482532b95fb6bc8df35dbe9e0267920180506-6800-10cm4yz
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[paperclip] Trying to link /tmp/3cf520a32bc585ce01d411815de4112220180506-6800-19mzij1.jpg to /tmp/3cf520a32bc585ce01d411815de4112220180506-6800-iprhf3.jpg
+Command :: PATH=/usr/bin/:$PATH; file -b --mime '/tmp/3cf520a32bc585ce01d411815de4112220180506-6800-iprhf3.jpg'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 244ms (Views: 35.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/guard/17" for 127.0.0.1 at 2018-05-06 18:21:16 -0300
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 17 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 37ms (Views: 33.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 18:21:20 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 34ms (Views: 33.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/guards" for 127.0.0.1 at 2018-05-06 18:21:46 -0300
+Processing by GuardsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dfsrMDZj03vLNfbm9PaWTAY6dlzOax8ljZhHVruir9G+/9nHzhFjyt9Y1iVWmzGayLyOYiiMcZi4diWLMWpLrQ==", "guard"=>{"firstname"=>"Cristian", "lastname"=>"Fernandez", "surname"=>"Vasquez", "rut"=>"17865432-4", "age"=>"26", "sex"=>"Maculino", "nationality"=>"Argentino", "phone_number"=>"965439876", "second_phone"=>"8748979873", "email"=>"paburtonavarro@gmail.com", "educational_level"=>"Media Completa", "city"=>"Santiago", "commune"=>"Puente Alto", "address"=>"Del abasto 2894"}, "commit"=>"Registrar Guardia"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 33ms (Views: 30.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/guards" for 127.0.0.1 at 2018-05-06 18:22:01 -0300
+Processing by GuardsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lcdMYaPlyUi3WrkW3Dz7Hgbs47VsaL86thPWLFpNYJmAaqB9zFCpgq0aWFAPEUMDXCotgBZfsgKq56RKgquFHw==", "guard"=>{"firstname"=>"Cristian", "lastname"=>"Fernandez", "surname"=>"Vasquez", "rut"=>"17865432-4", "age"=>"26", "sex"=>"Maculino", "nationality"=>"Argentino", "phone_number"=>"965439876", "second_phone"=>"8748979873", "email"=>"paburtonavarro@gmail.com", "educational_level"=>"Media Completa", "city"=>"Santiago", "commune"=>"Puente Alto", "address"=>"Del abasto 2894"}, "commit"=>"Registrar Guardia"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO `guards` (`rut`, `phone_number`, `email`, `nationality`, `created_at`, `updated_at`, `firstname`, `lastname`, `surname`, `age`, `sex`, `city`, `commune`, `address`, `educational_level`, `second_phone`) VALUES ('17865432-4', '965439876', 'paburtonavarro@gmail.com', 'Argentino', '2018-05-06 21:22:01', '2018-05-06 21:22:01', 'Cristian', 'Fernandez', 'Vasquez', 26, 'Maculino', 'Santiago', 'Puente Alto', 'Del abasto 2894', 'Media Completa', '8748979873')[0m
+  [1m[35m (29.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/guards
+Completed 302 Found in 55ms (ActiveRecord: 30.5ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-06 18:22:01 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.7ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 28ms (Views: 26.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/guard/18" for 127.0.0.1 at 2018-05-06 18:22:03 -0300
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 18 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 26ms (Views: 22.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-06 18:22:12 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 33ms (Views: 31.3ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/guard/18" for 127.0.0.1 at 2018-05-06 19:35:33 -0300
+Processing by GuardsController#delete as HTML
+  Parameters: {"authenticity_token"=>"Bn9iGIT3ULu0/+imjiA9yUQE/8Y82vuCOsmRI8HtbzQT0o4E60Iwca6/CeBdDYXUHsIx80bt9romPeNFGQuKsg==", "id"=>"18"}
+  [1m[36mGuard Load (9.7ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 18 LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (11.7ms)[0m  [1m[31mDELETE FROM `guards` WHERE `guards`.`id` = 18[0m
+  [1m[35m (33.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/guards
+Completed 302 Found in 63ms (ActiveRecord: 55.8ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-06 19:35:33 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 44ms (Views: 41.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/guard/17" for 127.0.0.1 at 2018-05-06 19:35:35 -0300
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 17 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 28ms (Views: 25.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guard/16" for 127.0.0.1 at 2018-05-06 19:35:39 -0300
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 16 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 26ms (Views: 23.8ms | ActiveRecord: 0.3ms)
+
+

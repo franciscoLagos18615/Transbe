@@ -38,6 +38,6 @@ class GuardsController < ApplicationController
 
   private
   def guard_params
-    params.require(:guard).permit(:firstname, :lastname,:surname, :rut, :email, :phone_number, :nationality, :second_phone, :age, :city, :commune, :address, :educational_level, :sex)
+    params.require(:guard).permit(:firstname, :lastname,:surname, :rut, :email, :phone_number, :nationality, :second_phone, :age, :city, :commune, :address, :educational_level, :sex, :avatar)
   end
 end

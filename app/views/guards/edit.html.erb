@@ -1,61 +1,70 @@
 <h1>Editar Guardia</h1>
 <%= form_for @guard do |f| %>
 <div>
-    <%= f.label :firstname %>
+    <%= f.label :Primer_Nombre %>
     <%= f.text_field :firstname%>
 </div>
 <div>
-    <%= f.label :lastname %>
+    <%= f.label :Apellido %>
     <%= f.text_field :lastname%>
 </div>
 <div>
-    <%= f.label :surname %>
+    <%= f.label :Segundo_Apellido %>
     <%= f.text_field :surname%>
 </div>
 <div>
-    <%= f.label :age %>
+    <%= f.label :Edad %>
     <%= f.text_field :age%>
 </div>
 <div>
-    <%= f.label :rut %>
+    <%= f.label :Rut %>
     <%= f.text_field :rut%>
 </div>
 <div>
-    <%= f.label :sex %>
+    <%= f.label :Sexo %>
     <%= f.text_field :sex%>
 </div>
 <div>
-    <%= f.label :nationality %>
+    <%= f.label :Nacionalidad %>
     <%= f.text_field :nationality%>
 </div>
 <div>
-    <%= f.label :phone_number %>
+    <%= f.label :Telefono %>
     <%= f.text_field :phone_number%>
 </div>
 <div>
-    <%= f.label :second_phone %>
+    <%= f.label :Telefono_Secundario %>
     <%= f.text_field :second_phone%>
 </div>
 <div>
-    <%= f.label :email %>
+    <%= f.label :Email %>
     <%= f.text_field :email%>
 </div>
 <div>
-    <%= f.label :educational_level %>
+    <%= f.label :Nivel_Educacional %>
     <%= f.text_field :educational_level%>
 </div>
 <div>
-    <%= f.label :city %>
+    <%= f.label :Ciudad %>
     <%= f.text_field :city%>
 </div>
 <div>
-    <%= f.label :commune %>
+    <%= f.label :Comuna %>
     <%= f.text_field :commune%>
 </div>
 <div>
-    <%= f.label :address %>
+    <%= f.label :Dirección %>
     <%= f.text_field :address%>
 </div>
-    <%=f.submit%>
+<div>
+    <p>
+        Actualizar foto de perfil
+        <p>
+                <%= f.file_field :avatar%>
+        </p>
+
+    </p>
+</div>
+    <%=f.submit "Actualizar Información"%>
 </div>
 <%end%>

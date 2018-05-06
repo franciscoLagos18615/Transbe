@@ -1,63 +1,72 @@
 <h1>Registro de Guardia</h1>
 <%= form_for @guard do |t| %>
 <div>
-    <%= t.label :firstname %>
+    <%= t.label :Primer_Nombre %>
     <%= t.text_field :firstname%>
 </div>
 
 <div>
-    <%= t.label :lastname %>
+    <%= t.label :Apellido %>
     <%= t.text_field :lastname%>
 </div>
 <div>
-    <%= t.label :surname %>
+    <%= t.label :Segundo_Apellido %>
     <%= t.text_field :surname%>
 </div>
 <div>
-    <%= t.label :rut %>
-    <%= t.text_field :rut%>
+    <%= t.label :Rut %>
+    <%= t.text_field :rut%>    
 </div>
 <div>
-    <%= t.label :age %>
+    <%= t.label :Edad %>
     <%= t.text_field :age%>
 </div
 <div>
-    <%= t.label :sex %>
+    <%= t.label :Sexo %>
     <%= t.text_field :sex%>
 </div>
 <div>
-    <%= t.label :nationality %>
+    <%= t.label :Nacionalidad %>
     <%= t.text_field :nationality%>
 </div>
 <div>
-    <%= t.label :phone_number %>
+    <%= t.label :Telefono %>
     <%= t.text_field :phone_number%>
 </div>
 <div>
-    <%= t.label :second_phone %>
+    <%= t.label :Telefono_Secundario %>
     <%= t.text_field :second_phone%>
 </div>
 <div>
-    <%= t.label :email %>
+    <%= t.label :Email %>
     <%= t.text_field :email%>
 </div>
 <div>
-    <%= t.label :educational_level %>
+    <%= t.label :Nivel_Educacional %>
     <%= t.text_field :educational_level%>
 </div>
 <div>
-    <%= t.label :city %>
+    <%= t.label :Ciudad %>
     <%= t.text_field :city%>
 </div>
 <div>
-    <%= t.label :commune %>
+    <%= t.label :Comuna %>
     <%= t.text_field :commune%>
 </div>
 <div>
-    <%= t.label :address %>
+    <%= t.label :Dirección %>
     <%= t.text_field :address%>
 </div>
 <div>
-    <%=t.submit%>
+    <p>
+        Subir foto de perfil
+        <p>
+                <%= t.file_field :avatar%>
+        </p>
+
+    </p>
+</div>
+<div>
+    <%=t.submit "Registrar Guardia"%>
 </div>
 <%end%>

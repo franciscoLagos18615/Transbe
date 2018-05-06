@@ -3014,3 +3014,45 @@ Processing by GuardsController#index as HTML
 Completed 200 OK in 26ms (Views: 24.4ms | ActiveRecord: 0.8ms)
 
 
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('8255491897942701930', 0)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to EditGuardEntity (20180505224513)
+  [1m[35m (675.2ms)[0m  [1m[35mALTER TABLE `guards` DROP `birthdate`[0m
+  [1m[35m (510.2ms)[0m  [1m[35mALTER TABLE `guards` DROP `name`[0m
+  [1m[35m (639.3ms)[0m  [1m[35mALTER TABLE `guards` ADD `firstname` varchar(255)[0m
+  [1m[35m (528.6ms)[0m  [1m[35mALTER TABLE `guards` ADD `lastname` varchar(255)[0m
+  [1m[35m (427.4ms)[0m  [1m[35mALTER TABLE `guards` ADD `surname` varchar(255)[0m
+  [1m[35m (517.3ms)[0m  [1m[35mALTER TABLE `guards` ADD `age` int[0m
+  [1m[35m (516.2ms)[0m  [1m[35mALTER TABLE `guards` ADD `sex` varchar(255)[0m
+  [1m[35m (519.0ms)[0m  [1m[35mALTER TABLE `guards` ADD `city` varchar(255)[0m
+  [1m[35m (582.1ms)[0m  [1m[35mALTER TABLE `guards` ADD `commune` varchar(255)[0m
+  [1m[35m (551.6ms)[0m  [1m[35mALTER TABLE `guards` ADD `address` varchar(255)[0m
+  [1m[35m (426.8ms)[0m  [1m[35mALTER TABLE `guards` ADD `educational_level` varchar(255)[0m
+  [1m[35m (472.7ms)[0m  [1m[35mALTER TABLE `guards` ADD `second_phone` varchar(255)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180505224513')[0m
+  [1m[35m (40.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('8255491897942701930')[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for 127.0.0.1 at 2018-05-06 01:04:18 -0300
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/matiiass/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/matiiass/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb (18.0ms)
+Completed 200 OK in 63ms (Views: 34.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-06 01:08:06 -0300
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by BienvenidaController#index as HTML
+  Rendering bienvenida/index.html.erb within layouts/application
+  Rendered bienvenida/index.html.erb within layouts/application (385.9ms)
+Completed 200 OK in 450ms (Views: 437.7ms | ActiveRecord: 0.0ms)
+
+

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+    #el root es de que direccione como paga de inicio al index de la carpeta bienvenido
+  root 'bienvenida#index'
   #get 'guards/index'
   #resource :guards
   #get '/guards/', to: 'guards#index'

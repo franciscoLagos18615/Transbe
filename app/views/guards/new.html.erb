@@ -20,7 +20,7 @@
 <div>
     <%= t.label :Edad %>
     <%= t.text_field :age%>
-</div
+</div>
 <div>
     <%= t.label :Sexo %>
     <%= t.text_field :sex%>
@@ -43,7 +43,19 @@
 </div>
 <div>
     <%= t.label :Nivel_Educacional %>
-    <%= t.text_field :educational_level%>
+
+
+    <select data-placeholder="Nivel Educacional", class="chosen-select" >
+                <option value=""></option>
+                <option value="Basica incompleta">Básica incompleta</option>
+                <option value="Basica completa">Básica completa</option>
+                <option value="Media imcompleta">Media incompleta</option>
+                <option value="Media completa">Media completa</option>
+                <option value="Tecnica incompleta">Técnica incompleta </option>
+                <option value="Tecnica completa">Técnica completa</option>
+                <option value="Superior incompleta">Superior incompleta</option>
+                <option value="Superior completa">Superior completa</option>
+    </select>
 </div>
 <div>
     <%= t.label :Ciudad %>

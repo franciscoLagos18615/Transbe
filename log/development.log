@@ -3840,3 +3840,1590 @@ Completed 200 OK in 450ms (Views: 437.7ms | ActiveRecord: 0.0ms)
 >>>>>>> master
 
 
+Started GET "/" for 127.0.0.1 at 2018-05-06 20:27:36 -0300
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.6) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.6) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('8255491897942701930', 0)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to EditGuardEntity (20180505224513)
+  [1m[35m (381.9ms)[0m  [1m[35mALTER TABLE `guards` DROP `birthdate`[0m
+  [1m[35m (343.0ms)[0m  [1m[35mALTER TABLE `guards` DROP `name`[0m
+  [1m[35m (294.0ms)[0m  [1m[35mALTER TABLE `guards` ADD `firstname` varchar(255)[0m
+  [1m[35m (276.2ms)[0m  [1m[35mALTER TABLE `guards` ADD `lastname` varchar(255)[0m
+  [1m[35m (309.9ms)[0m  [1m[35mALTER TABLE `guards` ADD `surname` varchar(255)[0m
+  [1m[35m (342.9ms)[0m  [1m[35mALTER TABLE `guards` ADD `age` int[0m
+  [1m[35m (326.6ms)[0m  [1m[35mALTER TABLE `guards` ADD `sex` varchar(255)[0m
+  [1m[35m (269.1ms)[0m  [1m[35mALTER TABLE `guards` ADD `city` varchar(255)[0m
+  [1m[35m (326.3ms)[0m  [1m[35mALTER TABLE `guards` ADD `commune` varchar(255)[0m
+  [1m[35m (342.9ms)[0m  [1m[35mALTER TABLE `guards` ADD `address` varchar(255)[0m
+  [1m[35m (326.3ms)[0m  [1m[35mALTER TABLE `guards` ADD `educational_level` varchar(255)[0m
+  [1m[35m (260.7ms)[0m  [1m[35mALTER TABLE `guards` ADD `second_phone` varchar(255)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180505224513')[0m
+  [1m[35m (35.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAttachmentAvatarToGuards (20180506191702)
+  [1m[35m (292.3ms)[0m  [1m[35mALTER TABLE `guards` ADD `avatar_file_name` varchar(255)[0m
+  [1m[35m (342.8ms)[0m  [1m[35mALTER TABLE `guards` ADD `avatar_content_type` varchar(255)[0m
+  [1m[35m (326.4ms)[0m  [1m[35mALTER TABLE `guards` ADD `avatar_file_size` int[0m
+  [1m[35m (268.1ms)[0m  [1m[35mALTER TABLE `guards` ADD `avatar_updated_at` datetime[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180506191702')[0m
+  [1m[35m (106.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('8255491897942701930')[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for 127.0.0.1 at 2018-05-06 20:33:30 -0300
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by BienvenidaController#index as HTML
+  Rendering bienvenida/index.html.erb within layouts/application
+  Rendered bienvenida/index.html.erb within layouts/application (319.0ms)
+Completed 200 OK in 353ms (Views: 345.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-06 20:33:41 -0300
+Processing by BienvenidaController#index as HTML
+  Rendering bienvenida/index.html.erb within layouts/application
+  Rendered bienvenida/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 28ms (Views: 26.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-06 20:33:43 -0300
+Processing by BienvenidaController#index as HTML
+  Rendering bienvenida/index.html.erb within layouts/application
+  Rendered bienvenida/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 22ms (Views: 20.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-06 20:33:45 -0300
+Processing by BienvenidaController#index as HTML
+  Rendering bienvenida/index.html.erb within layouts/application
+  Rendered bienvenida/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-06 20:33:46 -0300
+Processing by BienvenidaController#index as HTML
+  Rendering bienvenida/index.html.erb within layouts/application
+  Rendered bienvenida/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 68ms (Views: 67.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-06 20:33:47 -0300
+Processing by BienvenidaController#index as HTML
+  Rendering bienvenida/index.html.erb within layouts/application
+  Rendered bienvenida/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 25ms (Views: 23.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-06 20:33:48 -0300
+Processing by BienvenidaController#index as HTML
+  Rendering bienvenida/index.html.erb within layouts/application
+  Rendered bienvenida/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 21ms (Views: 20.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-06 20:33:48 -0300
+Processing by BienvenidaController#index as HTML
+  Rendering bienvenida/index.html.erb within layouts/application
+  Rendered bienvenida/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 22ms (Views: 20.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-05-06 20:34:19 -0300
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 27ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-06 20:34:19 -0300
+Processing by BienvenidaController#index as HTML
+  Rendering bienvenida/index.html.erb within layouts/application
+  Rendered bienvenida/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 21ms (Views: 19.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-05-06 20:34:30 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-06 20:34:30 -0300
+Processing by BienvenidaController#index as HTML
+  Rendering bienvenida/index.html.erb within layouts/application
+  Rendered bienvenida/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 18ms (Views: 17.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-06 20:37:10 -0300
+Processing by BienvenidaController#index as HTML
+  Rendering bienvenida/index.html.erb within layouts/application
+  Rendered bienvenida/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 20ms (Views: 18.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-06 20:38:14 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 27ms (Views: 21.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 20:38:17 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (97.9ms)
+Completed 200 OK in 132ms (Views: 115.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/guards" for 127.0.0.1 at 2018-05-06 20:39:29 -0300
+Processing by GuardsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/j0l1iIoFVoHHo3BwS0bosbqoI09VwGgxVGcrEp0GCQ41lh70nxkPmZ1V13vfWWIvwGs/WbFVc1wJyX2uF/ppQ==", "guard"=>{"firstname"=>"Diego", "lastname"=>"Opazo", "surname"=>"Diaz", "rut"=>"18", "age"=>"26", "sex"=>"Masculino", "nationality"=>"Chileno", "phone_number"=>"+56977689594", "second_phone"=>"+56984553289", "email"=>"diego.opazo@usach.cl", "educational_level"=>"Básica", "city"=>"Santiago", "commune"=>"Pudahuel", "address"=>"asd"}, "commit"=>"Registrar Guardia"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `guards` (`rut`, `phone_number`, `email`, `nationality`, `created_at`, `updated_at`, `firstname`, `lastname`, `surname`, `age`, `sex`, `city`, `commune`, `address`, `educational_level`, `second_phone`) VALUES ('18', '+56977689594', 'diego.opazo@usach.cl', 'Chileno', '2018-05-06 23:39:29', '2018-05-06 23:39:29', 'Diego', 'Opazo', 'Diaz', 26, 'Masculino', 'Santiago', 'Pudahuel', 'asd', 'Básica', '+56984553289')[0m
+  [1m[35m (68.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/guards
+Completed 302 Found in 73ms (ActiveRecord: 68.7ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-06 20:39:29 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guard/1" for 127.0.0.1 at 2018-05-06 20:39:34 -0300
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGuard Load (0.7ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 186ms (Views: 17.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-06 20:39:40 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 19ms (Views: 17.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/guards/1/edit" for 127.0.0.1 at 2018-05-06 20:46:39 -0300
+Processing by GuardsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering guards/edit.html.erb within layouts/application
+  Rendered guards/edit.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 28ms (Views: 25.7ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/guard/1" for 127.0.0.1 at 2018-05-06 20:46:41 -0300
+Processing by GuardsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TxqNLV/XBKJebqyU36UBJbXn0zxNXWARYVE2SmcP5SHTq+/Nqyb/YrrKr0yCbYm8ru39/i0P80+YB6aPLz49wg==", "guard"=>{"firstname"=>"Diego", "lastname"=>"Opazo", "surname"=>"Diaz", "age"=>"26", "rut"=>"18", "sex"=>"Masculino", "nationality"=>"Chileno", "phone_number"=>"+56977689594", "second_phone"=>"+56984553289", "email"=>"diego.opazo@usach.cl", "educational_level"=>"Básica", "city"=>"Santiago", "commune"=>"Pudahuel", "address"=>"asd"}, "commit"=>"Actualizar Información", "id"=>"1"}
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/guards
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-06 20:46:41 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 24ms (Views: 23.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/guards/1/edit" for 127.0.0.1 at 2018-05-06 20:59:29 -0300
+Processing by GuardsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering guards/edit.html.erb within layouts/application
+  Rendered guards/edit.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 25ms (Views: 22.9ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/guard/1" for 127.0.0.1 at 2018-05-06 20:59:32 -0300
+Processing by GuardsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L/oOYsA08AIJpLRvsTblIeK0m2fp/RwhMaP0lHsfQ8WzS2yCNMULwu0At7fs/m24+b61pYmvj3/I9WRRMy6bJg==", "guard"=>{"firstname"=>"Diego", "lastname"=>"Opazo", "surname"=>"Diaz", "age"=>"todo", "rut"=>"18", "sex"=>"Masculino", "nationality"=>"Chileno", "phone_number"=>"+56977689594", "second_phone"=>"+56984553289", "email"=>"diego.opazo@usach.cl", "educational_level"=>"Básica", "city"=>"Santiago", "commune"=>"Pudahuel", "address"=>"asd"}, "commit"=>"Actualizar Información", "id"=>"1"}
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE `guards` SET `age` = 0, `updated_at` = '2018-05-06 23:59:32' WHERE `guards`.`id` = 1[0m
+  [1m[35m (152.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/guards
+Completed 302 Found in 158ms (ActiveRecord: 152.9ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-06 20:59:32 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 26ms (Views: 24.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/guards/1/edit" for 127.0.0.1 at 2018-05-06 20:59:35 -0300
+Processing by GuardsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering guards/edit.html.erb within layouts/application
+  Rendered guards/edit.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 28ms (Views: 27.0ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/guard/1" for 127.0.0.1 at 2018-05-06 20:59:40 -0300
+Processing by GuardsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"USBlpPkPcNKd3HGXRW2JOJfs4i3xUWVVfz8GfDJG7/HNkQdEDf6LEnl4ck8YpQGhjObM75ED9guGaZa5enc3Eg==", "guard"=>{"firstname"=>"Diego", "lastname"=>"Opazo", "surname"=>"Diaz", "age"=>"80", "rut"=>"18", "sex"=>"Masculino", "nationality"=>"Chileno", "phone_number"=>"+56977689594", "second_phone"=>"+56984553289", "email"=>"diego.opazo@usach.cl", "educational_level"=>"Básica", "city"=>"Santiago", "commune"=>"Pudahuel", "address"=>"asd"}, "commit"=>"Actualizar Información", "id"=>"1"}
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE `guards` SET `age` = 80, `updated_at` = '2018-05-06 23:59:40' WHERE `guards`.`id` = 1[0m
+  [1m[35m (104.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/guards
+Completed 302 Found in 114ms (ActiveRecord: 105.5ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-06 20:59:40 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 23ms (Views: 21.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/guards/1/edit" for 127.0.0.1 at 2018-05-06 20:59:43 -0300
+Processing by GuardsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering guards/edit.html.erb within layouts/application
+  Rendered guards/edit.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/guard/1" for 127.0.0.1 at 2018-05-06 20:59:48 -0300
+Processing by GuardsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hUZmjA2/dlr+K46UooBVSlV9wjAn3h5xGVRVeUdP1GcZ9wRs+U6NmhqPjUz/SN3TTnfs8keMjS/gAsW8D34MhA==", "guard"=>{"firstname"=>"Diego", "lastname"=>"Opazo", "surname"=>"Diaz", "age"=>"80", "rut"=>"18061590-3", "sex"=>"Masculino", "nationality"=>"Chileno", "phone_number"=>"+56977689594", "second_phone"=>"+56984553289", "email"=>"diego.opazo@usach.cl", "educational_level"=>"Básica", "city"=>"Santiago", "commune"=>"Pudahuel", "address"=>"asd"}, "commit"=>"Actualizar Información", "id"=>"1"}
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE `guards` SET `rut` = '18061590-3', `updated_at` = '2018-05-06 23:59:48' WHERE `guards`.`id` = 1[0m
+  [1m[35m (108.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/guards
+Completed 302 Found in 113ms (ActiveRecord: 108.7ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-06 20:59:48 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 21ms (Views: 18.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-06 21:33:15 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 19ms (Views: 18.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 21:33:18 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (47.4ms)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `request_uri' for #<ActionDispatch::Request:0x00007f67962ede98>
+Did you mean?  request_id
+               request_id=):
+    71: </div>
+    72:     <div class="menu">
+    73:               <ul>
+    74:                     <li class="<%= "active" if (request.request_uri == root_path) %>">
+    75:                     <%= link_to "Inicio", root_path %></li>
+    76:                     <% for page in MenuOption.find(:all, :order => "menu_options.order") %>
+    77:                     <li class="divider"></li>
+  
+app/views/guards/new.html.erb:74:in `block in _app_views_guards_new_html_erb__2479208682509483933_70041438986440'
+app/views/guards/new.html.erb:2:in `_app_views_guards_new_html_erb__2479208682509483933_70041438986440'
+Started GET "/guards" for 127.0.0.1 at 2018-05-06 21:33:26 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 23ms (Views: 21.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 21:34:11 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 27ms (Views: 26.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-06 21:40:35 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 18ms (Views: 17.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 21:40:37 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 26ms (Views: 25.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 21:41:23 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 20ms (Views: 19.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 21:45:19 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 25ms (Views: 23.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guards/multiple-select.js" for 127.0.0.1 at 2018-05-06 21:45:19 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/guards/multiple-select.js"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/guards/multiple-select.js" for 127.0.0.1 at 2018-05-06 21:45:20 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/guards/multiple-select.js"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 21:46:40 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 32ms (Views: 30.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guards/multiple-select.js" for 127.0.0.1 at 2018-05-06 21:46:40 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/guards/multiple-select.js"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/guards/multiple-select.js" for 127.0.0.1 at 2018-05-06 21:46:41 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/guards/multiple-select.js"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 21:46:59 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 30ms (Views: 28.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guards/multiple-select.js" for 127.0.0.1 at 2018-05-06 21:46:59 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/guards/multiple-select.js"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/guards/multiple-select.js" for 127.0.0.1 at 2018-05-06 21:47:00 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/guards/multiple-select.js"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 21:49:55 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (213.2ms)
+Completed 500 Internal Server Error in 216ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `form' for #<#<Class:0x00007f6796498888>:0x00007f6794a2e308>
+Did you mean?  fork):
+    48: 
+    49:     <p>
+    50:         <label for "query_product_name"> Product: </label>
+    51:         <%= form.select :product_name,
+    52:                         @products,
+    53:                         :prompt => "Select Product"
+    54:         %>
+  
+app/views/guards/new.html.erb:51:in `block in _app_views_guards_new_html_erb__2479208682509483933_70041426033780'
+app/views/guards/new.html.erb:2:in `_app_views_guards_new_html_erb__2479208682509483933_70041426033780'
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 21:50:19 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (299.0ms)
+Completed 500 Internal Server Error in 303ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `form' for #<#<Class:0x00007f6796498888>:0x00007f678805c7f0>
+Did you mean?  fork):
+    48: 
+    49:     <p>
+    50:         <label for "query_product_name"> Product: </label>
+    51:         <%= form.select :educational_level,
+    52:                         @products,
+    53:                         :prompt => "Select Product"
+    54:         %>
+  
+app/views/guards/new.html.erb:51:in `block in _app_views_guards_new_html_erb__2479208682509483933_70041320220840'
+app/views/guards/new.html.erb:2:in `_app_views_guards_new_html_erb__2479208682509483933_70041320220840'
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 21:51:08 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (208.1ms)
+Completed 500 Internal Server Error in 210ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `form' for #<#<Class:0x00007f6796498888>:0x00007f678c2627d0>
+Did you mean?  fork):
+    48: 
+    49:     <p>
+    50:         <label for "query_product_name"> Product: </label>
+    51:         <%= form.select :educational_level,
+    52:                         @guard,
+    53:                         :prompt => "Select Product"
+    54:         %>
+  
+app/views/guards/new.html.erb:51:in `block in _app_views_guards_new_html_erb__2479208682509483933_70041354836080'
+app/views/guards/new.html.erb:2:in `_app_views_guards_new_html_erb__2479208682509483933_70041354836080'
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 21:51:43 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 33ms (Views: 31.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 21:53:05 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (241.2ms)
+Completed 500 Internal Server Error in 246ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `form' for #<#<Class:0x00007f6796498888>:0x00007f679534fce8>
+Did you mean?  fork):
+    48: 
+    49:     <p>
+    50:         <label for "query_product_name"> Product: </label>
+    51:         <%= form.selects:prompt => "Select Product"
+    52:         %>
+    53:     </p>
+    54: 
+  
+app/views/guards/new.html.erb:51:in `block in _app_views_guards_new_html_erb__2479208682509483933_70041430575640'
+app/views/guards/new.html.erb:2:in `_app_views_guards_new_html_erb__2479208682509483933_70041430575640'
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 21:53:28 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (197.4ms)
+Completed 500 Internal Server Error in 201ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `form' for #<#<Class:0x00007f6796498888>:0x00007f67962c3620>
+Did you mean?  fork):
+    48: 
+    49:     <p>
+    50:         <label for "query_product_name"> Product: </label>
+    51:         <%= form.select:prompt => "Select Product"
+    52:         %>
+    53:     </p>
+    54: 
+  
+app/views/guards/new.html.erb:51:in `block in _app_views_guards_new_html_erb__2479208682509483933_70041438920620'
+app/views/guards/new.html.erb:2:in `_app_views_guards_new_html_erb__2479208682509483933_70041438920620'
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 21:53:45 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (198.9ms)
+Completed 500 Internal Server Error in 201ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `form' for #<#<Class:0x00007f6796498888>:0x00007f67962cf678>
+Did you mean?  fork):
+    48: 
+    49:     <p>
+    50:         <label for "query_product_name"> Product: </label>
+    51:         <%= form.select :prompt => "Select Product"
+    52:         %>
+    53:     </p>
+    54: 
+  
+app/views/guards/new.html.erb:51:in `block in _app_views_guards_new_html_erb__2479208682509483933_70041438920880'
+app/views/guards/new.html.erb:2:in `_app_views_guards_new_html_erb__2479208682509483933_70041438920880'
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 21:53:56 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/diego/Tingeso/app/views/guards/new.html.erb:51: syntax error, unexpected ':'
+...t_buffer.append=( form.select :
+...                              ^
+/home/diego/Tingeso/app/views/guards/new.html.erb:79: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;end;
+         ^~~
+/home/diego/Tingeso/app/views/guards/new.html.erb:81: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/home/diego/Tingeso/app/views/guards/new.html.erb:83: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/guards/new.html.erb:51: syntax error, unexpected ':'
+app/views/guards/new.html.erb:79: syntax error, unexpected keyword_end, expecting ')'
+app/views/guards/new.html.erb:81: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/guards/new.html.erb:83: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 21:54:32 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (209.5ms)
+Completed 500 Internal Server Error in 215ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `form' for #<#<Class:0x00007f6796498888>:0x00007f6790038820>
+Did you mean?  fork):
+    48: 
+    49:     <p>
+    50:         <label for "query_product_name"> Product: </label>
+    51:         <%= form.select :Nivel_Educacional
+    52:         %>
+    53:     </p>
+    54: 
+  
+app/views/guards/new.html.erb:51:in `block in _app_views_guards_new_html_erb__2479208682509483933_70041387255960'
+app/views/guards/new.html.erb:2:in `_app_views_guards_new_html_erb__2479208682509483933_70041387255960'
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 21:59:19 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 23ms (Views: 22.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 22:02:44 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 20ms (Views: 19.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 22:03:01 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 30ms (Views: 28.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 22:03:05 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 28ms (Views: 26.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 22:03:56 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 21ms (Views: 20.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 22:06:46 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 22ms (Views: 20.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 22:06:57 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 27ms (Views: 25.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 22:07:00 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 26ms (Views: 24.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 22:11:55 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 25ms (Views: 23.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 22:13:35 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 31ms (Views: 28.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/guards" for 127.0.0.1 at 2018-05-06 22:13:52 -0300
+Processing by GuardsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"o8t6yyBrGT4rEJgtyK1zm6P94st9uF9rwplkEXZXoP1je3ORG9D39qSGdi/jSKCpTQqLe1zmV8kxbIpjK4eKRw==", "guard"=>{"firstname"=>"asd", "lastname"=>"asd", "surname"=>"asd", "rut"=>"asd", "age"=>"asd", "sex"=>"asd", "nationality"=>"asd", "phone_number"=>"asd", "second_phone"=>"asd", "email"=>"asd", "city"=>"asd", "commune"=>"asd", "address"=>"asd"}, "commit"=>"Registrar Guardia"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `guards` (`rut`, `phone_number`, `email`, `nationality`, `created_at`, `updated_at`, `firstname`, `lastname`, `surname`, `age`, `sex`, `city`, `commune`, `address`, `second_phone`) VALUES ('asd', 'asd', 'asd', 'asd', '2018-05-07 01:13:52', '2018-05-07 01:13:52', 'asd', 'asd', 'asd', 0, 'asd', 'asd', 'asd', 'asd', 'asd')[0m
+  [1m[35m (150.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/guards
+Completed 302 Found in 157ms (ActiveRecord: 151.2ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-06 22:13:52 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (45.2ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (49.2ms)
+Completed 200 OK in 76ms (Views: 29.0ms | ActiveRecord: 45.2ms)
+
+
+Started GET "/guard/2" for 127.0.0.1 at 2018-05-06 22:13:56 -0300
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 2 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 27ms (Views: 24.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-06 22:14:44 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 28ms (Views: 25.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 22:14:46 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 28ms (Views: 27.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 22:14:47 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 28ms (Views: 26.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-06 22:14:56 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/guards/2/edit" for 127.0.0.1 at 2018-05-06 22:14:58 -0300
+Processing by GuardsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 2 LIMIT 1[0m
+  Rendering guards/edit.html.erb within layouts/application
+  Rendered guards/edit.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 28ms (Views: 25.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/guards/2/edit" for 127.0.0.1 at 2018-05-06 22:15:51 -0300
+Processing by GuardsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 2 LIMIT 1[0m
+  Rendering guards/edit.html.erb within layouts/application
+  Rendered guards/edit.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 25ms (Views: 23.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-06 22:53:05 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'chosen-boostrap' with type 'text/css'
+Checked in these paths: 
+  /home/diego/Tingeso/app/assets/config
+  /home/diego/Tingeso/app/assets/images
+  /home/diego/Tingeso/app/assets/javascripts
+  /home/diego/Tingeso/app/assets/stylesheets
+  /root/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /root/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.1.6/lib/assets/compiled
+  /root/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.1.6/lib/assets/compiled
+  /root/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.1.0/lib/assets/javascripts
+  /home/diego/Tingeso/node_modules):
+    4:     <title>TransbeApp</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:  <!--Se agrega los cdn para trabajar con bootstrap y otra depedencias-->
+   10:  <script
+  
+app/assets/stylesheets/application.css:15
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___3211400938243861046_47046774304640'
+Started GET "/guards" for 127.0.0.1 at 2018-05-06 22:53:13 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'chosen-boostrap' with type 'text/css'
+Checked in these paths: 
+  /home/diego/Tingeso/app/assets/config
+  /home/diego/Tingeso/app/assets/images
+  /home/diego/Tingeso/app/assets/javascripts
+  /home/diego/Tingeso/app/assets/stylesheets
+  /root/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /root/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.1.6/lib/assets/compiled
+  /root/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.1.6/lib/assets/compiled
+  /root/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.1.0/lib/assets/javascripts
+  /home/diego/Tingeso/node_modules):
+    4:     <title>TransbeApp</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:  <!--Se agrega los cdn para trabajar con bootstrap y otra depedencias-->
+   10:  <script
+  
+app/assets/stylesheets/application.css:15
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___3211400938243861046_70041437510780'
+Started GET "/guards" for 127.0.0.1 at 2018-05-06 22:53:31 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'chosen-boostrap' with type 'text/css'
+Checked in these paths: 
+  /home/diego/Tingeso/app/assets/config
+  /home/diego/Tingeso/app/assets/images
+  /home/diego/Tingeso/app/assets/javascripts
+  /home/diego/Tingeso/app/assets/stylesheets
+  /root/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /root/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.1.6/lib/assets/compiled
+  /root/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.1.6/lib/assets/compiled
+  /root/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.1.0/lib/assets/javascripts
+  /home/diego/Tingeso/node_modules):
+    4:     <title>TransbeApp</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:  <!--Se agrega los cdn para trabajar con bootstrap y otra depedencias-->
+   10:  <script
+  
+app/assets/stylesheets/application.css:15
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___3211400938243861046_70041353953480'
+Started GET "/guards" for 127.0.0.1 at 2018-05-06 22:53:34 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'chosen-boostrap' with type 'text/css'
+Checked in these paths: 
+  /home/diego/Tingeso/app/assets/config
+  /home/diego/Tingeso/app/assets/images
+  /home/diego/Tingeso/app/assets/javascripts
+  /home/diego/Tingeso/app/assets/stylesheets
+  /root/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /root/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.1.6/lib/assets/compiled
+  /root/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.1.6/lib/assets/compiled
+  /root/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.1.0/lib/assets/javascripts
+  /home/diego/Tingeso/node_modules):
+    4:     <title>TransbeApp</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:  <!--Se agrega los cdn para trabajar con bootstrap y otra depedencias-->
+   10:  <script
+  
+app/assets/stylesheets/application.css:15
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___3211400938243861046_47046771313280'
+Started GET "/guards" for 127.0.0.1 at 2018-05-06 22:53:54 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'chosen-boostrap' with type 'text/css'
+Checked in these paths: 
+  /home/diego/Tingeso/app/assets/config
+  /home/diego/Tingeso/app/assets/images
+  /home/diego/Tingeso/app/assets/javascripts
+  /home/diego/Tingeso/app/assets/stylesheets
+  /root/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /root/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.1.6/lib/assets/compiled
+  /root/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.1.6/lib/assets/compiled
+  /root/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.1.0/lib/assets/javascripts
+  /home/diego/Tingeso/node_modules):
+    4:     <title>TransbeApp</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:  <!--Se agrega los cdn para trabajar con bootstrap y otra depedencias-->
+   10:  <script
+  
+app/assets/stylesheets/application.css:15
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___3211400938243861046_70041436901320'
+Started GET "/guards" for 127.0.0.1 at 2018-05-06 22:54:32 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 30ms (Views: 27.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 22:54:41 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 24ms (Views: 22.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/guards" for 127.0.0.1 at 2018-05-06 22:54:56 -0300
+Processing by GuardsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mTKdCqmQuwPjYD+IH3+8PUl461mmzhUf09nG3u4yFB1f2eCnWcTKZ4IL5RQxL8IXMJPnKf1cQXJmr3+EHBnlnA==", "guard"=>{"firstname"=>"qwe", "lastname"=>"qwe", "surname"=>"qwe", "rut"=>"qwe", "age"=>"qwe", "sex"=>"qwe", "nationality"=>"qwe", "phone_number"=>"qwe", "second_phone"=>"qwe", "email"=>"qwe", "city"=>"qwe", "commune"=>"qwe", "address"=>"qwe"}, "commit"=>"Registrar Guardia"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `guards` (`rut`, `phone_number`, `email`, `nationality`, `created_at`, `updated_at`, `firstname`, `lastname`, `surname`, `age`, `sex`, `city`, `commune`, `address`, `second_phone`) VALUES ('qwe', 'qwe', 'qwe', 'qwe', '2018-05-07 01:54:56', '2018-05-07 01:54:56', 'qwe', 'qwe', 'qwe', 0, 'qwe', 'qwe', 'qwe', 'qwe', 'qwe')[0m
+  [1m[35m (58.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/guards
+Completed 302 Found in 63ms (ActiveRecord: 59.1ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-06 22:54:56 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 25ms (Views: 23.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guard/3" for 127.0.0.1 at 2018-05-06 22:55:00 -0300
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 3 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 28ms (Views: 24.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 22:55:09 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 26ms (Views: 25.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/guards" for 127.0.0.1 at 2018-05-06 22:55:22 -0300
+Processing by GuardsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ny4EOzt8dZcqVtryBYjr7cXO7+N5dGSA7OZu0HDy6S3xxXmWyygE80s9AG4r2JXHvCXjkyLmMO1ZkNeKgtkYrA==", "guard"=>{"firstname"=>"zxc", "lastname"=>"zxc", "surname"=>"zxc", "rut"=>"zxc", "age"=>"zxc", "sex"=>"zxc", "nationality"=>"zxc", "phone_number"=>"zxc", "second_phone"=>"zxc", "email"=>"zxc", "city"=>"zxc", "commune"=>"zxc", "address"=>"zxc"}, "commit"=>"Registrar Guardia"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `guards` (`rut`, `phone_number`, `email`, `nationality`, `created_at`, `updated_at`, `firstname`, `lastname`, `surname`, `age`, `sex`, `city`, `commune`, `address`, `second_phone`) VALUES ('zxc', 'zxc', 'zxc', 'zxc', '2018-05-07 01:55:22', '2018-05-07 01:55:22', 'zxc', 'zxc', 'zxc', 0, 'zxc', 'zxc', 'zxc', 'zxc', 'zxc')[0m
+  [1m[35m (57.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/guards
+Completed 302 Found in 62ms (ActiveRecord: 57.6ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-06 22:55:22 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (887.4ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (890.6ms)
+Completed 200 OK in 917ms (Views: 28.7ms | ActiveRecord: 887.4ms)
+
+
+Started GET "/guard/4" for 127.0.0.1 at 2018-05-06 22:55:29 -0300
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 4 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 31ms (Views: 27.9ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/guard/2" for 127.0.0.1 at 2018-05-06 22:56:42 -0300
+Processing by GuardsController#delete as HTML
+  Parameters: {"authenticity_token"=>"x+a0CsvnUabKLTM4yv9EDEPUL3Rp7lEhZIM2H13394IHVr1Q8Fy/bkW73TrhGpc+rSNGxEiwWYOXdthtACfdOA==", "id"=>"2"}
+  [1m[36mGuard Load (0.8ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 2 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM `guards` WHERE `guards`.`id` = 2[0m
+  [1m[35m (37.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/guards
+Completed 302 Found in 43ms (ActiveRecord: 38.4ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-06 22:56:43 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 21ms (Views: 19.7ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/guard/3" for 127.0.0.1 at 2018-05-06 22:56:45 -0300
+Processing by GuardsController#delete as HTML
+  Parameters: {"authenticity_token"=>"00rt2cyTvwQZnjm+cn9sFWZzzikwj3AVbp839f6fjwcT+uSD9yhRzJYI17xZmr8niISnmRHReLedatmHo0+lvQ==", "id"=>"3"}
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 3 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM `guards` WHERE `guards`.`id` = 3[0m
+  [1m[35m (59.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/guards
+Completed 302 Found in 64ms (ActiveRecord: 60.6ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-06 22:56:45 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (13.3ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 30ms (Views: 15.9ms | ActiveRecord: 13.3ms)
+
+
+Started DELETE "/guard/4" for 127.0.0.1 at 2018-05-06 22:56:48 -0300
+Processing by GuardsController#delete as HTML
+  Parameters: {"authenticity_token"=>"Nr40/RSFgL/nfrD7PJi5PAcb5cq2LNtaTrZr3PVL/NL2Dj2nLz5ud2joXvkXfWoO6eyMepdy0/i9Q4WuqJvWaA==", "id"=>"4"}
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 4 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM `guards` WHERE `guards`.`id` = 4[0m
+  [1m[35m (24.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/guards
+Completed 302 Found in 28ms (ActiveRecord: 25.7ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-06 22:56:48 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-06 23:02:25 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 21ms (Views: 19.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 23:02:27 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/diego/Tingeso/app/views/guards/new.html.erb:48: syntax error, unexpected '='
+....educational_level]  }), class="chosen-select" );@output_buf...
+...                              ^):
+  
+app/views/guards/new.html.erb:48: syntax error, unexpected '='
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 23:03:21 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (10.6ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for #<Guard:0x00007f678c2d2940>
+Did you mean?  tap):
+    45:     <%= t.label :Nivel_Educacional %>
+    46: 
+    47: 
+    48:     <%= select_tag "Nivel_Educacional",options_for_select(@guard.map { |guard| [guard.Nivel_Educacional, guard.educational_level]  }), class:"chosen-select" %>
+    49:                 <option value=""></option>
+    50:                 <option value="Basica incompleta">Básica incompleta</option>
+    51:                 <option value="Basica completa">Básica completa</option>
+  
+app/views/guards/new.html.erb:48:in `block in _app_views_guards_new_html_erb__2479208682509483933_70041355061120'
+app/views/guards/new.html.erb:2:in `_app_views_guards_new_html_erb__2479208682509483933_70041355061120'
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 23:04:23 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 25ms (Views: 23.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 23:05:09 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/diego/Tingeso/app/views/guards/new.html.erb:48: syntax error, unexpected tLABEL
+...;@output_buffer.append=( class:"chosen-select" );@output_buf...
+...                         ^~~~~~):
+  
+app/views/guards/new.html.erb:48: syntax error, unexpected tLABEL
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 23:05:23 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/diego/Tingeso/app/views/guards/new.html.erb:48: syntax error, unexpected '='
+...;@output_buffer.append=( class="chosen-select" );@output_buf...
+...                              ^):
+  
+app/views/guards/new.html.erb:48: syntax error, unexpected '='
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 23:05:48 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/diego/Tingeso/app/views/guards/new.html.erb:48: syntax error, unexpected tLABEL
+...;@output_buffer.append=( class:"chosen-select" );@output_buf...
+...                         ^~~~~~):
+  
+app/views/guards/new.html.erb:48: syntax error, unexpected tLABEL
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 23:06:06 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/diego/Tingeso/app/views/guards/new.html.erb:48: syntax error, unexpected tLABEL
+...;@output_buffer.append=( class:"chosen-select" );@output_buf...
+...                         ^~~~~~):
+  
+app/views/guards/new.html.erb:48: syntax error, unexpected tLABEL
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 23:06:07 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/diego/Tingeso/app/views/guards/new.html.erb:48: syntax error, unexpected tLABEL
+...;@output_buffer.append=( class:"chosen-select" );@output_buf...
+...                         ^~~~~~):
+  
+app/views/guards/new.html.erb:48: syntax error, unexpected tLABEL
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 23:07:27 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 26ms (Views: 24.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/guards" for 127.0.0.1 at 2018-05-06 23:07:58 -0300
+Processing by GuardsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CppqbAHGMWbnSq0I6mecVreXNqksH59zqbXPif6pEWjKKmM2On3frmjcQwrBgk9kWWBfGQ1Bl9FaQCH7o3k70g==", "guard"=>{"firstname"=>"asd", "lastname"=>"asd", "surname"=>"asd", "rut"=>"18", "age"=>"asd", "sex"=>"asd", "nationality"=>"asd", "phone_number"=>"asd", "second_phone"=>"asd", "email"=>"asd", "city"=>"asd", "commune"=>"asdasd", "address"=>"asd"}, "commit"=>"Registrar Guardia"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO `guards` (`rut`, `phone_number`, `email`, `nationality`, `created_at`, `updated_at`, `firstname`, `lastname`, `surname`, `age`, `sex`, `city`, `commune`, `address`, `second_phone`) VALUES ('18', 'asd', 'asd', 'asd', '2018-05-07 02:07:58', '2018-05-07 02:07:58', 'asd', 'asd', 'asd', 0, 'asd', 'asd', 'asdasd', 'asd', 'asd')[0m
+  [1m[35m (149.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/guards
+Completed 302 Found in 158ms (ActiveRecord: 151.0ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-06 23:07:58 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (19.8ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (22.4ms)
+Completed 200 OK in 44ms (Views: 22.7ms | ActiveRecord: 19.8ms)
+
+
+Started GET "/guard/5" for 127.0.0.1 at 2018-05-06 23:08:00 -0300
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 5 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 22ms (Views: 19.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guard/5" for 127.0.0.1 at 2018-05-06 23:12:34 -0300
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 5 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 34ms (Views: 31.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-06 23:12:36 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 23:12:38 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/guards" for 127.0.0.1 at 2018-05-06 23:12:55 -0300
+Processing by GuardsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"44YZ0afSpZO/PqVT4MYN/qdzL0OAV+RIBVfM24CiggYlbWR8V4bU995Vf8/OlnPU3pgjM9vFsCWwIXWBcolzhw==", "guard"=>{"firstname"=>"asd", "lastname"=>"asd", "surname"=>"asd", "rut"=>"asd", "age"=>"asd", "sex"=>"asd", "nationality"=>"asd", "phone_number"=>"asd", "second_phone"=>"asd", "email"=>"asd", "city"=>"asd", "commune"=>"asd", "address"=>"asd"}, "commit"=>"Registrar Guardia"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `guards` (`rut`, `phone_number`, `email`, `nationality`, `created_at`, `updated_at`, `firstname`, `lastname`, `surname`, `age`, `sex`, `city`, `commune`, `address`, `second_phone`) VALUES ('asd', 'asd', 'asd', 'asd', '2018-05-07 02:12:55', '2018-05-07 02:12:55', 'asd', 'asd', 'asd', 0, 'asd', 'asd', 'asd', 'asd', 'asd')[0m
+  [1m[35m (56.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/guards
+Completed 302 Found in 61ms (ActiveRecord: 57.1ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-06 23:12:55 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 30ms (Views: 28.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/guards/5/edit" for 127.0.0.1 at 2018-05-06 23:12:59 -0300
+Processing by GuardsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 5 LIMIT 1[0m
+  Rendering guards/edit.html.erb within layouts/application
+  Rendered guards/edit.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 29ms (Views: 26.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guard/5" for 127.0.0.1 at 2018-05-06 23:13:02 -0300
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 5 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 23ms (Views: 20.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/guard/6" for 127.0.0.1 at 2018-05-06 23:13:05 -0300
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 6 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 18ms (Views: 15.7ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/guard/5" for 127.0.0.1 at 2018-05-06 23:13:09 -0300
+Processing by GuardsController#delete as HTML
+  Parameters: {"authenticity_token"=>"dyksj2mV8HTFG64jaCfsNoD2qWinXMNgIRowZehXWeK3mSXVUi4evEqNQCFDwj8EbgHA2IYCy8LS794XtYdzWA==", "id"=>"5"}
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 5 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM `guards` WHERE `guards`.`id` = 5[0m
+  [1m[35m (60.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/guards
+Completed 302 Found in 65ms (ActiveRecord: 61.3ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-06 23:13:09 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (9.3ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 34ms (Views: 23.8ms | ActiveRecord: 9.3ms)
+
+
+Started DELETE "/guard/6" for 127.0.0.1 at 2018-05-06 23:13:12 -0300
+Processing by GuardsController#delete as HTML
+  Parameters: {"authenticity_token"=>"AdCn9dtKUEsgPwNFqrgtEDXHieEivJj7D6fWWGGO6JjBYK6v4PG+g6+p7UeBXf4i2zDgUQPikFn8UjgqPF7CIg==", "id"=>"6"}
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 6 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM `guards` WHERE `guards`.`id` = 6[0m
+  [1m[35m (25.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/guards
+Completed 302 Found in 28ms (ActiveRecord: 26.2ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-06 23:13:12 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 19ms (Views: 17.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-06 23:22:25 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-06 23:22:27 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 23:22:28 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 30ms (Views: 27.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/guards" for 127.0.0.1 at 2018-05-06 23:22:33 -0300
+Processing by GuardsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f/pT5qsUrfmxJjkJcbV4AX+XTEGnabDAnRehVx2QXjS5ES5LW0DcndBN45Vf5QYrBnxAMfz75K0oYRgN77uvtQ==", "guard"=>{"firstname"=>"", "lastname"=>"zxc", "surname"=>"", "rut"=>"", "age"=>"", "sex"=>"", "nationality"=>"", "phone_number"=>"", "second_phone"=>"", "email"=>"", "city"=>"", "commune"=>"", "address"=>""}, "commit"=>"Registrar Guardia"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `guards` (`rut`, `phone_number`, `email`, `nationality`, `created_at`, `updated_at`, `firstname`, `lastname`, `surname`, `sex`, `city`, `commune`, `address`, `second_phone`) VALUES ('', '', '', '', '2018-05-07 02:22:33', '2018-05-07 02:22:33', '', 'zxc', '', '', '', '', '', '')[0m
+  [1m[35m (175.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/guards
+Completed 302 Found in 181ms (ActiveRecord: 176.1ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-06 23:22:33 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (10.8ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 33ms (Views: 21.9ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/guard/7" for 127.0.0.1 at 2018-05-06 23:22:38 -0300
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 7 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 22ms (Views: 19.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 23:22:47 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 27ms (Views: 24.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/guards" for 127.0.0.1 at 2018-05-06 23:22:53 -0300
+Processing by GuardsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"N1Mi5GNNAetPOLAEmhdLonq6IEdX9QpwXcFlnYe9/zXxuF9Jkxlwjy5Tapi0RzWIA1EsNwxnXh3ot9zHdZYOtA==", "guard"=>{"firstname"=>"dsa", "lastname"=>"", "surname"=>"", "rut"=>"", "age"=>"", "sex"=>"", "nationality"=>"", "phone_number"=>"", "second_phone"=>"", "email"=>"", "city"=>"", "commune"=>"", "address"=>""}, "commit"=>"Registrar Guardia"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `guards` (`rut`, `phone_number`, `email`, `nationality`, `created_at`, `updated_at`, `firstname`, `lastname`, `surname`, `sex`, `city`, `commune`, `address`, `second_phone`) VALUES ('', '', '', '', '2018-05-07 02:22:53', '2018-05-07 02:22:53', 'dsa', '', '', '', '', '', '', '')[0m
+  [1m[35m (95.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/guards
+Completed 302 Found in 102ms (ActiveRecord: 96.3ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-06 23:22:53 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 22ms (Views: 20.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guard/8" for 127.0.0.1 at 2018-05-06 23:22:55 -0300
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 8 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 20ms (Views: 17.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 23:25:19 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 32ms (Views: 30.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 23:26:36 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 30ms (Views: 27.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 23:26:40 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 23:27:09 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 29ms (Views: 28.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-06 23:27:13 -0300
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 23ms (Views: 21.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-06 23:27:14 -0300
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 31ms (Views: 28.8ms | ActiveRecord: 0.0ms)
+
+

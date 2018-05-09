@@ -42,7 +42,17 @@
 </div>
 <div>
     <%= f.label :Nivel_Educacional %>
-    <%= f.text_field :educational_level%>
+    <select data-placeholder="educational_level" class="chosen-select" tabindex="1">
+        <option value=""></option>
+        <option value="Basica incompleta">Básica incompleta</option>
+        <option value="Basica completa">Básica completa</option>
+        <option value="Media imcompleta">Media incompleta</option>
+        <option value="Media completa">Media completa</option>
+        <option value="Tecnica incompleta">Técnica incompleta </option>
+        <option value="Tecnica completa">Técnica completa</option>
+        <option value="Superior incompleta">Superior incompleta</option>
+        <option value="Superior completa">Superior completa</option>
+    </select>
 </div>
 <div>
     <%= f.label :Ciudad %>

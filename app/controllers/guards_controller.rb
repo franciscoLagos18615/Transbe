@@ -6,18 +6,30 @@ class GuardsController < ApplicationController
     @guard = Guard.new
   end
 
-  def create 
-    @guard = Guard.new(guard_params) 
-    if @guard.save
-      redirect_to guards_path
-    else
-      render :new
-    end
-  end
+  def create
+     @guard = Guard.new(guard_params)
+     respond_to do |format|
+       if @guard.valid? 
+         if @guard.save
+           format.html { redirect_to @guard, notice: 'Client was successfully created.' }
+           format.json { render :show, status: :created, location: @guard }
+         else
+           format.html { render :new }
+           format.json { render json: @guard.errors, status: :unprocessable_entity }
+         end
+       else
+         format.html { render :new }
+         format.json { render json: @guard.errors, status: :unprocessable_entity }
+       end
+     end
+   end
+
+
 
   def edit 
     @guard = Guard.find(params[:id])
   end
+
   def update
     @guard = Guard.find(params[:id])
     if @guard.update(guard_params)
@@ -26,6 +38,7 @@ class GuardsController < ApplicationController
       render :edit
     end
   end
+
   def delete
     @guard = Guard.find(params[:id])
     @guard.destroy

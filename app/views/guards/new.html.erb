@@ -1,74 +1,153 @@
 <h1>Registro de Guardia</h1>
 <%= form_for @guard do |t| %>
-<div>
-    <%= t.label :Primer_Nombre %>
-    <%= t.text_field :firstname%>
-</div>
+
+
+ <div class="control-group<%= @guard.errors[:firstname].any? ? " error" : "" %>">
+   <%= t.label :Primer_nombre, :class => 'control-label' %>
+   <div class="controls">
+     <%= t.text_field :firstname%>
+     <%#Obtener solo el mensaje con la expresion regular /\w([^]*)/%>
+     <span class="help-inline">
+      <%= @guard.errors[:firstname].any? ? @guard.errors[:firstname].to_s[/\w([^"]*)/] : "" %></span>
+   </div>
+ </div>
+
+ <div class="control-group<%= @guard.errors[:lastname].any? ? " error" : "" %>">
+   <%= t.label :Apellido_Paterno, :class => 'control-label' %>
+   <div class="controls">
+     <%= t.text_field :lastname%>
+     <%#Obtener solo el mensaje con la expresion regular /\w([^]*)/%>
+     <span class="help-inline">
+      <%= @guard.errors[:lastname].any? ? @guard.errors[:lastname].to_s[/\w([^"]*)/] : "" %></span>
+   </div>
+ </div>
+
+  <div class="control-group<%= @guard.errors[:surname].any? ? " error" : "" %>">
+   <%= t.label :Apellido_materno, :class => 'control-label' %>
+   <div class="controls">
+     <%= t.text_field :surname%>
+     <%#Obtener solo el mensaje con la expresion regular /\w([^]*)/%>
+     <span class="help-inline">
+      <%= @guard.errors[:surname].any? ? @guard.errors[:surname].to_s[/\w([^"]*)/] : "" %></span>
+   </div>
+ </div>
+
+  <div class="control-group<%= @guard.errors[:rut].any? ? " error" : "" %>">
+   <%= t.label :Rut, :class => 'control-label' %>
+   <div class="controls">
+     <%= t.text_field :rut%>
+     <%#Obtener solo el mensaje con la expresion regular /\w([^]*)/%>
+     <span class="help-inline">
+      <%= @guard.errors[:rut].any? ? @guard.errors[:rut].to_s[/\w([^"]*)/] : "" %></span>
+   </div>
+ </div>
+
+  <div class="control-group<%= @guard.errors[:age].any? ? " error" : "" %>">
+   <%= t.label :Edad, :class => 'control-label' %>
+   <div class="controls">
+     <%= t.text_field :age%>
+     <%#Obtener solo el mensaje con la expresion regular /\w([^]*)/%>
+     <span class="help-inline">
+      <%= @guard.errors[:age].any? ? @guard.errors[:age].to_s[/\w([^"]*)/] : "" %></span>
+   </div>
+ </div>
+
 
 <div>
-    <%= t.label :Apellido %>
-    <%= t.text_field :lastname%>
-</div>
-<div>
-    <%= t.label :Segundo_Apellido %>
-    <%= t.text_field :surname%>
-</div>
-<div>
-    <%= t.label :Rut %>
-    <%= t.text_field :rut%>    
-</div>
-<div>
-    <%= t.label :Edad %>
-    <%= t.text_field :age%>
-</div>
-<div>
     <%= t.label :Sexo %>
-    <%= t.text_field :sex%>
+    <%= t.radio_button(:sex, "Masculino") %>
+    <%= label_tag(:male, "Masculino") %>
+    <%= t.radio_button(:sex, "Femenino") %>
+    <%= label_tag(:female, "Femenino") %>
 </div>
-<div>
-    <%= t.label :Nacionalidad %>
-    <%= t.text_field :nationality%>
-</div>
-<div>
-    <%= t.label :Telefono %>
-    <%= t.text_field :phone_number%>
-</div>
-<div>
+
+  <div class="control-group<%= @guard.errors[:nationality].any? ? " error" : "" %>">
+   <%= t.label :Nacionalidad, :class => 'control-label' %>
+   <div class="controls">
+     <%= t.text_field :nationality%>
+     <%#Obtener solo el mensaje con la expresion regular /\w([^]*)/%>
+     <span class="help-inline">
+      <%= @guard.errors[:nationality].any? ? @guard.errors[:nationality].to_s[/\w([^"]*)/] : "" %></span>
+   </div>
+ </div>
+
+  <div class="control-group<%= @guard.errors[:phone_number].any? ? " error" : "" %>">
+   <%= t.label :Telefono, :class => 'control-label' %>
+   <div class="controls">
+     <%= t.text_field :phone_number%>
+     <%#Obtener solo el mensaje con la expresion regular /\w([^]*)/%>
+     <span class="help-inline">
+      <%= @guard.errors[:phone_number].any? ? @guard.errors[:phone_number].to_s[/\w([^"]*)/] : "" %></span>
+   </div>
+ </div>
+
+ <div>
     <%= t.label :Telefono_Secundario %>
-    <%= t.text_field :second_phone%>
+    <div>
+        <%= t.text_field :second_phone%>
+    </div>
+    
 </div>
-<div>
-    <%= t.label :Email %>
-    <%= t.text_field :email%>
-</div>
+
+  <div class="control-group<%= @guard.errors[:email].any? ? " error" : "" %>">
+   <%= t.label :Email, :class => 'control-label' %>
+   <div class="controls">
+     <%= t.text_field :email%>
+     <%#Obtener solo el mensaje con la expresion regular /\w([^]*)/%>
+     <span class="help-inline">
+      <%= @guard.errors[:email].any? ? @guard.errors[:email].to_s[/\w([^"]*)/] : "" %></span>
+   </div>
+ </div>
+
 <div>
     <%= t.label :Nivel_Educacional %>
 
-
-    <select data-placeholder="Nivel Educacional", class="chosen-select" >
-                <option value=""></option>
-                <option value="Basica incompleta">Básica incompleta</option>
-                <option value="Basica completa">Básica completa</option>
-                <option value="Media imcompleta">Media incompleta</option>
-                <option value="Media completa">Media completa</option>
-                <option value="Tecnica incompleta">Técnica incompleta </option>
-                <option value="Tecnica completa">Técnica completa</option>
-                <option value="Superior incompleta">Superior incompleta</option>
-                <option value="Superior completa">Superior completa</option>
-    </select>
+    <%= t.select(:educational_level) do %>
+        <% [['Basica incompleta', "Basica incompleta"], 
+            ['Basica completa', "Basica completa"],
+            ['Media incompleta', "Media incompleta"],
+            ['Media completa', "Media completa"],
+            ['Tecnica incompleta', "Tecnica incompleta"],
+            ['Tecnica completa', "Tecnica completa"],
+            ['Superior incompleta', "Superior incompleta"],
+            ['Superior completa', "Superior completa"]].each do |c| -%>
+            <%= content_tag(:option, c.first, value: c.last) %>
+    <% end %>
+    <% end %>
 </div>
+
 <div>
     <%= t.label :Ciudad %>
-    <%= t.text_field :city%>
+    <%= t.select(:city) do %>
+        <% [['Santiago', "Santiago"], 
+            ['Melipilla', "Melipilla"]].each do |c| -%>
+            <%= content_tag(:option, c.first, value: c.last) %>
+    <% end %>
+    <% end %>
 </div>
+
 <div>
     <%= t.label :Comuna %>
-    <%= t.text_field :commune%>
+        <%= t.select(:commune) do %>
+        <% [['Estación central', "Estación central"], 
+            ['Maipu', "Maipu"],            
+            ['Quilicura', "Quilicura"], 
+            ['Vitacura', "Vitacura"]].each do |c| -%>
+            <%= content_tag(:option, c.first, value: c.last) %>
+    <% end %>
+    <% end %>
 </div>
-<div>
-    <%= t.label :Dirección %>
-    <%= t.text_field :address%>
-</div>
+
+  <div class="control-group<%= @guard.errors[:address].any? ? " error" : "" %>">
+   <%= t.label :Dirección, :class => 'control-label' %>
+   <div class="controls">
+     <%= t.text_field :address%>
+     <%#Obtener solo el mensaje con la expresion regular /\w([^]*)/%>
+     <span class="help-inline">
+      <%= @guard.errors[:address].any? ? @guard.errors[:address].to_s[/\w([^"]*)/] : "" %></span>
+   </div>
+ </div>
+
 <div>
     <p>
         Subir foto de perfil

@@ -1,8 +1,12 @@
-<h1>Registro de Guardia</h1>
+<h1 align="center" class="mb-0">Registrar
+            <span class="text-primary">Guardia</span>
+          </h1>
+
+  <div class="col-md-7 col-center" align="left">
 <%= form_for @guard do |t| %>
 
 
- <div class="control-group<%= @guard.errors[:firstname].any? ? " error" : "" %>">
+ <div class="form-group<%= @guard.errors[:firstname].any? ? " error" : "" %>">
    <%= t.label :Primer_nombre, :class => 'control-label' %>
    <div class="controls">
      <%= t.text_field :firstname%>
@@ -12,7 +16,8 @@
    </div>
  </div>
 
- <div class="control-group<%= @guard.errors[:lastname].any? ? " error" : "" %>">
+
+ <div class="form-group<%= @guard.errors[:lastname].any? ? " error" : "" %>" >
    <%= t.label :Apellido_Paterno, :class => 'control-label' %>
    <div class="controls">
      <%= t.text_field :lastname%>
@@ -22,7 +27,7 @@
    </div>
  </div>
 
-  <div class="control-group<%= @guard.errors[:surname].any? ? " error" : "" %>">
+  <div class="form-group<%= @guard.errors[:surname].any? ? " error" : "" %>">
    <%= t.label :Apellido_materno, :class => 'control-label' %>
    <div class="controls">
      <%= t.text_field :surname%>
@@ -32,17 +37,19 @@
    </div>
  </div>
 
-  <div class="control-group<%= @guard.errors[:rut].any? ? " error" : "" %>">
+  <div class="form-group<%= @guard.errors[:rut].any? ? " error" : "" %>">
    <%= t.label :Rut, :class => 'control-label' %>
    <div class="controls">
      <%= t.text_field :rut%>
+      
      <%#Obtener solo el mensaje con la expresion regular /\w([^]*)/%>
      <span class="help-inline">
       <%= @guard.errors[:rut].any? ? @guard.errors[:rut].to_s[/\w([^"]*)/] : "" %></span>
    </div>
+   <h9>(Ingrese Rut con punto y guion)</h9>
  </div>
 
-  <div class="control-group<%= @guard.errors[:age].any? ? " error" : "" %>">
+  <div class="form-group<%= @guard.errors[:age].any? ? " error" : "" %>">
    <%= t.label :Edad, :class => 'control-label' %>
    <div class="controls">
      <%= t.text_field :age%>
@@ -61,7 +68,7 @@
     <%= label_tag(:female, "Femenino") %>
 </div>
 
-  <div class="control-group<%= @guard.errors[:nationality].any? ? " error" : "" %>">
+  <div class="form-group<%= @guard.errors[:nationality].any? ? " error" : "" %>">
    <%= t.label :Nacionalidad, :class => 'control-label' %>
    <div class="controls">
      <%= t.text_field :nationality%>
@@ -71,7 +78,7 @@
    </div>
  </div>
 
-  <div class="control-group<%= @guard.errors[:phone_number].any? ? " error" : "" %>">
+  <div class="form-group<%= @guard.errors[:phone_number].any? ? " error" : "" %>">
    <%= t.label :Telefono, :class => 'control-label' %>
    <div class="controls">
      <%= t.text_field :phone_number%>
@@ -89,7 +96,7 @@
     
 </div>
 
-  <div class="control-group<%= @guard.errors[:email].any? ? " error" : "" %>">
+  <div class="form-group<%= @guard.errors[:email].any? ? " error" : "" %>">
    <%= t.label :Email, :class => 'control-label' %>
    <div class="controls">
      <%= t.text_field :email%>
@@ -138,7 +145,7 @@
     <% end %>
 </div>
 
-  <div class="control-group<%= @guard.errors[:address].any? ? " error" : "" %>">
+  <div class="form-group<%= @guard.errors[:address].any? ? " error" : "" %>">
    <%= t.label :Dirección, :class => 'control-label' %>
    <div class="controls">
      <%= t.text_field :address%>
@@ -157,7 +164,15 @@
 
     </p>
 </div>
-<div>
-    <%=t.submit "Registrar Guardia"%>
+<div class="form-group" align="center">
+  <div class="form-group" align="center">
+    <!--%=t.submit "Registrar Guardia"%-->
+
+    <button type="submit" class="btn btn-primary" %="t.submit"%>Ingresar Guardia</button>
+
+    <h1></h1>
+    <h1></h1>
 </div>
 <%end%>
+
+</div>

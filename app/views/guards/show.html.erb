@@ -1,5 +1,10 @@
-<h1>Detalles del guardia <%=@guard.firstname%> </h1>
-<%= image_tag @guard.avatar.url(:thumb) %>
+<section class="resume-section p-3 p-lg-5 d-flex d-column">
+<div class="my-auto">
+
+<div class="subheading mb-5" align="center">
+
+<a>Detalles del guardia <%=@guard.firstname%> </a>
+<p align="center"> <%= image_tag @guard.avatar.url(:thumb) %></p>
 <p>Nombre: <%=@guard.firstname%></p>
 <p>Apellido Paterno: <%=@guard.lastname%></p>
 <p>Apellido Materno: <%=@guard.surname%></p>
@@ -15,6 +20,8 @@
 <p>Comuna: <%=@guard.commune%></p>
 <p>Dirección: <%=@guard.address%></p>
  <td><%=link_to "Volver", guards_path()%></td>
+</div>
 
+</div>
 
-
+</section>

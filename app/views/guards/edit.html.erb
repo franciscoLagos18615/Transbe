@@ -1,6 +1,10 @@
-<h1>Editar Guardia</h1>
+<h1 align="center" class="mb-0">Editar
+            <span class="text-primary">Guardia</span>
+          </h1>
+<div class="col-md-7 col-center" align="left">
+
 <%= form_for @guard do |f| %>
- <div class="control-group<%= @guard.errors[:firstname].any? ? " error" : "" %>">
+ <div class="form-group<%= @guard.errors[:firstname].any? ? " error" : "" %>">
    <%= f.label :Primer_nombre, :class => 'control-label' %>
    <div class="controls">
      <%= f.text_field :firstname%>
@@ -10,7 +14,7 @@
    </div>
  </div>
 
- <div class="control-group<%= @guard.errors[:lastname].any? ? " error" : "" %>">
+ <div class="form-group<%= @guard.errors[:lastname].any? ? " error" : "" %>">
    <%= f.label :Apellido_Paterno, :class => 'control-label' %>
    <div class="controls">
      <%= f.text_field :lastname%>
@@ -20,7 +24,7 @@
    </div>
  </div>
 
-  <div class="control-group<%= @guard.errors[:surname].any? ? " error" : "" %>">
+  <div class="form-group<%= @guard.errors[:surname].any? ? " error" : "" %>">
    <%= f.label :Apellido_materno, :class => 'control-label' %>
    <div class="controls">
      <%= f.text_field :surname%>
@@ -30,7 +34,7 @@
    </div>
  </div>
 
-  <div class="control-group<%= @guard.errors[:rut].any? ? " error" : "" %>">
+  <div class="form-group<%= @guard.errors[:rut].any? ? " error" : "" %>">
    <%= f.label :Rut, :class => 'control-label' %>
    <div class="controls">
      <%= f.text_field :rut%>
@@ -40,7 +44,7 @@
    </div>
  </div>
 
-  <div class="control-group<%= @guard.errors[:age].any? ? " error" : "" %>">
+  <div class="form-group<%= @guard.errors[:age].any? ? " error" : "" %>">
    <%= f.label :Edad, :class => 'control-label' %>
    <div class="controls">
      <%= f.text_field :age%>
@@ -59,7 +63,7 @@
     <%= label_tag(:female, "Femenino") %>
 </div>
 
-  <div class="control-group<%= @guard.errors[:nationality].any? ? " error" : "" %>">
+  <div class="form-group<%= @guard.errors[:nationality].any? ? " error" : "" %>">
    <%= f.label :Nacionalidad, :class => 'control-label' %>
    <div class="controls">
      <%= f.text_field :nationality%>
@@ -69,7 +73,7 @@
    </div>
  </div>
 
-  <div class="control-group<%= @guard.errors[:phone_number].any? ? " error" : "" %>">
+  <div class="form-group<%= @guard.errors[:phone_number].any? ? " error" : "" %>">
    <%= f.label :Telefono, :class => 'control-label' %>
    <div class="controls">
      <%= f.text_field :phone_number%>
@@ -78,13 +82,15 @@
       <%= @guard.errors[:phone_number].any? ? @guard.errors[:phone_number].to_s[/\w([^"]*)/] : "" %></span>
    </div>
  </div>
-
- <div>
-    <%= f.label :Telefono_Secundario %>
+<div class="form-group">
+<%= f.label :Telefono_Secundario %>
+ <div class="controls">
+    
     <%= f.text_field :second_phone%>
 </div>
+</div>
 
-  <div class="control-group<%= @guard.errors[:email].any? ? " error" : "" %>">
+  <div class="form-group<%= @guard.errors[:email].any? ? " error" : "" %>">
    <%= f.label :Email, :class => 'control-label' %>
    <div class="controls">
      <%= f.text_field :email%>
@@ -133,7 +139,7 @@
     <% end %>
 </div>
 
-  <div class="control-group<%= @guard.errors[:address].any? ? " error" : "" %>">
+  <div class="form-group<%= @guard.errors[:address].any? ? " error" : "" %>">
    <%= f.label :Dirección, :class => 'control-label' %>
    <div class="controls">
      <%= f.text_field :address%>
@@ -153,6 +159,12 @@
     </p>
 
 </div>
-    <%=f.submit "Actualizar Información"%>
+<div align="center">
+<button  type="submit" class="btn btn-success" %="f.submit"%>Actualizar Informacion</button>
+    <!--%=f.submit "Actualizar Información"%-->
+    <h1></h1>
+    </div>
 </div>
 <%end%>
+
+</div>

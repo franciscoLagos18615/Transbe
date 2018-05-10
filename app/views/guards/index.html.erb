@@ -1,28 +1,42 @@
-<h1>Listado de Guardias</h1>
-<%= link_to "Crear Guardia", guards_new_path %>
+<h1 align="center" class="mb-0">Lista de
+            <span class="text-primary">Guardias</span>
+          </h1>
 
-<table>
+<table class="table table-striped">
+  <thead>
+  
   <tr>
-    <%@guards.each do |t|%>
-    <thead>
-      <th>Nombre</th>
-      <th>Rut</th>
-    </thead>
-  </tr>
+   
+     
+      <th scope="col">Nombre</th>
+      <th scope="col">Rut</th>
+      <th scope="col">Accion</th>
+    </tr>
+  </thead>
 
-  <tr>
+ <tr>
+  <%@guards.each do |t|%>
     <thead>
       <th><%=t.firstname%>
         <%=t.lastname%>
       </th>
       <th><%=t.rut%></th>
       <td><%=link_to "Detalles", guard_path(t)%>
+    
+      
         <%=link_to "Editar", edit_guard_path(t)%>
+      
         <%= link_to "Eliminar", t, method: :delete, data: { confirm: "¿Esta seguro que desea eliminar el registro de este guardia?"} %>
       </td>
     </thead>
   
   </tr>
+  
+    
   <%end%>
 </table>
+<div class="col-md-7 col-center" align="left">
 
+<%= link_to "Crear Guardia", guards_new_path %>
+
+</div>

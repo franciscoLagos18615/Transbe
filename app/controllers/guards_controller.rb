@@ -1,6 +1,7 @@
 class GuardsController < ApplicationController
   def index
     @guards=Guard.all
+    @guards = Guard.search(params[:rut]).all
   end
   def new
     @guard = Guard.new
@@ -24,7 +25,12 @@ class GuardsController < ApplicationController
      end
    end
 
+   def search 
+    q = params[:rut]
+    @guards = Guard.find(:all, :conditions => ["rut LIKE %?%",q])
+    redirect_to guards_path
 
+   end
 
   def edit 
     @guard = Guard.find(params[:id])

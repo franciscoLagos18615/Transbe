@@ -5,6 +5,13 @@
 
 <a>Detalles del guardia <%=@guard.firstname%> </a>
 <p align="center"> <%= image_tag @guard.avatar.url(:thumb) %></p>
+<p align="center"> <%= image_tag @guard.ficha_guardia_doc.url(:thumb) %></p>
+<p align="center"> <%= image_tag @guard.cert_estudio_doc.url(:thumb) %></p>
+<p align="center"> <%= image_tag @guard.cert_residencia_doc.url(:thumb) %></p>
+<p align="center"> <%= image_tag @guard.cedula_identidad_doc.url(:thumb) %></p>
+<p align="center"> <%= image_tag @guard.pacto_horas_doc.url(:thumb) %></p>
+<p align="center"> <%= image_tag @guard.cert_antecedentes_doc.url(:thumb) %></p>
+<p align="center"> <%= image_tag @guard.credencial_doc.url(:thumb) %></p>
 <p>Nombre: <%=@guard.firstname%></p>
 <p>Apellido Paterno: <%=@guard.lastname%></p>
 <p>Apellido Materno: <%=@guard.surname%></p>

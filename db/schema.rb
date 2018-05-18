@@ -10,13 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180518172913) do
+ActiveRecord::Schema.define(version: 20180518191455) do
 
   create_table "bills", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text "description"
     t.decimal "ingress", precision: 10
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "factura_doc_file_name"
+    t.string "factura_doc_content_type"
+    t.integer "factura_doc_file_size"
+    t.datetime "factura_doc_updated_at"
   end
 
   create_table "contract_guards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -24,6 +28,10 @@ ActiveRecord::Schema.define(version: 20180518172913) do
     t.datetime "finish_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "contrato_doc_file_name"
+    t.string "contrato_doc_content_type"
+    t.integer "contrato_doc_file_size"
+    t.datetime "contrato_doc_updated_at"
   end
 
   create_table "contract_installations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -31,6 +39,10 @@ ActiveRecord::Schema.define(version: 20180518172913) do
     t.datetime "finish_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "contrato_de_instalacion_doc_file_name"
+    t.string "contrato_de_instalacion_doc_content_type"
+    t.integer "contrato_de_instalacion_doc_file_size"
+    t.datetime "contrato_de_instalacion_doc_updated_at"
   end
 
   create_table "guards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -87,6 +99,11 @@ ActiveRecord::Schema.define(version: 20180518172913) do
     t.datetime "credencial_doc_updated_at"
   end
 
+  create_table "guards_installations", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "guard_id", null: false
+    t.bigint "installation_id", null: false
+  end
+
   create_table "installations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.integer "number_guards"
@@ -101,6 +118,19 @@ ActiveRecord::Schema.define(version: 20180518172913) do
     t.datetime "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "liquidacion_doc_file_name"
+    t.string "liquidacion_doc_content_type"
+    t.integer "liquidacion_doc_file_size"
+    t.datetime "liquidacion_doc_updated_at"
+  end
+
+  create_table "settlements", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "finiquito_doc_file_name"
+    t.string "finiquito_doc_content_type"
+    t.integer "finiquito_doc_file_size"
+    t.datetime "finiquito_doc_updated_at"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -124,6 +154,10 @@ ActiveRecord::Schema.define(version: 20180518172913) do
     t.integer "days_taken"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "vacacion_doc_file_name"
+    t.string "vacacion_doc_content_type"
+    t.integer "vacacion_doc_file_size"
+    t.datetime "vacacion_doc_updated_at"
   end
 
 end

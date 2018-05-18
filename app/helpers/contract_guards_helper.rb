@@ -1,0 +1,2 @@
+module ContractGuardsHelper
+end

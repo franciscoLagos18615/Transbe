@@ -1,3 +1,3 @@
 class Bill < ApplicationRecord
-    belongs_to :guard
+    belongs_to :contract_installation
 end

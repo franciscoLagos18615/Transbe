@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180518191455) do
+ActiveRecord::Schema.define(version: 20180520023320) do
 
   create_table "bills", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text "description"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20180518191455) do
     t.string "factura_doc_content_type"
     t.integer "factura_doc_file_size"
     t.datetime "factura_doc_updated_at"
+    t.bigint "contract_installation_id"
+    t.index ["contract_installation_id"], name: "index_bills_on_contract_installation_id"
   end
 
   create_table "contract_guards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -32,6 +34,8 @@ ActiveRecord::Schema.define(version: 20180518191455) do
     t.string "contrato_doc_content_type"
     t.integer "contrato_doc_file_size"
     t.datetime "contrato_doc_updated_at"
+    t.bigint "guard_id"
+    t.index ["guard_id"], name: "index_contract_guards_on_guard_id"
   end
 
   create_table "contract_installations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -43,6 +47,8 @@ ActiveRecord::Schema.define(version: 20180518191455) do
     t.string "contrato_de_instalacion_doc_content_type"
     t.integer "contrato_de_instalacion_doc_file_size"
     t.datetime "contrato_de_instalacion_doc_updated_at"
+    t.bigint "installation_id"
+    t.index ["installation_id"], name: "index_contract_installations_on_installation_id"
   end
 
   create_table "guards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -122,6 +128,8 @@ ActiveRecord::Schema.define(version: 20180518191455) do
     t.string "liquidacion_doc_content_type"
     t.integer "liquidacion_doc_file_size"
     t.datetime "liquidacion_doc_updated_at"
+    t.bigint "guard_id"
+    t.index ["guard_id"], name: "index_sallary_settlements_on_guard_id"
   end
 
   create_table "settlements", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -131,6 +139,8 @@ ActiveRecord::Schema.define(version: 20180518191455) do
     t.string "finiquito_doc_content_type"
     t.integer "finiquito_doc_file_size"
     t.datetime "finiquito_doc_updated_at"
+    t.bigint "guard_id"
+    t.index ["guard_id"], name: "index_settlements_on_guard_id"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -158,6 +168,8 @@ ActiveRecord::Schema.define(version: 20180518191455) do
     t.string "vacacion_doc_content_type"
     t.integer "vacacion_doc_file_size"
     t.datetime "vacacion_doc_updated_at"
+    t.bigint "guard_id"
+    t.index ["guard_id"], name: "index_vacations_on_guard_id"
   end
 
 end

@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get 'vacations/index'
+
+  get 'settlements/index'
+
+  get 'sallary_settlements/index'
+
+  get 'contract_installations/index'
+
+  get 'contract_guards/index'
+
+  get 'bills/index'
+
+  get 'installations/index'
+
     #el root es de que direccione como paga de inicio al index de la carpeta bienvenido
   root 'bienvenida#index'
   #get 'guards/index'

@@ -1,6 +1,7 @@
 class GuardsController < ApplicationController
   def index
     @guards=Guard.all
+    @guards = Guard.search(params[:rut]).all
   end
   def new
     @guard = Guard.new
@@ -24,7 +25,12 @@ class GuardsController < ApplicationController
      end
    end
 
+   def search 
+    q = params[:rut]
+    @guards = Guard.find(:all, :conditions => ["rut LIKE %?%",q])
+    redirect_to guards_path
 
+   end
 
   def edit 
     @guard = Guard.find(params[:id])
@@ -51,6 +57,6 @@ class GuardsController < ApplicationController
 
   private
   def guard_params
-    params.require(:guard).permit(:firstname, :lastname,:surname, :rut, :email, :phone_number, :nationality, :second_phone, :age, :city, :commune, :address, :educational_level, :sex, :avatar)
+    params.require(:guard).permit(:firstname, :lastname,:surname, :rut, :email, :phone_number, :nationality, :second_phone, :age, :city, :commune, :address, :educational_level, :sex, :avatar, :ficha_guardia_doc, :cert_estudio_doc, :cert_residencia_doc, :cedula_identidad_doc, :pacto_horas_doc, :cert_antecedentes_doc, :credencial_doc)
   end
 end

@@ -10,7 +10,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180506191702) do
+ActiveRecord::Schema.define(version: 20180520023320) do
+
+  create_table "bills", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text "description"
+    t.decimal "ingress", precision: 10
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "factura_doc_file_name"
+    t.string "factura_doc_content_type"
+    t.integer "factura_doc_file_size"
+    t.datetime "factura_doc_updated_at"
+    t.bigint "contract_installation_id"
+    t.index ["contract_installation_id"], name: "index_bills_on_contract_installation_id"
+  end
+
+  create_table "contract_guards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.datetime "start_date"
+    t.datetime "finish_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "contrato_doc_file_name"
+    t.string "contrato_doc_content_type"
+    t.integer "contrato_doc_file_size"
+    t.datetime "contrato_doc_updated_at"
+    t.bigint "guard_id"
+    t.index ["guard_id"], name: "index_contract_guards_on_guard_id"
+  end
+
+  create_table "contract_installations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.datetime "start_date"
+    t.datetime "finish_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "contrato_de_instalacion_doc_file_name"
+    t.string "contrato_de_instalacion_doc_content_type"
+    t.integer "contrato_de_instalacion_doc_file_size"
+    t.datetime "contrato_de_instalacion_doc_updated_at"
+    t.bigint "installation_id"
+    t.index ["installation_id"], name: "index_contract_installations_on_installation_id"
+  end
 
   create_table "guards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "rut"
@@ -33,6 +72,75 @@ ActiveRecord::Schema.define(version: 20180506191702) do
     t.string "avatar_content_type"
     t.integer "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string "afiliation"
+    t.string "prevision"
+    t.string "contract_type"
+    t.string "ficha_guardia_doc_file_name"
+    t.string "ficha_guardia_doc_content_type"
+    t.integer "ficha_guardia_doc_file_size"
+    t.datetime "ficha_guardia_doc_updated_at"
+    t.string "cert_estudio_doc_file_name"
+    t.string "cert_estudio_doc_content_type"
+    t.integer "cert_estudio_doc_file_size"
+    t.datetime "cert_estudio_doc_updated_at"
+    t.string "cert_residencia_doc_file_name"
+    t.string "cert_residencia_doc_content_type"
+    t.integer "cert_residencia_doc_file_size"
+    t.datetime "cert_residencia_doc_updated_at"
+    t.string "cedula_identidad_doc_file_name"
+    t.string "cedula_identidad_doc_content_type"
+    t.integer "cedula_identidad_doc_file_size"
+    t.datetime "cedula_identidad_doc_updated_at"
+    t.string "pacto_horas_doc_file_name"
+    t.string "pacto_horas_doc_content_type"
+    t.integer "pacto_horas_doc_file_size"
+    t.datetime "pacto_horas_doc_updated_at"
+    t.string "cert_antecedentes_doc_file_name"
+    t.string "cert_antecedentes_doc_content_type"
+    t.integer "cert_antecedentes_doc_file_size"
+    t.datetime "cert_antecedentes_doc_updated_at"
+    t.string "credencial_doc_file_name"
+    t.string "credencial_doc_content_type"
+    t.integer "credencial_doc_file_size"
+    t.datetime "credencial_doc_updated_at"
+  end
+
+  create_table "guards_installations", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "guard_id", null: false
+    t.bigint "installation_id", null: false
+  end
+
+  create_table "installations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.integer "number_guards"
+    t.integer "additional_guards"
+    t.datetime "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sallary_settlements", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "cost"
+    t.datetime "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "liquidacion_doc_file_name"
+    t.string "liquidacion_doc_content_type"
+    t.integer "liquidacion_doc_file_size"
+    t.datetime "liquidacion_doc_updated_at"
+    t.bigint "guard_id"
+    t.index ["guard_id"], name: "index_sallary_settlements_on_guard_id"
+  end
+
+  create_table "settlements", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "finiquito_doc_file_name"
+    t.string "finiquito_doc_content_type"
+    t.integer "finiquito_doc_file_size"
+    t.datetime "finiquito_doc_updated_at"
+    t.bigint "guard_id"
+    t.index ["guard_id"], name: "index_settlements_on_guard_id"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -50,6 +158,18 @@ ActiveRecord::Schema.define(version: 20180506191702) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "vacations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "days_taken"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "vacacion_doc_file_name"
+    t.string "vacacion_doc_content_type"
+    t.integer "vacacion_doc_file_size"
+    t.datetime "vacacion_doc_updated_at"
+    t.bigint "guard_id"
+    t.index ["guard_id"], name: "index_vacations_on_guard_id"
   end
 
 end

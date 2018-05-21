@@ -2,12 +2,16 @@
             <span class="text-primary">Guardias</span>
           </h1>
 
+<div>
+<%= form_tag guards_path, method: :get do %>
+  <%= text_field_tag :rut, params[:rut], placeholder: 'Ingrese Rut de guardia' %>
+  <%= submit_tag "Buscar", name: nil %>
+<% end %>
+</div>
+
 <table class="table table-striped">
   <thead>
-  
   <tr>
-   
-     
       <th scope="col">Nombre</th>
       <th scope="col">Rut</th>
       <th scope="col">Accion</th>
@@ -21,22 +25,15 @@
         <%=t.lastname%>
       </th>
       <th><%=t.rut%></th>
-      <td><%=link_to "Detalles", guard_path(t)%>
-    
-      
-        <%=link_to "Editar", edit_guard_path(t)%>
-      
-        <%= link_to "Eliminar", t, method: :delete, data: { confirm: "¿Esta seguro que desea eliminar el registro de este guardia?"} %>
+      <td>
+        <%=link_to '<span class="fa fa-align-justify"></span>'.html_safe , guard_path(t),class: "btn btn-info" %>
+        <%=link_to '<span class="fa fa-pencil"></span>'.html_safe , edit_guard_path(t), class: "btn btn-primary"%>
+        <%= link_to '<span class="fa fa-window-close"></span>'.html_safe , t, method: :delete, data: { confirm: "¿Esta seguro que desea eliminar el registro de este guardia?"} , class: "btn btn-danger"%>
       </td>
     </thead>
-  
   </tr>
-  
-    
   <%end%>
 </table>
 <div class="col-md-7 col-center" align="left">
-
 <%= link_to "Crear Guardia", guards_new_path %>
-
 </div>

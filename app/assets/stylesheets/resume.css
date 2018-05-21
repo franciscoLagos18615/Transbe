@@ -38,6 +38,8 @@ h9{
   color: rgba(61, 61, 61, 0.959);
 }
 
+
+
 .subheading {
   text-transform: uppercase;
   font-weight: 500;
@@ -172,3 +174,18 @@ a:hover, a:focus, a:active {
 }
 
 
+.icon-case {
+
+  width: 40px;
+  float: left;
+  border-radius: 5px 0px 0px 5px;
+  background: #EEEEEE;
+  height: 38px;
+  position: unset;
+  text-align: -webkit-center;
+  line-height: 40px;
+}
+
+i {
+  color:#555;
+}

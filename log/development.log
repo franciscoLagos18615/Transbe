@@ -18884,3 +18884,1190 @@ Migrating to AddRelationSallarySettlementsToGuard (20180520023320)
   [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('8255491897942701930')[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (48.9ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('8255491897942701930', 0)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to AddBasicFiledsToGuard (20180518142935)
+  [1m[35m (631.9ms)[0m  [1m[35mALTER TABLE `guards` ADD `afiliation` varchar(255)[0m
+  [1m[35m (345.5ms)[0m  [1m[35mALTER TABLE `guards` ADD `prevision` varchar(255)[0m
+  [1m[35m (359.8ms)[0m  [1m[35mALTER TABLE `guards` ADD `contract_type` varchar(255)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180518142935')[0m
+  [1m[35m (44.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddFilesToGuard (20180518161422)
+  [1m[35m (334.6ms)[0m  [1m[35mALTER TABLE `guards` ADD `ficha_guardia_doc_file_name` varchar(255)[0m
+  [1m[35m (343.1ms)[0m  [1m[35mALTER TABLE `guards` ADD `ficha_guardia_doc_content_type` varchar(255)[0m
+  [1m[35m (369.5ms)[0m  [1m[35mALTER TABLE `guards` ADD `ficha_guardia_doc_file_size` int[0m
+  [1m[35m (293.0ms)[0m  [1m[35mALTER TABLE `guards` ADD `ficha_guardia_doc_updated_at` datetime[0m
+  [1m[35m (318.5ms)[0m  [1m[35mALTER TABLE `guards` ADD `cert_estudio_doc_file_name` varchar(255)[0m
+  [1m[35m (326.5ms)[0m  [1m[35mALTER TABLE `guards` ADD `cert_estudio_doc_content_type` varchar(255)[0m
+  [1m[35m (377.9ms)[0m  [1m[35mALTER TABLE `guards` ADD `cert_estudio_doc_file_size` int[0m
+  [1m[35m (318.3ms)[0m  [1m[35mALTER TABLE `guards` ADD `cert_estudio_doc_updated_at` datetime[0m
+  [1m[35m (309.8ms)[0m  [1m[35mALTER TABLE `guards` ADD `cert_residencia_doc_file_name` varchar(255)[0m
+  [1m[35m (359.9ms)[0m  [1m[35mALTER TABLE `guards` ADD `cert_residencia_doc_content_type` varchar(255)[0m
+  [1m[35m (351.5ms)[0m  [1m[35mALTER TABLE `guards` ADD `cert_residencia_doc_file_size` int[0m
+  [1m[35m (319.4ms)[0m  [1m[35mALTER TABLE `guards` ADD `cert_residencia_doc_updated_at` datetime[0m
+  [1m[35m (360.0ms)[0m  [1m[35mALTER TABLE `guards` ADD `cedula_identidad_doc_file_name` varchar(255)[0m
+  [1m[35m (359.8ms)[0m  [1m[35mALTER TABLE `guards` ADD `cedula_identidad_doc_content_type` varchar(255)[0m
+  [1m[35m (401.6ms)[0m  [1m[35mALTER TABLE `guards` ADD `cedula_identidad_doc_file_size` int[0m
+  [1m[35m (319.4ms)[0m  [1m[35mALTER TABLE `guards` ADD `cedula_identidad_doc_updated_at` datetime[0m
+  [1m[35m (335.0ms)[0m  [1m[35mALTER TABLE `guards` ADD `pacto_horas_doc_file_name` varchar(255)[0m
+  [1m[35m (343.3ms)[0m  [1m[35mALTER TABLE `guards` ADD `pacto_horas_doc_content_type` varchar(255)[0m
+  [1m[35m (359.7ms)[0m  [1m[35mALTER TABLE `guards` ADD `pacto_horas_doc_file_size` int[0m
+  [1m[35m (311.2ms)[0m  [1m[35mALTER TABLE `guards` ADD `pacto_horas_doc_updated_at` datetime[0m
+  [1m[35m (293.3ms)[0m  [1m[35mALTER TABLE `guards` ADD `cert_antecedentes_doc_file_name` varchar(255)[0m
+  [1m[35m (376.8ms)[0m  [1m[35mALTER TABLE `guards` ADD `cert_antecedentes_doc_content_type` varchar(255)[0m
+  [1m[35m (359.8ms)[0m  [1m[35mALTER TABLE `guards` ADD `cert_antecedentes_doc_file_size` int[0m
+  [1m[35m (311.1ms)[0m  [1m[35mALTER TABLE `guards` ADD `cert_antecedentes_doc_updated_at` datetime[0m
+  [1m[35m (335.0ms)[0m  [1m[35mALTER TABLE `guards` ADD `credencial_doc_file_name` varchar(255)[0m
+  [1m[35m (351.6ms)[0m  [1m[35mALTER TABLE `guards` ADD `credencial_doc_content_type` varchar(255)[0m
+  [1m[35m (351.5ms)[0m  [1m[35mALTER TABLE `guards` ADD `credencial_doc_file_size` int[0m
+  [1m[35m (319.5ms)[0m  [1m[35mALTER TABLE `guards` ADD `credencial_doc_updated_at` datetime[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180518161422')[0m
+  [1m[35m (30.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateInstallations (20180518165038)
+  [1m[35m (266.1ms)[0m  [1m[35mCREATE TABLE `installations` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `number_guards` int, `additional_guards` int, `date` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180518165038')[0m
+  [1m[35m (31.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateVacations (20180518171535)
+  [1m[35m (250.1ms)[0m  [1m[35mCREATE TABLE `vacations` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `days_taken` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180518171535')[0m
+  [1m[35m (31.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateContractGuards (20180518171746)
+  [1m[35m (249.5ms)[0m  [1m[35mCREATE TABLE `contract_guards` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `start_date` datetime, `finish_date` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180518171746')[0m
+  [1m[35m (65.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSallarySettlements (20180518172447)
+  [1m[35m (232.9ms)[0m  [1m[35mCREATE TABLE `sallary_settlements` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `cost` int, `date` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180518172447')[0m
+  [1m[35m (22.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateContractInstallations (20180518172717)
+  [1m[35m (208.6ms)[0m  [1m[35mCREATE TABLE `contract_installations` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `start_date` datetime, `finish_date` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180518172717')[0m
+  [1m[35m (23.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateBills (20180518172913)
+  [1m[35m (225.3ms)[0m  [1m[35mCREATE TABLE `bills` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `description` text, `ingress` decimal, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180518172913')[0m
+  [1m[35m (23.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSettlements (20180518185020)
+  [1m[35m (275.5ms)[0m  [1m[35mCREATE TABLE `settlements` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180518185020')[0m
+  [1m[35m (31.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAttachmentVacacionDocToVacations (20180518185538)
+  [1m[35m (326.3ms)[0m  [1m[35mALTER TABLE `vacations` ADD `vacacion_doc_file_name` varchar(255)[0m
+  [1m[35m (301.7ms)[0m  [1m[35mALTER TABLE `vacations` ADD `vacacion_doc_content_type` varchar(255)[0m
+  [1m[35m (293.8ms)[0m  [1m[35mALTER TABLE `vacations` ADD `vacacion_doc_file_size` int[0m
+  [1m[35m (334.7ms)[0m  [1m[35mALTER TABLE `vacations` ADD `vacacion_doc_updated_at` datetime[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180518185538')[0m
+  [1m[35m (31.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAttachmentFiniquitoDocToSettlements (20180518185646)
+  [1m[35m (334.3ms)[0m  [1m[35mALTER TABLE `settlements` ADD `finiquito_doc_file_name` varchar(255)[0m
+  [1m[35m (301.2ms)[0m  [1m[35mALTER TABLE `settlements` ADD `finiquito_doc_content_type` varchar(255)[0m
+  [1m[35m (284.4ms)[0m  [1m[35mALTER TABLE `settlements` ADD `finiquito_doc_file_size` int[0m
+  [1m[35m (319.3ms)[0m  [1m[35mALTER TABLE `settlements` ADD `finiquito_doc_updated_at` datetime[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180518185646')[0m
+  [1m[35m (30.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAttachmentLiquidacionDocToSallarysettlements (20180518185800)
+  [1m[35m (342.4ms)[0m  [1m[35mALTER TABLE `sallary_settlements` ADD `liquidacion_doc_file_name` varchar(255)[0m
+  [1m[35m (326.3ms)[0m  [1m[35mALTER TABLE `sallary_settlements` ADD `liquidacion_doc_content_type` varchar(255)[0m
+  [1m[35m (259.6ms)[0m  [1m[35mALTER TABLE `sallary_settlements` ADD `liquidacion_doc_file_size` int[0m
+  [1m[35m (284.7ms)[0m  [1m[35mALTER TABLE `sallary_settlements` ADD `liquidacion_doc_updated_at` datetime[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180518185800')[0m
+  [1m[35m (40.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAttachmentContratoDocToContractGuards (20180518190022)
+  [1m[35m (342.5ms)[0m  [1m[35mALTER TABLE `contract_guards` ADD `contrato_doc_file_name` varchar(255)[0m
+  [1m[35m (342.8ms)[0m  [1m[35mALTER TABLE `contract_guards` ADD `contrato_doc_content_type` varchar(255)[0m
+  [1m[35m (267.9ms)[0m  [1m[35mALTER TABLE `contract_guards` ADD `contrato_doc_file_size` int[0m
+  [1m[35m (293.0ms)[0m  [1m[35mALTER TABLE `contract_guards` ADD `contrato_doc_updated_at` datetime[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180518190022')[0m
+  [1m[35m (30.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAttachmentFacturaDocToBills (20180518190119)
+  [1m[35m (335.5ms)[0m  [1m[35mALTER TABLE `bills` ADD `factura_doc_file_name` varchar(255)[0m
+  [1m[35m (309.5ms)[0m  [1m[35mALTER TABLE `bills` ADD `factura_doc_content_type` varchar(255)[0m
+  [1m[35m (268.2ms)[0m  [1m[35mALTER TABLE `bills` ADD `factura_doc_file_size` int[0m
+  [1m[35m (301.0ms)[0m  [1m[35mALTER TABLE `bills` ADD `factura_doc_updated_at` datetime[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180518190119')[0m
+  [1m[35m (30.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAttachmentContratoDeInstalacionDocToContractInstallations (20180518190255)
+  [1m[35m (326.5ms)[0m  [1m[35mALTER TABLE `contract_installations` ADD `contrato_de_instalacion_doc_file_name` varchar(255)[0m
+  [1m[35m (369.1ms)[0m  [1m[35mALTER TABLE `contract_installations` ADD `contrato_de_instalacion_doc_content_type` varchar(255)[0m
+  [1m[35m (268.0ms)[0m  [1m[35mALTER TABLE `contract_installations` ADD `contrato_de_instalacion_doc_file_size` int[0m
+  [1m[35m (284.6ms)[0m  [1m[35mALTER TABLE `contract_installations` ADD `contrato_de_instalacion_doc_updated_at` datetime[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180518190255')[0m
+  [1m[35m (31.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddJoinTableGuardsInstallations (20180518191455)
+  [1m[35m (249.6ms)[0m  [1m[35mCREATE TABLE `guards_installations` (`guard_id` bigint NOT NULL, `installation_id` bigint NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180518191455')[0m
+  [1m[35m (31.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddRelationBillToGuard (20180519165732)
+  [1m[35m (334.3ms)[0m  [1m[35mALTER TABLE `bills` ADD `guard_id` bigint[0m
+  [1m[35m (150.3ms)[0m  [1m[35mCREATE  INDEX `index_bills_on_guard_id`  ON `bills` (`guard_id`) [0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180519165732')[0m
+  [1m[35m (30.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddRelationContractToGuard (20180519170152)
+  [1m[35m (326.6ms)[0m  [1m[35mALTER TABLE `contract_guards` ADD `guard_id` bigint[0m
+  [1m[35m (165.7ms)[0m  [1m[35mCREATE  INDEX `index_contract_guards_on_guard_id`  ON `contract_guards` (`guard_id`) [0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180519170152')[0m
+  [1m[35m (30.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddRelationSettlementToGuard (20180519170314)
+  [1m[35m (325.9ms)[0m  [1m[35mALTER TABLE `settlements` ADD `guard_id` bigint[0m
+  [1m[35m (175.2ms)[0m  [1m[35mCREATE  INDEX `index_settlements_on_guard_id`  ON `settlements` (`guard_id`) [0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180519170314')[0m
+  [1m[35m (40.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddRelationVacationToGuard (20180519171202)
+  [1m[35m (352.1ms)[0m  [1m[35mALTER TABLE `vacations` ADD `guard_id` bigint[0m
+  [1m[35m (166.0ms)[0m  [1m[35mCREATE  INDEX `index_vacations_on_guard_id`  ON `vacations` (`guard_id`) [0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180519171202')[0m
+  [1m[35m (30.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddRelationContractToInstallation (20180519171618)
+  [1m[35m (301.4ms)[0m  [1m[35mALTER TABLE `contract_installations` ADD `installation_id` bigint[0m
+  [1m[35m (157.3ms)[0m  [1m[35mCREATE  INDEX `index_contract_installations_on_installation_id`  ON `contract_installations` (`installation_id`) [0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180519171618')[0m
+  [1m[35m (31.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to EditRelationBillToContractInstallation (20180519172342)
+  [1m[35m (351.0ms)[0m  [1m[35mALTER TABLE `bills` DROP `guard_id`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180519172342')[0m
+  [1m[35m (39.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddRelationBillsToContract (20180520022920)
+  [1m[35m (342.5ms)[0m  [1m[35mALTER TABLE `bills` ADD `contract_installation_id` bigint[0m
+  [1m[35m (142.1ms)[0m  [1m[35mCREATE  INDEX `index_bills_on_contract_installation_id`  ON `bills` (`contract_installation_id`) [0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180520022920')[0m
+  [1m[35m (30.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddRelationSallarySettlementsToGuard (20180520023320)
+  [1m[35m (275.8ms)[0m  [1m[35mALTER TABLE `sallary_settlements` ADD `guard_id` bigint[0m
+  [1m[35m (165.7ms)[0m  [1m[35mCREATE  INDEX `index_sallary_settlements_on_guard_id`  ON `sallary_settlements` (`guard_id`) [0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180520023320')[0m
+  [1m[35m (31.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('8255491897942701930')[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for 127.0.0.1 at 2018-05-22 11:50:02 -0400
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by BienvenidaController#index as HTML
+  Rendering bienvenida/index.html.erb within layouts/application
+  Rendered bienvenida/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 640ms (Views: 626.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-22 11:50:06 -0400
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (27.7ms)
+Completed 200 OK in 154ms (Views: 56.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 11:51:09 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 49ms (Views: 45.6ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/guard/23" for 127.0.0.1 at 2018-05-22 11:51:14 -0400
+Processing by GuardsController#delete as HTML
+  Parameters: {"authenticity_token"=>"HIeeUvpF1r3h4HEYber/lThj5S2XYar9NBsmdRmu/xvcN5cIwf44dW52nxpGDyyn1pSMnbY/ol/H7sgHRH7VoQ==", "id"=>"23"}
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 23 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM `guards_installations` WHERE `guards_installations`.`guard_id` = 23[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM `guards` WHERE `guards`.`id` = 23[0m
+  [1m[35m (71.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/guards
+Completed 302 Found in 164ms (ActiveRecord: 74.0ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 11:51:14 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 29ms (Views: 26.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guard/24" for 127.0.0.1 at 2018-05-22 11:51:21 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 24 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 39ms (Views: 36.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-22 11:51:32 -0400
+Processing by BienvenidaController#index as HTML
+  Rendering bienvenida/index.html.erb within layouts/application
+  Rendered bienvenida/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 31ms (Views: 29.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 11:51:33 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 35ms (Views: 33.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/guards/24/edit" for 127.0.0.1 at 2018-05-22 11:51:36 -0400
+Processing by GuardsController#edit as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 24 LIMIT 1[0m
+  Rendering guards/edit.html.erb within layouts/application
+  Rendered guards/edit.html.erb within layouts/application (417.0ms)
+Completed 200 OK in 446ms (Views: 442.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-22 11:51:48 -0400
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 45ms (Views: 44.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 11:58:28 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 28ms (Views: 27.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/guards/24/edit" for 127.0.0.1 at 2018-05-22 11:58:29 -0400
+Processing by GuardsController#edit as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 24 LIMIT 1[0m
+  Rendering guards/edit.html.erb within layouts/application
+  Rendered guards/edit.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 36ms (Views: 33.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-22 12:01:31 -0400
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 31ms (Views: 29.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/guards" for 127.0.0.1 at 2018-05-22 12:02:32 -0400
+Processing by GuardsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"m12IOBL/+fWRGJ0Eg/VBc9PU1vsW/TeQkGoLjaHQtwZdtvWV4quIkfBzR5itpT9Zqj/ai01vY/0lHLLXU/tGhw==", "guard"=>{"firstname"=>"D", "lastname"=>"d", "surname"=>"d", "rut"=>"18061590-3", "email"=>"d@d.cl", "age"=>"3", "sex"=>"1", "nationality"=>"c", "phone_number"=>"987654321", "second_phone"=>"", "educational_level"=>"1", "city"=>"s", "commune"=>"s", "address"=>"s"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `guards` (`rut`, `phone_number`, `email`, `nationality`, `created_at`, `updated_at`, `firstname`, `lastname`, `surname`, `age`, `sex`, `city`, `commune`, `address`, `educational_level`, `second_phone`) VALUES ('18061590-3', '987654321', 'd@d.cl', 'c', '2018-05-22 16:02:32', '2018-05-22 16:02:32', 'D', 'd', 'd', 3, '1', 's', 's', 's', '1', '')[0m
+  [1m[35m (215.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/guard/25
+Completed 302 Found in 221ms (ActiveRecord: 215.4ms)
+
+
+Started GET "/guard/25" for 127.0.0.1 at 2018-05-22 12:02:32 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mGuard Load (24.9ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 25 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 55ms (Views: 28.4ms | ActiveRecord: 24.9ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:02:38 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 32ms (Views: 30.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guard/25" for 127.0.0.1 at 2018-05-22 12:02:41 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 25 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 47ms (Views: 44.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:02:50 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 31ms (Views: 29.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/guards/25/edit" for 127.0.0.1 at 2018-05-22 12:02:52 -0400
+Processing by GuardsController#edit as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 25 LIMIT 1[0m
+  Rendering guards/edit.html.erb within layouts/application
+  Rendered guards/edit.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 35ms (Views: 33.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:03:04 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 38ms (Views: 36.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/guards/25/edit" for 127.0.0.1 at 2018-05-22 12:03:05 -0400
+Processing by GuardsController#edit as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 25 LIMIT 1[0m
+  Rendering guards/edit.html.erb within layouts/application
+  Rendered guards/edit.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 37ms (Views: 35.1ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/guard/25" for 127.0.0.1 at 2018-05-22 12:03:14 -0400
+Processing by GuardsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VvfdDDGyFgbssy4jTMmgFwH97oHFNyv/XuAxjgsoeOmI0QvfNY9kdPeuchGPwxGfWjRBo84ipdJt5Bhb5ssBjA==", "guard"=>{"firstname"=>"D", "lastname"=>"d", "surname"=>"d", "rut"=>"18061590-3", "age"=>"3", "nationality"=>"c", "phone_number"=>"987654321", "second_phone"=>"", "email"=>"d@d.cl", "educational_level"=>"Basica incompleta", "city"=>"Santiago", "commune"=>"Estación central", "address"=>"s", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007fdcf0734108 @tempfile=#<Tempfile:/tmp/RackMultipart20180522-2003-19wuvjo.png>, @original_filename="Captura de pantalla_2017-04-02_20-31-22.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"guard[avatar]\"; filename=\"Captura de pantalla_2017-04-02_20-31-22.png\"\r\nContent-Type: image/png\r\n">}, "id"=>"25"}
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 25 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[paperclip] Trying to link /tmp/RackMultipart20180522-2003-19wuvjo.png to /tmp/4636896f754a35e4e8f9ebe9749f8d8020180522-2003-17f5apx.png
+[paperclip] Trying to link /tmp/4636896f754a35e4e8f9ebe9749f8d8020180522-2003-17f5apx.png to /tmp/d948fc7091d1e0682ed32124cb854ff220180522-2003-audoaz.png
+Command :: PATH=/usr/bin/:$PATH; file -b --mime '/tmp/d948fc7091d1e0682ed32124cb854ff220180522-2003-audoaz.png'
+Command :: PATH=/usr/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/4636896f754a35e4e8f9ebe9749f8d8020180522-2003-17f5apx.png[0]' 2>/dev/null
+Command :: PATH=/usr/bin/:$PATH; identify -format %m '/tmp/4636896f754a35e4e8f9ebe9749f8d8020180522-2003-17f5apx.png[0]'
+Command :: PATH=/usr/bin/:$PATH; convert '/tmp/4636896f754a35e4e8f9ebe9749f8d8020180522-2003-17f5apx.png[0]' -auto-orient -resize "300x300>" '/tmp/5f79651e6ffbbdc1d5f684a9e482fb0220180522-2003-xdyt9y'
+[paperclip] Trying to link /tmp/5f79651e6ffbbdc1d5f684a9e482fb0220180522-2003-xdyt9y to /tmp/9ac32e21dd0fd0f08d08c05b46499c8c20180522-2003-11ybhxv
+Command :: PATH=/usr/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/4636896f754a35e4e8f9ebe9749f8d8020180522-2003-17f5apx.png[0]' 2>/dev/null
+Command :: PATH=/usr/bin/:$PATH; identify -format %m '/tmp/4636896f754a35e4e8f9ebe9749f8d8020180522-2003-17f5apx.png[0]'
+Command :: PATH=/usr/bin/:$PATH; convert '/tmp/4636896f754a35e4e8f9ebe9749f8d8020180522-2003-17f5apx.png[0]' -auto-orient -resize "100x100>" '/tmp/5f79651e6ffbbdc1d5f684a9e482fb0220180522-2003-1bt8lkx'
+[paperclip] Trying to link /tmp/5f79651e6ffbbdc1d5f684a9e482fb0220180522-2003-1bt8lkx to /tmp/418f5bf68c7e1aea5379dfe691fa289a20180522-2003-mxb4zx
+[paperclip] Trying to link /tmp/4636896f754a35e4e8f9ebe9749f8d8020180522-2003-17f5apx.png to /tmp/d948fc7091d1e0682ed32124cb854ff220180522-2003-12q67ch.png
+Command :: PATH=/usr/bin/:$PATH; file -b --mime '/tmp/d948fc7091d1e0682ed32124cb854ff220180522-2003-12q67ch.png'
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE `guards` SET `city` = 'Santiago', `commune` = 'Estación central', `educational_level` = 'Basica incompleta', `avatar_file_name` = 'Captura_de_pantalla_2017-04-02_20-31-22.png', `avatar_content_type` = 'image/png', `avatar_file_size` = 33000, `avatar_updated_at` = '2018-05-22 16:03:14', `updated_at` = '2018-05-22 16:03:15' WHERE `guards`.`id` = 25[0m
+  [1m[35m (36.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/guards
+Completed 302 Found in 547ms (ActiveRecord: 37.2ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:03:15 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 46ms (Views: 43.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guard/25" for 127.0.0.1 at 2018-05-22 12:03:17 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 25 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 34ms (Views: 31.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:03:54 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 31ms (Views: 30.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/guards/25/edit" for 127.0.0.1 at 2018-05-22 12:03:55 -0400
+Processing by GuardsController#edit as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 25 LIMIT 1[0m
+  Rendering guards/edit.html.erb within layouts/application
+  Rendered guards/edit.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 31ms (Views: 28.9ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/guard/25" for 127.0.0.1 at 2018-05-22 12:04:03 -0400
+Processing by GuardsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fbXlFLWgQu30rrR+WmLqm23VqrzNbtIoOZ2ZVodvh1ujkzPHsZ0wn++z6EyZaFsTNhwFnsZ7XAUKmbCDaoz+Pg==", "guard"=>{"firstname"=>"D", "lastname"=>"d", "surname"=>"d", "rut"=>"18061590-3", "email"=>"d@d.cl", "age"=>"3", "sex"=>"1", "nationality"=>"c", "phone_number"=>"987654321", "second_phone"=>"", "educational_level"=>"1", "city"=>"Santiago", "commune"=>"Estación central", "address"=>"s"}, "id"=>"25"}
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 25 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE `guards` SET `educational_level` = '1', `updated_at` = '2018-05-22 16:04:03' WHERE `guards`.`id` = 25[0m
+  [1m[35m (34.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/guards
+Completed 302 Found in 42ms (ActiveRecord: 35.3ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:04:03 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 30ms (Views: 28.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/guard/25" for 127.0.0.1 at 2018-05-22 12:04:11 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 25 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 37ms (Views: 34.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/guards/25/edit" for 127.0.0.1 at 2018-05-22 12:04:15 -0400
+Processing by GuardsController#edit as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 25 LIMIT 1[0m
+  Rendering guards/edit.html.erb within layouts/application
+  Rendered guards/edit.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 43ms (Views: 41.5ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/guard/25" for 127.0.0.1 at 2018-05-22 12:04:18 -0400
+Processing by GuardsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aPugUgWMPLFcerjxJ2bs79/JFYqfnf3qV3B+X3W5hJq23XaBAbFOw0dn5MPkbF1nhAC6qJSIc8dkdFeKmFr9/w==", "guard"=>{"firstname"=>"F", "lastname"=>"d", "surname"=>"d", "rut"=>"18061590-3", "email"=>"d@d.cl", "age"=>"3", "sex"=>"1", "nationality"=>"c", "phone_number"=>"987654321", "second_phone"=>"", "educational_level"=>"1", "city"=>"Santiago", "commune"=>"Estación central", "address"=>"s"}, "id"=>"25"}
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 25 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE `guards` SET `firstname` = 'F', `updated_at` = '2018-05-22 16:04:18' WHERE `guards`.`id` = 25[0m
+  [1m[35m (102.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/guards
+Completed 302 Found in 110ms (ActiveRecord: 102.6ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:04:19 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 31ms (Views: 29.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/guards/25/edit" for 127.0.0.1 at 2018-05-22 12:04:30 -0400
+Processing by GuardsController#edit as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mGuard Load (1.3ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 25 LIMIT 1[0m
+  Rendering guards/edit.html.erb within layouts/application
+  Rendered guards/edit.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 36ms (Views: 30.3ms | ActiveRecord: 1.3ms)
+
+
+Started PATCH "/guard/25" for 127.0.0.1 at 2018-05-22 12:04:36 -0400
+Processing by GuardsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WRCq0x09i9YYy50jgX+YoyCss6u+4b+d9a5aompCouqHNnwAGQD5pAPWwRFCdSkre2UcibX0MbDGqnN3h6Hbjw==", "guard"=>{"firstname"=>"F", "lastname"=>"d", "surname"=>"d", "rut"=>"18061590-3", "email"=>"d@d.cl", "age"=>"3", "sex"=>"1", "nationality"=>"c", "phone_number"=>"987654321", "second_phone"=>"", "educational_level"=>"1", "city"=>"Santiago", "commune"=>"Estación central", "address"=>"s"}, "id"=>"25"}
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 25 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/guards
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:04:36 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 35ms (Views: 33.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/guards/25/edit" for 127.0.0.1 at 2018-05-22 12:04:39 -0400
+Processing by GuardsController#edit as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 25 LIMIT 1[0m
+  Rendering guards/edit.html.erb within layouts/application
+  Rendered guards/edit.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 40ms (Views: 38.4ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/guard/25" for 127.0.0.1 at 2018-05-22 12:04:45 -0400
+Processing by GuardsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6jP+2+ksvo16WFzoyo46+xFmGe4wnCx1xwrM93urasc0FSgI7RHM/2FFANoJhItzSq+2zDuJolj0DuUilkgTog==", "guard"=>{"firstname"=>"F", "lastname"=>"d", "surname"=>"d", "rut"=>"18061590-3", "email"=>"d@d.cl", "age"=>"3", "sex"=>"1", "nationality"=>"c", "phone_number"=>"987654321", "second_phone"=>"", "educational_level"=>"1", "city"=>"Santiago", "commune"=>"Estación central", "address"=>"s"}, "id"=>"25"}
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 25 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/guards
+Completed 302 Found in 8ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:04:45 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 41ms (Views: 39.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/guards/25/edit" for 127.0.0.1 at 2018-05-22 12:07:02 -0400
+Processing by GuardsController#edit as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 25 LIMIT 1[0m
+  Rendering guards/edit.html.erb within layouts/application
+  Rendered guards/edit.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 36ms (Views: 32.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/guards/25/edit" for 127.0.0.1 at 2018-05-22 12:08:24 -0400
+Processing by GuardsController#edit as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 25 LIMIT 1[0m
+  Rendering guards/edit.html.erb within layouts/application
+  Rendered guards/edit.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 38ms (Views: 35.9ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/guard/25" for 127.0.0.1 at 2018-05-22 12:08:44 -0400
+Processing by GuardsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fcTllFDkeiFyX8cfbq5ob97bZeVz++43Q/b8MmRvMhS9dOzOa1+U6f3JKR1FS7tdMCwMVVKl5pWwAxJAOb8Yrg==", "guard"=>{"firstname"=>"F", "lastname"=>"d", "surname"=>"d", "rut"=>"18061590-3", "age"=>"3", "nationality"=>"c", "phone_number"=>"987654321", "second_phone"=>"", "email"=>"d@d.cl", "educational_level"=>"Basica incompleta", "city"=>"Santiago", "commune"=>"Estación central", "address"=>"s", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007fdce81c1ca0 @tempfile=#<Tempfile:/tmp/RackMultipart20180522-2003-1x1nsp5.png>, @original_filename="Captura de pantalla_2017-04-02_20-23-31.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"guard[avatar]\"; filename=\"Captura de pantalla_2017-04-02_20-23-31.png\"\r\nContent-Type: image/png\r\n">}, "id"=>"25"}
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 25 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[paperclip] Trying to link /tmp/RackMultipart20180522-2003-1x1nsp5.png to /tmp/e3b04977c69f8297b6a92ae20625c80b20180522-2003-2zvpew.png
+[paperclip] Trying to link /tmp/e3b04977c69f8297b6a92ae20625c80b20180522-2003-2zvpew.png to /tmp/897dc799407830a0ca89cbbf2446e1ec20180522-2003-u6rby1.png
+Command :: PATH=/usr/bin/:$PATH; file -b --mime '/tmp/897dc799407830a0ca89cbbf2446e1ec20180522-2003-u6rby1.png'
+Command :: PATH=/usr/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/e3b04977c69f8297b6a92ae20625c80b20180522-2003-2zvpew.png[0]' 2>/dev/null
+Command :: PATH=/usr/bin/:$PATH; identify -format %m '/tmp/e3b04977c69f8297b6a92ae20625c80b20180522-2003-2zvpew.png[0]'
+Command :: PATH=/usr/bin/:$PATH; convert '/tmp/e3b04977c69f8297b6a92ae20625c80b20180522-2003-2zvpew.png[0]' -auto-orient -resize "300x300>" '/tmp/9d3aafcff3ea9cf6a7302053d7b5376020180522-2003-16r220g'
+[paperclip] Trying to link /tmp/9d3aafcff3ea9cf6a7302053d7b5376020180522-2003-16r220g to /tmp/7e6a2fd24a10f73ef5202a5a289e503120180522-2003-ppytu8
+Command :: PATH=/usr/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/e3b04977c69f8297b6a92ae20625c80b20180522-2003-2zvpew.png[0]' 2>/dev/null
+Command :: PATH=/usr/bin/:$PATH; identify -format %m '/tmp/e3b04977c69f8297b6a92ae20625c80b20180522-2003-2zvpew.png[0]'
+Command :: PATH=/usr/bin/:$PATH; convert '/tmp/e3b04977c69f8297b6a92ae20625c80b20180522-2003-2zvpew.png[0]' -auto-orient -resize "100x100>" '/tmp/9d3aafcff3ea9cf6a7302053d7b5376020180522-2003-1ucr7a5'
+[paperclip] Trying to link /tmp/9d3aafcff3ea9cf6a7302053d7b5376020180522-2003-1ucr7a5 to /tmp/c39e00c2f52fbfa62298a4a89f4c525320180522-2003-1iya2y2
+[paperclip] Trying to link /tmp/e3b04977c69f8297b6a92ae20625c80b20180522-2003-2zvpew.png to /tmp/897dc799407830a0ca89cbbf2446e1ec20180522-2003-5kfaog.png
+Command :: PATH=/usr/bin/:$PATH; file -b --mime '/tmp/897dc799407830a0ca89cbbf2446e1ec20180522-2003-5kfaog.png'
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE `guards` SET `educational_level` = 'Basica incompleta', `avatar_file_name` = 'Captura_de_pantalla_2017-04-02_20-23-31.png', `avatar_file_size` = 221025, `avatar_updated_at` = '2018-05-22 16:08:44', `updated_at` = '2018-05-22 16:08:44' WHERE `guards`.`id` = 25[0m
+[paperclip] deleting /home/diego/Tingeso/public/system/guards/avatars/000/000/025/original/Captura_de_pantalla_2017-04-02_20-31-22.png
+[paperclip] deleting /home/diego/Tingeso/public/system/guards/avatars/000/000/025/medium/Captura_de_pantalla_2017-04-02_20-31-22.png
+[paperclip] deleting /home/diego/Tingeso/public/system/guards/avatars/000/000/025/thumb/Captura_de_pantalla_2017-04-02_20-31-22.png
+  [1m[35m (39.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/guards
+Completed 302 Found in 388ms (ActiveRecord: 40.4ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:08:44 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 32ms (Views: 30.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guard/25" for 127.0.0.1 at 2018-05-22 12:09:17 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 25 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 36ms (Views: 33.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:21:57 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 51ms (Views: 49.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-22 12:22:06 -0400
+Processing by BienvenidaController#index as HTML
+  Rendering bienvenida/index.html.erb within layouts/application
+  Rendered bienvenida/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 43ms (Views: 41.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:22:12 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 55ms (Views: 53.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-22 12:22:13 -0400
+Processing by BienvenidaController#index as HTML
+  Rendering bienvenida/index.html.erb within layouts/application
+  Rendered bienvenida/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 59ms (Views: 57.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:22:14 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 34ms (Views: 32.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-22 12:22:14 -0400
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 30ms (Views: 28.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:22:15 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 33ms (Views: 31.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-22 12:22:15 -0400
+Processing by BienvenidaController#index as HTML
+  Rendering bienvenida/index.html.erb within layouts/application
+  Rendered bienvenida/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 44ms (Views: 42.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:23:12 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 35ms (Views: 33.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:27:14 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 41ms (Views: 39.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:28:19 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 31ms (Views: 29.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:29:05 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 31ms (Views: 29.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:29:08 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 26ms (Views: 25.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:29:32 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 37ms (Views: 34.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:30:32 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 35ms (Views: 33.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:30:41 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 35ms (Views: 34.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:30:55 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 32ms (Views: 31.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:31:57 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 40ms (Views: 38.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:32:00 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 31ms (Views: 29.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:32:38 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 28ms (Views: 27.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:32:44 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 41ms (Views: 39.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-22 12:32:46 -0400
+Processing by BienvenidaController#index as HTML
+  Rendering bienvenida/index.html.erb within layouts/application
+  Rendered bienvenida/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 32ms (Views: 31.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:32:49 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 32ms (Views: 30.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:32:56 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 33ms (Views: 31.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:33:18 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 43ms (Views: 41.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:33:53 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 41ms (Views: 38.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:34:11 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 33ms (Views: 31.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:34:22 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 31ms (Views: 29.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:34:27 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 34ms (Views: 32.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:34:36 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 35ms (Views: 33.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:35:28 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 32ms (Views: 30.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:35:59 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 30ms (Views: 28.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:36:14 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 40ms (Views: 38.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:36:52 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 30ms (Views: 28.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:38:15 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 36ms (Views: 34.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:39:29 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 29ms (Views: 27.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:39:40 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 30ms (Views: 28.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:40:05 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 39ms (Views: 37.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:42:12 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 33ms (Views: 32.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:42:44 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 37ms (Views: 35.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:48:50 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.7ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 33ms (Views: 30.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-22 12:52:14 -0400
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 40ms (Views: 38.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/guards" for 127.0.0.1 at 2018-05-22 12:53:20 -0400
+Processing by GuardsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"198rZ18wWaoAN0Pa9QTvzTm3FG0akoz/azleJ34zwrQRNFbKr2QozmFcmUbbVJHnQFwYHUEA2JLeT+d9jBgzNQ==", "guard"=>{"firstname"=>"d", "lastname"=>"d", "surname"=>"d", "rut"=>"18061590-3", "email"=>"d@d", "age"=>"2", "sex"=>"1", "nationality"=>"d", "phone_number"=>"123123123", "second_phone"=>"123123123", "educational_level"=>"1", "city"=>"d", "commune"=>"d", "address"=>"d"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `guards` (`rut`, `phone_number`, `email`, `nationality`, `created_at`, `updated_at`, `firstname`, `lastname`, `surname`, `age`, `sex`, `city`, `commune`, `address`, `educational_level`, `second_phone`) VALUES ('18061590-3', '123123123', 'd@d', 'd', '2018-05-22 16:53:20', '2018-05-22 16:53:20', 'd', 'd', 'd', 2, '1', 'd', 'd', 'd', '1', '123123123')[0m
+  [1m[35m (129.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/guard/26
+Completed 302 Found in 140ms (ActiveRecord: 129.6ms)
+
+
+Started GET "/guard/26" for 127.0.0.1 at 2018-05-22 12:53:21 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mGuard Load (45.7ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 26 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 79ms (Views: 31.4ms | ActiveRecord: 45.7ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-22 12:53:30 -0400
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 32ms (Views: 31.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:53:30 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 37ms (Views: 35.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 12:55:32 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 40ms (Views: 38.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/guard/24" for 127.0.0.1 at 2018-05-22 12:55:34 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mGuard Load (0.8ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 24 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 34ms (Views: 30.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 13:03:46 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  Rendered guards/index.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/diego/Tingeso/app/views/guards/index.html.erb:31: syntax error, unexpected ',', expecting =>
+...n-info", data-toggle="tooltip", title"editar" );@output_buff...
+...                              ^):
+  
+app/views/guards/index.html.erb:31: syntax error, unexpected ',', expecting =>
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 13:04:45 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 41ms (Views: 38.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 13:06:07 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 33ms (Views: 30.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 13:19:14 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 32ms (Views: 30.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 13:20:14 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 34ms (Views: 32.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-22 15:28:58 -0400
+  [1m[35m (40.9ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (32.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by BienvenidaController#index as HTML
+  Rendering bienvenida/index.html.erb within layouts/application
+  Rendered bienvenida/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 904ms (Views: 869.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-22 15:29:03 -0400
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (71.3ms)
+Completed 200 OK in 245ms (Views: 99.3ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 15:29:05 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 50ms (Views: 36.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guard/24" for 127.0.0.1 at 2018-05-22 15:29:34 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mGuard Load (0.7ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 24 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 64ms (Views: 33.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/guard/24" for 127.0.0.1 at 2018-05-22 15:30:14 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 24 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 37ms (Views: 33.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/guard/24" for 127.0.0.1 at 2018-05-22 15:35:21 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 24 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 29ms (Views: 27.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/guard/24" for 127.0.0.1 at 2018-05-22 15:41:33 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 24 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 34ms (Views: 31.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/guard/24" for 127.0.0.1 at 2018-05-22 15:42:19 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 24 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 28ms (Views: 26.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/guard/24" for 127.0.0.1 at 2018-05-22 15:43:52 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 24 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 28ms (Views: 26.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/guard/24" for 127.0.0.1 at 2018-05-22 15:44:14 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 24 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 36ms (Views: 34.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/guard/24" for 127.0.0.1 at 2018-05-22 15:45:00 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 24 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 38ms (Views: 36.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/guard/24" for 127.0.0.1 at 2018-05-22 15:48:11 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 24 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 38ms (Views: 34.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/guard/24" for 127.0.0.1 at 2018-05-22 15:51:03 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 24 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 35ms (Views: 32.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/guard/24" for 127.0.0.1 at 2018-05-22 15:51:48 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 24 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 39ms (Views: 36.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/guard/24" for 127.0.0.1 at 2018-05-22 15:52:04 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mGuard Load (0.2ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 24 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 32ms (Views: 29.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 15:57:26 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 36ms (Views: 33.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-22 15:57:33 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 27ms (Views: 26.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/guard/24" for 127.0.0.1 at 2018-05-22 15:57:35 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mGuard Load (0.1ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 24 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 44ms (Views: 42.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-22 15:58:03 -0400
+Processing by BienvenidaController#index as HTML
+  Rendering bienvenida/index.html.erb within layouts/application
+  Rendered bienvenida/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 25ms (Views: 24.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-22 15:58:57 -0400
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 33ms (Views: 31.1ms | ActiveRecord: 0.0ms)
+
+

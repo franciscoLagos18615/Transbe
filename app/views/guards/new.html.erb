@@ -178,19 +178,97 @@
    
   </div>
 
-  <div class="custom-file">
+  <div class="form-row">
+    <div class="col-md-8 mb-6">
+     <div class="custom-file">
    
-  <input type="file" class="custom-file-input" id="customFileLang" lang="es"  >
-  <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
+      <!--%= t.file_field :avatar,type:"file",class:"custon-file-input",id:"customFileLang",label_class:"custom-file-label" %-->
+  <!--input type="file" class="custom-file-input" id="customFileLang" lang="es" >
+  <label class="custom-file-label" for="customFileLang">Seleccionar Imagen del guardia</label-->
+   <div >
+    <%= t.label :avatar,"Seleccionar foto perfil del guardia"  , :class =>'custom-file-label'%>
+    <%= t.file_field :avatar %>
+  </div>
+    
+  
+ 
+
+    </div>
+  </div>
+</div>
+<h1></h1>
+
+<div class="form-row">
+  <div class="col-md-8 mb-6">
+     <div class="custom-file">
+  <%= t.label :ficha_guardia_doc,"Ficha del Guardia",:class =>'custom-file-label' %>
+  
+  <%= t.file_field :ficha_guardia_doc,:class=>'custom-file-input', :type=>'file', multiple: "false", :name => '[ficha_guardia_doc]' %> 
+</div>
+</div>
+</div>
+<h1></h1>
+<div class="form-row">
+  <div class="col-md-8 mb-6">
+     <div class="custom-file">
+     
+  <%= t.label :cert_estudio_doc,"Certificado de estudio",:class =>'custom-file-label' %>
+  
+  <%= t.file_field :cert_estudio_doc,:class=>'custom-file-input', :type=>'file', multiple: "false", :name => '[ficha_guardia_doc]' %> 
+</div>
+</div>
+</div>
+<h1></h1>
+<div class="form-row">
+  <div class="col-md-8 mb-6">
+     <div class="custom-file">
+     
+  <%= t.label :cert_residencia_doc,"Certificado de Residencia",:class =>'custom-file-label' %>
+  
+  <%= t.file_field :cert_residencia_doc,:class=>'custom-file-input', :type=>'file', multiple: "false", :name => '[ficha_guardia_doc]' %> 
+</div>
+</div>
+</div>
+<h1></h1>
+<div class="form-row">
+  <div class="col-md-8 mb-6">
+     <div class="custom-file">
+     
+  <%= t.label :cedula_identidad_doc,"Cedula de Identidad",:class =>'custom-file-label' %>
+  
+  <%= t.file_field :cedula_identidad_doc,:class=>'custom-file-input', :type=>'file', multiple: "false", :name => '[ficha_guardia_doc]' %> 
+</div>
+</div>
 </div>
 
-  <div class="form-row">
-    <div class="col-md-6 mb-3">
-      
-    </div>
-   
+<h1></h1>
+<div class="form-row">
+  <div class="col-md-8 mb-6">
+     <div class="custom-file">
+     
+  <%= t.label :pacto_horas_doc,"Pacto de Horas",:class =>'custom-file-label' %>
   
+  <%= t.file_field :pacto_horas_doc,:class=>'custom-file-input', :type=>'file', multiple: "false", :name => '[ficha_guardia_doc]' %> 
+</div>
+</div>
+</div>
+
+<h1></h1>
+<div class="form-row">
+  <div class="col-md-8 mb-6">
+     <div class="custom-file">
+     
+  <%= t.label :cert_antecedentes_doc,"Certificado de Antecedentes",:class =>'custom-file-label' %>
+  
+  <%= t.file_field :cert_antecedentes_doc,:class=>'custom-file-input', :type=>'file', multiple: "false", :name => '[ficha_guardia_doc]' %> 
+</div>
+</div>
+</div>
+  <div class="form-row">
+    <div class="col-md-6 mb-3">    
+    </div>   
   </div>
+
   <div align="right">
   
   <button  type="submit" class="btn btn-primary" %="t.submit"%>Ingresar Guardia</button>
@@ -201,7 +279,9 @@
 <%end%>
   
 </div>
+
 <script>
+
 //FUNCION JAVASCRIPT PARA VALIDAR EL RUN 
 function checkRut(rut) {
     // Despejar Puntos

@@ -1,2 +1,20 @@
-<h1>Installations#index</h1>
-<p>Find me in app/views/installations/index.html.erb</p>
+<h1>Listado de Productos</h1>
+<%= link_to "Crear Instalacion", installations_new_path %>
+<table>
+  <tr>
+    <thead>
+      <th>Nombre</th>
+      <th>Cantidad de Guardias</th>
+    </thead>
+  </tr>
+    <% @installations.each do |installation| %>
+  <tr>
+    <td><%= installation.name %></td>
+    <td><%= installation.number_guards %></td>
+    <td>
+      <%= link_to "Editar", edit_installation_path(installation) %>
+      <%= link_to "Eliminar", installation, method: :delete, data: { confirm: "Deseas eliminar registro de esta instalacion?"} %>
+    </td>
+  </tr>
+    <% end %>
+</table>

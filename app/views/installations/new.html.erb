@@ -1,0 +1,22 @@
+<h1>Listado de instalaciones</h1>
+<%= form_for @installation do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :number_guards %>
+    <%= f.number_field :number_guards %>
+  </div>
+  <div>
+    <%= f.label :additional_guards %>
+    <%= f.number_field :additional_guards %>
+  </div>
+  <div>
+    <%= f.label :date %>
+    <%= f.date_field :date %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>

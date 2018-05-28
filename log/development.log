@@ -20071,3 +20071,848 @@ Processing by GuardsController#new as HTML
 Completed 200 OK in 33ms (Views: 31.1ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/guard/1" for 127.0.0.1 at 2018-05-28 16:01:49 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 87ms (Views: 84.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-28 16:01:59 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 50ms (Views: 48.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/guard/2" for 127.0.0.1 at 2018-05-28 16:02:01 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 2 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 66ms (Views: 62.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-28 16:02:05 -0400
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 62ms (Views: 60.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-05-28 16:02:23 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 54ms (Views: 52.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/guard/1" for 127.0.0.1 at 2018-05-28 16:02:26 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 53ms (Views: 50.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-05-28 16:04:05 -0400
+Processing by GuardsController#new as HTML
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 51ms (Views: 50.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/installations" for 127.0.0.1 at 2018-05-28 16:57:12 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/installations"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/guards" for 127.0.0.1 at 2018-05-28 16:57:22 -0400
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (23.9ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (84.5ms)
+Completed 200 OK in 158ms (Views: 100.8ms | ActiveRecord: 35.9ms)
+
+
+Started GET "/installations" for 127.0.0.1 at 2018-05-28 16:58:27 -0400
+Processing by InstallationsController#index as HTML
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `search' for #<Class:0x007f3f0011d4d8>):
+  
+app/controllers/installations_controller.rb:4:in `index'
+Started GET "/installations" for 127.0.0.1 at 2018-05-28 17:00:32 -0400
+Processing by InstallationsController#index as HTML
+  Rendering installations/index.html.erb within layouts/application
+  [1m[36mInstallation Load (0.6ms)[0m  [1m[34mSELECT `installations`.* FROM `installations`[0m
+  Rendered installations/index.html.erb within layouts/application (127.6ms)
+Completed 500 Internal Server Error in 136ms (ActiveRecord: 1.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `installation_path' for #<#<Class:0x007f3f0957a798>:0x007f3f0956d020>
+Did you mean?  installations_path
+               installations_url):
+    29:       <td>
+    30:         <%=link_to '<span class="fa fa-align-justify" data-original-title="Detalles" data-toggle="tooltip"></span>'.html_safe , guard_path(t),class: "btn btn-info" %>
+    31:         <%=link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip"></span>'.html_safe , edit_guard_path(t), class: "btn btn-primary"%>
+    32:         <%= link_to '<span class="fa fa-window-close" data-original-title="Eliminar" data-toggle="tooltip"></span>'.html_safe , t, method: :delete, data: { confirm: "¿Esta seguro que desea eliminar el registro de este guardia?"} , class: "btn btn-danger"%>
+    33:       </td>
+    34:     
+    35:   </tr>
+  
+app/views/installations/index.html.erb:32:in `block in _app_views_installations_index_html_erb__3158008517204564578_69954358223200'
+app/views/installations/index.html.erb:24:in `_app_views_installations_index_html_erb__3158008517204564578_69954358223200'
+Started GET "/installations" for 127.0.0.1 at 2018-05-28 17:01:36 -0400
+Processing by InstallationsController#index as HTML
+  Rendering installations/index.html.erb within layouts/application
+  [1m[36mInstallation Load (0.8ms)[0m  [1m[34mSELECT `installations`.* FROM `installations`[0m
+  Rendered installations/index.html.erb within layouts/application (189.0ms)
+Completed 500 Internal Server Error in 193ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `installation_path' for #<#<Class:0x007f3f0957a798>:0x0055845c86e940>
+Did you mean?  installations_path
+               installations_url):
+    27:       </th>
+    28:       <th><%=t.number_guards%></th>
+    29:       <td>
+    30:         <%=link_to '<span class="fa fa-align-justify" data-original-title="Detalles" data-toggle="tooltip"></span>'.html_safe , installation_path(t),class: "btn btn-info" %>
+    31:         <%=link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip"></span>'.html_safe , edit_installation_path(t), class: "btn btn-primary"%>
+    32:         <%= link_to '<span class="fa fa-window-close" data-original-title="Eliminar" data-toggle="tooltip"></span>'.html_safe , t, method: :delete, data: { confirm: "¿Esta seguro que desea eliminar el registro de esta instalacion?"} , class: "btn btn-danger"%>
+    33:       </td>
+  
+app/views/installations/index.html.erb:30:in `block in _app_views_installations_index_html_erb__3158008517204564578_47013488231560'
+app/views/installations/index.html.erb:24:in `_app_views_installations_index_html_erb__3158008517204564578_47013488231560'
+Started GET "/installations" for 127.0.0.1 at 2018-05-28 17:02:25 -0400
+Processing by InstallationsController#index as HTML
+  Rendering installations/index.html.erb within layouts/application
+  [1m[36mInstallation Load (0.3ms)[0m  [1m[34mSELECT `installations`.* FROM `installations`[0m
+  Rendered installations/index.html.erb within layouts/application (125.0ms)
+Completed 500 Internal Server Error in 128ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `edit_installations_path' for #<#<Class:0x007f3f0957a798>:0x007f3f09e55548>
+Did you mean?  edit_registration_path):
+    28:       <th><%=t.number_guards%></th>
+    29:       <td>
+    30:         <%=link_to '<span class="fa fa-align-justify" data-original-title="Detalles" data-toggle="tooltip"></span>'.html_safe , installations_path(t),class: "btn btn-info" %>
+    31:         <%=link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip"></span>'.html_safe , edit_installations_path(t), class: "btn btn-primary"%>
+    32:         <%= link_to '<span class="fa fa-window-close" data-original-title="Eliminar" data-toggle="tooltip"></span>'.html_safe , t, method: :delete, data: { confirm: "¿Esta seguro que desea eliminar el registro de esta instalacion?"} , class: "btn btn-danger"%>
+    33:       </td>
+    34:     
+  
+app/views/installations/index.html.erb:31:in `block in _app_views_installations_index_html_erb__3158008517204564578_69954362847120'
+app/views/installations/index.html.erb:24:in `_app_views_installations_index_html_erb__3158008517204564578_69954362847120'
+Started GET "/installations" for 127.0.0.1 at 2018-05-28 17:03:47 -0400
+Processing by InstallationsController#index as HTML
+  Rendering installations/index.html.erb within layouts/application
+  [1m[36mInstallation Load (1.1ms)[0m  [1m[34mSELECT `installations`.* FROM `installations`[0m
+  Rendered installations/index.html.erb within layouts/application (331.1ms)
+Completed 500 Internal Server Error in 336ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `installations_new_path' for #<#<Class:0x007f3f0957a798>:0x007f3efc052958>
+Did you mean?  installations_index_path
+               installations_path):
+    40: </script>
+    41: 
+    42: <div class="col-md-7 col-center" align="left">
+    43: <%= link_to "Crear Instalacion", installations_new_path %>
+    44: </div>
+  
+app/views/installations/index.html.erb:43:in `_app_views_installations_index_html_erb__3158008517204564578_69954246449560'
+Started GET "/installations/new" for 127.0.0.1 at 2018-05-28 17:21:26 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/installations/new"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/installations/new" for 127.0.0.1 at 2018-05-28 17:21:50 -0400
+Processing by InstallationsController#new as HTML
+  Rendering installations/new.html.erb within layouts/application
+  Rendered installations/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 74ms (Views: 55.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/installations/" for 127.0.0.1 at 2018-05-28 19:00:59 -0400
+  [1m[35m (6.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by InstallationsController#index as HTML
+  Rendering installations/index.html.erb within layouts/application
+  [1m[36mInstallation Load (0.4ms)[0m  [1m[34mSELECT `installations`.* FROM `installations`[0m
+  Rendered installations/index.html.erb within layouts/application (160.4ms)
+Completed 500 Internal Server Error in 195ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `installation_path' for #<#<Class:0x00555f528e6410>:0x00555f52914e50>
+Did you mean?  installations_path
+               installations_new_path
+               installations_url):
+    27:       </th>
+    28:       <th><%=t.number_guards%></th>
+    29:       <td>
+    30:         <%=link_to '<span class="fa fa-align-justify" data-original-title="Detalles" data-toggle="tooltip"></span>'.html_safe , installation_path(t),class: "btn btn-info" %>
+    31:         <%=link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip"></span>'.html_safe , edit_installation_path(t), class: "btn btn-primary"%>
+    32:         <%= link_to '<span class="fa fa-window-close" data-original-title="Eliminar" data-toggle="tooltip"></span>'.html_safe , t, method: :delete, data: { confirm: "¿Esta seguro que desea eliminar el registro de esta instalacion?"} , class: "btn btn-danger"%>
+    33:       </td>
+  
+app/views/installations/index.html.erb:30:in `block in _app_views_installations_index_html_erb__1627054425458749644_46933947662080'
+app/views/installations/index.html.erb:24:in `_app_views_installations_index_html_erb__1627054425458749644_46933947662080'
+Started GET "/installations/" for 127.0.0.1 at 2018-05-28 19:03:35 -0400
+Processing by InstallationsController#index as HTML
+  Rendering installations/index.html.erb within layouts/application
+  [1m[36mInstallation Load (0.4ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` LIMIT 11[0m
+  [1m[36mCACHE Installation Load (0.0ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` LIMIT 11[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Installation Load (0.0ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` LIMIT 11[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Installation Load (0.0ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` LIMIT 11[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Installation Load (0.0ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` LIMIT 11[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Installation Load (0.0ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` LIMIT 11[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Installation Load (0.0ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` LIMIT 11[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Installation Load (0.0ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` LIMIT 11[0m  [["LIMIT", 11]]
+  Rendered installations/index.html.erb within layouts/application (251.6ms)
+Completed 500 Internal Server Error in 254ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `products_new_path' for #<#<Class:0x00555f528e6410>:0x00555f539d9a60>):
+    1: <h1>Listado de Productos</h1>
+    2: <%= link_to "Crear Instalacion", products_new_path %>
+    3: <table>
+    4:   <tr>
+    5:     <thead>
+  
+app/views/installations/index.html.erb:2:in `_app_views_installations_index_html_erb__1627054425458749644_46933956547620'
+Started GET "/installations/" for 127.0.0.1 at 2018-05-28 19:03:49 -0400
+Processing by InstallationsController#index as HTML
+  Rendering installations/index.html.erb within layouts/application
+  [1m[36mInstallation Load (0.4ms)[0m  [1m[34mSELECT `installations`.* FROM `installations`[0m
+  Rendered installations/index.html.erb within layouts/application (196.8ms)
+Completed 500 Internal Server Error in 199ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `installation' for #<#<Class:0x00555f528e6410>:0x00555f53cad188>
+Did you mean?  @installations):
+     9:   </tr>
+    10:     <% @installations.each do |product| %>
+    11:   <tr>
+    12:     <td><%= installation.name %></td>
+    13:     <td><%= installation.number_guards %></td>
+    14:     <td>
+    15:       <%= link_to "Editar", edit_installation_path(installation) %>
+  
+app/views/installations/index.html.erb:12:in `block in _app_views_installations_index_html_erb__1627054425458749644_46933958029020'
+app/views/installations/index.html.erb:10:in `_app_views_installations_index_html_erb__1627054425458749644_46933958029020'
+Started GET "/installations/" for 127.0.0.1 at 2018-05-28 19:04:04 -0400
+Processing by InstallationsController#index as HTML
+  Rendering installations/index.html.erb within layouts/application
+  [1m[36mInstallation Load (0.4ms)[0m  [1m[34mSELECT `installations`.* FROM `installations`[0m
+  Rendered installations/index.html.erb within layouts/application (117.6ms)
+Completed 500 Internal Server Error in 121ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `edit_installation_path' for #<#<Class:0x00555f528e6410>:0x00555f539ac240>
+Did you mean?  edit_registration_path):
+    12:     <td><%= installation.name %></td>
+    13:     <td><%= installation.number_guards %></td>
+    14:     <td>
+    15:       <%= link_to "Editar", edit_installation_path(installation) %>
+    16:       <%= link_to "Eliminar", installation, method: :delete, data: { confirm: "Deseas eliminar registro de esta instalacion?"} %>
+    17:     </td>
+    18:   </tr>
+  
+app/views/installations/index.html.erb:15:in `block in _app_views_installations_index_html_erb__1627054425458749644_46933956454020'
+app/views/installations/index.html.erb:10:in `_app_views_installations_index_html_erb__1627054425458749644_46933956454020'
+Started GET "/installations/" for 127.0.0.1 at 2018-05-28 19:05:32 -0400
+Processing by InstallationsController#index as HTML
+  Rendering installations/index.html.erb within layouts/application
+  [1m[36mInstallation Load (0.4ms)[0m  [1m[34mSELECT `installations`.* FROM `installations`[0m
+  Rendered installations/index.html.erb within layouts/application (128.2ms)
+Completed 500 Internal Server Error in 131ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `edit_installations_path' for #<#<Class:0x00555f528e6410>:0x00555f528066a8>
+Did you mean?  edit_registration_path):
+    12:     <td><%= installation.name %></td>
+    13:     <td><%= installation.number_guards %></td>
+    14:     <td>
+    15:       <%= link_to "Editar", edit_installations_path(installation) %>
+    16:       <%= link_to "Eliminar", installation, method: :delete, data: { confirm: "Deseas eliminar registro de esta instalacion?"} %>
+    17:     </td>
+    18:   </tr>
+  
+app/views/installations/index.html.erb:15:in `block in _app_views_installations_index_html_erb__1627054425458749644_46933947204360'
+app/views/installations/index.html.erb:10:in `_app_views_installations_index_html_erb__1627054425458749644_46933947204360'
+Started GET "/installations/" for 127.0.0.1 at 2018-05-28 19:11:34 -0400
+Processing by InstallationsController#index as HTML
+  Rendering installations/index.html.erb within layouts/application
+  [1m[36mInstallation Load (0.3ms)[0m  [1m[34mSELECT `installations`.* FROM `installations`[0m
+  Rendered installations/index.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 295ms (Views: 285.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/installations/1/edit" for 127.0.0.1 at 2018-05-28 19:12:56 -0400
+Processing by InstallationsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mInstallation Load (0.3ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  Rendering installations/edit.html.erb within layouts/application
+  Rendered installations/edit.html.erb within layouts/application (104.9ms)
+Completed 200 OK in 197ms (Views: 148.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/installations/1/edit" for 127.0.0.1 at 2018-05-28 19:13:51 -0400
+Processing by InstallationsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mInstallation Load (0.4ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  Rendering installations/edit.html.erb within layouts/application
+  Rendered installations/edit.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 60ms (Views: 57.4ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/installation/1" for 127.0.0.1 at 2018-05-28 19:13:57 -0400
+Processing by InstallationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q8Hw91phuBwKuSSW+TXbvkWwU75MYqKE2n640SXVJnSdJsMPD+yWbvnR8NJFG4x1vVxaBQO3X6h+niMI5+6GFQ==", "installation"=>{"name"=>"Espacio Riesco", "number_guards"=>"10", "additional_guards"=>"10", "date"=>"2018-05-28"}, "commit"=>"Update Installation", "id"=>"1"}
+  [1m[36mInstallation Load (0.4ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 135ms (ActiveRecord: 0.4ms)
+
+
+  
+NameError (undefined local variable or method `installation_params' for #<InstallationsController:0x007fca0cacb858>
+Did you mean?  installations_params
+               installation_path
+               installation_url
+               installations_path):
+  
+app/controllers/installations_controller.rb:41:in `update'
+Started GET "/installation/1" for 127.0.0.1 at 2018-05-28 19:14:58 -0400
+Processing by InstallationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mInstallation Load (0.3ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+Completed 406 Not Acceptable in 35ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionController::UnknownFormat (InstallationsController#show is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.1.6) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
+actionpack (5.1.6) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.6) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.6) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.6) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.6) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.6) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started PATCH "/installation/1" for 127.0.0.1 at 2018-05-28 19:15:05 -0400
+Processing by InstallationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q8Hw91phuBwKuSSW+TXbvkWwU75MYqKE2n640SXVJnSdJsMPD+yWbvnR8NJFG4x1vVxaBQO3X6h+niMI5+6GFQ==", "installation"=>{"name"=>"Espacio Riesco", "number_guards"=>"10", "additional_guards"=>"10", "date"=>"2018-05-28"}, "commit"=>"Update Installation", "id"=>"1"}
+  [1m[36mInstallation Load (0.3ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 139ms (ActiveRecord: 0.3ms)
+
+
+  
+NameError (undefined local variable or method `installation_params' for #<InstallationsController:0x007fca0c29f968>
+Did you mean?  installations_params
+               installation_path
+               installation_url
+               installations_path):
+  
+app/controllers/installations_controller.rb:41:in `update'
+Started GET "/installation/1" for 127.0.0.1 at 2018-05-28 19:16:24 -0400
+Processing by InstallationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mInstallation Load (0.3ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+Completed 406 Not Acceptable in 37ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionController::UnknownFormat (InstallationsController#show is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.1.6) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
+actionpack (5.1.6) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.6) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.6) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.6) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.6) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.6) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/installation/" for 127.0.0.1 at 2018-05-28 19:16:39 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/installation"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/installation/" for 127.0.0.1 at 2018-05-28 19:16:41 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/installation"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/installations/" for 127.0.0.1 at 2018-05-28 19:16:44 -0400
+Processing by InstallationsController#index as HTML
+  Rendering installations/index.html.erb within layouts/application
+  [1m[36mInstallation Load (0.4ms)[0m  [1m[34mSELECT `installations`.* FROM `installations`[0m
+  Rendered installations/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 52ms (Views: 50.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/installations/1/edit" for 127.0.0.1 at 2018-05-28 19:16:48 -0400
+Processing by InstallationsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mInstallation Load (0.3ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  Rendering installations/edit.html.erb within layouts/application
+  Rendered installations/edit.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 60ms (Views: 57.1ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/installation/1" for 127.0.0.1 at 2018-05-28 19:16:53 -0400
+Processing by InstallationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sSeZlTX6jQ4XhsskOGZtKhM9fvAczvnxG9QSePGj5Tn+Kls6hmFDmXCLxunmkAktag87LoDpogK6rcqmR/jjoA==", "installation"=>{"name"=>"Espacio Riesco", "number_guards"=>"10", "additional_guards"=>"10", "date"=>"2018-05-25"}, "commit"=>"Update Installation", "id"=>"1"}
+  [1m[36mInstallation Load (0.3ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 133ms (ActiveRecord: 0.3ms)
+
+
+  
+NameError (undefined local variable or method `installation_params' for #<InstallationsController:0x007fca147827c0>
+Did you mean?  installations_params
+               installation_path
+               installation_url
+               installations_path):
+  
+app/controllers/installations_controller.rb:41:in `update'
+Started GET "/installation/1" for 127.0.0.1 at 2018-05-28 19:29:17 -0400
+Processing by InstallationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mInstallation Load (0.4ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  Rendering installations/show.html.erb within layouts/application
+  Rendered installations/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 58ms (Views: 40.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/installation/" for 127.0.0.1 at 2018-05-28 19:30:38 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/installation"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/installations/" for 127.0.0.1 at 2018-05-28 19:30:40 -0400
+Processing by InstallationsController#index as HTML
+  Rendering installations/index.html.erb within layouts/application
+  [1m[36mInstallation Load (0.4ms)[0m  [1m[34mSELECT `installations`.* FROM `installations`[0m
+  Rendered installations/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 57ms (Views: 55.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/installations/1/edit" for 127.0.0.1 at 2018-05-28 19:30:42 -0400
+Processing by InstallationsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mInstallation Load (0.4ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  Rendering installations/edit.html.erb within layouts/application
+  Rendered installations/edit.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 48ms (Views: 45.7ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/installation/1" for 127.0.0.1 at 2018-05-28 19:30:55 -0400
+Processing by InstallationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9DBAHWh80Fjgr6BYuYSg5nJkBL/JCMJhjGm5KsMSU6e7PYKy2+cez4eirZVncsThC1ZBYVUvmZItEGH0dUlVPg==", "installation"=>{"name"=>"Espacio Riesco", "number_guards"=>"12", "additional_guards"=>"7", "date"=>"2018-05-25"}, "commit"=>"Update Installation", "id"=>"1"}
+  [1m[36mInstallation Load (0.3ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 129ms (ActiveRecord: 0.3ms)
+
+
+  
+NameError (undefined local variable or method `installation_params' for #<InstallationsController:0x007fca0cda28d8>
+Did you mean?  installations_params
+               installation_path
+               installation_url
+               installations_path):
+  
+app/controllers/installations_controller.rb:41:in `update'
+Started GET "/installation/1" for 127.0.0.1 at 2018-05-28 19:36:00 -0400
+Processing by InstallationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mInstallation Load (0.3ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  Rendering installations/show.html.erb within layouts/application
+  Rendered installations/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 58ms (Views: 40.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/installation/" for 127.0.0.1 at 2018-05-28 19:36:03 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/installation"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/installations/" for 127.0.0.1 at 2018-05-28 19:36:09 -0400
+Processing by InstallationsController#index as HTML
+  Rendering installations/index.html.erb within layouts/application
+  [1m[36mInstallation Load (0.4ms)[0m  [1m[34mSELECT `installations`.* FROM `installations`[0m
+  Rendered installations/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 57ms (Views: 55.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/installations/1/edit" for 127.0.0.1 at 2018-05-28 19:36:12 -0400
+Processing by InstallationsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mInstallation Load (0.4ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  Rendering installations/edit.html.erb within layouts/application
+  Rendered installations/edit.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 49ms (Views: 46.0ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/installation/1" for 127.0.0.1 at 2018-05-28 19:36:15 -0400
+Processing by InstallationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OGwYxOqTil0sgJbM0bA/AO7zIj1z3KILYD5kVzrPC4B3YdprWQhEykuNmwEPRlsHl8Fn4+/7+fjBR7yJjJQNGQ==", "installation"=>{"name"=>"Espacio Riesco", "number_guards"=>"10", "additional_guards"=>"10", "date"=>"2018-05-22"}, "commit"=>"Update Installation", "id"=>"1"}
+  [1m[36mInstallation Load (0.4ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (8.9ms)[0m  [1m[33mUPDATE `installations` SET `date` = '2018-05-22 00:00:00', `updated_at` = '2018-05-28 23:36:15' WHERE `installations`.`id` = 1[0m
+  [1m[35m (29.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/installations
+Completed 302 Found in 46ms (ActiveRecord: 39.4ms)
+
+
+Started GET "/installations" for 127.0.0.1 at 2018-05-28 19:36:16 -0400
+Processing by InstallationsController#index as HTML
+  Rendering installations/index.html.erb within layouts/application
+  [1m[36mInstallation Load (0.2ms)[0m  [1m[34mSELECT `installations`.* FROM `installations`[0m
+  Rendered installations/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 44ms (Views: 43.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/installations/1/edit" for 127.0.0.1 at 2018-05-28 19:36:25 -0400
+Processing by InstallationsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mInstallation Load (0.4ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  Rendering installations/edit.html.erb within layouts/application
+  Rendered installations/edit.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 54ms (Views: 51.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/installations/new" for 127.0.0.1 at 2018-05-28 19:36:29 -0400
+Processing by InstallationsController#new as HTML
+  Rendering installations/new.html.erb within layouts/application
+  Rendered installations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 47ms (Views: 46.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/installations" for 127.0.0.1 at 2018-05-28 19:37:06 -0400
+Processing by InstallationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tNfgMlldMOWKy99MUeE/d7OzM6WbsCm5/PNCJtgDIkYLhLIMku5TYIkCSKrCcljk1k5pWOePyd90Gy6FfhYioQ==", "installation"=>{"name"=>"Movistar Arena", "number_guards"=>"7", "additional_guards"=>"0", "date"=>"2018-05-21"}, "commit"=>"Create Installation"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (17.2ms)[0m  [1m[32mINSERT INTO `installations` (`name`, `number_guards`, `additional_guards`, `date`, `created_at`, `updated_at`) VALUES ('Movistar Arena', 7, 0, '2018-05-21 00:00:00', '2018-05-28 23:37:06', '2018-05-28 23:37:06')[0m
+  [1m[35m (38.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/installation/2
+Completed 302 Found in 61ms (ActiveRecord: 55.8ms)
+
+
+Started GET "/installation/2" for 127.0.0.1 at 2018-05-28 19:37:06 -0400
+Processing by InstallationsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mInstallation Load (0.3ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 2 LIMIT 1[0m
+  Rendering installations/show.html.erb within layouts/application
+  Rendered installations/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 51ms (Views: 48.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-28 19:39:35 -0400
+Processing by BienvenidaController#index as HTML
+  Rendering bienvenida/index.html.erb within layouts/application
+  Rendered bienvenida/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 54ms (Views: 52.0ms | ActiveRecord: 0.0ms)
+
+

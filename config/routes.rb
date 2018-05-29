@@ -32,6 +32,14 @@ Rails.application.routes.draw do
   put '/guard/:id', to: 'guards#update'
   delete '/guard/:id', to: 'guards#delete'
 
+  get '/installations', to: 'installations#index'
+  get '/installations/new', to: 'installations#new'
+  post '/installations', to: 'installations#create'
+  get '/installation/:id', to: 'installations#show', as: 'installation'
+  get '/installations/:id/edit', to: 'installations#edit', as: 'edit_installation'
+  patch '/installation/:id', to: 'installations#update'
+  put '/installation/:id', to: 'installations#update'
+  delete '/installation/:id', to: 'installations#delete'
 
   devise_for :users
   get 'bienvenida/index'

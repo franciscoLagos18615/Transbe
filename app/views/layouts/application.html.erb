@@ -21,14 +21,29 @@
  
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
    
+   
 
   </head>
 
   <body>
  
    
+<p class="notice"><%=notice %> </p>
+<p class="alert"> <%=alert %> </p>
 
+
+<p class="navbar-text pull-right">
+<% if user_signed_in? %>
+  Hola, <strong><%= current_user.email %></strong>.
+  <%= link_to 'Edita tu Perfil', edit_user_registration_path, :class => 'navbar-link' %> |
+  <%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+<% else %>
+  <%= link_to "Registrarse", new_user_registration_path, :class => 'navbar-link'  %> |
+  <%= link_to "Iniciar Sesión", new_user_session_path, :class => 'navbar-link'  %>
+<% end %>
+</p>
  
+
     
      <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
       <a class="navbar-brand js-scroll-trigger" href="/">
@@ -61,7 +76,7 @@
           </div>
         </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="/">Instalaciones</a>
+            <a class="nav-link js-scroll-trigger" href="/installations/index">Instalaciones</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="/">Acerca de la Empresa</a>

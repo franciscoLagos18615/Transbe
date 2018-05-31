@@ -1,4 +1,54 @@
-<h1>Detalles de la instalacion <%=@installation.name%><h1>
-<p><%=@installation.name %></p>
-<p><%=@installation.number_guards %></p>
-<p><%=@installation.date %></p>
+
+<h1 align="center" class="mb-0">Detalle de la
+    <span class="text-primary">Instalacion</span>
+</h1>
+<div class="container">
+	<table class="table table-striped table-hover medium">
+		<tbody>
+			<tr>
+				<td>
+					<medium><strong>Nombre</strong></medium>
+				</td>
+				<td>
+					<medium><%=@installation.name%></medium>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<medium><strong>Numero de Guardias</strong></medium>
+				</td>
+				<td>
+					<medium><%=@installation.number_guards%></medium>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<medium><strong>Guardia Adicionales</strong></medium>
+				</td>
+				<td>
+					<medium><%=@installation.additional_guards%></medium>
+				</td>
+			</tr>
+            <tr>
+				<td>
+					<medium><strong>Fecha de inicio</strong></medium>
+				</td>
+				<td>
+					<medium><%=@installation.date%></medium>
+				</td>
+			</tr>
+
+		</tbody>
+	</table>
+</div>
+
+<div align="center">
+<table>
+  <thead>
+    <tr>
+      <th scope="col"><a class="btn btn-secondary" href="/installations"><i class="fa fa-arrow-circle-left"></i> Volver       </a></th>
+      <th scope="col"><a class="btn btn-primary" href="/installations/new"><i class="fa fa-plus-square"></i> Crear nueva instalacion</a></th>
+    </tr>
+  </thead>
+</table>
+</div>

@@ -1,21 +1,60 @@
-<%= form_for @installation do |f| %>
-  <div>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+
+
+<h1 align="center" class="col-md-10 col-center">Editar
+    <span class="text-primary">Instalacion</span>
+</h1>
+
+<div class="col-md-10 col-center" align="left">
+  <%= form_for @installation do |f| %>
+  <div class="form-group" align="center">
+    <!--FORMULARIO DEL TIPO BOOSTRAP QUE INCLUYE VALIDACIONES-->
+    <div lang="es" class="col-md-12 col-center" align="left">
+      <form>
+ 
+        <div class="form-row">
+          <div class="col-md-10 col-center">
+            <label for="validationServer01" >Nombre Instalacion</label>
+            <div class="input-group-prepend">
+              <span class="icon-case"><i class="fa fa-user"></i></span>
+              <%= f.text_field :name, type:"text",class:"form-control is-valid", :required=> true %>
+            </div>
+          </div>
+          <div class="col-md-10 col-center">
+            <label for="validationServer01" > Numero Guardias Necesarios</label>
+            <div class="input-group-prepend">
+              <span class="icon-case"><i class="fa fa-user"></i></span>
+              <%= f.text_field :number_guards, type:"number",class:"form-control is-valid", :required=> true %>
+            </div>
+          </div>
+          <div class="col-md-10 col-center">
+            <label for="validationServer01" >Guardias Adicionales</label>
+            <div class="input-group-prepend">
+              <span class="icon-case"><i class="fa fa-user"></i></span>
+              <%= f.text_field :additional_guards, type:"number",class:"form-control is-valid", :required=> true %>
+            </div>
+          </div>
+          <div class="col-md-10 col-center">
+            <label for="validationServer01" >Fecha Inicio</label>
+            <div class="input-group-prepend">
+              <span class="icon-case"><i class="fa fa-user"></i></span>
+              <%= f.date_field :date, type:"date",class:"form-control is-valid", :required=> true %>
+            </div>
+          </div>
+        </div>
+       
+        <div align="center">
+          <h1></h1>
+          <table>
+          <thead>
+            <tr>
+              <th scope="col"><a class="btn btn-primary" href="/installations"><i class="fa fa-arrow-circle-left"></i> Volver       </a></th>
+              <th scope="col"><button type="submit" class="btn btn-success" %="f.submit"% ><i class="fa fa-plus-square"></i> Actualizar instalacion</button></th>
+            </tr>
+          </thead>
+        </table>
+        </div>
+      </form>
+    </div>
   </div>
-  <div>
-    <%= f.label :number_guards %>
-    <%= f.number_field :number_guards %>
-  </div>
-  <div>
-    <%= f.label :additional_guards %>
-    <%= f.number_field :additional_guards %>
-  </div>
-  <div>
-    <%= f.label :date %>
-    <%= f.date_field :date %>
-  </div>
-  <div>
-    <%= f.submit %>
-  </div>
-<% end %>
+  <%end%>
+</div>

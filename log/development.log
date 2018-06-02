@@ -21196,3 +21196,12 @@ Processing by GuardsController#show as HTML
 Completed 200 OK in 131ms (Views: 65.6ms | ActiveRecord: 1.5ms)
 
 
+Started GET "/guard/1" for 127.0.0.1 at 2018-06-02 17:14:45 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 120ms (Views: 54.0ms | ActiveRecord: 1.4ms)
+
+

@@ -1,0 +1,112 @@
+<!--
+
+<h2>Edit <%= resource_name.to_s.humanize %></h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Actualmente está esperando la confirmación de: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :password %> <i>(déjelo en blanco si no quiere cambiarlo)</i><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+    <% if @minimum_password_length %>
+      <br />
+      <em><%= @minimum_password_length %> caracteres minimo</em>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :current_password %> <i>(necesitamos su contraseña actual para confirmar sus cambios)</i><br />
+    <%= f.password_field :current_password, autocomplete: "off" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
+<% end %>
+
+<h3>Borrar mi cuenta</h3>
+
+<p>Quieres elminar tu cuenta? <%= button_to "Eliminar mi cuenta", registration_path(resource_name), data: { confirm: "¿ Esta seguro de eliminar su cuenta?" }, method: :delete %></p>
+
+<%= link_to "Volver", :back %>
+
+-->
+<h1> </h1>
+
+<body1 class="text-center" align="center">
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+  
+   <form class="form-signin">
+   
+   <h1 class="h3 mb-3 font-weight-normal" align="center">Editar Usuario</h1>
+   <div align="left">
+      <label>Correo Actual</label>
+   </div>
+   
+  <div class="text-center" align="center">
+  <h7></h7>
+    <label for="inputEmail" class="sr-only">Email</label>
+    <%= f.email_field :email,type: "email",class:"form-control",placeholder:"Email", autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Actualmente está esperando la confirmación de: <%= resource.unconfirmed_email %></div>
+  <% end %>
+  
+  <div class="text-center">
+  <h1> </h1>
+    <label for="inputPassword" class="sr-only">Contraseña</label>
+    <%= f.password_field :password,type:"password",class:"form-control",placeholder:"Nueva Contraseña(minimo 6 caracteres)", autocomplete: "off",:required=>true %>
+    
+  </div>
+  
+  <div class="text-center">
+  <h1> </h1>
+    <label for="inputPassword2" class="sr-only">Confirmar Contraseña</label>
+    <%= f.password_field :password_confirmation,type:"password",class:"form-control",placeholder:"Confirmar Nueva Contraseña", autocomplete: "off",:required=>true %>
+  </div>
+
+  <div class="text-center">
+  <h1> </h1>
+    <label for="inputPassword2" class="sr-only">Actual Contraseña</label>
+    <i>(necesitamos su contraseña actual para confirmar sus cambios)</i><br />
+    <%= f.password_field :current_password,type:"password",class:"form-control",placeholder:"Actual Contraseña", autocomplete: "off",:required=>true %>
+  </div>
+
+  <div class="col-md-12 col-md-offset-3">
+<h1></h1>
+    <button  type="submit" class="btn btn-lg btn-primary btn-block" %="f.submit"%>Actualizar información</button>
+  </div>
+<% end %>
+
+<%= render "users/shared/links" %>
+
+</form>
+</body1>
+
+<body1 class="text-center" align="center">
+  <form>
+    <h1 class="h3 mb-3 font-weight-normal" align="center">Eliminar cuenta</h1>
+    <p>Quieres elminar tu cuenta? </p>
+    <%= button_to "Eliminar mi cuenta",registration_path(resource_name), data: { confirm: "¿ Esta seguro de eliminar su cuenta?" }, method: :delete,class:"btn btn-md btn-primary btn-block" %>
+
+    <%= link_to "Volver", :back %>
+
+  </form>
+
+</body1>

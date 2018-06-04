@@ -3,19 +3,11 @@
             <span class="text-primary">Guardia</span>
           </h1>
 
-  <div class="col-md-10 col-center" align="left">
-<%=form_for @guard do |t|%>
-
-
-
+<div class="col-md-10 col-center" align="left">
+  <%=form_for @guard do |t|%>
 <div class="form-group" align="center">
-  
-
-
 <!--FORMULARIO DEL TIPO BOOSTRAP QUE INCLUYE VALIDACIONES-->
 <div lang="es" class="col-md-12 col-center" align="left">
-
-
 <form>
   <div class="form-row">
     <div class="col-md-4 mb-3">
@@ -89,7 +81,7 @@
     <div class="col-md-4 mb-3" >
     <label  >Sexo</label >
       
-<%= t.select(:sex , [['Masculino', 1], ['Femenino',2]], {}, {class: " form-control " }) %>
+<%= t.select(:sex , [['Masculino', "Masculino"], ['Femenino',"Femenino"]], {}, {class: " form-control " }) %>
 
 
     </div>
@@ -140,12 +132,12 @@
       <span class="icon-case"><i class="fa fa-graduation-cap"></i></span>
     
      <%= t.select(:educational_level ,
-       [['Basica Incompleta', 1],
-       ['Basica Completa', 2],
-        ['Media Incompleta',3],
-         ['Media Completa',4],
-         ['Superior Incompleta',5],
-         ['Superior Completa',6]], {}, {class: " form-control " }) %>
+       [['Basica Incompleta', "Basica Incompleta"],
+       ['Basica Completa', "Basica Completa"],
+        ['Media Incompleta',"Media Incompleta"],
+         ['Media Completa',"Media Completa"],
+         ['Superior Incompleta',"Superior Incompleta"],
+         ['Superior Completa',"Superior Completa"]], {}, {class: " form-control " }) %>
        
     </div>
     </div>
@@ -178,22 +170,96 @@
    
   </div>
 
-  <div class="custom-file">
-   
-  <input type="file" class="custom-file-input" id="customFileLang" lang="es"  >
-  <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
-</div>
+
 
   <div class="form-row">
-    <div class="col-md-6 mb-3">
-      
+    <div class="col-md-8 mb-6">
+     <div class="custom-file">
+      <div >
+      <%= t.label :avatar,"Seleccionar foto perfil del guardia"  , :class =>'custom-file-label'%>
+      <%= t.file_field :avatar %>
+      </div>
     </div>
-   
-  
   </div>
+</div>
+
+<h1></h1>
+
+<div class="form-row">
+  <div class="col-md-8 mb-6">
+     <div class="custom-file">
+  <%= t.label :ficha_guardia_doc,"Ficha del Guardia",:class =>'custom-file-label' %>
+  
+  <%= t.file_field :ficha_guardia_doc%> 
+</div>
+</div>
+</div>
+<h1></h1>
+
+<div class="form-row">
+  <div class="col-md-8 mb-6">
+     <div class="custom-file">
+     
+      <%= t.label :cert_estudio_doc,"Certificado de estudio",:class =>'custom-file-label' %>
+      
+      <%= t.file_field :cert_estudio_doc%> 
+</div>
+</div>
+</div>
+<h1></h1>
+<div class="form-row">
+  <div class="col-md-8 mb-6">
+     <div class="custom-file">
+     
+      <%= t.label :cert_residencia_doc,"Certificado de Residencia",:class =>'custom-file-label' %>
+      
+      <%= t.file_field :cert_residencia_doc%> 
+</div>
+</div>
+</div>
+<h1></h1>
+<div class="form-row">
+  <div class="col-md-8 mb-6">
+     <div class="custom-file">
+     
+      <%= t.label :cedula_identidad_doc,"Cedula de Identidad",:class =>'custom-file-label' %>
+      
+      <%= t.file_field :cedula_identidad_doc%> 
+</div>
+</div>
+</div>
+
+<h1></h1>
+<div class="form-row">
+  <div class="col-md-8 mb-6">
+     <div class="custom-file">
+     
+      <%= t.label :pacto_horas_doc,"Pacto de Horas",:class =>'custom-file-label' %>
+      
+      <%= t.file_field :pacto_horas_doc%> 
+</div>
+</div>
+</div>
+
+<h1></h1>
+<div class="form-row">
+  <div class="col-md-8 mb-6">
+     <div class="custom-file">
+     
+      <%= t.label :cert_antecedentes_doc,"Certificado de Antecedentes",:class =>'custom-file-label' %>
+      
+      <%= t.file_field :cert_antecedentes_doc%> 
+</div>
+</div>
+</div>
+  <div class="form-row">
+    <div class="col-md-6 mb-3">    
+    </div>   
+  </div>
+
   <div align="right">
   
-  <button  type="submit" class="btn btn-primary" %="t.submit"%>Ingresar Guardia</button>
+    <button  type="submit" class="btn btn-primary" %="t.submit"%>Ingresar Guardia</button>
   </div>
 </form>
 
@@ -201,7 +267,9 @@
 <%end%>
   
 </div>
+
 <script>
+
 //FUNCION JAVASCRIPT PARA VALIDAR EL RUN 
 function checkRut(rut) {
     // Despejar Puntos

@@ -1,2 +1,42 @@
-<h1>Installations#index</h1>
-<p>Find me in app/views/installations/index.html.erb</p>
+<h1 align="center" class="mb-0">Lista de
+    <span class="text-primary">Instalaciones</span>
+</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Nombre Instalacion</th>
+      <th scope="col">Numero de Guardias</th>
+      
+    </tr>
+  </thead>
+<tbody>
+  <tr>
+    <%@installations.each do |installation|%>
+    
+      <th>
+        <%=installation.name%>  
+      </th>
+      <th>
+        <%=installation.number_guards%>
+      </th>
+     <td>
+        <%=link_to '<span class="fa fa-align-justify" data-original-title="Detalles" data-toggle="tooltip"></span>'.html_safe , installation_path(installation),class: "btn btn-info" %>
+        <%=link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip"></span>'.html_safe , edit_installation_path(installation), class: "btn btn-primary"%>
+        <%= link_to '<span class="fa fa-window-close" data-original-title="Eliminar" data-toggle="tooltip"></span>'.html_safe , installation, method: :delete, data: { confirm: "¿Esta seguro que desea eliminar la instalacion?"} , class: "btn btn-danger"%>
+      </td>
+  </tr>
+</tbody>
+  <%end%>
+</table>
+
+<div align="center">
+<table>
+  <thead>
+    <tr>
+      <th scope="col"><a class="btn btn-secondary" href="/"><i class="fa fa-home"></i> Inicio       </a></th>
+      <th scope="col"><a class="btn btn-primary" href="/installations/new"><i class="fa fa-plus-square"></i> Crear nueva instalacion</a></th>
+    </tr>
+  </thead>
+</table>
+</div>

@@ -1,0 +1,44 @@
+<!--
+<h2>Olvidaste tu contraseña?</h2>
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Send me reset password instructions" %>
+  </div>
+<% end %>
+
+<%= render "users/shared/links" %>
+-->
+
+<body1 class="text-center" align="center">
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= devise_error_messages! %>
+  
+   <form class="form-signin">
+   <h1 class="h3 mb-3 font-weight-normal" align="center"> Olvidaste la contraseña</h1>
+  <div class="text-center" align="center">
+    <label for="inputEmail" class="sr-only">Email</label>
+    <%= f.email_field :email,type: "email",class:"form-control",placeholder:"Email", autofocus: true, autocomplete: "email" %>
+  </div>
+
+
+  
+
+  <div class="col-md-12 col-md-offset-3">
+<h1> </h1>
+    <button  type="submit" class="btn btn-md btn-primary btn-block" %="f.submit"%>
+Enviarme instrucciones para restablecer la contraseña</button>
+  </div>
+<% end %>
+
+<%= render "users/shared/links" %>
+
+</form>
+</body1>

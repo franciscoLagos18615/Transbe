@@ -4,230 +4,271 @@
 <div class="col-md-7 col-center" align="left">
 
 <%= form_for @guard do |f| %>
- <div class="form-group<%= @guard.errors[:firstname].any? ? " error" : "" %>">
-   <%= f.label :Primer_nombre, :class => 'control-label' %>
-   <div class="controls">
-     <%= f.text_field :firstname%>
-     <%#Obtener solo el mensaje con la expresion regular /\w([^]*)/%>
-     <span class="help-inline">
-      <%= @guard.errors[:firstname].any? ? @guard.errors[:firstname].to_s[/\w([^"]*)/] : "" %></span>
-   </div>
- </div>
+ <div class="form-group" align="center">
+<!--FORMULARIO DEL TIPO BOOSTRAP QUE INCLUYE VALIDACIONES-->
+<div lang="es" class="col-md-12 col-center" align="left">
+<form>
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+   
+      <label for="validationServer01" >Nombre</label>
+      
+      <div class="input-group-prepend">
+              <span class="icon-case"><i class="fa fa-user"></i></span>
+      
+        <%= f.text_field :firstname, type:"text",class:"form-control is-valid", placeholder:"Pedro", :required=> true %>
+          </div>
 
- <div class="form-group<%= @guard.errors[:lastname].any? ? " error" : "" %>">
-   <%= f.label :Apellido_Paterno, :class => 'control-label' %>
-   <div class="controls">
-     <%= f.text_field :lastname%>
-     <%#Obtener solo el mensaje con la expresion regular /\w([^]*)/%>
-     <span class="help-inline">
-      <%= @guard.errors[:lastname].any? ? @guard.errors[:lastname].to_s[/\w([^"]*)/] : "" %></span>
-   </div>
- </div>
-
-  <div class="form-group<%= @guard.errors[:surname].any? ? " error" : "" %>">
-   <%= f.label :Apellido_materno, :class => 'control-label' %>
-   <div class="controls">
-     <%= f.text_field :surname%>
-     <%#Obtener solo el mensaje con la expresion regular /\w([^]*)/%>
-     <span class="help-inline">
-      <%= @guard.errors[:surname].any? ? @guard.errors[:surname].to_s[/\w([^"]*)/] : "" %></span>
-   </div>
- </div>
-
-  <div class="form-group<%= @guard.errors[:rut].any? ? " error" : "" %>">
-   <%= f.label :Rut, :class => 'control-label' %>
-   <div class="controls">
-     <%= f.text_field :rut%>
-     <%#Obtener solo el mensaje con la expresion regular /\w([^]*)/%>
-     <span class="help-inline">
-      <%= @guard.errors[:rut].any? ? @guard.errors[:rut].to_s[/\w([^"]*)/] : "" %></span>
-   </div>
- </div>
-
-  <div class="form-group<%= @guard.errors[:age].any? ? " error" : "" %>">
-   <%= f.label :Edad, :class => 'control-label' %>
-   <div class="controls">
-     <%= f.text_field :age%>
-     <%#Obtener solo el mensaje con la expresion regular /\w([^]*)/%>
-     <span class="help-inline">
-      <%= @guard.errors[:age].any? ? @guard.errors[:age].to_s[/\w([^"]*)/] : "" %></span>
-   </div>
- </div>
-
-
-<div>
-    <%= f.label :Sexo %>
-    <%= f.radio_button(:sex, "Masculino") %>
-    <%= label_tag(:male, "Masculino") %>
-    <%= f.radio_button(:sex, "Femenino") %>
-    <%= label_tag(:female, "Femenino") %>
-</div>
-
-  <div class="form-group<%= @guard.errors[:nationality].any? ? " error" : "" %>">
-   <%= f.label :Nacionalidad, :class => 'control-label' %>
-   <div class="controls">
-     <%= f.text_field :nationality%>
-     <%#Obtener solo el mensaje con la expresion regular /\w([^]*)/%>
-     <span class="help-inline">
-      <%= @guard.errors[:nationality].any? ? @guard.errors[:nationality].to_s[/\w([^"]*)/] : "" %></span>
-   </div>
- </div>
-
-  <div class="form-group<%= @guard.errors[:phone_number].any? ? " error" : "" %>">
-   <%= f.label :Telefono, :class => 'control-label' %>
-   <div class="controls">
-     <%= f.text_field :phone_number%>
-     <%#Obtener solo el mensaje con la expresion regular /\w([^]*)/%>
-     <span class="help-inline">
-      <%= @guard.errors[:phone_number].any? ? @guard.errors[:phone_number].to_s[/\w([^"]*)/] : "" %></span>
-   </div>
- </div>
-<div class="form-group">
-<%= f.label :Telefono_Secundario %>
- <div class="controls">
-    
-    <%= f.text_field :second_phone%>
-</div>
-</div>
-
-  <div class="form-group<%= @guard.errors[:email].any? ? " error" : "" %>">
-   <%= f.label :Email, :class => 'control-label' %>
-   <div class="controls">
-     <%= f.text_field :email%>
-     <%#Obtener solo el mensaje con la expresion regular /\w([^]*)/%>
-     <span class="help-inline">
-      <%= @guard.errors[:email].any? ? @guard.errors[:email].to_s[/\w([^"]*)/] : "" %></span>
-   </div>
- </div>
-
-<div>
-    <%= f.label :Nivel_Educacional %>
-
-    <%= f.select(:educational_level) do %>
-        <% [['Basica incompleta', "Basica incompleta"], 
-            ['Basica completa', "Basica completa"],
-            ['Media incompleta', "Media incompleta"],
-            ['Media completa', "Media completa"],
-            ['Tecnica incompleta', "Tecnica incompleta"],
-            ['Tecnica completa', "Tecnica completa"],
-            ['Superior incompleta', "Superior incompleta"],
-            ['Superior completa', "Superior completa"]].each do |c| -%>
-            <%= content_tag(:option, c.first, value: c.last) %>
-    <% end %>
-    <% end %>
-</div>
-
-<div>
-    <%= f.label :Ciudad %>
-    <%= f.select(:city) do %>
-        <% [['Santiago', "Santiago"], 
-            ['Melipilla', "Melipilla"]].each do |c| -%>
-            <%= content_tag(:option, c.first, value: c.last) %>
-    <% end %>
-    <% end %>
-</div>
-
-<div>
-    <%= f.label :Comuna %>
-        <%= f.select(:commune) do %>
-        <% [['Estación central', "Estación central"], 
-            ['Maipu', "Maipu"],            
-            ['Quilicura', "Quilicura"], 
-            ['Vitacura', "Vitacura"]].each do |c| -%>
-            <%= content_tag(:option, c.first, value: c.last) %>
-    <% end %>
-    <% end %>
-</div>
-
-  <div class="form-group<%= @guard.errors[:address].any? ? " error" : "" %>">
-   <%= f.label :Dirección, :class => 'control-label' %>
-   <div class="controls">
-     <%= f.text_field :address%>
-     <%#Obtener solo el mensaje con la expresion regular /\w([^]*)/%>
-     <span class="help-inline">
-      <%= @guard.errors[:address].any? ? @guard.errors[:address].to_s[/\w([^"]*)/] : "" %></span>
-   </div>
- </div>
-
-<div>
-    <p>
-        Actualizar foto de perfil
-        <p>
-                <%= f.file_field :avatar%>
-        </p>
-
-    </p>
-
-</div>
-<div>
-    <p>
-        Actualizar ficha de guardia
-        <p>
-                <%= f.file_field :ficha_guardia_doc%>
-        </p>
-
-    </p>
-</div>
-<div>
-    <p>
-        Actualizar Certificado de Estudio
-        <p>
-                <%= f.file_field :cert_estudio_doc%>
-        </p>
-
-    </p>
-</div>
-<div>
-    <p>
-        Actualizar Certificado de residencia
-        <p>
-                <%= f.file_field :cert_residencia_doc%>
-        </p>
-
-    </p>
-</div>
-<div>
-    <p>
-        Actualizar Cedula de Identidad
-        <p>
-                <%= f.file_field :cedula_identidad_doc%>
-        </p>
-
-    </p>
-</div>
-<div>
-    <p>
-        Actualizar Pacto de Horas
-        <p>
-                <%= f.file_field :pacto_horas_doc%>
-        </p>
-
-    </p>
-</div>
-<div>
-    <p>
-        Actualizar certificado de antecedentes
-        <p>
-                <%= f.file_field :cert_antecedentes_doc%>
-        </p>
-
-    </p>
-</div>
-<div>
-    <p>
-        Actualizar Credencial
-        <p>
-                <%= f.file_field :credencial_doc%>
-        </p>
-
-    </p>
-</div>
-<div align="center">
-<button  type="submit" class="btn btn-success" %="f.submit"%>Actualizar Informacion</button>
-    <!--%=f.submit "Actualizar Información"%-->
-    <h1></h1>
     </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationServer02">Primer Apellido</label>
+      
+      <%= f.text_field :lastname, type:"text",class:"form-control is-valid", placeholder:"Hernandez", :required=> true %>
+      <div class="invalid-feedback">
+        Ingrese un apellido correcto
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationServer02">Segundo Apellido</label>
+      
+      <%= f.text_field :surname, type:"text",class:"form-control is-valid", placeholder:"Sepulveda", :required=> true %>
+      
+    </div>
+   
+  </div>
+
+  
+   <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="validationServer04">RUN</label>
+      <div class="input-group-prepend">
+      <span class="icon-case"><i class="fa fa-id-card"></i></span>
+      
+      <!--<input  class="form-control is-valid" placeholder="18615292-1" required>-->
+      <%= f.text_field :rut, type:"text",oninput:"checkRut(this)",class:"form-control is-valid", placeholder:"18615292-1", :required=> true %>
+     
+    </div>
+     
+    </div>
+    
+    <div class="col-md-6 mb-3">
+      <label id="email" for="validationServer05">Correo Electronico</label>
+        <div class="input-group-prepend">
+      <span class="icon-case"><i class="fa fa-envelope-o"></i></span>
+      <!--<input  type="email" class="form-control is-valid" id="validationServer05" placeholder="correo@ejemplo.cl">-->
+      <%= f.text_field :email, type:"email",class:"form-control is-valid", placeholder:"correo@ejemplo.cl", :required=> true %>
+      </div>
+      <div class="valid-feedback">
+        
+      </div>
+    </div>
+    
+   
+  </div>
+
+<div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="validationServer01">Edad</label>
+      
+      <div class="input-group-prepend">
+              <span class="icon-case"><i class="fa fa-user"></i></span>
+      <!--<input  type="number" class="form-control is-valid" id="validationServer01" placeholder="38" required >-->
+      <%= f.text_field :age, type:"number",class:"form-control is-valid", placeholder:"38", :required=> true %>
+          </div>
+
+    </div>
+    <div class="col-md-4 mb-3" >
+    <label  >Sexo</label >
+      
+<%= f.select(:sex , [['Masculino', "Masculino"], ['Femenino',"Femenino"]], {}, {class: " form-control " }) %>
+
+
+    </div>
+
+
+    <div class="col-md-4 mb-3">
+      <label for="validationServer02">Nacionalidad</label>
+      <!--<input type="text" class="form-control is-valid" id="validationServer02" placeholder="Chileno" required>-->
+
+      <%= f.text_field :nationality, type:"text",class:"form-control is-valid", placeholder:"Chileno", :required=> true %>
+    </div>
+   
+  </div>
+
+
+
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="validationServer01">Telefono(9 digitos)</label>
+      <div class="input-group-prepend">
+      <span class="icon-case"><i class="fa fa-phone"></i></span>
+      
+      <!--<input  type="tel" pattern="^\d{9}$" class="form-control is-valid" placeholder="976001556" required>-->
+      <%= f.text_field :phone_number, type:"text",pattern:"[0-9]{9}",class:"form-control is-valid", placeholder:"976001556", :required=> true %>
+     
+    </div>
+     
+    </div>
+    
+    <div class="col-md-6 mb-3">
+      <label id="telsecundario" for="validationServer02">Telefono Secundario</label>
+       
+      <!--<input  type="tel" pattern="^\d{9}$" class="form-control is-valid" id="validationServer02" placeholder="23189263">-->
+      <%= f.text_field :second_phone, type:"text" ,pattern:"[0-9]{9}",class:"form-control is-valid", placeholder:"976001556" %>
+      <div class="valid-feedback">
+        
+      </div>
+    </div>
+    
+   
+  </div>
+
+    <div class="form-row">
+    <div class="col-md-12 col-center">
+      
+      <label>Nivel Educacional</label>
+      <div class="input-group-prepend">
+      <span class="icon-case"><i class="fa fa-graduation-cap"></i></span>
+    
+     <%= f.select(:educational_level ,
+       [['Basica Incompleta', "Basica Incompleta"],
+       ['Basica Completa', "Basica Completa"],
+        ['Media Incompleta',"Media Incompleta"],
+         ['Media Completa',"Media Completa"],
+         ['Superior Incompleta',"Superior Incompleta"],
+         ['Superior Completa',"Superior Completa"]], {}, {class: " form-control " }) %>
+       
+    </div>
+    </div>
+    
+   
+  </div>
+<div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="validationServer01">Ciudad</label>
+      
+      <div class="input-group-prepend">
+              <span class="icon-case"><i class="fa fa-location-arrow"></i></span>
+      <!--<input  type="text" class="form-control is-valid" id="validationServer01" placeholder="Santiago" required >-->
+      <%= f.text_field :city, type:"text",class:"form-control is-valid", placeholder:"Santiago", :required=> true %>
+          </div>
+
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationServer02">Comuna</label>
+      <!--<input  type="text" class="form-control is-valid" id="validationServer02" placeholder="Puente Alto" required>-->
+      <%= f.text_field :commune, type:"text",class:"form-control is-valid", placeholder:"Puente Alto", :required=> true %>
+      
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationServer02">Direccion</label>
+     
+      <%= f.text_field :address, type:"text",class:"form-control is-valid", placeholder:"pasaje barca331", :required=> true %>
+      
+    </div>
+   
+  </div>
+
+  <div class="form-row">
+    <div class="col-md-8 mb-6">
+     <div class="custom-file">
+   
+      <!--%= f.file_field :avatar,type:"file",class:"custon-file-input",id:"customFileLang",label_class:"custom-file-label" %-->
+  <!--input type="file" class="custom-file-input" id="customFileLang" lang="es" >
+  <label class="custom-file-label" for="customFileLang">Seleccionar Imagen del guardia</label-->
+   <div >
+    <%= f.label :avatar,"Seleccionar foto perfil del guardia"  , :class =>'custom-file-label'%>
+    <%= f.file_field :avatar %>
+  </div>
+    
+  
+ 
+
+    </div>
+  </div>
 </div>
+<h1></h1>
+
+<div class="form-row">
+  <div class="col-md-8 mb-6">
+     <div class="custom-file">
+  <%= f.label :ficha_guardia_doc,"Ficha del Guardia",:class =>'custom-file-label' %>
+  
+  <%= f.file_field :ficha_guardia_doc%> 
+</div>
+</div>
+</div>
+<h1></h1>
+<div class="form-row">
+  <div class="col-md-8 mb-6">
+     <div class="custom-file">
+     
+  <%= f.label :cert_estudio_doc,"Certificado de estudio",:class =>'custom-file-label' %>
+  
+  <%= f.file_field :cert_estudio_doc%> 
+</div>
+</div>
+</div>
+<h1></h1>
+<div class="form-row">
+  <div class="col-md-8 mb-6">
+     <div class="custom-file">
+     
+  <%= f.label :cert_residencia_doc,"Certificado de Residencia",:class =>'custom-file-label' %>
+  
+  <%= f.file_field :cert_residencia_doc %> 
+</div>
+</div>
+</div>
+<h1></h1>
+<div class="form-row">
+  <div class="col-md-8 mb-6">
+     <div class="custom-file">
+     
+  <%= f.label :cedula_identidad_doc,"Cedula de Identidad",:class =>'custom-file-label' %>
+  
+  <%= f.file_field :cedula_identidad_doc%> 
+</div>
+</div>
+</div>
+
+<h1></h1>
+<div class="form-row">
+  <div class="col-md-8 mb-6">
+     <div class="custom-file">
+     
+  <%= f.label :pacto_horas_doc,"Pacto de Horas",:class =>'custom-file-label' %>
+  
+  <%= f.file_field :pacto_horas_doc%> 
+</div>
+</div>
+</div>
+
+<h1></h1>
+<div class="form-row">
+  <div class="col-md-8 mb-6">
+     <div class="custom-file">
+     
+  <%= f.label :cert_antecedentes_doc,"Certificado de Antecedentes",:class =>'custom-file-label' %>
+  
+  <%= f.file_field :cert_antecedentes_doc%> 
+</div>
+</div>
+</div>
+  <div class="form-row">
+    <div class="col-md-6 mb-3">    
+    </div>   
+  </div>
+
+  <div align="right">
+  
+    <button  type="submit" class="btn btn-primary" %="f.submit"%>Ingresar Guardia</button>
+  </div>
+</form>
+
+
 <%end%>
+  
+</div>
 
 </div>

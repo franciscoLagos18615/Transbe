@@ -88,15 +88,55 @@
 </div>
 
 
+<div class="accordion" id="accord">
+	<p>
+	  <a class="btn btn-primary" data-toggle="collapse" href="#ficha" role="button" aria-expanded="false" aria-controls="ficha">Ficha</a>
+	  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#cedula" aria-expanded="false" aria-controls="cedula">Cédula</button>
+	  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#pacto" aria-expanded="false" aria-controls="pacto">Pacto de horas</button>
+	  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#credencial" aria-expanded="false" aria-controls="credencial">Credencial</button>
+	  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".cert" aria-expanded="false" aria-controls="estudios residencia antecedentes">Certificados</button>
+	  <button class="btn btn-info" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="ficha cedula pacto credencial estudios residencia antecedentes">Mostrar todo</button>
+	</p>
 
 
-<p align="center"> <%= image_tag @guard.ficha_guardia_doc.url(:thumb) %></p>
-<p align="center"> <%= image_tag @guard.cert_estudio_doc.url(:thumb) %></p>
-<p align="center"> <%= image_tag @guard.cert_residencia_doc.url(:thumb) %></p>
-<p align="center"> <%= image_tag @guard.cedula_identidad_doc.url(:thumb) %></p>
-<p align="center"> <%= image_tag @guard.pacto_horas_doc.url(:thumb) %></p>
-<p align="center"> <%= image_tag @guard.cert_antecedentes_doc.url(:thumb) %></p>
-<p align="center"> <%= image_tag @guard.credencial_doc.url(:thumb) %></p>
+    <div class="collapse multi-collapse" id="ficha" data-parent="#accord">
+      <div class="card card-body">
+        <p align="center"> <%= image_tag @guard.ficha_guardia_doc.url(:thumb) %></p>
+      </div>
+    </div>
+    <div class="collapse multi-collapse cert" id="estudios" data-parent="#accord">
+      <div class="card card-body">
+        <p align="center"> <%= image_tag @guard.cert_estudio_doc.url(:thumb) %></p>
+      </div>
+    </div>
+    <div class="collapse multi-collapse cert" id="residencia" data-parent="#accord">
+      <div class="card card-body">
+		<p align="center"> <%= image_tag @guard.cert_residencia_doc.url(:thumb) %></p>
+      </div>
+    </div>
+    <div class="collapse multi-collapse" id="cedula" data-parent="#accord">
+      <div class="card card-body">
+        <p align="center"> <%= image_tag @guard.cedula_identidad_doc.url(:thumb) %></p>
+      </div>
+    </div>
+    <div class="collapse multi-collapse" id="pacto" data-parent="#accord">
+      <div class="card card-body">
+        <p align="center"> <%= image_tag @guard.pacto_horas_doc.url(:thumb) %></p>
+      </div>
+    </div>
+    <div class="collapse multi-collapse cert" id="antecedentes" data-parent="#accord">
+      <div class="card card-body">
+        <p align="center"> <%= image_tag @guard.cert_antecedentes_doc.url(:thumb) %></p>
+      </div>
+    </div>
+    <div class="collapse multi-collapse" id="credencial" data-parent="#accord">
+      <div class="card card-body">
+        <p align="center"> <%= image_tag @guard.credencial_doc.url(:thumb) %></p>
+      </div>
+    </div>
+</div>  
+
+
 
 <td><%=link_to "Volver", guards_path()%></td>
 </div>

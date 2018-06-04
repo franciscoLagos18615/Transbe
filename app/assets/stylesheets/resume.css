@@ -84,6 +84,7 @@ color:black;
   .bg-primary{
     color:black;
   }
+ 
   #sideNav {
     text-align: center;
     position: fixed;
@@ -122,12 +123,19 @@ color:black;
   }
   #sideNav .navbar-collapse .navbar-nav .nav-item {
     display: block;
+    ;
+  }
+  #sideNav .navbar-collapse .navbar-nav .nav-item .dropdown{
+    display: none;
+    
     
   }
   #sideNav .navbar-collapse .navbar-nav .nav-item .nav-link {
     display: block;
     
+  
   }
+  
 }
 
 section.resume-section {

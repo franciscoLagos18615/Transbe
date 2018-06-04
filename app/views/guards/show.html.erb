@@ -4,7 +4,7 @@
 <div class="subheading mb-5" >
 
 <a>Detalles del guardia <%=@guard.firstname%> </a>
-<p align="center"> <%= image_tag @guard.avatar.url(:thumb) %></p>
+<p align="center"> <img class="img-fluid rounded-circle" src=<%=@guard.avatar.url(:thumb)%> ></p>
 
 <div class="container">
 	<table class="table table-striped table-hover small">

@@ -114,8 +114,8 @@
     <div class="col-md-6 mb-3">
       <label id="telsecundario" for="validationServer02">Telefono Secundario</label>
        
-      <!--<input  type="tel" pattern="^\d{9}$" class="form-control is-valid" id="validationServer02" placeholder="23189263">-->
-      <%= t.text_field :second_phone, type:"text" ,pattern:"[0-9]{9}",class:"form-control is-valid", placeholder:"976001556" %>
+      <!--<input  type="tel" pattern="^\d{9}$" class="form-control is-valid" id="validationServer02" placeholder="223189263">-->
+      <%= t.text_field :second_phone, type:"text" ,pattern:"[0-9]{9}",class:"form-control is-valid", placeholder:"223189263" %>
       <div class="valid-feedback">
         
       </div>
@@ -257,10 +257,21 @@
     </div>   
   </div>
 
-  <div align="right">
+  <!--div align="right">
   
     <button  type="submit" class="btn btn-primary" %="t.submit"%>Ingresar Guardia</button>
-  </div>
+  </div-->
+  <div align="center">
+        <h1> </h1>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col"><a class="btn btn-secondary" href="/"><i class="fa fa-home"></i> Volver al Inicio</a></th>
+            <th scope="col"><button  type="submit" class="btn btn-primary" %="f.submit"%><i class="fa fa-plus-square"></i> Ingresar nuevo Guardia</button></th>
+          </tr>
+        </thead>
+      </table>
+    </div>
 </form>
 
 

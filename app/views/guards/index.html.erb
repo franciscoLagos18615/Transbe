@@ -29,7 +29,7 @@
       <th><%=t.rut%></th>
       <td>
         <%=link_to '<span class="fa fa-align-justify" data-original-title="Detalles" data-toggle="tooltip"></span>'.html_safe , guard_path(t),class: "btn btn-info" %>
-        <%=link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip"></span>'.html_safe , edit_guard_path(t), class: "btn btn-primary"%>
+        <%=link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip"></span>'.html_safe , edit_guard_path(t), class: "btn btn-success"%>
         <%= link_to '<span class="fa fa-window-close" data-original-title="Eliminar" data-toggle="tooltip"></span>'.html_safe , t, method: :delete, data: { confirm: "¿Esta seguro que desea eliminar el registro de este guardia?"} , class: "btn btn-danger"%>
       </td>
     
@@ -44,6 +44,17 @@ $(document).ready(function(){
 });
 </script>
 
-<div class="col-md-7 col-center" align="left">
-<%= link_to "Crear Guardia", guards_new_path %>
+<!--div class="col-md-7 col-center" align="left">
+  <%= link_to "Crear Guardia", guards_new_path %>
+</div-->
+
+<div align="center">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col"><a class="btn btn-secondary" href="/"><i class="fa fa-home"></i> Volver al Inicio</a></th>
+        <th scope="col"><a class="btn btn-primary" href="/guards/new"><i class="fa fa-plus-square"></i> Crear nuevo Guardia</a></th>
+      </tr>
+    </thead>
+  </table>
 </div>

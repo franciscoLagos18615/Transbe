@@ -12,7 +12,7 @@ class GuardsController < ApplicationController
      respond_to do |format|
        if @guard.valid? 
          if @guard.save
-           format.html { redirect_to @guard, notice: 'Client was successfully created.' }
+           format.html { redirect_to @guard, notice: 'Guardia Correctamente Creado.' }
            format.json { render :show, status: :created, location: @guard }
          else
            format.html { render :new }

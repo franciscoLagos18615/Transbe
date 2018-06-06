@@ -23671,3 +23671,534 @@ Processing by GuardsController#show as HTML
 Completed 200 OK in 36ms (Views: 32.6ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/guards/" for 127.0.0.1 at 2018-06-05 14:13:54 -0400
+  [1m[35m (5.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (1.3ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (56.5ms)
+Completed 200 OK in 402ms (Views: 369.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/guard/1" for 127.0.0.1 at 2018-06-05 14:14:02 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 46ms (Views: 39.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/guards/" for 127.0.0.1 at 2018-06-06 14:34:50 -0400
+  [1m[35m (55.9ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (11.1ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (66.8ms)
+Completed 200 OK in 423ms (Views: 385.4ms | ActiveRecord: 14.9ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-06-06 14:34:56 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.0ms)
+  Rendered users/sessions/new.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 62ms (Views: 45.0ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2018-06-06 14:35:01 -0400
+Processing by Devise::PasswordsController#new as HTML
+  Rendering users/passwords/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.6ms)
+  Rendered users/shared/_links.html.erb (0.5ms)
+  Rendered users/passwords/new.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 51ms (Views: 49.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/password" for 127.0.0.1 at 2018-06-06 14:35:12 -0400
+Processing by Devise::PasswordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UkXtdlVm6wrMC3sB7613EF7PFaQg/92T0KaIDCXxPcSCej7kNXbjiQmCJ3Tz5tOj26zK6521oAEY+YeDvMY8Kg==", "user"=>{"email"=>"cristianfervas1992@gmail.com"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'cristianfervas1992@gmail.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`reset_password_token` = 'e7d09e3bdde8f7185fef2f352db30cbeefc07326b0a7fa1ce70f027ca2fad9c9' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (6.7ms)[0m  [1m[33mUPDATE `users` SET `reset_password_token` = 'e7d09e3bdde8f7185fef2f352db30cbeefc07326b0a7fa1ce70f027ca2fad9c9', `reset_password_sent_at` = '2018-06-06 18:35:13', `updated_at` = '2018-06-06 18:35:13' WHERE `users`.`id` = 1[0m
+  [1m[35m (29.6ms)[0m  [1m[35mCOMMIT[0m
+  Rendering users/mailer/reset_password_instructions.html.erb
+  Rendered users/mailer/reset_password_instructions.html.erb (1.1ms)
+Devise::Mailer#reset_password_instructions: processed outbound mail in 255.6ms
+Sent mail to cristianfervas1992@gmail.com (6.5ms)
+Date: Wed, 06 Jun 2018 14:35:13 -0400
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: cristianfervas1992@gmail.com
+Message-ID: <5b1829617a7b9_30eb2b25dcda88ec4448c@cristian-Satellite-C45-A.mail>
+Subject: =?UTF-8?Q?Instrucciones_para_restablecer_su_contrase=C3=B1a?=
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Hello cristianfervas1992@gmail.com!</p>
+
+<p>Someone has requested a link to change your password. You can do this through the link below.</p>
+
+<p><a href="http://localhost:3000/users/password/edit?reset_password_token=pbZE4WukRjJWGg4mixq4">Change my password</a></p>
+
+<p>If you didn't request this, please ignore this email.</p>
+<p>Your password won't change until you access the link above and create a new one.</p>
+
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 626ms (ActiveRecord: 38.8ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-06-06 14:35:13 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.1ms)
+  Rendered users/sessions/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 37ms (Views: 35.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/password" for 127.0.0.1 at 2018-06-06 14:42:42 -0400
+  [1m[35m (25.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Devise::PasswordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UkXtdlVm6wrMC3sB7613EF7PFaQg/92T0KaIDCXxPcSCej7kNXbjiQmCJ3Tz5tOj26zK6521oAEY+YeDvMY8Kg==", "user"=>{"email"=>"cristianfervas1992@gmail.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'cristianfervas1992@gmail.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`reset_password_token` = '22d6d20bfbd56e60132b5e0b1ec9c3d66a5db2982a4bbfcee00e6f015ea58a4e' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[33mUPDATE `users` SET `reset_password_token` = '22d6d20bfbd56e60132b5e0b1ec9c3d66a5db2982a4bbfcee00e6f015ea58a4e', `reset_password_sent_at` = '2018-06-06 18:42:42', `updated_at` = '2018-06-06 18:42:42' WHERE `users`.`id` = 1[0m
+  [1m[35m (26.9ms)[0m  [1m[35mCOMMIT[0m
+  Rendering users/mailer/reset_password_instructions.html.erb
+  Rendered users/mailer/reset_password_instructions.html.erb (2.4ms)
+Devise::Mailer#reset_password_instructions: processed outbound mail in 214.1ms
+Sent mail to cristianfervas1992@gmail.com (7.7ms)
+Date: Wed, 06 Jun 2018 14:42:43 -0400
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: cristianfervas1992@gmail.com
+Message-ID: <5b182b235f9f9_31d32af241b111347654a@cristian-Satellite-C45-A.mail>
+Subject: =?UTF-8?Q?Instrucciones_para_restablecer_su_contrase=C3=B1a?=
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Hello cristianfervas1992@gmail.com!</p>
+
+<p>Someone has requested a link to change your password. You can do this through the link below.</p>
+
+<p><a href="http://localhost:3000/users/password/edit?reset_password_token=JmfenbULdS34_3__iroQ">Change my password</a></p>
+
+<p>If you didn't request this, please ignore this email.</p>
+<p>Your password won't change until you access the link above and create a new one.</p>
+
+Completed 500 Internal Server Error in 599ms (ActiveRecord: 30.8ms)
+
+
+  
+Errno::ECONNREFUSED (Connection refused - connect(2) for "localhost" port 25):
+  
+/home/cristian/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/net/smtp.rb:539:in `initialize'
+/home/cristian/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/net/smtp.rb:539:in `open'
+/home/cristian/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/net/smtp.rb:539:in `tcp_socket'
+/home/cristian/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/net/smtp.rb:549:in `block in do_start'
+/home/cristian/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/timeout.rb:93:in `block in timeout'
+/home/cristian/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/timeout.rb:103:in `timeout'
+/home/cristian/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/net/smtp.rb:548:in `do_start'
+/home/cristian/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/net/smtp.rb:518:in `start'
+mail (2.7.0) lib/mail/network/delivery_methods/smtp.rb:109:in `start_smtp_session'
+mail (2.7.0) lib/mail/network/delivery_methods/smtp.rb:100:in `deliver!'
+mail (2.7.0) lib/mail/message.rb:2160:in `do_delivery'
+mail (2.7.0) lib/mail/message.rb:260:in `block in deliver'
+actionmailer (5.1.6) lib/action_mailer/base.rb:558:in `block in deliver_mail'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.6) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `instrument'
+actionmailer (5.1.6) lib/action_mailer/base.rb:556:in `deliver_mail'
+mail (2.7.0) lib/mail/message.rb:260:in `deliver'
+actionmailer (5.1.6) lib/action_mailer/message_delivery.rb:96:in `block in deliver_now'
+actionmailer (5.1.6) lib/action_mailer/rescuable.rb:15:in `handle_exceptions'
+actionmailer (5.1.6) lib/action_mailer/message_delivery.rb:95:in `deliver_now'
+devise (4.4.3) lib/devise/models/authenticatable.rb:193:in `send_devise_notification'
+devise (4.4.3) lib/devise/models/recoverable.rb:99:in `send_reset_password_instructions_notification'
+devise (4.4.3) lib/devise/models/recoverable.rb:52:in `send_reset_password_instructions'
+devise (4.4.3) lib/devise/models/recoverable.rb:136:in `send_reset_password_instructions'
+devise (4.4.3) app/controllers/devise/passwords_controller.rb:15:in `create'
+actionpack (5.1.6) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.6) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.6) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.6) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/mapper.rb:16:in `block in <class:Constraints>'
+actionpack (5.1.6) lib/action_dispatch/routing/mapper.rb:46:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/users/password" for 127.0.0.1 at 2018-06-06 14:45:49 -0400
+  [1m[35m (23.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Devise::PasswordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UkXtdlVm6wrMC3sB7613EF7PFaQg/92T0KaIDCXxPcSCej7kNXbjiQmCJ3Tz5tOj26zK6521oAEY+YeDvMY8Kg==", "user"=>{"email"=>"cristianfervas1992@gmail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'cristianfervas1992@gmail.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`reset_password_token` = 'cb7f58a701fcc6a812b84a9e62b955877fbf47525afb5f564026c27a2062aa80' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[33mUPDATE `users` SET `reset_password_token` = 'cb7f58a701fcc6a812b84a9e62b955877fbf47525afb5f564026c27a2062aa80', `reset_password_sent_at` = '2018-06-06 18:45:49', `updated_at` = '2018-06-06 18:45:49' WHERE `users`.`id` = 1[0m
+  [1m[35m (26.9ms)[0m  [1m[35mCOMMIT[0m
+  Rendering users/mailer/reset_password_instructions.html.erb
+  Rendered users/mailer/reset_password_instructions.html.erb (3.4ms)
+Devise::Mailer#reset_password_instructions: processed outbound mail in 202.6ms
+Sent mail to cristianfervas1992@gmail.com (1173.1ms)
+Date: Wed, 06 Jun 2018 14:45:50 -0400
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: cristianfervas1992@gmail.com
+Message-ID: <5b182bde31d7b_32272ac8d6f71d5833674@cristian-Satellite-C45-A.mail>
+Subject: =?UTF-8?Q?Instrucciones_para_restablecer_su_contrase=C3=B1a?=
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Hello cristianfervas1992@gmail.com!</p>
+
+<p>Someone has requested a link to change your password. You can do this through the link below.</p>
+
+<p><a href="http://localhost:3000/users/password/edit?reset_password_token=NNj_QkTXiZ53WtSFGa45">Change my password</a></p>
+
+<p>If you didn't request this, please ignore this email.</p>
+<p>Your password won't change until you access the link above and create a new one.</p>
+
+Completed 500 Internal Server Error in 1746ms (ActiveRecord: 32.6ms)
+
+
+  
+Net::SMTPAuthenticationError (535-5.7.8 Username and Password not accepted. Learn more at
+):
+  
+/home/cristian/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/net/smtp.rb:981:in `check_auth_response'
+/home/cristian/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/net/smtp.rb:736:in `auth_plain'
+/home/cristian/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/net/smtp.rb:728:in `authenticate'
+/home/cristian/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/net/smtp.rb:565:in `do_start'
+/home/cristian/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/net/smtp.rb:518:in `start'
+mail (2.7.0) lib/mail/network/delivery_methods/smtp.rb:109:in `start_smtp_session'
+mail (2.7.0) lib/mail/network/delivery_methods/smtp.rb:100:in `deliver!'
+mail (2.7.0) lib/mail/message.rb:2160:in `do_delivery'
+mail (2.7.0) lib/mail/message.rb:260:in `block in deliver'
+actionmailer (5.1.6) lib/action_mailer/base.rb:558:in `block in deliver_mail'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.6) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `instrument'
+actionmailer (5.1.6) lib/action_mailer/base.rb:556:in `deliver_mail'
+mail (2.7.0) lib/mail/message.rb:260:in `deliver'
+actionmailer (5.1.6) lib/action_mailer/message_delivery.rb:96:in `block in deliver_now'
+actionmailer (5.1.6) lib/action_mailer/rescuable.rb:15:in `handle_exceptions'
+actionmailer (5.1.6) lib/action_mailer/message_delivery.rb:95:in `deliver_now'
+devise (4.4.3) lib/devise/models/authenticatable.rb:193:in `send_devise_notification'
+devise (4.4.3) lib/devise/models/recoverable.rb:99:in `send_reset_password_instructions_notification'
+devise (4.4.3) lib/devise/models/recoverable.rb:52:in `send_reset_password_instructions'
+devise (4.4.3) lib/devise/models/recoverable.rb:136:in `send_reset_password_instructions'
+devise (4.4.3) app/controllers/devise/passwords_controller.rb:15:in `create'
+actionpack (5.1.6) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.6) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.6) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.6) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/mapper.rb:16:in `block in <class:Constraints>'
+actionpack (5.1.6) lib/action_dispatch/routing/mapper.rb:46:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/password/new" for 127.0.0.1 at 2018-06-06 14:51:40 -0400
+  [1m[35m (1.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Devise::PasswordsController#new as HTML
+  Rendering users/passwords/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.3ms)
+  Rendered users/shared/_links.html.erb (0.2ms)
+  Rendered users/passwords/new.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 284ms (Views: 260.2ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/users/password" for 127.0.0.1 at 2018-06-06 14:51:45 -0400
+Processing by Devise::PasswordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+dRZ06c2Kh8EBeEJIsjekXAz+PuotvkqiiE4ioBB+Xwp64pBxyYinMGMvXw+g3oi9VAntBX8hLhCfjcFGXb4kg==", "user"=>{"email"=>"cristianfervas1992@gmail.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'cristianfervas1992@gmail.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`reset_password_token` = '89ec7894bf1147011fd25b6cb2ffff7878b924d5edc23c2eb8760faa15970695' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[33mUPDATE `users` SET `reset_password_token` = '89ec7894bf1147011fd25b6cb2ffff7878b924d5edc23c2eb8760faa15970695', `reset_password_sent_at` = '2018-06-06 18:51:46', `updated_at` = '2018-06-06 18:51:46' WHERE `users`.`id` = 1[0m
+  [1m[35m (52.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendering users/mailer/reset_password_instructions.html.erb
+  Rendered users/mailer/reset_password_instructions.html.erb (1.0ms)
+Devise::Mailer#reset_password_instructions: processed outbound mail in 149.5ms
+Sent mail to cristianfervas1992@gmail.com (635.6ms)
+Date: Wed, 06 Jun 2018 14:51:46 -0400
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: cristianfervas1992@gmail.com
+Message-ID: <5b182d4251925_32f02ae9589bdfcc8ad@cristian-Satellite-C45-A.mail>
+Subject: =?UTF-8?Q?Instrucciones_para_restablecer_su_contrase=C3=B1a?=
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Hello cristianfervas1992@gmail.com!</p>
+
+<p>Someone has requested a link to change your password. You can do this through the link below.</p>
+
+<p><a href="http://localhost:3000/users/password/edit?reset_password_token=7dTd-D1G3fnqAvzQ6a7Q">Change my password</a></p>
+
+<p>If you didn't request this, please ignore this email.</p>
+<p>Your password won't change until you access the link above and create a new one.</p>
+
+Completed 500 Internal Server Error in 1121ms (ActiveRecord: 54.4ms)
+
+
+  
+EOFError (end of file reached):
+  
+
+Started GET "/users/password/new" for 127.0.0.1 at 2018-06-06 16:10:45 -0400
+  [1m[35m (1.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Devise::PasswordsController#new as HTML
+  Rendering users/passwords/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.1ms)
+  Rendered users/shared/_links.html.erb (0.2ms)
+  Rendered users/passwords/new.html.erb within layouts/application (25.5ms)
+Completed 200 OK in 306ms (Views: 272.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-06-06 16:10:49 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.5ms)
+  Rendered users/sessions/new.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 45ms (Views: 43.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-06-06 16:10:52 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4ch1HpyCy2/fXeX2W+hG7/4lifUbK7Tq1xwox/3CoAFnx93A8UK1qDbGGKg0EdoyN8Bb4R9O+q9EWiw8OiY1Pg==", "user"=>{"email"=>"cristianfervas1992@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'cristianfervas1992@gmail.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (6.2ms)[0m  [1m[33mUPDATE `users` SET `current_sign_in_at` = '2018-06-06 20:10:52', `sign_in_count` = 2, `updated_at` = '2018-06-06 20:10:52' WHERE `users`.`id` = 1[0m
+  [1m[35m (39.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 275ms (ActiveRecord: 45.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-06 16:10:53 -0400
+Processing by BienvenidaController#index as HTML
+  Rendering bienvenida/index.html.erb within layouts/application
+  Rendered bienvenida/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 42ms (Views: 40.0ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-06-06 16:10:57 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"QCOUvNvELSvMqu0G4oS8AzcOd0C/0Gbj9pAcay2ZMbPBRGtH6yvgLC1MsEywMmYTxLJoRDvELfJVLn67Hi4LAg=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-06 16:10:57 -0400
+Processing by BienvenidaController#index as HTML
+  Rendering bienvenida/index.html.erb within layouts/application
+  Rendered bienvenida/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 42ms (Views: 41.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-06-06 16:10:59 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.0ms)
+  Rendered users/sessions/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 49ms (Views: 46.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2018-06-06 16:11:01 -0400
+Processing by Devise::PasswordsController#new as HTML
+  Rendering users/passwords/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.8ms)
+  Rendered users/shared/_links.html.erb (0.4ms)
+  Rendered users/passwords/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 51ms (Views: 49.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/password" for 127.0.0.1 at 2018-06-06 17:02:50 -0400
+  [1m[35m (19.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Devise::PasswordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i2NcSh56kH42WX+BPg2ZvJUYlDXwZ+z1A6+BuxEBwtEVD/3txdMjnMge+fU9iTa3repbw+dw7oxE31eYkSSeOQ==", "user"=>{"email"=>"cristianfervas1992@gmail.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'cristianfervas1992@gmail.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`reset_password_token` = 'e61a1428aa302bcb8eeb9afca2bb3f34b16a1318cd662d1e3b97998169115a36' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[33mUPDATE `users` SET `reset_password_token` = 'e61a1428aa302bcb8eeb9afca2bb3f34b16a1318cd662d1e3b97998169115a36', `reset_password_sent_at` = '2018-06-06 21:02:50', `updated_at` = '2018-06-06 21:02:50' WHERE `users`.`id` = 1[0m
+  [1m[35m (26.5ms)[0m  [1m[35mCOMMIT[0m
+  Rendering users/mailer/reset_password_instructions.html.erb
+  Rendered users/mailer/reset_password_instructions.html.erb (2.2ms)
+Devise::Mailer#reset_password_instructions: processed outbound mail in 185.3ms
+Sent mail to cristianfervas1992@gmail.com (2732.8ms)
+Date: Wed, 06 Jun 2018 17:02:50 -0400
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: cristianfervas1992@gmail.com
+Message-ID: <5b184bfaebd8b_43b52ae25ce559e85305a@cristian-Satellite-C45-A.mail>
+Subject: =?UTF-8?Q?Instrucciones_para_restablecer_su_contrase=C3=B1a?=
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Hello cristianfervas1992@gmail.com!</p>
+
+<p>Someone has requested a link to change your password. You can do this through the link below.</p>
+
+<p><a href="http://localhost:3000/users/password/edit?reset_password_token=q4mrzkkzxxbojkR2Xd7j">Change my password</a></p>
+
+<p>If you didn't request this, please ignore this email.</p>
+<p>Your password won't change until you access the link above and create a new one.</p>
+
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 3325ms (ActiveRecord: 30.6ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-06-06 17:02:53 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.2ms)
+  Rendered users/sessions/new.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 232ms (Views: 229.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/edit?reset_password_token=[FILTERED]" for 127.0.0.1 at 2018-06-06 17:03:34 -0400
+Processing by Devise::PasswordsController#edit as HTML
+  Parameters: {"reset_password_token"=>"[FILTERED]"}
+  Rendering users/passwords/edit.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.2ms)
+  Rendered users/passwords/edit.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 49ms (Views: 46.4ms | ActiveRecord: 0.0ms)
+
+

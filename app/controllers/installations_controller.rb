@@ -12,7 +12,7 @@ class InstallationsController < ApplicationController
      respond_to do |format|
        if @installation.valid? 
          if @installation.save
-           format.html { redirect_to @installation, notice: 'Installation was successfully created.' }
+           format.html { redirect_to @installation, notice: 'Instalacion Creada Exitosamente.' }
            format.json { render :show, status: :created, location: @installation }
          else
            format.html { render :new }

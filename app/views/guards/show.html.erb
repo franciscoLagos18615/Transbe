@@ -54,7 +54,7 @@
 					<small>Telefono principal y secundario</small>
 				</td>
 				<td>
-					<small><%=@guard.phone_number%> / <%=@guard.phone_number%> </small>
+					<small><%=@guard.phone_number%> / <%=@guard.second_phone%> </small>
 				</td>
 
 			</tr>
@@ -138,9 +138,25 @@
 
 
 
-<td><%=link_to "Volver", guards_path()%></td>
+<!--td><%=link_to "Volver", guards_path()%></td-->
+<div align="center">
+	<table>
+  	<thead>
+    	<tr>
+      	<th scope="col"><a class="btn btn-secondary" href="/guards"><i class="fa fa-arrow-circle-left"></i> Volver </a></th>
+      	<th>
+				<%=link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Editar Guardia</span>'.html_safe , edit_guard_path(@guard), class: "btn btn-success"%>
+				</th>
+				<th scope="col"><a class="btn btn-primary" href="/guards/new"><i class="fa fa-plus-square"></i> Crear nuevo Guardia</a></th>
+    	</tr>
+  	</thead>
+	</table>
+</div>
+
+
 </div>
 
 </div>
+
 
 </section>

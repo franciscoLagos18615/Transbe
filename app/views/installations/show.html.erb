@@ -47,7 +47,10 @@
   <thead>
     <tr>
       <th scope="col"><a class="btn btn-secondary" href="/installations"><i class="fa fa-arrow-circle-left"></i> Volver       </a></th>
-      <th scope="col"><a class="btn btn-primary" href="/installations/new"><i class="fa fa-plus-square"></i> Crear nueva instalacion</a></th>
+      <th>
+				<%=link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Editar Instalacion</span>'.html_safe , edit_installation_path(@installation), class: "btn btn-success"%>
+				</th>
+			<th scope="col"><a class="btn btn-primary" href="/installations/new"><i class="fa fa-plus-square"></i> Crear nueva instalacion</a></th>
     </tr>
   </thead>
 </table>

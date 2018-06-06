@@ -19,10 +19,14 @@
       </th>
       <th>
         <%=installation.number_guards%>
+        
       </th>
+      
+        
      <td>
+        
         <%=link_to '<span class="fa fa-align-justify" data-original-title="Detalles" data-toggle="tooltip"></span>'.html_safe , installation_path(installation),class: "btn btn-info" %>
-        <%=link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip"></span>'.html_safe , edit_installation_path(installation), class: "btn btn-primary"%>
+        <%=link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip"></span>'.html_safe , edit_installation_path(installation), class: "btn btn-success"%>
         <%= link_to '<span class="fa fa-window-close" data-original-title="Eliminar" data-toggle="tooltip"></span>'.html_safe , installation, method: :delete, data: { confirm: "¿Esta seguro que desea eliminar la instalacion?"} , class: "btn btn-danger"%>
       </td>
   </tr>

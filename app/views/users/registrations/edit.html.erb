@@ -97,9 +97,19 @@
 <%= render "users/shared/links" %>
 
 </form>
+
+
+<form>
+    <h1 class="h3 mb-3 font-weight-normal" align="center">Eliminar cuenta</h1>
+    <p>Quieres elminar tu cuenta? </p>
+    <%= button_to "Eliminar mi cuenta",registration_path(resource_name), data: { confirm: "¿ Esta seguro de eliminar su cuenta?" }, method: :delete,class:"btn btn-md btn-primary btn-block" %>
+
+    <%= link_to "Volver", :back %>
+
+  </form>
 </body1>
 
-<body1 class="text-center" align="center">
+<!--body1 class="text-center" align="center">
   <form>
     <h1 class="h3 mb-3 font-weight-normal" align="center">Eliminar cuenta</h1>
     <p>Quieres elminar tu cuenta? </p>
@@ -109,4 +119,4 @@
 
   </form>
 
-</body1>
+</body1-->

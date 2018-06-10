@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180610042336) do
+ActiveRecord::Schema.define(version: 20180610043807) do
 
   create_table "bills", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text "description"
@@ -152,6 +152,17 @@ ActiveRecord::Schema.define(version: 20180610042336) do
     t.datetime "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "modifications", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "contract_guard_id"
+    t.string "modificacion_doc_file_name"
+    t.string "modificacion_doc_content_type"
+    t.integer "modificacion_doc_file_size"
+    t.datetime "modificacion_doc_updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["contract_guard_id"], name: "index_modifications_on_contract_guard_id"
   end
 
   create_table "osdocumentations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

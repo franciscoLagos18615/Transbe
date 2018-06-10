@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180520023320) do
+ActiveRecord::Schema.define(version: 20180610032621) do
 
   create_table "bills", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text "description"
@@ -103,6 +103,28 @@ ActiveRecord::Schema.define(version: 20180520023320) do
     t.string "credencial_doc_content_type"
     t.integer "credencial_doc_file_size"
     t.datetime "credencial_doc_updated_at"
+    t.string "derecho_saber_doc_file_name"
+    t.string "derecho_saber_doc_content_type"
+    t.integer "derecho_saber_doc_file_size"
+    t.datetime "derecho_saber_doc_updated_at"
+    t.string "epp_entrega_doc_file_name"
+    t.string "epp_entrega_doc_content_type"
+    t.integer "epp_entrega_doc_file_size"
+    t.datetime "epp_entrega_doc_updated_at"
+    t.string "epp_recibo_doc_file_name"
+    t.string "epp_recibo_doc_content_type"
+    t.integer "epp_recibo_doc_file_size"
+    t.datetime "epp_recibo_doc_updated_at"
+    t.string "auth_turno_doc_file_name"
+    t.string "auth_turno_doc_content_type"
+    t.integer "auth_turno_doc_file_size"
+    t.datetime "auth_turno_doc_updated_at"
+    t.string "reg_interno_doc_file_name"
+    t.string "reg_interno_doc_content_type"
+    t.integer "reg_interno_doc_file_size"
+    t.datetime "reg_interno_doc_updated_at"
+    t.text "observations"
+    t.boolean "active"
   end
 
   create_table "guards_installations", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

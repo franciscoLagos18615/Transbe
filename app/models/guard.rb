@@ -38,6 +38,26 @@ class Guard < ApplicationRecord
     has_attached_file :credencial_doc, styles: { medium: "800x1200#", thumb: "800x1200#" }, default_url: "/images/:style/file-add-icon.png"
     validates_attachment_content_type :credencial_doc, content_type: /\Aimage\/.*\z/
 
+    #Derecho  a Saber
+    has_attached_file :derecho_saber_doc, styles: { medium: "800x1200#", thumb: "800x1200#" }, default_url: "/images/:style/file-add-icon.png"
+    validates_attachment_content_type :derecho_saber_doc, content_type: /\Aimage\/.*\z/
+
+    #EPP entrega
+    has_attached_file :epp_entrega_doc, styles: { medium: "800x1200#", thumb: "800x1200#" }, default_url: "/images/:style/file-add-icon.png"
+    validates_attachment_content_type :epp_entrega_doc, content_type: /\Aimage\/.*\z/
+
+    #EPP recibo
+    has_attached_file :epp_recibo_doc, styles: { medium: "800x1200#", thumb: "800x1200#" }, default_url: "/images/:style/file-add-icon.png"
+    validates_attachment_content_type :epp_recibo_doc, content_type: /\Aimage\/.*\z/
+
+    #Autorizacion de turno
+    has_attached_file :auth_turno_doc, styles: { medium: "800x1200#", thumb: "800x1200#" }, default_url: "/images/:style/file-add-icon.png"
+    validates_attachment_content_type :auth_turno_doc, content_type: /\Aimage\/.*\z/
+
+    #Reglamento interno
+    has_attached_file :reg_interno_doc, styles: { medium: "800x1200#", thumb: "800x1200#" }, default_url: "/images/:style/file-add-icon.png"
+    validates_attachment_content_type :reg_interno_doc, content_type: /\Aimage\/.*\z/
+    
     def self.search search_term
         return all unless search_term.present? 
         where(['rut LIKE ?', "%#{search_term}%"]) #project_name means the column name, change it to the correct name.

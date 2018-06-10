@@ -1,5 +1,6 @@
 class Installation < ApplicationRecord
     has_many :contract_intallations
+    has_many :events
     has_and_belongs_to_many :guards
 
     def self.search search_term

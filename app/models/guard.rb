@@ -2,6 +2,7 @@ class Guard < ApplicationRecord
     has_many :bills
     has_many :contract_guards
     has_many :vacations
+    has_many :osdocumentations
     has_and_belongs_to_many :installations
     #Paperclip Configuration
     #Avatar

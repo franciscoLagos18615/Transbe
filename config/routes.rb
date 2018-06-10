@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'events/index'
+
   get 'vacations/index'
 
   get 'settlements/index'

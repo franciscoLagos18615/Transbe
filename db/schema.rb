@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180610032621) do
+ActiveRecord::Schema.define(version: 20180610042336) do
 
   create_table "bills", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text "description"
@@ -49,6 +49,19 @@ ActiveRecord::Schema.define(version: 20180610032621) do
     t.datetime "contrato_de_instalacion_doc_updated_at"
     t.bigint "installation_id"
     t.index ["installation_id"], name: "index_contract_installations_on_installation_id"
+  end
+
+  create_table "events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.string "factura_evento_doc_file_name"
+    t.string "factura_evento_doc_content_type"
+    t.integer "factura_evento_doc_file_size"
+    t.datetime "factura_evento_doc_updated_at"
+    t.datetime "date"
+    t.bigint "installation_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["installation_id"], name: "index_events_on_installation_id"
   end
 
   create_table "guards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -139,6 +152,17 @@ ActiveRecord::Schema.define(version: 20180610032621) do
     t.datetime "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "osdocumentations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "guard_id"
+    t.datetime "expiration"
+    t.string "certificado_os10_doc_file_name"
+    t.string "certificado_os10_doc_content_type"
+    t.integer "certificado_os10_doc_file_size"
+    t.datetime "certificado_os10_doc_updated_at"
+    t.boolean "state"
+    t.index ["guard_id"], name: "index_osdocumentations_on_guard_id"
   end
 
   create_table "sallary_settlements", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

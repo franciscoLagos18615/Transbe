@@ -1,4 +1,4 @@
-<h1 align="center" class="mb-0">Lista de
+<!--h1 align="center" class="mb-0">Lista de
     <span class="text-primary">Instalaciones</span>
 </h1>
 
@@ -43,4 +43,61 @@
     </tr>
   </thead>
 </table>
+</div-->
+
+
+<h1 align="center" class="mb-0">Lista de
+    <span class="text-primary">Instalaciones</span>
+</h1>
+
+
+
+
+
+<table class="table table-hover">
+  <thead>
+  <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Numero Guardia Asociados</th>
+      <th scope="col">Accion</th>
+    </tr>
+  </thead>
+ <tbody>
+ <tr>
+  <%@installations.each do |ins|%>
+    
+      <th><%=ins.name%>
+      
+      </th>
+      <th>
+      
+      <%=ins.number_guards%>
+      
+      </th>
+      <td>
+        <%=link_to '<span class="fa fa-align-justify" data-original-title="Detalles" data-toggle="tooltip"></span>'.html_safe , installation_path(ins),class: "btn btn-info" %>
+        <%=link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip"></span>'.html_safe , edit_installation_path(ins), class: "btn btn-success"%>
+      </td>
+    
+  </tr>
+  </tbody>
+  <%end%>
+</table>
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>
+
+
+<div align="center">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col"><a class="btn btn-secondary" href="/"><i class="fa fa-home"></i> Volver al Inicio</a></th>
+        <th scope="col"><a class="btn btn-primary" href="/installations/new"><i class="fa fa-plus-square"></i> Crear nueva Instalacion</a></th>
+      </tr>
+    </thead>
+  </table>
 </div>

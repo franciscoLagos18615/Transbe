@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'events/index'
+  #get 'events/index'
 
   get 'vacations/index'
 
@@ -42,6 +42,16 @@ Rails.application.routes.draw do
   patch '/installation/:id', to: 'installations#update'
   put '/installation/:id', to: 'installations#update'
   delete '/installation/:id', to: 'installations#delete'
+
+  #ruta de eventos
+  get '/events', to: 'events#index'
+  get '/events/new', to: 'events#new'
+  post '/events', to: 'events#create'
+  get '/event/:id', to: 'events#show', as: 'event'
+  get '/events/:id/edit', to: 'events#edit', as: 'edit_event'
+  patch '/event/:id', to: 'events#update'
+  put '/event/:id', to: 'events#update'
+  delete '/event/:id', to: 'events#delete'
 
   devise_for :users
   get 'bienvenida/index'

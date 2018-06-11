@@ -1,0 +1,45 @@
+
+<h1 align="center" class="col-md-10 col-center">Agregar
+    <span class="text-primary">Evento</span>
+</h1>
+
+<div class="col-md-10 col-center" align="left">
+  <%= form_for @event do |l| %>
+  <div class="form-group" align="center">
+    <!--FORMULARIO DEL TIPO BOOSTRAP QUE INCLUYE VALIDACIONES-->
+    <div lang="es" class="col-md-12 col-center" align="left">
+      <form>
+ 
+        <div class="form-row">
+          <div class="col-md-10 col-center">
+            <label for="validationServer01" >Nombre del Evento</label>
+            <div class="input-group-prepend">
+              <span class="icon-case"><i class="fa fa-user"></i></span>
+              <%= l.text_field :name, type:"text",class:"form-control is-valid", placeholder:"Comic Con", :required=> true %>
+            </div>
+          </div>
+          
+          <div class="col-md-10 col-center">
+            <label for="validationServer01" >Fecha Inicio</label>
+            <div class="input-group-prepend">
+              <span class="icon-case"><i class="fa fa-user"></i></span>
+              <%= l.date_field :date, type:"date",class:"form-control is-valid", placeholder:"07/07/2018", :required=> true %>
+            </div>
+          </div>
+        </div>
+    <div align="center">
+        <h1> </h1>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col"><a class="btn btn-secondary" href="/events"><i class="fa fa-arrow-circle-left"></i> Volver </a></th>
+            <th scope="col"><button  type="submit" class="btn btn-primary" %="l.submit"%><i class="fa fa-plus-square"></i> Crear nuevo Evento</button></th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+      </form>
+    </div>
+  </div>
+  <%end%>
+</div>

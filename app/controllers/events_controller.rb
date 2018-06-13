@@ -11,9 +11,11 @@ class EventsController < ApplicationController
   #metodo create for event
   def create
     @event = Event.new(events_params)
+    @event.installation_id = 1
     respond_to do |format|
       if @event.valid? 
         if @event.save
+         
           format.html { redirect_to @event, notice: 'Evento Creado Exitosamente.' }
           format.json { render :show, status: :created, location: @event }
         else

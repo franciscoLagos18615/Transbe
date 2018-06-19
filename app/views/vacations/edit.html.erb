@@ -1,0 +1,13 @@
+<%= form_for @vacation do |f| %>
+  <div>
+    <%= f.label :days_taken %>
+    <%= f.number_field :days_taken %>
+  </div>
+  <div>
+    <%= f.label :vacacion_doc,"Vacacion:" %>
+    <%= f.file_field :vacacion_doc%>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>

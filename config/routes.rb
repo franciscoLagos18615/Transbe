@@ -53,6 +53,16 @@ Rails.application.routes.draw do
   put '/event/:id', to: 'events#update'
   delete '/event/:id', to: 'events#delete'
 
+  #ruta de vacaciones
+  get '/vacations', to: 'vacations#index'
+  get '/vacations/new', to: 'vacations#new'
+  post '/vacations', to: 'vacations#create'
+  get '/vacation/:id', to: 'vacations#show', as: 'vacation'
+  get '/vacations/:id/edit', to: 'vacations#edit', as: 'edit_vacation'
+  patch '/vacation/:id', to: 'vacations#update'
+  put '/vacation/:id', to: 'vacations#update'
+  delete '/vacation/:id', to: 'vacations#delete'
+
   devise_for :users
   get 'bienvenida/index'
 

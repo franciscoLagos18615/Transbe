@@ -28,9 +28,16 @@
       </th>
       <th><%=t.rut%></th>
       <td>
+      <% if can? :show, t%>
         <%=link_to '<span class="fa fa-align-justify" data-original-title="Detalles" data-toggle="tooltip"></span>'.html_safe , guard_path(t),class: "btn btn-info" %>
-        <%=link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip"></span>'.html_safe , edit_guard_path(t), class: "btn btn-success"%>
+      <% end %>
+      <% if can? :edit, t %>
+          <%=link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip"></span>'.html_safe , edit_guard_path(t), class: "btn btn-success"%>
+      <% end %>
+        
+      <% if can? :delete,t %>    
         <%= link_to '<span class="fa fa-window-close" data-original-title="Eliminar" data-toggle="tooltip"></span>'.html_safe , t, method: :delete, data: { confirm: "¿Esta seguro que desea eliminar el registro de este guardia?"} , class: "btn btn-danger"%>
+      <% end %>
       </td>
     
   </tr>

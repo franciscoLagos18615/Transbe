@@ -61,3 +61,7 @@ gem 'paperclip', '6.0.0'
 
 # RUT/RUN Chilean validator for Rails models.
 gem 'rut_validation', '1.1.0'
+
+#gem cancancan version actualizada de la gema cancan para la administracion de usuarios
+
+gem 'cancancan', '~> 2.0'

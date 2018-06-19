@@ -75,8 +75,14 @@
       
       </th>
       <td>
-        <%=link_to '<span class="fa fa-align-justify" data-original-title="Detalles" data-toggle="tooltip"></span>'.html_safe , installation_path(ins),class: "btn btn-info" %>
-        <%=link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip"></span>'.html_safe , edit_installation_path(ins), class: "btn btn-success"%>
+        
+        
+        <% if can? :show, ins %>
+           <%=link_to '<span class="fa fa-align-justify" data-original-title="Detalles" data-toggle="tooltip"></span>'.html_safe , installation_path(ins),class: "btn btn-info" %>
+        <% end %>
+      <% if can? :edit, ins %>
+          <%=link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip"></span>'.html_safe , edit_installation_path(ins), class: "btn btn-success"%>
+      <% end %>
       </td>
     
   </tr>

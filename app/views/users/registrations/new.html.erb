@@ -29,6 +29,14 @@
     <label for="inputPassword2" class="sr-only">Confirmar Contraseña</label>
     <%= f.password_field :password_confirmation,type:"password",class:"form-control",placeholder:"Repetir Contraseña", autocomplete: "off",:required=>true %>
   </div>
+  <div >
+  <h1> </h1>
+  <!--
+    <h7>Tipo de usuario:</h7>
+    <%= f.collection_select :role ,User::ROLES, :to_s, :humanize,:required=>true  %>
+    -->
+  </div>
+
 
   <div class="col-md-12 col-md-offset-3">
 <h1></h1>

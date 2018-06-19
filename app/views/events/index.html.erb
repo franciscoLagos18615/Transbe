@@ -29,8 +29,14 @@
       
       </th>
       <td>
-        <%=link_to '<span class="fa fa-align-justify" data-original-title="Detalles" data-toggle="tooltip"></span>'.html_safe , event_path(even),class: "btn btn-info" %>
-        <%=link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip"></span>'.html_safe , edit_event_path(even), class: "btn btn-success"%>
+      <% if can? :show, even %>
+           <%=link_to '<span class="fa fa-align-justify" data-original-title="Detalles" data-toggle="tooltip"></span>'.html_safe , event_path(even),class: "btn btn-info" %>
+      <% end %>
+      <% if can? :edit, even %>
+          <%=link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip"></span>'.html_safe , edit_event_path(even), class: "btn btn-success"%>
+      <% end %>
+       
+        
       </td>
     
   </tr>

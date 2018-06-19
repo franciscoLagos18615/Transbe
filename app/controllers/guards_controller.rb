@@ -1,4 +1,9 @@
 class GuardsController < ApplicationController
+  #permisos para la gem cancancan para que no todos lo usuarios realizen las mismas acciones
+  before_action :set_guard, only: [:show, :edit, :update, :destroy]
+  authorize_resource
+
+
   def index
     @guards=Guard.all
     @guards = Guard.search(params[:rut]).all
@@ -39,12 +44,12 @@ class GuardsController < ApplicationController
   def update
     @guard = Guard.find(params[:id])
     if @guard.update(guard_params)
-      redirect_to guards_path
+      redirect_to guards_path, notice: 'Guardia Actualizado correctamente'
     else
       render :edit
     end
   end
-
+  
   def delete
     @guard = Guard.find(params[:id])
     @guard.destroy
@@ -56,6 +61,12 @@ class GuardsController < ApplicationController
   end
 
   private
+  #set installation
+  def set_guard
+    @guard = Guard.find(params[:id])
+  end
+
+
   def guard_params
     params.require(:guard).permit(:firstname, :lastname,:surname, :rut, :email, :phone_number, :nationality, :second_phone, :age, :city, :commune, :address, :educational_level, :sex, :avatar, :ficha_guardia_doc, :cert_estudio_doc, :cert_residencia_doc, :cedula_identidad_doc, :pacto_horas_doc, :cert_antecedentes_doc, :credencial_doc)
   end

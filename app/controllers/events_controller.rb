@@ -1,4 +1,7 @@
 class EventsController < ApplicationController
+  
+  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  authorize_resource
   #metodo index
   def index
     @events=Event.all
@@ -16,7 +19,7 @@ class EventsController < ApplicationController
       if @event.valid? 
         if @event.save
          
-          format.html { redirect_to @event, notice: 'Evento Creado Exitosamente.' }
+          format.html { redirect_to events_path, notice: 'Evento Creado Exitosamente.' }
           format.json { render :show, status: :created, location: @event }
         else
           format.html { render :new }
@@ -42,7 +45,7 @@ class EventsController < ApplicationController
   def update
     @event = Event.find(params[:id])
     if @event.update(events_params)
-      redirect_to events_path
+      redirect_to events_path, notice: 'Evento Actualizado correctamente'
     else
       render :edit
     end
@@ -58,10 +61,17 @@ class EventsController < ApplicationController
   #metodo show
   def show
     @event=Event.find(params[:id])
+    #authorize! :all, @event
   end
 
   ####
   private
+
+  #set event
+  def set_event
+    @event = Event.find(params[:id])
+  end
+
   def events_params
     params.require(:event).permit(:name, :date)
   end

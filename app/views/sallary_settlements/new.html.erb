@@ -1,0 +1,18 @@
+
+<%= form_for @sallary_settlement do |f| %>
+  <div>
+    <%= f.label :cost, "Costo" %>
+    <%= f.number_field :cost %>
+  </div>
+  <div>
+    <%= f.label :date, "Fecha" %>
+    <%= f.date_field :date %>
+  </div>
+  <div>
+    <%= f.label :liquidacion_doc,"Liquidacion:" %>
+    <%= f.file_field :liquidacion_doc%>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -3,14 +3,14 @@ class SallarySettlementsController < ApplicationController
   authorize_resource
   def index
     @sallary_settlements=SallarySettlement.all
-    @sallary_settlements=SallarySettlement.search(params[:name]).all
   end
   #metodo new
   def new
+    @sallary_settlement = SallarySettlement.new
   end
   #metodo create for event
   def create
-    @sallary_settlement = SallarySettlement.new(events_params)
+    @sallary_settlement = SallarySettlement.new(sallary_settlements_params)
     @sallary_settlement.guard_id = 1
     respond_to do |format|
       if @sallary_settlement.valid? 
@@ -70,7 +70,7 @@ class SallarySettlementsController < ApplicationController
   end
 
   def sallary_settlements_params
-    params.require(:sallary_settlement).permit(:name, :date)
+    params.require(:sallary_settlement).permit(:cost, :date, :liquidacion_doc)
   end
  
 

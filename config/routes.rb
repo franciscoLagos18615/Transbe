@@ -34,6 +34,7 @@ Rails.application.routes.draw do
   put '/guard/:id', to: 'guards#update'
   delete '/guard/:id', to: 'guards#delete'
 
+  #rutas de installaciones
   get '/installations', to: 'installations#index'
   get '/installations/new', to: 'installations#new'
   post '/installations', to: 'installations#create'
@@ -43,7 +44,7 @@ Rails.application.routes.draw do
   put '/installation/:id', to: 'installations#update'
   delete '/installation/:id', to: 'installations#delete'
 
-  #ruta de eventos
+  #rutas de eventos
   get '/events', to: 'events#index'
   get '/events/new', to: 'events#new'
   post '/events', to: 'events#create'
@@ -53,7 +54,7 @@ Rails.application.routes.draw do
   put '/event/:id', to: 'events#update'
   delete '/event/:id', to: 'events#delete'
 
-  #ruta de vacaciones
+  #rutas de vacaciones
   get '/vacations', to: 'vacations#index'
   get '/vacations/new', to: 'vacations#new'
   post '/vacations', to: 'vacations#create'
@@ -62,6 +63,36 @@ Rails.application.routes.draw do
   patch '/vacation/:id', to: 'vacations#update'
   put '/vacation/:id', to: 'vacations#update'
   delete '/vacation/:id', to: 'vacations#delete'
+
+  #rutas de liquidaciones
+  get '/sallary_settlements', to: 'sallary_settlements#index'
+  get '/sallary_settlements/new', to: 'sallary_settlements#new'
+  post '/sallary_settlements', to: 'sallary_settlements#create'
+  get '/sallary_settlement/:id', to: 'sallary_settlements#show', as: 'sallary_settlement'
+  get '/sallary_settlements/:id/edit', to: 'sallary_settlements#edit', as: 'edit_sallary_settlement'
+  patch '/sallary_settlement/:id', to: 'sallary_settlements#update'
+  put '/sallary_settlement/:id', to: 'sallary_settlements#update'
+  delete '/sallary_settlement/:id', to: 'sallary_settlements#delete'
+
+  #rutas de la documentacion 0s10
+  get '/osdocumentations', to: 'osdocumentations#index'
+  get '/osdocumentations/new', to: 'osdocumentations#new'
+  post '/osdocumentations', to: 'osdocumentations#create'
+  get '/osdocumentation/:id', to: 'osdocumentations#show', as: 'osdocumentation'
+  get '/osdocumentations/:id/edit', to: 'osdocumentations#edit', as: 'edit_osdocumentation'
+  patch '/osdocumentation/:id', to: 'osdocumentations#update'
+  put '/osdocumentation/:id', to: 'osdocumentations#update'
+  delete '/osdocumentation/:id', to: 'osdocumentations#delete'
+
+  #rutas de finiquitos
+  get '/settlements', to: 'settlements#index'
+  get '/settlements/new', to: 'settlements#new'
+  post '/settlements', to: 'settlements#create'
+  get '/settlement/:id', to: 'settlements#show', as: 'settlement'
+  get '/settlements/:id/edit', to: 'settlements#edit', as: 'edit_settlement'
+  patch '/settlement/:id', to: 'settlements#update'
+  put '/settlement/:id', to: 'settlements#update'
+  delete '/settlement/:id', to: 'settlements#delete'
 
   devise_for :users
   get 'bienvenida/index'

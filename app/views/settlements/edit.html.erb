@@ -1,0 +1,18 @@
+
+<%= form_for @settlement do |f| %>
+  <div>
+    <%= f.label :date, "Fecha" %>
+    <%= f.date_field :date %>
+  </div>
+  <div>
+    <%= f.label :observation, "Observaciones" %>
+    <%= f.text_field :observation %>
+  </div>
+  <div>
+    <%= f.label :finiquito_doc,"Finiquito:" %>
+    <%= f.file_field :finiquito_doc%>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,17 @@
+<%= form_for @osdocumentation do |f| %>
+  <div>
+    <%= f.label :expiration, "Fecha de Expiracion" %>
+    <%= f.date_field :expiration %>
+  </div>
+  <div>
+    <%= f.label :state, "Estado" %>
+    <%= f.check_box :state %>
+  </div>
+  <div>
+    <%= f.label :certificado_os10_doc,"Certificado OS10:" %>
+    <%= f.file_field :certificado_os10_doc%>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>

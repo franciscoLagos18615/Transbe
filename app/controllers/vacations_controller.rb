@@ -8,34 +8,45 @@ class VacationsController < ApplicationController
     @vacations = Vacation.all
   end
   def new
-    @vacation = Vacation.new
+    #@vacation = Vacation.new
+    @guard = Guard.find(params[:id])
+    @vacation = @guard.vacations.build
   end
 
   def create
-     @vacation = Vacation.new(vacation_params)
-     @vacation.guard_id = 1
-     respond_to do |format|
-       if @vacation.valid? 
-         if @vacation.save
-           format.html { redirect_to @vacation, notice: 'Documento de Vacacion Correctamente Creado.' }
-           format.json { render :show, status: :created, location: @vacation }
-         else
-           format.html { render :new }
-           format.json { render json: @vacation.errors, status: :unprocessable_entity }
-         end
-       else
-         format.html { render :new }
-         format.json { render json: @vacation.errors, status: :unprocessable_entity }
-       end
-     end
-   end
+    @guard = Guard.find(params[:id])
+    @vacation = @guard.vacations.build(vacation_params)
+    if @vacation.save
+      redirect_to new_vacation_path(:id => @guard.id)
+    end
+  end
 
-   def search 
+=begin
+  def create
+    @vacation = Vacation.new(vacation_params)
+    @vacation.guard_id = 4
+    respond_to do |format|
+      if @vacation.valid? 
+        if @vacation.save
+          format.html { redirect_to @vacation, notice: 'Documento de Vacacion Correctamente Creado.' }
+          format.json { render :show, status: :created, location: @vacation }
+        else
+          format.html { render :new }
+          format.json { render json: @vacation.errors, status: :unprocessable_entity }
+        end
+      else
+        format.html { render :new }
+        format.json { render json: @vacation.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+=end
+  def search 
     q = params[:rut]
     @vacations = Vacation.find(:all, :conditions => ["rut LIKE %?%",q])
     redirect_to vacations_path
 
-   end
+  end
 
   def edit 
     @vacation = Vacation.find(params[:id])
@@ -55,11 +66,15 @@ class VacationsController < ApplicationController
     @vacation.destroy
     redirect_to vacations_path
   end
-
+=begin
   def show
     @vacation=Vacation.find(params[:id])
   end
-
+=end
+  def show
+    @guard = Guard.find(params[:id])
+    @vacation = @guard.vacations.build
+  end
   private
   #set installation
   def set_vacation

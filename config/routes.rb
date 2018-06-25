@@ -55,14 +55,15 @@ Rails.application.routes.draw do
   delete '/event/:id', to: 'events#delete'
 
   #rutas de vacaciones
-  get '/vacations', to: 'vacations#index'
-  get '/vacations/new', to: 'vacations#new'
-  post '/vacations', to: 'vacations#create'
-  get '/vacation/:id', to: 'vacations#show', as: 'vacation'
-  get '/vacations/:id/edit', to: 'vacations#edit', as: 'edit_vacation'
-  patch '/vacation/:id', to: 'vacations#update'
-  put '/vacation/:id', to: 'vacations#update'
-  delete '/vacation/:id', to: 'vacations#delete'
+  #get '/vacations', to: 'vacations#index'
+  #get '/vacations/new', to: 'vacations#new'
+  #post '/vacations', to: 'vacations#create'
+  #get '/vacation/:id', to: 'vacations#show', as: 'vacation'
+  #get '/vacations/:id/edit', to: 'vacations#edit', as: 'edit_vacation'
+  #patch '/vacation/:id', to: 'vacations#update'
+  #put '/vacation/:id', to: 'vacations#update'
+  #delete '/vacation/:id', to: 'vacations#delete'
+  resources :vacations
 
   #rutas de liquidaciones
   get '/sallary_settlements', to: 'sallary_settlements#index'

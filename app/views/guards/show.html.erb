@@ -141,15 +141,20 @@
 <!--td><%=link_to "Volver", guards_path()%></td-->
 <div align="center">
 	<table>
-  	<thead>
-    	<tr>
-      	<th scope="col"><a class="btn btn-secondary" href="/guards"><i class="fa fa-arrow-circle-left"></i> Volver </a></th>
-      	<th>
-				<%=link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Editar Guardia</span>'.html_safe , edit_guard_path(@guard), class: "btn btn-success"%>
+	  	<thead>
+	    	<tr>
+		      	<th scope="col"><a class="btn btn-secondary" href="/guards"><i class="fa fa-arrow-circle-left"></i> Volver </a>
+		      	</th>
+		      	<th>
+					<%=link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Editar Guardia</span>'.html_safe , edit_guard_path(@guard), class: "btn btn-success"%>
 				</th>
-				<th scope="col"><a class="btn btn-primary" href="/guards/new"><i class="fa fa-plus-square"></i> Crear nuevo Guardia</a></th>
-    	</tr>
-  	</thead>
+					<th scope="col"><a class="btn btn-primary" href="/guards/new"><i class="fa fa-plus-square"></i> Crear nuevo Guardia</a></th>
+
+					<%= link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Agregar Vacaciones</span>'.html_safe, :controller => :vacations, :action => :new, :id => @guard.id%>
+					<%= link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Ver vacaciones</span>'.html_safe, :controller => :vacations, :action => :show, :id => @guard.id%>
+
+	    	</tr>
+	  	</thead>
 	</table>
 </div>
 

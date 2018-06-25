@@ -1,5 +1,5 @@
 
-<%= form_for @vacation do |f| %>
+<%= form_for @vacation, :url =>{:action =>:create, :id=>@guard.id} do |f| %>
   <div>
     <%= f.label :days_taken, "Numero de dias" %>
     <%= f.number_field :days_taken %>

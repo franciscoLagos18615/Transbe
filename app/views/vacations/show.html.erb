@@ -1,4 +1,9 @@
-<p>Dias tomados</p>
-    <%=@vacation.days_taken%>
-<p>Documento asociado</p>
-    <%=image_tag @vacation.vacacion_doc%>
+
+<%if !@guard.vacations.nil?%>
+	<% for item in @guard.vacations%>
+		<p>Dias tomados</p>
+		    <%=item.days_taken%>
+		<p>Documento asociado</p>
+		    <%=image_tag item.vacacion_doc%>
+	<%end%>
+<%end%>

@@ -65,6 +65,8 @@ Rails.application.routes.draw do
   #delete '/vacation/:id', to: 'vacations#delete'
   resources :vacations
   resources :contract_guards
+  resources :osdocumentations
+  resources :settlements
   #rutas de liquidaciones
   get '/sallary_settlements', to: 'sallary_settlements#index'
   get '/sallary_settlements/new', to: 'sallary_settlements#new'
@@ -76,24 +78,24 @@ Rails.application.routes.draw do
   delete '/sallary_settlement/:id', to: 'sallary_settlements#delete'
 
   #rutas de la documentacion 0s10
-  get '/osdocumentations', to: 'osdocumentations#index'
-  get '/osdocumentations/new', to: 'osdocumentations#new'
-  post '/osdocumentations', to: 'osdocumentations#create'
-  get '/osdocumentation/:id', to: 'osdocumentations#show', as: 'osdocumentation'
-  get '/osdocumentations/:id/edit', to: 'osdocumentations#edit', as: 'edit_osdocumentation'
-  patch '/osdocumentation/:id', to: 'osdocumentations#update'
-  put '/osdocumentation/:id', to: 'osdocumentations#update'
-  delete '/osdocumentation/:id', to: 'osdocumentations#delete'
+  #get '/osdocumentations', to: 'osdocumentations#index'
+  #get '/osdocumentations/new', to: 'osdocumentations#new'
+  #post '/osdocumentations', to: 'osdocumentations#create'
+  #get '/osdocumentation/:id', to: 'osdocumentations#show', as: 'osdocumentation'
+  #get '/osdocumentations/:id/edit', to: 'osdocumentations#edit', as: 'edit_osdocumentation'
+  #patch '/osdocumentation/:id', to: 'osdocumentations#update'
+  #put '/osdocumentation/:id', to: 'osdocumentations#update'
+  #delete '/osdocumentation/:id', to: 'osdocumentations#delete'
 
   #rutas de finiquitos
-  get '/settlements', to: 'settlements#index'
-  get '/settlements/new', to: 'settlements#new'
-  post '/settlements', to: 'settlements#create'
-  get '/settlement/:id', to: 'settlements#show', as: 'settlement'
-  get '/settlements/:id/edit', to: 'settlements#edit', as: 'edit_settlement'
-  patch '/settlement/:id', to: 'settlements#update'
-  put '/settlement/:id', to: 'settlements#update'
-  delete '/settlement/:id', to: 'settlements#delete'
+  #get '/settlements', to: 'settlements#index'
+  #get '/settlements/new', to: 'settlements#new'
+  #post '/settlements', to: 'settlements#create'
+  #get '/settlement/:id', to: 'settlements#show', as: 'settlement'
+  #get '/settlements/:id/edit', to: 'settlements#edit', as: 'edit_settlement'
+  #patch '/settlement/:id', to: 'settlements#update'
+  #put '/settlement/:id', to: 'settlements#update'
+  #delete '/settlement/:id', to: 'settlements#delete'
 
   devise_for :users
   get 'bienvenida/index'

@@ -1,39 +1,22 @@
 class OsdocumentationsController < ApplicationController
-    before_action :set_osdocumentation, only: [:show, :edit, :update, :destroy]
-    authorize_resource
-
+  before_action :set_osdocumentation, only: [:show, :edit, :update, :destroy]
+  authorize_resource
   def index
     @osdocumentations = Osdocumentation.all
   end
   def new
-    @osdocumentation = Osdocumentation.new
+    #@vacation = Vacation.new
+    @guard = Guard.find(params[:id])
+    @osdocumentation = @guard.osdocumentations.build
   end
 
   def create
-     @osdocumentation = Osdocumentation.new(osdocumentation_params)
-     @osdocumentation.guard_id = 1
-     respond_to do |format|
-       if @osdocumentation.valid? 
-         if @osdocumentation.save
-           format.html { redirect_to @osdocumentation, notice: 'Documento de OS10 Correctamente Creado.' }
-           format.json { render :show, status: :created, location: @vacation }
-         else
-           format.html { render :new }
-           format.json { render json: @osdocumentation.errors, status: :unprocessable_entity }
-         end
-       else
-         format.html { render :new }
-         format.json { render json: @osdocumentation.errors, status: :unprocessable_entity }
-       end
-     end
-   end
-
-   def search 
-    q = params[:rut]
-    @osdocumentations = Osdocumentation.find(:all, :conditions => ["rut LIKE %?%",q])
-    redirect_to osdocumentations_path
-
-   end
+    @guard = Guard.find(params[:id])
+    @osdocumentation = @guard.osdocumentations.build(osdocumentation_params)
+    if @osdocumentation.save
+      redirect_to new_osdocumentation_path(:id => @guard.id)
+    end
+  end
 
   def edit 
     @osdocumentation = Osdocumentation.find(params[:id])
@@ -42,7 +25,7 @@ class OsdocumentationsController < ApplicationController
   def update
     @osdocumentation = Osdocumentation.find(params[:id])
     if @osdocumentation.update(osdocumentation_params)
-      redirect_to osdocumentations_path, notice: 'Documento de  OS10 Actualizado correctamente'
+      redirect_to osdocumentations_path, notice: 'Documento de  Vacacion Actualizado correctamente'
     else
       render :edit
     end
@@ -55,17 +38,17 @@ class OsdocumentationsController < ApplicationController
   end
 
   def show
-    @osdocumentation=Osdocumentation.find(params[:id])
+    @guard = Guard.find(params[:id])
+    @osdocumentation = @guard.osdocumentations.build
   end
-
   private
   #set installation
   def set_osdocumentation
     @osdocumentation = Osdocumentation.find(params[:id])
+    #@osdocumentation = Osdocumentation.find_by(id: [params[:Osdocumentation_id]])
   end
 
-
   def osdocumentation_params
-    params.require(:osdocumentation).permit(:expiration,:certificado_os10_doc,:state)
+    params.require(:osdocumentation).permit(:expiration, :certificado_os10_doc, :state)
   end
 end

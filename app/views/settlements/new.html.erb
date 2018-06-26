@@ -1,5 +1,5 @@
 
-<%= form_for @settlement do |f| %>
+<%= form_for @settlement, :url =>{:action =>:create, :id=>@guard.id} do |f| %>
   <div>
     <%= f.label :date, "Fecha" %>
     <%= f.date_field :date %>

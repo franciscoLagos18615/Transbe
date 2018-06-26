@@ -1,6 +1,10 @@
-<p>Fecha</p>
-<%= @settlement.date %>
-<p>Observacion</p>
-<%=@settlement.observation %>
-<p>Documento asociado</p>
-<%=image_tag @settlement.finiquito_doc%>
+<%if !@guard.settlements.nil?%>
+	<% for item in @guard.settlements%>
+		<p>Fecha</p>
+		    <%=item.date%>
+		<p>Observacion</p>
+		    <%=item.observation%>
+		<p>Documento asociado</p>
+		<a href=<%=item.finiquito_doc%>&embedded=true">Visualizar Contrato PDF</a>
+	<%end%>
+<%end%>

@@ -5,34 +5,18 @@ class SettlementsController < ApplicationController
     @settlements = Settlement.all
   end
   def new
-    @settlement = Settlement.new
+    #@vacation = Vacation.new
+    @guard = Guard.find(params[:id])
+    @settlement = @guard.settlements.build
   end
 
   def create
-     @settlement = Settlement.new(settlement_params)
-     @settlement.guard_id = 1
-     respond_to do |format|
-       if @settlement.valid? 
-         if @settlement.save
-           format.html { redirect_to @settlement, notice: 'Documento de Finiquito Correctamente Creado.' }
-           format.json { render :show, status: :created, location: @settlements }
-         else
-           format.html { render :new }
-           format.json { render json: @settlement.errors, status: :unprocessable_entity }
-         end
-       else
-         format.html { render :new }
-         format.json { render json: @settlement.errors, status: :unprocessable_entity }
-       end
-     end
-   end
-
-   def search 
-    q = params[:rut]
-    @settlements = Settlement.find(:all, :conditions => ["rut LIKE %?%",q])
-    redirect_to settlements_path
-
-   end
+    @guard = Guard.find(params[:id])
+    @settlement = @guard.settlements.build(settlement_params)
+    if @settlement.save
+      redirect_to new_settlement_path(:id => @guard.id)
+    end
+  end
 
   def edit 
     @settlement = Settlement.find(params[:id])
@@ -41,7 +25,7 @@ class SettlementsController < ApplicationController
   def update
     @settlement = Settlement.find(params[:id])
     if @settlement.update(settlement_params)
-      redirect_to settlement_path, notice: 'Documento de Finiquito Actualizado correctamente'
+      redirect_to settlements_path, notice: 'Documento de Finiquito Actualizado correctamente'
     else
       render :edit
     end
@@ -54,16 +38,14 @@ class SettlementsController < ApplicationController
   end
 
   def show
-    @settlement=Settlement.find(params[:id])
+    @guard = Guard.find(params[:id])
+    @settlement = @guard.settlements.build
   end
-
   private
   #set installation
   def set_settlement
     @settlement = Settlement.find(params[:id])
   end
-
-
   def settlement_params
     params.require(:settlement).permit(:date, :finiquito_doc, :observation)
   end

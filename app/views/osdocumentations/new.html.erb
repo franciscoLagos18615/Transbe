@@ -1,4 +1,4 @@
-<%= form_for @osdocumentation do |f| %>
+<%= form_for @osdocumentation, :url =>{:action =>:create, :id=>@guard.id} do |f| %>  
   <div>
     <%= f.label :expiration, "Fecha de Expiracion" %>
     <%= f.date_field :expiration %>

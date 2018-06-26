@@ -1,6 +1,10 @@
-<p>Fecha de Expiracion</p>
-<%=@osdocumentation.expiration%>
-<p>Estado</p>
-<%=@osdocumentation.state %>
-<p>Documento asociado</p>
-<%=image_tag @osdocumentation.certificado_os10_doc%>
+<%if !@guard.osdocumentations.nil?%>
+	<% for item in @guard.osdocumentation%>
+		<p>Expiracion</p>
+		    <%=item.expiration%>
+		<p>Estado</p>
+		    <%=item.state%>
+		<p>Documento asociado</p>
+		<a href=<%=item.certificado_os10_doc%>&embedded=true">Visualizar Contrato PDF</a>
+	<%end%>
+<%end%>

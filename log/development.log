@@ -53966,3 +53966,2280 @@ puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
 puma (3.11.4) lib/puma/server.rb:446:in `process_client'
 puma (3.11.4) lib/puma/server.rb:306:in `block in run'
 puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/guards/" for 127.0.0.1 at 2018-06-24 21:56:53 -0400
+  [1m[35m (5.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (1.5ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (89.3ms)
+Completed 200 OK in 390ms (Views: 312.1ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/guard/1" for 127.0.0.1 at 2018-06-24 21:56:59 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  [1m[36mCACHE Guard Load (0.0ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 60ms (Views: 52.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/vacations/new?id=1" for 127.0.0.1 at 2018-06-24 21:57:04 -0400
+Processing by VacationsController#new as HTML
+  Parameters: {"id"=>"1"}
+  Rendering public/402.html
+  Rendered public/402.html (0.4ms)
+Completed 402 Payment Required in 32ms (Views: 15.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-24 21:57:06 -0400
+Processing by BienvenidaController#index as HTML
+  Rendering bienvenida/index.html.erb within layouts/application
+  Rendered bienvenida/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 44ms (Views: 42.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-24 21:57:06 -0400
+Processing by BienvenidaController#index as HTML
+  Rendering bienvenida/index.html.erb within layouts/application
+  Rendered bienvenida/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 51ms (Views: 49.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-06-24 21:57:09 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/devise
+  Rendered users/shared/_links.html.erb (1.1ms)
+  Rendered users/sessions/new.html.erb within layouts/devise (15.9ms)
+Completed 200 OK in 65ms (Views: 62.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-06-24 21:57:11 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FN+hUAf5PFue/t5CYV5MJqOObR3C2JvtUCBTUKTfkXPShYoSQP+UchR7lg1r17dgWKPD60XT/0AU4l8EfaPtzA==", "user"=>{"email"=>"cristianfervas1992@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'cristianfervas1992@gmail.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[33mUPDATE `users` SET `current_sign_in_at` = '2018-06-25 01:57:11', `last_sign_in_at` = '2018-06-23 21:14:56', `sign_in_count` = 7, `updated_at` = '2018-06-25 01:57:11' WHERE `users`.`id` = 1[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 174ms (ActiveRecord: 5.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-24 21:57:11 -0400
+Processing by BienvenidaController#index as HTML
+  Rendering bienvenida/index.html.erb within layouts/application
+  Rendered bienvenida/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 66ms (Views: 63.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-06-24 21:57:15 -0400
+Processing by GuardsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 69ms (Views: 64.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-06-24 21:57:16 -0400
+Processing by GuardsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 82ms (Views: 78.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/guard/1" for 127.0.0.1 at 2018-06-24 21:57:19 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Guard Load (0.0ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 77ms (Views: 69.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/vacations/new?id=1" for 127.0.0.1 at 2018-06-24 21:57:22 -0400
+Processing by VacationsController#new as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering vacations/new.html.erb within layouts/application
+  Rendered vacations/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 91ms (Views: 59.1ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/vacations/1" for 127.0.0.1 at 2018-06-24 21:57:26 -0400
+Processing by VacationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVacation Load (0.4ms)[0m  [1m[34mSELECT  `vacations`.* FROM `vacations` WHERE `vacations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering vacations/show.html.erb within layouts/application
+  [1m[36mVacation Load (0.4ms)[0m  [1m[34mSELECT `vacations`.* FROM `vacations` WHERE `vacations`.`guard_id` = 1[0m
+  Rendered vacations/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 63ms (Views: 55.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/vacations/1" for 127.0.0.1 at 2018-06-24 21:57:39 -0400
+Processing by VacationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVacation Load (0.5ms)[0m  [1m[34mSELECT  `vacations`.* FROM `vacations` WHERE `vacations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering vacations/show.html.erb within layouts/application
+  [1m[36mVacation Load (0.6ms)[0m  [1m[34mSELECT `vacations`.* FROM `vacations` WHERE `vacations`.`guard_id` = 1[0m
+  Rendered vacations/show.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 71ms (Views: 62.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/vacations/new?id=1" for 127.0.0.1 at 2018-06-24 21:57:42 -0400
+Processing by VacationsController#new as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering vacations/new.html.erb within layouts/application
+  Rendered vacations/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 71ms (Views: 64.6ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/vacations?id=1" for 127.0.0.1 at 2018-06-24 21:57:52 -0400
+Processing by VacationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pzfIWN7Sw/42wUn5Kni7lhILpU8ssHVOXYs+yj2B12SU/tfgjgREsiXp3DLvPugI1RwFwZkevntN6D5SlpOT5g==", "vacation"=>{"days_taken"=>"3", "vacacion_doc"=>#<ActionDispatch::Http::UploadedFile:0x007f3ad2266290 @tempfile=#<Tempfile:/tmp/RackMultipart20180624-4713-1lblml1.jpg>, @original_filename="paper-sizes-large.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"vacation[vacacion_doc]\"; filename=\"paper-sizes-large.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Vacation", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+[paperclip] Trying to link /tmp/RackMultipart20180624-4713-1lblml1.jpg to /tmp/e5346eba614c451f9ad054f5ec678ccf20180624-4713-1qecm5u.jpg
+[paperclip] Trying to link /tmp/e5346eba614c451f9ad054f5ec678ccf20180624-4713-1qecm5u.jpg to /tmp/e5346eba614c451f9ad054f5ec678ccf20180624-4713-1ar74ze.jpg
+Command :: PATH=/usr/bin/:$PATH; file -b --mime '/tmp/e5346eba614c451f9ad054f5ec678ccf20180624-4713-1ar74ze.jpg'
+Command :: PATH=/usr/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/e5346eba614c451f9ad054f5ec678ccf20180624-4713-1qecm5u.jpg[0]' 2>/dev/null
+Command :: PATH=/usr/bin/:$PATH; identify -format %m '/tmp/e5346eba614c451f9ad054f5ec678ccf20180624-4713-1qecm5u.jpg[0]'
+Command :: PATH=/usr/bin/:$PATH; convert '/tmp/e5346eba614c451f9ad054f5ec678ccf20180624-4713-1qecm5u.jpg[0]' -auto-orient -resize "x1200" -crop "800x1200+4+0" +repage '/tmp/6fabc590a2e797fadeb682888d2033cd20180624-4713-u91bkd'
+[paperclip] Trying to link /tmp/6fabc590a2e797fadeb682888d2033cd20180624-4713-u91bkd to /tmp/7e7b906798a358b4b55450a9dd1b0da720180624-4713-14fv5e0
+Command :: PATH=/usr/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/e5346eba614c451f9ad054f5ec678ccf20180624-4713-1qecm5u.jpg[0]' 2>/dev/null
+Command :: PATH=/usr/bin/:$PATH; identify -format %m '/tmp/e5346eba614c451f9ad054f5ec678ccf20180624-4713-1qecm5u.jpg[0]'
+Command :: PATH=/usr/bin/:$PATH; convert '/tmp/e5346eba614c451f9ad054f5ec678ccf20180624-4713-1qecm5u.jpg[0]' -auto-orient -resize "x1200" -crop "800x1200+4+0" +repage '/tmp/6fabc590a2e797fadeb682888d2033cd20180624-4713-1aepb1k'
+[paperclip] Trying to link /tmp/6fabc590a2e797fadeb682888d2033cd20180624-4713-1aepb1k to /tmp/b22a1a39612b86de756989d13ca0200720180624-4713-1j3dyq1
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[paperclip] Trying to link /tmp/e5346eba614c451f9ad054f5ec678ccf20180624-4713-1qecm5u.jpg to /tmp/e5346eba614c451f9ad054f5ec678ccf20180624-4713-1a5y7ns.jpg
+Command :: PATH=/usr/bin/:$PATH; file -b --mime '/tmp/e5346eba614c451f9ad054f5ec678ccf20180624-4713-1a5y7ns.jpg'
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO `vacations` (`days_taken`, `created_at`, `updated_at`, `vacacion_doc_file_name`, `vacacion_doc_content_type`, `vacacion_doc_file_size`, `vacacion_doc_updated_at`, `guard_id`) VALUES (3, '2018-06-25 01:57:52', '2018-06-25 01:57:52', 'paper-sizes-large.jpg', 'image/jpeg', 101436, '2018-06-25 01:57:52', 1)[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/vacations/new?id=1
+Completed 302 Found in 348ms (ActiveRecord: 5.6ms)
+
+
+Started GET "/vacations/new?id=1" for 127.0.0.1 at 2018-06-24 21:57:52 -0400
+Processing by VacationsController#new as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering vacations/new.html.erb within layouts/application
+  Rendered vacations/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 53ms (Views: 47.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/guard/1" for 127.0.0.1 at 2018-06-24 21:58:04 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Guard Load (0.0ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 78ms (Views: 72.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/vacations/1" for 127.0.0.1 at 2018-06-24 21:58:07 -0400
+Processing by VacationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVacation Load (0.4ms)[0m  [1m[34mSELECT  `vacations`.* FROM `vacations` WHERE `vacations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering vacations/show.html.erb within layouts/application
+  [1m[36mVacation Load (0.5ms)[0m  [1m[34mSELECT `vacations`.* FROM `vacations` WHERE `vacations`.`guard_id` = 1[0m
+  Rendered vacations/show.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 74ms (Views: 65.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/vacations/new?id=1" for 127.0.0.1 at 2018-06-24 22:02:46 -0400
+Processing by VacationsController#new as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering vacations/new.html.erb within layouts/application
+  Rendered vacations/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 58ms (Views: 50.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/vacations/new?id=1" for 127.0.0.1 at 2018-06-24 22:03:14 -0400
+Processing by VacationsController#new as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering vacations/new.html.erb within layouts/application
+  Rendered vacations/new.html.erb within layouts/application (153.4ms)
+Completed 500 Internal Server Error in 162ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `file_field_tag' for #<ActionView::Helpers::FormBuilder:0x007f3ad0d71b50>
+Did you mean?  file_field):
+     7:   <div>
+     8:     <%= f.label :vacacion_doc,"Vacacion:" %>
+     9:     <%= f.file_field :vacacion_doc%>
+    10:     <%= f.file_field_tag "vacacion_doc[]", type: :file, multiple: true %>
+    11: 
+    12:   </div>
+    13:   <div>
+  
+app/views/vacations/new.html.erb:10:in `block in _app_views_vacations_new_html_erb__2079551287359230114_69945294474160'
+app/views/vacations/new.html.erb:2:in `_app_views_vacations_new_html_erb__2079551287359230114_69945294474160'
+Started GET "/vacations/new?id=1" for 127.0.0.1 at 2018-06-24 22:03:30 -0400
+Processing by VacationsController#new as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering vacations/new.html.erb within layouts/application
+  Rendered vacations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 57ms (Views: 51.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/guard/1" for 127.0.0.1 at 2018-06-24 23:20:07 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Guard Load (0.0ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 64ms (Views: 58.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/vacations/new?id=1" for 127.0.0.1 at 2018-06-24 23:20:11 -0400
+Processing by VacationsController#new as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering vacations/new.html.erb within layouts/application
+  Rendered vacations/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 65ms (Views: 58.1ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/vacations?id=1" for 127.0.0.1 at 2018-06-24 23:20:44 -0400
+Processing by VacationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lTq5tmOt3T7Ts8YUMVdjWGS719VnRevAtMB9HPXyVdum86YOM3tacsCbU9/0ETDGo6x3W9LrIPWko32EXuARWQ==", "vacation"=>{"days_taken"=>"3", "vacacion_doc"=>[#<ActionDispatch::Http::UploadedFile:0x007f3abc397e68 @tempfile=#<Tempfile:/tmp/RackMultipart20180624-4713-o5xc83.png>, @original_filename="missing.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"vacation[vacacion_doc][]\"; filename=\"missing.png\"\r\nContent-Type: image/png\r\n">, #<ActionDispatch::Http::UploadedFile:0x007f3abc397e18 @tempfile=#<Tempfile:/tmp/RackMultipart20180624-4713-1iguqg2.jpg>, @original_filename="paper-sizes-large.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"vacation[vacacion_doc][]\"; filename=\"paper-sizes-large.jpg\"\r\nContent-Type: image/jpeg\r\n">]}, "commit"=>"Create Vacation", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+Unpermitted parameter: :vacacion_doc
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO `vacations` (`days_taken`, `created_at`, `updated_at`, `guard_id`) VALUES (3, '2018-06-25 03:20:44', '2018-06-25 03:20:44', 1)[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/vacations/new?id=1
+Completed 302 Found in 15ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/vacations/new?id=1" for 127.0.0.1 at 2018-06-24 23:20:44 -0400
+Processing by VacationsController#new as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering vacations/new.html.erb within layouts/application
+  Rendered vacations/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 58ms (Views: 51.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-06-24 23:20:49 -0400
+Processing by GuardsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 58ms (Views: 54.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/guard/1" for 127.0.0.1 at 2018-06-24 23:20:54 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Guard Load (0.0ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 68ms (Views: 62.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/vacations/1" for 127.0.0.1 at 2018-06-24 23:20:56 -0400
+Processing by VacationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVacation Load (0.3ms)[0m  [1m[34mSELECT  `vacations`.* FROM `vacations` WHERE `vacations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering vacations/show.html.erb within layouts/application
+  [1m[36mVacation Load (0.5ms)[0m  [1m[34mSELECT `vacations`.* FROM `vacations` WHERE `vacations`.`guard_id` = 1[0m
+  Rendered vacations/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 63ms (Views: 55.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/guard/5" for 127.0.0.1 at 2018-06-24 23:21:45 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 5 LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Guard Load (0.0ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 5 LIMIT 1[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 169ms (Views: 60.6ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/vacations/5" for 127.0.0.1 at 2018-06-24 23:21:51 -0400
+Processing by VacationsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mVacation Load (0.3ms)[0m  [1m[34mSELECT  `vacations`.* FROM `vacations` WHERE `vacations`.`id` = 5 LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 5 LIMIT 1[0m
+  Rendering vacations/show.html.erb within layouts/application
+  [1m[36mVacation Load (0.3ms)[0m  [1m[34mSELECT `vacations`.* FROM `vacations` WHERE `vacations`.`guard_id` = 5[0m
+  Rendered vacations/show.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 77ms (Views: 51.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/vacations/new?id=5" for 127.0.0.1 at 2018-06-24 23:21:54 -0400
+Processing by VacationsController#new as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 5 LIMIT 1[0m
+  Rendering vacations/new.html.erb within layouts/application
+  Rendered vacations/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 61ms (Views: 55.2ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/vacations?id=5" for 127.0.0.1 at 2018-06-24 23:22:40 -0400
+Processing by VacationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6c4lon7MnvHlqNIujsPsS28ej4wABj9mNery+tII2r3aBzoaLhoZvfaAR+VLhb/VqAkvArWo9FMlifJieRqePw==", "vacation"=>{"days_taken"=>"4", "vacacion_doc"=>[#<ActionDispatch::Http::UploadedFile:0x007f3abc428b98 @tempfile=#<Tempfile:/tmp/RackMultipart20180624-4713-gh5e55.png>, @original_filename="missing.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"vacation[vacacion_doc][]\"; filename=\"missing.png\"\r\nContent-Type: image/png\r\n">, #<ActionDispatch::Http::UploadedFile:0x007f3abc428b48 @tempfile=#<Tempfile:/tmp/RackMultipart20180624-4713-1kt4la6.jpg>, @original_filename="paper-sizes-large.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"vacation[vacacion_doc][]\"; filename=\"paper-sizes-large.jpg\"\r\nContent-Type: image/jpeg\r\n">]}, "commit"=>"Create Vacation", "id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 5 LIMIT 1[0m
+Unpermitted parameter: :vacacion_doc
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `vacations` (`days_taken`, `created_at`, `updated_at`, `guard_id`) VALUES (4, '2018-06-25 03:22:40', '2018-06-25 03:22:40', 5)[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/vacations/new?id=5
+Completed 302 Found in 14ms (ActiveRecord: 5.2ms)
+
+
+Started GET "/vacations/new?id=5" for 127.0.0.1 at 2018-06-24 23:22:40 -0400
+Processing by VacationsController#new as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 5 LIMIT 1[0m
+  Rendering vacations/new.html.erb within layouts/application
+  Rendered vacations/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 66ms (Views: 59.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-06-24 23:22:47 -0400
+Processing by GuardsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.8ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 60ms (Views: 55.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/guard/2" for 127.0.0.1 at 2018-06-24 23:22:49 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 2 LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Guard Load (0.0ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 65ms (Views: 60.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/vacations/2" for 127.0.0.1 at 2018-06-24 23:22:52 -0400
+Processing by VacationsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mVacation Load (0.5ms)[0m  [1m[34mSELECT  `vacations`.* FROM `vacations` WHERE `vacations`.`id` = 2 LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 2 LIMIT 1[0m
+  Rendering vacations/show.html.erb within layouts/application
+  [1m[36mVacation Load (0.5ms)[0m  [1m[34mSELECT `vacations`.* FROM `vacations` WHERE `vacations`.`guard_id` = 2[0m
+  Rendered vacations/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 57ms (Views: 48.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/guard/4" for 127.0.0.1 at 2018-06-24 23:24:12 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGuard Load (0.7ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 4 LIMIT 1[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Guard Load (0.0ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 4 LIMIT 1[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 73ms (Views: 65.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/vacations/new?id=4" for 127.0.0.1 at 2018-06-24 23:24:15 -0400
+Processing by VacationsController#new as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 4 LIMIT 1[0m
+  Rendering vacations/new.html.erb within layouts/application
+  Rendered vacations/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 54ms (Views: 47.7ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/vacations?id=4" for 127.0.0.1 at 2018-06-24 23:24:39 -0400
+Processing by VacationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LknySzCU2qHJ4raW0bxTX3hIVXe6OOHpoaTBAdzDZIIdgO3zYEJd7drKI10U+gDBv1/1+Q+WKtyxx8GZd9EgAA==", "vacation"=>{"days_taken"=>"4", "vacacion_doc"=>[#<ActionDispatch::Http::UploadedFile:0x007f3ac41a5b70 @tempfile=#<Tempfile:/tmp/RackMultipart20180624-4713-1axqvr8.png>, @original_filename="missing.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"vacation[vacacion_doc][]\"; filename=\"missing.png\"\r\nContent-Type: image/png\r\n">, #<ActionDispatch::Http::UploadedFile:0x007f3ac41a5af8 @tempfile=#<Tempfile:/tmp/RackMultipart20180624-4713-2elfqv.jpg>, @original_filename="paper-sizes-large.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"vacation[vacacion_doc][]\"; filename=\"paper-sizes-large.jpg\"\r\nContent-Type: image/jpeg\r\n">]}, "commit"=>"Create Vacation", "id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (1.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 4 LIMIT 1[0m
+Unpermitted parameter: :vacacion_doc
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `vacations` (`days_taken`, `created_at`, `updated_at`, `guard_id`) VALUES (4, '2018-06-25 03:24:39', '2018-06-25 03:24:39', 4)[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/vacations/new?id=4
+Completed 302 Found in 17ms (ActiveRecord: 7.1ms)
+
+
+Started GET "/vacations/new?id=4" for 127.0.0.1 at 2018-06-24 23:24:39 -0400
+Processing by VacationsController#new as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 4 LIMIT 1[0m
+  Rendering vacations/new.html.erb within layouts/application
+  Rendered vacations/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 68ms (Views: 61.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/guard/4" for 127.0.0.1 at 2018-06-24 23:24:45 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 4 LIMIT 1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Guard Load (0.0ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 4 LIMIT 1[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 68ms (Views: 61.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/vacations/4" for 127.0.0.1 at 2018-06-24 23:24:47 -0400
+Processing by VacationsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mVacation Load (0.3ms)[0m  [1m[34mSELECT  `vacations`.* FROM `vacations` WHERE `vacations`.`id` = 4 LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 4 LIMIT 1[0m
+  Rendering vacations/show.html.erb within layouts/application
+  [1m[36mVacation Load (0.7ms)[0m  [1m[34mSELECT `vacations`.* FROM `vacations` WHERE `vacations`.`guard_id` = 4[0m
+  Rendered vacations/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 62ms (Views: 54.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/vacations/new?id=4" for 127.0.0.1 at 2018-06-24 23:26:15 -0400
+Processing by VacationsController#new as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 4 LIMIT 1[0m
+  Rendering vacations/new.html.erb within layouts/application
+  Rendered vacations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 181ms (Views: 55.1ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/vacations?id=4" for 127.0.0.1 at 2018-06-24 23:26:24 -0400
+Processing by VacationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vJWJOxWmGO+/wPx1X66TtYV0WvCmqbeZlyTKBj55pguPXJaDRXCfo6zoab6a6MArQmP6fhMHfKyHR8qelWviiQ==", "vacation"=>{"days_taken"=>"8", "vacacion_doc"=>[#<ActionDispatch::Http::UploadedFile:0x0055a9d03de620 @tempfile=#<Tempfile:/tmp/RackMultipart20180624-4713-splnd8.png>, @original_filename="missing.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"vacation[vacacion_doc][]\"; filename=\"missing.png\"\r\nContent-Type: image/png\r\n">, #<ActionDispatch::Http::UploadedFile:0x0055a9d03de4e0 @tempfile=#<Tempfile:/tmp/RackMultipart20180624-4713-v49imz.jpg>, @original_filename="paper-sizes-large.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"vacation[vacacion_doc][]\"; filename=\"paper-sizes-large.jpg\"\r\nContent-Type: image/jpeg\r\n">]}, "commit"=>"Create Vacation", "id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 4 LIMIT 1[0m
+Unpermitted parameter: :vacacion_doc
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `vacations` (`days_taken`, `created_at`, `updated_at`, `guard_id`) VALUES (8, '2018-06-25 03:26:24', '2018-06-25 03:26:24', 4)[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/vacations/new?id=4
+Completed 302 Found in 12ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/vacations/new?id=4" for 127.0.0.1 at 2018-06-24 23:26:24 -0400
+Processing by VacationsController#new as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 4 LIMIT 1[0m
+  Rendering vacations/new.html.erb within layouts/application
+  Rendered vacations/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 73ms (Views: 65.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/guard/4" for 127.0.0.1 at 2018-06-24 23:26:30 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 4 LIMIT 1[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Guard Load (0.0ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 4 LIMIT 1[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 72ms (Views: 65.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/vacations/4" for 127.0.0.1 at 2018-06-24 23:26:33 -0400
+Processing by VacationsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mVacation Load (0.5ms)[0m  [1m[34mSELECT  `vacations`.* FROM `vacations` WHERE `vacations`.`id` = 4 LIMIT 1[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (1.3ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 4 LIMIT 1[0m
+  Rendering vacations/show.html.erb within layouts/application
+  [1m[36mVacation Load (1.3ms)[0m  [1m[34mSELECT `vacations`.* FROM `vacations` WHERE `vacations`.`guard_id` = 4[0m
+  Rendered vacations/show.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 79ms (Views: 66.8ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/guard/5" for 127.0.0.1 at 2018-06-24 23:27:33 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 5 LIMIT 1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Guard Load (0.1ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 5 LIMIT 1[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 183ms (Views: 56.8ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/vacations/5" for 127.0.0.1 at 2018-06-24 23:27:36 -0400
+Processing by VacationsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mVacation Load (0.6ms)[0m  [1m[34mSELECT  `vacations`.* FROM `vacations` WHERE `vacations`.`id` = 5 LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 5 LIMIT 1[0m
+  Rendering vacations/show.html.erb within layouts/application
+  [1m[36mVacation Load (0.4ms)[0m  [1m[34mSELECT `vacations`.* FROM `vacations` WHERE `vacations`.`guard_id` = 5[0m
+  Rendered vacations/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 81ms (Views: 55.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/guard/3" for 127.0.0.1 at 2018-06-24 23:27:42 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 3 LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Guard Load (0.0ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 3 LIMIT 1[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 70ms (Views: 61.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/vacations/3" for 127.0.0.1 at 2018-06-24 23:27:45 -0400
+Processing by VacationsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mVacation Load (0.4ms)[0m  [1m[34mSELECT  `vacations`.* FROM `vacations` WHERE `vacations`.`id` = 3 LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 3 LIMIT 1[0m
+  Rendering vacations/show.html.erb within layouts/application
+  [1m[36mVacation Load (0.4ms)[0m  [1m[34mSELECT `vacations`.* FROM `vacations` WHERE `vacations`.`guard_id` = 3[0m
+  Rendered vacations/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 59ms (Views: 52.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/vacations/new?id=3" for 127.0.0.1 at 2018-06-24 23:27:48 -0400
+Processing by VacationsController#new as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 3 LIMIT 1[0m
+  Rendering vacations/new.html.erb within layouts/application
+  Rendered vacations/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 59ms (Views: 53.4ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/vacations?id=3" for 127.0.0.1 at 2018-06-24 23:27:56 -0400
+Processing by VacationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Uqonr8Lw72aHhrfKaZwbryZu8fpD+eHHv6PKxFXsG85hYzgXkiZoKpSuIgGs2kgx4XlRdPZXKvKvwMpc/v5fTA==", "vacation"=>{"days_taken"=>"6", "vacacion_doc"=>[#<ActionDispatch::Http::UploadedFile:0x007f3ad0fc7cd8 @tempfile=#<Tempfile:/tmp/RackMultipart20180624-4713-9is1p9.png>, @original_filename="missing.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"vacation[vacacion_doc][]\"; filename=\"missing.png\"\r\nContent-Type: image/png\r\n">, #<ActionDispatch::Http::UploadedFile:0x007f3ad0fc7b20 @tempfile=#<Tempfile:/tmp/RackMultipart20180624-4713-jkxbl2.jpg>, @original_filename="paper-sizes-large.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"vacation[vacacion_doc][]\"; filename=\"paper-sizes-large.jpg\"\r\nContent-Type: image/jpeg\r\n">]}, "commit"=>"Create Vacation", "id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 3 LIMIT 1[0m
+Unpermitted parameter: :vacacion_doc
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `vacations` (`days_taken`, `created_at`, `updated_at`, `guard_id`) VALUES (6, '2018-06-25 03:27:56', '2018-06-25 03:27:56', 3)[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/vacations/new?id=3
+Completed 302 Found in 15ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/vacations/new?id=3" for 127.0.0.1 at 2018-06-24 23:27:56 -0400
+Processing by VacationsController#new as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 3 LIMIT 1[0m
+  Rendering vacations/new.html.erb within layouts/application
+  Rendered vacations/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 81ms (Views: 74.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/guard/3" for 127.0.0.1 at 2018-06-24 23:28:00 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 3 LIMIT 1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Guard Load (0.0ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 3 LIMIT 1[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 82ms (Views: 75.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/vacations/3" for 127.0.0.1 at 2018-06-24 23:28:04 -0400
+Processing by VacationsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mVacation Load (0.4ms)[0m  [1m[34mSELECT  `vacations`.* FROM `vacations` WHERE `vacations`.`id` = 3 LIMIT 1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 3 LIMIT 1[0m
+  Rendering vacations/show.html.erb within layouts/application
+  [1m[36mVacation Load (0.9ms)[0m  [1m[34mSELECT `vacations`.* FROM `vacations` WHERE `vacations`.`guard_id` = 3[0m
+  Rendered vacations/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 76ms (Views: 66.8ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/vacations/new?id=3" for 127.0.0.1 at 2018-06-24 23:28:47 -0400
+Processing by VacationsController#new as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 3 LIMIT 1[0m
+  Rendering vacations/new.html.erb within layouts/application
+  Rendered vacations/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 188ms (Views: 55.8ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/vacations?id=3" for 127.0.0.1 at 2018-06-24 23:28:56 -0400
+Processing by VacationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zOQjVz8L4BDl9avJcjABXzRSZfkQlFp21LGLogT2/iL/LTzvb91nXPbdPgK3dlLB80XFd6U6kUPE0os6r+S6oA==", "vacation"=>{"days_taken"=>"3", "vacacion_doc"=>[#<ActionDispatch::Http::UploadedFile:0x007f3ad0e75ce0 @tempfile=#<Tempfile:/tmp/RackMultipart20180624-4713-l3pxvf.png>, @original_filename="missing.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"vacation[vacacion_doc][]\"; filename=\"missing.png\"\r\nContent-Type: image/png\r\n">, #<ActionDispatch::Http::UploadedFile:0x007f3ad0e75790 @tempfile=#<Tempfile:/tmp/RackMultipart20180624-4713-bsuotv.jpg>, @original_filename="paper-sizes-large.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"vacation[vacacion_doc][]\"; filename=\"paper-sizes-large.jpg\"\r\nContent-Type: image/jpeg\r\n">]}, "commit"=>"Create Vacation", "id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 3 LIMIT 1[0m
+Unpermitted parameter: :vacacion_doc
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `vacations` (`days_taken`, `created_at`, `updated_at`, `guard_id`) VALUES (3, '2018-06-25 03:28:56', '2018-06-25 03:28:56', 3)[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/vacations/new?id=3
+Completed 302 Found in 15ms (ActiveRecord: 6.9ms)
+
+
+Started GET "/vacations/new?id=3" for 127.0.0.1 at 2018-06-24 23:28:56 -0400
+Processing by VacationsController#new as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 3 LIMIT 1[0m
+  Rendering vacations/new.html.erb within layouts/application
+  Rendered vacations/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 66ms (Views: 59.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/guard/3" for 127.0.0.1 at 2018-06-24 23:29:01 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mGuard Load (0.7ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 3 LIMIT 1[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Guard Load (0.0ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 3 LIMIT 1[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 83ms (Views: 74.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/vacations/3" for 127.0.0.1 at 2018-06-24 23:29:04 -0400
+Processing by VacationsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mVacation Load (0.4ms)[0m  [1m[34mSELECT  `vacations`.* FROM `vacations` WHERE `vacations`.`id` = 3 LIMIT 1[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.8ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 3 LIMIT 1[0m
+  Rendering vacations/show.html.erb within layouts/application
+  [1m[36mVacation Load (0.9ms)[0m  [1m[34mSELECT `vacations`.* FROM `vacations` WHERE `vacations`.`guard_id` = 3[0m
+  Rendered vacations/show.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 81ms (Views: 70.9ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/guard/1" for 127.0.0.1 at 2018-06-24 23:29:55 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGuard Load (1.3ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Guard Load (0.0ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 242ms (Views: 92.9ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/vacations/1" for 127.0.0.1 at 2018-06-24 23:29:58 -0400
+Processing by VacationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVacation Load (0.8ms)[0m  [1m[34mSELECT  `vacations`.* FROM `vacations` WHERE `vacations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering vacations/show.html.erb within layouts/application
+  [1m[36mVacation Load (0.6ms)[0m  [1m[34mSELECT `vacations`.* FROM `vacations` WHERE `vacations`.`guard_id` = 1[0m
+  Rendered vacations/show.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 90ms (Views: 62.4ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/vacations/new?id=1" for 127.0.0.1 at 2018-06-24 23:30:05 -0400
+Processing by VacationsController#new as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering vacations/new.html.erb within layouts/application
+  Rendered vacations/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 63ms (Views: 58.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/vacations?id=1" for 127.0.0.1 at 2018-06-24 23:30:15 -0400
+Processing by VacationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"A/PbiFbG/6rY3fI9hvuvFZ86wGJ9SRA3Vw6CKx5CdYIwOsQwBhB45sv1Z/ZDvfyLWC1g7Mjn2wJHbYKztVAxAA==", "vacation"=>{"days_taken"=>"18", "vacacion_doc"=>[#<ActionDispatch::Http::UploadedFile:0x007f3ad1941d90 @tempfile=#<Tempfile:/tmp/RackMultipart20180624-4713-vfraz.png>, @original_filename="missing.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"vacation[vacacion_doc][]\"; filename=\"missing.png\"\r\nContent-Type: image/png\r\n">, #<ActionDispatch::Http::UploadedFile:0x007f3ad1941cc8 @tempfile=#<Tempfile:/tmp/RackMultipart20180624-4713-2iy01b.jpg>, @original_filename="paper-sizes-large.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"vacation[vacacion_doc][]\"; filename=\"paper-sizes-large.jpg\"\r\nContent-Type: image/jpeg\r\n">]}, "commit"=>"Create Vacation", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+Unpermitted parameter: :vacacion_doc
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `vacations` (`days_taken`, `created_at`, `updated_at`, `guard_id`) VALUES (18, '2018-06-25 03:30:15', '2018-06-25 03:30:15', 1)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/vacations/new?id=1
+Completed 302 Found in 14ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/vacations/new?id=1" for 127.0.0.1 at 2018-06-24 23:30:15 -0400
+Processing by VacationsController#new as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering vacations/new.html.erb within layouts/application
+  Rendered vacations/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 72ms (Views: 65.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/guard/1" for 127.0.0.1 at 2018-06-24 23:30:19 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Guard Load (0.0ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 71ms (Views: 65.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/vacations/1" for 127.0.0.1 at 2018-06-24 23:30:22 -0400
+Processing by VacationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVacation Load (0.5ms)[0m  [1m[34mSELECT  `vacations`.* FROM `vacations` WHERE `vacations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering vacations/show.html.erb within layouts/application
+  [1m[36mVacation Load (0.6ms)[0m  [1m[34mSELECT `vacations`.* FROM `vacations` WHERE `vacations`.`guard_id` = 1[0m
+  Rendered vacations/show.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 91ms (Views: 81.8ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/vacations/new?id=1" for 127.0.0.1 at 2018-06-24 23:32:59 -0400
+  
+SyntaxError (/home/cristian/Code/TransbeApp/Transbe/app/controllers/vacations_controller.rb:23: syntax error, unexpected '\n', expecting =>
+/home/cristian/Code/TransbeApp/Transbe/app/controllers/vacations_controller.rb:94: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/vacations_controller.rb:23: syntax error, unexpected '\n', expecting =>
+app/controllers/vacations_controller.rb:94: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/guard/1" for 127.0.0.1 at 2018-06-24 23:33:16 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Guard Load (0.0ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 188ms (Views: 80.0ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-06-24 23:33:18 -0400
+Processing by GuardsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 67ms (Views: 63.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/vacations/new?id=1" for 127.0.0.1 at 2018-06-24 23:33:21 -0400
+Processing by VacationsController#new as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.7ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering vacations/new.html.erb within layouts/application
+  Rendered vacations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 74ms (Views: 52.5ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/vacations?id=1" for 127.0.0.1 at 2018-06-24 23:33:28 -0400
+Processing by VacationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u2KCZ30sPJu78RDoFkTjBgo/BulSdwjFao0igkD3ieOIq53fLfq716jZhSPTArCYzSimZ+fZw/B67iIa6+XNYQ==", "vacation"=>{"days_taken"=>"10", "vacacion_doc"=>[#<ActionDispatch::Http::UploadedFile:0x007f3ad1f5b398 @tempfile=#<Tempfile:/tmp/RackMultipart20180624-4713-vohxlj.png>, @original_filename="missing.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"vacation[vacacion_doc][]\"; filename=\"missing.png\"\r\nContent-Type: image/png\r\n">, #<ActionDispatch::Http::UploadedFile:0x007f3ad1f5b2f8 @tempfile=#<Tempfile:/tmp/RackMultipart20180624-4713-vwklhg.jpg>, @original_filename="paper-sizes-large.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"vacation[vacacion_doc][]\"; filename=\"paper-sizes-large.jpg\"\r\nContent-Type: image/jpeg\r\n">]}, "commit"=>"Create Vacation", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+Unpermitted parameter: :vacacion_doc
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `vacations` (`days_taken`, `created_at`, `updated_at`, `guard_id`) VALUES (10, '2018-06-25 03:33:28', '2018-06-25 03:33:28', 1)[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/vacations/new?id=1
+Completed 302 Found in 17ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/vacations/new?id=1" for 127.0.0.1 at 2018-06-24 23:33:28 -0400
+Processing by VacationsController#new as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.9ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering vacations/new.html.erb within layouts/application
+  Rendered vacations/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 60ms (Views: 52.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/guard/1" for 127.0.0.1 at 2018-06-24 23:33:33 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Guard Load (0.0ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 83ms (Views: 77.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/vacations/1" for 127.0.0.1 at 2018-06-24 23:33:35 -0400
+Processing by VacationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVacation Load (0.3ms)[0m  [1m[34mSELECT  `vacations`.* FROM `vacations` WHERE `vacations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering vacations/show.html.erb within layouts/application
+  [1m[36mVacation Load (0.5ms)[0m  [1m[34mSELECT `vacations`.* FROM `vacations` WHERE `vacations`.`guard_id` = 1[0m
+  Rendered vacations/show.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 63ms (Views: 54.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/guard/2" for 127.0.0.1 at 2018-06-24 23:40:00 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 2 LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Guard Load (0.0ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 228ms (Views: 93.1ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/vacations/2" for 127.0.0.1 at 2018-06-24 23:40:03 -0400
+Processing by VacationsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mVacation Load (0.2ms)[0m  [1m[34mSELECT  `vacations`.* FROM `vacations` WHERE `vacations`.`id` = 2 LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 2 LIMIT 1[0m
+  Rendering vacations/show.html.erb within layouts/application
+  [1m[36mVacation Load (0.4ms)[0m  [1m[34mSELECT `vacations`.* FROM `vacations` WHERE `vacations`.`guard_id` = 2[0m
+  Rendered vacations/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 117ms (Views: 71.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/vacations/new?id=2" for 127.0.0.1 at 2018-06-24 23:40:06 -0400
+Processing by VacationsController#new as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.7ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 2 LIMIT 1[0m
+  Rendering vacations/new.html.erb within layouts/application
+  Rendered vacations/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 65ms (Views: 56.6ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/vacations?id=2" for 127.0.0.1 at 2018-06-24 23:40:13 -0400
+Processing by VacationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eCnYsSp636lB6cpOVQGJEuE1H+kslJrRnz10ES+c18tL4McJeqxY5VLBX4WQR9qMJiK/Z5k6UeSPXnSJhI6TSQ==", "vacation"=>{"days_taken"=>"2", "vacacion_doc"=>[#<ActionDispatch::Http::UploadedFile:0x007f3ac420d748 @tempfile=#<Tempfile:/tmp/RackMultipart20180624-4713-1jfth7p.png>, @original_filename="missing.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"vacation[vacacion_doc][]\"; filename=\"missing.png\"\r\nContent-Type: image/png\r\n">, #<ActionDispatch::Http::UploadedFile:0x007f3ac420d6d0 @tempfile=#<Tempfile:/tmp/RackMultipart20180624-4713-fehvde.jpg>, @original_filename="paper-sizes-large.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"vacation[vacacion_doc][]\"; filename=\"paper-sizes-large.jpg\"\r\nContent-Type: image/jpeg\r\n">]}, "commit"=>"Create Vacation", "id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 2 LIMIT 1[0m
+Unpermitted parameter: :vacacion_doc
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO `vacations` (`days_taken`, `created_at`, `updated_at`, `guard_id`) VALUES (2, '2018-06-25 03:40:13', '2018-06-25 03:40:13', 2)[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/vacations/new?id=2
+Completed 302 Found in 18ms (ActiveRecord: 7.1ms)
+
+
+Started GET "/vacations/new?id=2" for 127.0.0.1 at 2018-06-24 23:40:13 -0400
+Processing by VacationsController#new as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.7ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 2 LIMIT 1[0m
+  Rendering vacations/new.html.erb within layouts/application
+  Rendered vacations/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 74ms (Views: 66.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/guard/2" for 127.0.0.1 at 2018-06-24 23:40:17 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 2 LIMIT 1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Guard Load (0.0ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 67ms (Views: 60.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/vacations/2" for 127.0.0.1 at 2018-06-24 23:40:19 -0400
+Processing by VacationsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mVacation Load (0.4ms)[0m  [1m[34mSELECT  `vacations`.* FROM `vacations` WHERE `vacations`.`id` = 2 LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 2 LIMIT 1[0m
+  Rendering vacations/show.html.erb within layouts/application
+  [1m[36mVacation Load (0.5ms)[0m  [1m[34mSELECT `vacations`.* FROM `vacations` WHERE `vacations`.`guard_id` = 2[0m
+  Rendered vacations/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 70ms (Views: 53.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/vacations/new?id=2" for 127.0.0.1 at 2018-06-24 23:41:43 -0400
+Processing by VacationsController#new as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 2 LIMIT 1[0m
+  Rendering vacations/new.html.erb within layouts/application
+  Rendered vacations/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 186ms (Views: 52.5ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/vacations?id=2" for 127.0.0.1 at 2018-06-24 23:41:55 -0400
+Processing by VacationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BjLkAjEyRp946ntfCeF3MpixfJV3GogrQZ0e856emME1+/u6YeTB02vC7pTMpySsX6bcG8K0Qx5R/h5rNYzcQw==", "vacation"=>{"days_taken"=>"5", "vacacion_doc"=>[#<ActionDispatch::Http::UploadedFile:0x007f3ad2121650 @tempfile=#<Tempfile:/tmp/RackMultipart20180624-4713-1slw62u.png>, @original_filename="missing.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"vacation[vacacion_doc][]\"; filename=\"missing.png\"\r\nContent-Type: image/png\r\n">, #<ActionDispatch::Http::UploadedFile:0x007f3ad21215d8 @tempfile=#<Tempfile:/tmp/RackMultipart20180624-4713-1eonm7i.jpg>, @original_filename="paper-sizes-large.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"vacation[vacacion_doc][]\"; filename=\"paper-sizes-large.jpg\"\r\nContent-Type: image/jpeg\r\n">]}, "commit"=>"Create Vacation", "id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (1.0ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 2 LIMIT 1[0m
+Unpermitted parameter: :vacacion_doc
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `vacations` (`days_taken`, `created_at`, `updated_at`, `guard_id`) VALUES (5, '2018-06-25 03:41:55', '2018-06-25 03:41:55', 2)[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/vacations/new?id=2
+Completed 302 Found in 15ms (ActiveRecord: 4.8ms)
+
+
+Started GET "/vacations/new?id=2" for 127.0.0.1 at 2018-06-24 23:41:55 -0400
+Processing by VacationsController#new as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 2 LIMIT 1[0m
+  Rendering vacations/new.html.erb within layouts/application
+  Rendered vacations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 70ms (Views: 63.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/guard/2" for 127.0.0.1 at 2018-06-24 23:41:58 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 2 LIMIT 1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Guard Load (0.0ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 70ms (Views: 62.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/vacations/2" for 127.0.0.1 at 2018-06-24 23:42:01 -0400
+Processing by VacationsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mVacation Load (0.8ms)[0m  [1m[34mSELECT  `vacations`.* FROM `vacations` WHERE `vacations`.`id` = 2 LIMIT 1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 2 LIMIT 1[0m
+  Rendering vacations/show.html.erb within layouts/application
+  [1m[36mVacation Load (0.5ms)[0m  [1m[34mSELECT `vacations`.* FROM `vacations` WHERE `vacations`.`guard_id` = 2[0m
+  Rendered vacations/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 79ms (Views: 66.7ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/guard/3" for 127.0.0.1 at 2018-06-24 23:47:14 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 3 LIMIT 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Guard Load (0.0ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 3 LIMIT 1[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 199ms (Views: 57.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/vacations/new?id=3" for 127.0.0.1 at 2018-06-24 23:47:16 -0400
+Processing by VacationsController#new as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 3 LIMIT 1[0m
+  Rendering vacations/new.html.erb within layouts/application
+  Rendered vacations/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 83ms (Views: 59.9ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/vacations?id=3" for 127.0.0.1 at 2018-06-24 23:47:25 -0400
+Processing by VacationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hLhoWBIPC+Khk9gx6vIrvHf8N7paA/H3wReGuf5E9LG3cXfgQtmMrrK7TfovtHgisOuXNO+tOsLRdIYhVVawMw==", "vacation"=>{"days_taken"=>"20", "vacacion_doc"=>[#<ActionDispatch::Http::UploadedFile:0x007f3ac45db488 @tempfile=#<Tempfile:/tmp/RackMultipart20180624-4713-b2s9jc.png>, @original_filename="missing.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"vacation[vacacion_doc][]\"; filename=\"missing.png\"\r\nContent-Type: image/png\r\n">, #<ActionDispatch::Http::UploadedFile:0x007f3ac45db438 @tempfile=#<Tempfile:/tmp/RackMultipart20180624-4713-g5lxvv.jpg>, @original_filename="paper-sizes-large.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"vacation[vacacion_doc][]\"; filename=\"paper-sizes-large.jpg\"\r\nContent-Type: image/jpeg\r\n">]}, "commit"=>"Create Vacation", "id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 3 LIMIT 1[0m
+Unpermitted parameter: :vacacion_doc
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `vacations` (`days_taken`, `created_at`, `updated_at`, `guard_id`) VALUES (20, '2018-06-25 03:47:25', '2018-06-25 03:47:25', 3)[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/vacations/new?id=3
+Completed 302 Found in 16ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/vacations/new?id=3" for 127.0.0.1 at 2018-06-24 23:47:25 -0400
+Processing by VacationsController#new as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 3 LIMIT 1[0m
+  Rendering vacations/new.html.erb within layouts/application
+  Rendered vacations/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 57ms (Views: 50.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/guard/3" for 127.0.0.1 at 2018-06-24 23:47:30 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 3 LIMIT 1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Guard Load (0.0ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 3 LIMIT 1[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 70ms (Views: 63.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/vacations/3" for 127.0.0.1 at 2018-06-24 23:47:32 -0400
+Processing by VacationsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mVacation Load (0.3ms)[0m  [1m[34mSELECT  `vacations`.* FROM `vacations` WHERE `vacations`.`id` = 3 LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 3 LIMIT 1[0m
+  Rendering vacations/show.html.erb within layouts/application
+  [1m[36mVacation Load (0.6ms)[0m  [1m[34mSELECT `vacations`.* FROM `vacations` WHERE `vacations`.`guard_id` = 3[0m
+  Rendered vacations/show.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 59ms (Views: 50.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/vacations/new?id=3" for 127.0.0.1 at 2018-06-24 23:50:35 -0400
+Processing by VacationsController#new as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 3 LIMIT 1[0m
+  Rendering vacations/new.html.erb within layouts/application
+  Rendered vacations/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 169ms (Views: 53.2ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/vacations?id=3" for 127.0.0.1 at 2018-06-24 23:50:48 -0400
+Processing by VacationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mNxYQTc4aThCTR1tFvH9Jyhw4eEbtuzogCWZGqjwFhOrFUf5Z+7udFFliKbTt66572dBb64YJ92QRpmCA+JSkQ==", "vacation"=>{"days_taken"=>"23", "vacacion_doc"=>[#<ActionDispatch::Http::UploadedFile:0x007f3acd4e0188 @tempfile=#<Tempfile:/tmp/RackMultipart20180624-4713-wfbgiu.png>, @original_filename="missing.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"vacation[vacacion_doc][]\"; filename=\"missing.png\"\r\nContent-Type: image/png\r\n">, #<ActionDispatch::Http::UploadedFile:0x007f3acd4e0138 @tempfile=#<Tempfile:/tmp/RackMultipart20180624-4713-1ugie2q.jpg>, @original_filename="paper-sizes-large.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"vacation[vacacion_doc][]\"; filename=\"paper-sizes-large.jpg\"\r\nContent-Type: image/jpeg\r\n">]}, "commit"=>"Create Vacation", "id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 3 LIMIT 1[0m
+Unpermitted parameter: :vacacion_doc
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO `vacations` (`days_taken`, `created_at`, `updated_at`, `guard_id`) VALUES (23, '2018-06-25 03:50:48', '2018-06-25 03:50:48', 3)[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/vacations/new?id=3
+Completed 302 Found in 16ms (ActiveRecord: 5.9ms)
+
+
+Started GET "/vacations/new?id=3" for 127.0.0.1 at 2018-06-24 23:50:48 -0400
+Processing by VacationsController#new as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 3 LIMIT 1[0m
+  Rendering vacations/new.html.erb within layouts/application
+  Rendered vacations/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 56ms (Views: 50.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/guard/2" for 127.0.0.1 at 2018-06-24 23:50:53 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 2 LIMIT 1[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Guard Load (0.0ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 79ms (Views: 68.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/vacations/2" for 127.0.0.1 at 2018-06-24 23:50:56 -0400
+Processing by VacationsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mVacation Load (0.5ms)[0m  [1m[34mSELECT  `vacations`.* FROM `vacations` WHERE `vacations`.`id` = 2 LIMIT 1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 2 LIMIT 1[0m
+  Rendering vacations/show.html.erb within layouts/application
+  [1m[36mVacation Load (0.4ms)[0m  [1m[34mSELECT `vacations`.* FROM `vacations` WHERE `vacations`.`guard_id` = 2[0m
+  Rendered vacations/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 74ms (Views: 64.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/guard/5" for 127.0.0.1 at 2018-06-24 23:55:55 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 5 LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Guard Load (0.0ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 5 LIMIT 1[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 188ms (Views: 65.3ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/vacations/new?id=5" for 127.0.0.1 at 2018-06-24 23:55:58 -0400
+Processing by VacationsController#new as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.7ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 5 LIMIT 1[0m
+  Rendering vacations/new.html.erb within layouts/application
+  Rendered vacations/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 80ms (Views: 59.1ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/vacations?id=5" for 127.0.0.1 at 2018-06-24 23:56:05 -0400
+Processing by VacationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1Ah6K5Tgm8UmMNV+kUEHypaRkVYUad7OzUFsqJ2E+5XnwWWTxDYciTUYQLVUB1RUUYYx2KHHFfvdImwwNpa/Fw==", "vacation"=>{"days_taken"=>"15", "vacacion_doc"=>[#<ActionDispatch::Http::UploadedFile:0x007f3acd2dc008 @tempfile=#<Tempfile:/tmp/RackMultipart20180624-4713-1d4byz1.png>, @original_filename="missing.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"vacation[vacacion_doc][]\"; filename=\"missing.png\"\r\nContent-Type: image/png\r\n">, #<ActionDispatch::Http::UploadedFile:0x007f3acd2d7f80 @tempfile=#<Tempfile:/tmp/RackMultipart20180624-4713-14y4nbh.jpg>, @original_filename="paper-sizes-large.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"vacation[vacacion_doc][]\"; filename=\"paper-sizes-large.jpg\"\r\nContent-Type: image/jpeg\r\n">]}, "commit"=>"Create Vacation", "id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 5 LIMIT 1[0m
+Unpermitted parameter: :vacacion_doc
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `vacations` (`days_taken`, `created_at`, `updated_at`, `guard_id`) VALUES (15, '2018-06-25 03:56:05', '2018-06-25 03:56:05', 5)[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/vacations/new?id=5
+Completed 302 Found in 14ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/vacations/new?id=5" for 127.0.0.1 at 2018-06-24 23:56:05 -0400
+Processing by VacationsController#new as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 5 LIMIT 1[0m
+  Rendering vacations/new.html.erb within layouts/application
+  Rendered vacations/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 59ms (Views: 51.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/guard/5" for 127.0.0.1 at 2018-06-24 23:56:40 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 5 LIMIT 1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Guard Load (0.0ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 5 LIMIT 1[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 68ms (Views: 61.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/vacations/5" for 127.0.0.1 at 2018-06-24 23:56:43 -0400
+Processing by VacationsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mVacation Load (0.3ms)[0m  [1m[34mSELECT  `vacations`.* FROM `vacations` WHERE `vacations`.`id` = 5 LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.9ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 5 LIMIT 1[0m
+  Rendering vacations/show.html.erb within layouts/application
+  [1m[36mVacation Load (0.4ms)[0m  [1m[34mSELECT `vacations`.* FROM `vacations` WHERE `vacations`.`guard_id` = 5[0m
+  Rendered vacations/show.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 62ms (Views: 51.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/vacations/new?id=5" for 127.0.0.1 at 2018-06-24 23:59:04 -0400
+Processing by VacationsController#new as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 5 LIMIT 1[0m
+  Rendering vacations/new.html.erb within layouts/application
+  Rendered vacations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 192ms (Views: 66.0ms | ActiveRecord: 3.9ms)
+
+
+Started POST "/vacations?id=5" for 127.0.0.1 at 2018-06-24 23:59:11 -0400
+Processing by VacationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EkkY7mFIlZaOwAYLps+DQnTSUiqMBinuTOHraqYcyjchgAdWMZ4S2p3ok8BjidDcs8XypDmo4ttcguvyDQ6OtQ==", "vacation"=>{"days_taken"=>"8", "vacacion_doc"=>[#<ActionDispatch::Http::UploadedFile:0x007f3acd3ea760 @tempfile=#<Tempfile:/tmp/RackMultipart20180624-4713-97edmx.png>, @original_filename="missing.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"vacation[vacacion_doc][]\"; filename=\"missing.png\"\r\nContent-Type: image/png\r\n">, #<ActionDispatch::Http::UploadedFile:0x007f3acd3ea710 @tempfile=#<Tempfile:/tmp/RackMultipart20180624-4713-j76aj8.jpg>, @original_filename="paper-sizes-large.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"vacation[vacacion_doc][]\"; filename=\"paper-sizes-large.jpg\"\r\nContent-Type: image/jpeg\r\n">]}, "commit"=>"Create Vacation", "id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 5 LIMIT 1[0m
+Unpermitted parameter: :vacacion_doc
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `vacations` (`days_taken`, `created_at`, `updated_at`, `guard_id`) VALUES (8, '2018-06-25 03:59:11', '2018-06-25 03:59:11', 5)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/vacations/new?id=5
+Completed 302 Found in 14ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/vacations/new?id=5" for 127.0.0.1 at 2018-06-24 23:59:11 -0400
+Processing by VacationsController#new as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 5 LIMIT 1[0m
+  Rendering vacations/new.html.erb within layouts/application
+  Rendered vacations/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 59ms (Views: 50.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/guards/" for 127.0.0.1 at 2018-06-25 10:58:25 -0400
+  [1m[35m (10.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (2.8ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (103.1ms)
+Completed 200 OK in 466ms (Views: 388.1ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-06-25 10:58:29 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/devise
+  Rendered users/shared/_links.html.erb (1.3ms)
+  Rendered users/sessions/new.html.erb within layouts/devise (15.4ms)
+Completed 200 OK in 60ms (Views: 56.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-06-25 10:58:30 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zsZSQLlIrfjUEOBQNZF9Y7LbjQQJW1nlnYm3tkoziH/wFKXCrbDCJG/GkPddndR/ej8zafXvlYrNDtg8ABQUYw==", "user"=>{"email"=>"cristianfervas1992@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'cristianfervas1992@gmail.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[33mUPDATE `users` SET `current_sign_in_at` = '2018-06-25 14:58:30', `last_sign_in_at` = '2018-06-25 01:57:11', `sign_in_count` = 8, `updated_at` = '2018-06-25 14:58:30' WHERE `users`.`id` = 1[0m
+  [1m[35m (26.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 218ms (ActiveRecord: 29.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-25 10:58:30 -0400
+Processing by BienvenidaController#index as HTML
+  Rendering bienvenida/index.html.erb within layouts/application
+  Rendered bienvenida/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 50ms (Views: 47.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-06-25 10:58:36 -0400
+Processing by GuardsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 91ms (Views: 86.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/guard/1" for 127.0.0.1 at 2018-06-25 10:59:26 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Guard Load (0.0ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 76ms (Views: 67.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/vacations/1" for 127.0.0.1 at 2018-06-25 10:59:29 -0400
+Processing by VacationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVacation Load (0.2ms)[0m  [1m[34mSELECT  `vacations`.* FROM `vacations` WHERE `vacations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering vacations/show.html.erb within layouts/application
+  [1m[36mVacation Load (0.5ms)[0m  [1m[34mSELECT `vacations`.* FROM `vacations` WHERE `vacations`.`guard_id` = 1[0m
+  Rendered vacations/show.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 173ms (Views: 82.5ms | ActiveRecord: 13.4ms)
+
+
+Started GET "/guard/5" for 127.0.0.1 at 2018-06-25 10:59:37 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 5 LIMIT 1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Guard Load (0.0ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 5 LIMIT 1[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 81ms (Views: 73.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/vacations/5" for 127.0.0.1 at 2018-06-25 10:59:40 -0400
+Processing by VacationsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mVacation Load (0.4ms)[0m  [1m[34mSELECT  `vacations`.* FROM `vacations` WHERE `vacations`.`id` = 5 LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 5 LIMIT 1[0m
+  Rendering vacations/show.html.erb within layouts/application
+  [1m[36mVacation Load (0.5ms)[0m  [1m[34mSELECT `vacations`.* FROM `vacations` WHERE `vacations`.`guard_id` = 5[0m
+  Rendered vacations/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 83ms (Views: 75.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/guard/1" for 127.0.0.1 at 2018-06-25 11:27:16 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Guard Load (0.0ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 66ms (Views: 58.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/vacations/1" for 127.0.0.1 at 2018-06-25 11:27:23 -0400
+Processing by VacationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVacation Load (0.5ms)[0m  [1m[34mSELECT  `vacations`.* FROM `vacations` WHERE `vacations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering vacations/show.html.erb within layouts/application
+  [1m[36mVacation Load (3.4ms)[0m  [1m[34mSELECT `vacations`.* FROM `vacations` WHERE `vacations`.`guard_id` = 1[0m
+  Rendered vacations/show.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 75ms (Views: 64.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/guards/" for 127.0.0.1 at 2018-06-25 22:45:49 -0400
+  [1m[35m (3.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (1.5ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (113.7ms)
+Completed 200 OK in 370ms (Views: 298.4ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-06-25 22:45:51 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/devise
+  Rendered users/shared/_links.html.erb (1.1ms)
+  Rendered users/sessions/new.html.erb within layouts/devise (14.6ms)
+Completed 200 OK in 62ms (Views: 60.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-06-25 22:45:54 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2KwuEMOiKu7wqYznCQI/gGxgmUuqxI9lLhtw86dzpZ5s2REit5WUMSyLExkJzcNJid19N9lOHZoui951AUMEww==", "user"=>{"email"=>"cristianfervas1992@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'cristianfervas1992@gmail.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[33mUPDATE `users` SET `current_sign_in_at` = '2018-06-26 02:45:54', `last_sign_in_at` = '2018-06-25 14:58:30', `sign_in_count` = 9, `updated_at` = '2018-06-26 02:45:54' WHERE `users`.`id` = 1[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 178ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-25 22:45:54 -0400
+Processing by BienvenidaController#index as HTML
+  Rendering bienvenida/index.html.erb within layouts/application
+  Rendered bienvenida/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 53ms (Views: 50.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-06-25 22:46:01 -0400
+Processing by GuardsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 56ms (Views: 52.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/guards/new" for 127.0.0.1 at 2018-06-25 22:46:08 -0400
+Processing by GuardsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering guards/new.html.erb within layouts/application
+  Rendered guards/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 62ms (Views: 58.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/contract_guards/new" for 127.0.0.1 at 2018-06-25 22:46:15 -0400
+Processing by ContractGuardsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.7ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = NULL LIMIT 1[0m
+Completed 404 Not Found in 12ms (ActiveRecord: 1.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Guard with 'id'=):
+  
+app/controllers/contract_guards_controller.rb:11:in `new'
+Started GET "/guards" for 127.0.0.1 at 2018-06-25 22:51:25 -0400
+Processing by GuardsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.7ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 62ms (Views: 57.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/guard/1" for 127.0.0.1 at 2018-06-25 22:51:29 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Guard Load (0.0ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 76ms (Views: 70.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/contract_guards/new?id=1" for 127.0.0.1 at 2018-06-25 22:51:33 -0400
+Processing by ContractGuardsController#new as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering contract_guards/new.html.erb within layouts/application
+  Rendered contract_guards/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 121ms (Views: 76.1ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/contract_guards?id=1" for 127.0.0.1 at 2018-06-25 22:53:15 -0400
+Processing by ContractGuardsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Vr90/Ps9hQquJ22FDplAuWrJoMPVb1avdd5RUXWIHXpDaIrrlmQx0JPtxbXZ3E971jZAF8GoGVhpbJo8FqqRwA==", "contract_guard"=>{"start_date"=>"2018-06-26", "finish_date"=>"2018-06-28", "contrato_doc"=>#<ActionDispatch::Http::UploadedFile:0x007fc67c306408 @tempfile=#<Tempfile:/tmp/RackMultipart20180625-5368-1ubj1x7.pdf>, @original_filename="jurasica1.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"contract_guard[contrato_doc]\"; filename=\"jurasica1.pdf\"\r\nContent-Type: application/pdf\r\n">}, "commit"=>"Create Contract guard", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+[paperclip] Trying to link /tmp/RackMultipart20180625-5368-1ubj1x7.pdf to /tmp/68d674416f75ab726d5c5fd17b54ee2e20180625-5368-jnfjjp.pdf
+[paperclip] Trying to link /tmp/68d674416f75ab726d5c5fd17b54ee2e20180625-5368-jnfjjp.pdf to /tmp/68d674416f75ab726d5c5fd17b54ee2e20180625-5368-1vt7yta.pdf
+Command :: PATH=/usr/bin/:$PATH; file -b --mime '/tmp/68d674416f75ab726d5c5fd17b54ee2e20180625-5368-1vt7yta.pdf'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[paperclip] Trying to link /tmp/68d674416f75ab726d5c5fd17b54ee2e20180625-5368-jnfjjp.pdf to /tmp/68d674416f75ab726d5c5fd17b54ee2e20180625-5368-7ktuyu.pdf
+Command :: PATH=/usr/bin/:$PATH; file -b --mime '/tmp/68d674416f75ab726d5c5fd17b54ee2e20180625-5368-7ktuyu.pdf'
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO `contract_guards` (`start_date`, `finish_date`, `created_at`, `updated_at`, `contrato_doc_file_name`, `contrato_doc_content_type`, `contrato_doc_file_size`, `contrato_doc_updated_at`, `guard_id`) VALUES ('2018-06-26 00:00:00', '2018-06-28 00:00:00', '2018-06-26 02:53:15', '2018-06-26 02:53:15', 'jurasica1.pdf', 'application/pdf', 142351, '2018-06-26 02:53:15', 1)[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/contract_guards/new?id=1
+Completed 302 Found in 38ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/contract_guards/new?id=1" for 127.0.0.1 at 2018-06-25 22:53:15 -0400
+Processing by ContractGuardsController#new as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (1.9ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering contract_guards/new.html.erb within layouts/application
+  Rendered contract_guards/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 79ms (Views: 70.2ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/guard/1" for 127.0.0.1 at 2018-06-25 22:53:33 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Guard Load (0.0ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 88ms (Views: 80.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/contract_guards/1" for 127.0.0.1 at 2018-06-25 22:53:36 -0400
+Processing by ContractGuardsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 85ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `set_contract_guard' for #<ContractGuardsController:0x007fc6740ed2f0>
+Did you mean?  edit_contract_guard_url):
+  
+activesupport (5.1.6) lib/active_support/callbacks.rb:413:in `block in make_lambda'
+activesupport (5.1.6) lib/active_support/callbacks.rb:178:in `block (2 levels) in halting_and_conditional'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:12:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.1.6) lib/active_support/callbacks.rb:179:in `block in halting_and_conditional'
+activesupport (5.1.6) lib/active_support/callbacks.rb:507:in `block in invoke_before'
+activesupport (5.1.6) lib/active_support/callbacks.rb:507:in `each'
+activesupport (5.1.6) lib/active_support/callbacks.rb:507:in `invoke_before'
+activesupport (5.1.6) lib/active_support/callbacks.rb:130:in `run_callbacks'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.6) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.6) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/guard/1" for 127.0.0.1 at 2018-06-25 23:02:23 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Guard Load (0.0ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 170ms (Views: 65.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/contract_guards/1" for 127.0.0.1 at 2018-06-25 23:02:26 -0400
+Processing by ContractGuardsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 86ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `set_contract_guards' for #<ContractGuardsController:0x007fc67401b188>
+Did you mean?  edit_contract_guard_url):
+  
+activesupport (5.1.6) lib/active_support/callbacks.rb:413:in `block in make_lambda'
+activesupport (5.1.6) lib/active_support/callbacks.rb:178:in `block (2 levels) in halting_and_conditional'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:12:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.1.6) lib/active_support/callbacks.rb:179:in `block in halting_and_conditional'
+activesupport (5.1.6) lib/active_support/callbacks.rb:507:in `block in invoke_before'
+activesupport (5.1.6) lib/active_support/callbacks.rb:507:in `each'
+activesupport (5.1.6) lib/active_support/callbacks.rb:507:in `invoke_before'
+activesupport (5.1.6) lib/active_support/callbacks.rb:130:in `run_callbacks'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.6) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.6) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/guard/1" for 127.0.0.1 at 2018-06-25 23:02:52 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Guard Load (0.0ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 201ms (Views: 82.2ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/contract_guards/1" for 127.0.0.1 at 2018-06-25 23:02:54 -0400
+Processing by ContractGuardsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 83ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `set_edit_contract_guard' for #<ContractGuardsController:0x007fc68e0ec9f8>
+Did you mean?  set_trace_func):
+  
+activesupport (5.1.6) lib/active_support/callbacks.rb:413:in `block in make_lambda'
+activesupport (5.1.6) lib/active_support/callbacks.rb:178:in `block (2 levels) in halting_and_conditional'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:12:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.1.6) lib/active_support/callbacks.rb:179:in `block in halting_and_conditional'
+activesupport (5.1.6) lib/active_support/callbacks.rb:507:in `block in invoke_before'
+activesupport (5.1.6) lib/active_support/callbacks.rb:507:in `each'
+activesupport (5.1.6) lib/active_support/callbacks.rb:507:in `invoke_before'
+activesupport (5.1.6) lib/active_support/callbacks.rb:130:in `run_callbacks'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.6) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.6) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/guard/1" for 127.0.0.1 at 2018-06-25 23:03:05 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Guard Load (0.0ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 72ms (Views: 65.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/contract_guards/1" for 127.0.0.1 at 2018-06-25 23:11:07 -0400
+Processing by ContractGuardsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 74ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `set_contractGuard' for #<ContractGuardsController:0x007fc6740491a0>
+Did you mean?  edit_contract_guard_url):
+  
+activesupport (5.1.6) lib/active_support/callbacks.rb:413:in `block in make_lambda'
+activesupport (5.1.6) lib/active_support/callbacks.rb:178:in `block (2 levels) in halting_and_conditional'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:12:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.1.6) lib/active_support/callbacks.rb:179:in `block in halting_and_conditional'
+activesupport (5.1.6) lib/active_support/callbacks.rb:507:in `block in invoke_before'
+activesupport (5.1.6) lib/active_support/callbacks.rb:507:in `each'
+activesupport (5.1.6) lib/active_support/callbacks.rb:507:in `invoke_before'
+activesupport (5.1.6) lib/active_support/callbacks.rb:130:in `run_callbacks'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.6) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.6) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/guard/1" for 127.0.0.1 at 2018-06-25 23:11:35 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGuard Load (0.8ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Guard Load (0.0ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 175ms (Views: 64.4ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/contract_guards/1" for 127.0.0.1 at 2018-06-25 23:11:38 -0400
+Processing by ContractGuardsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 95ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `set_contract_guard' for #<ContractGuardsController:0x007fc68e5306b8>
+Did you mean?  edit_contract_guard_url):
+  
+activesupport (5.1.6) lib/active_support/callbacks.rb:413:in `block in make_lambda'
+activesupport (5.1.6) lib/active_support/callbacks.rb:178:in `block (2 levels) in halting_and_conditional'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:12:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.1.6) lib/active_support/callbacks.rb:179:in `block in halting_and_conditional'
+activesupport (5.1.6) lib/active_support/callbacks.rb:507:in `block in invoke_before'
+activesupport (5.1.6) lib/active_support/callbacks.rb:507:in `each'
+activesupport (5.1.6) lib/active_support/callbacks.rb:507:in `invoke_before'
+activesupport (5.1.6) lib/active_support/callbacks.rb:130:in `run_callbacks'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.6) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.6) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/guard/1" for 127.0.0.1 at 2018-06-25 23:21:27 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Guard Load (0.0ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 232ms (Views: 86.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/contract_guards/1" for 127.0.0.1 at 2018-06-25 23:21:29 -0400
+Processing by ContractGuardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContractGuard Load (0.3ms)[0m  [1m[34mSELECT  `contract_guards`.* FROM `contract_guards` WHERE `contract_guards`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (1.0ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering contract_guards/show.html.erb within layouts/application
+  [1m[36mContractGuard Load (0.4ms)[0m  [1m[34mSELECT `contract_guards`.* FROM `contract_guards` WHERE `contract_guards`.`guard_id` = 1[0m
+  Rendered contract_guards/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 86ms (Views: 55.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/contract_guards/1" for 127.0.0.1 at 2018-06-25 23:32:00 -0400
+Processing by ContractGuardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContractGuard Load (0.3ms)[0m  [1m[34mSELECT  `contract_guards`.* FROM `contract_guards` WHERE `contract_guards`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering contract_guards/show.html.erb within layouts/application
+  [1m[36mContractGuard Load (0.6ms)[0m  [1m[34mSELECT `contract_guards`.* FROM `contract_guards` WHERE `contract_guards`.`guard_id` = 1[0m
+  Rendered contract_guards/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 67ms (Views: 58.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/contract_guards/1" for 127.0.0.1 at 2018-06-25 23:32:48 -0400
+Processing by ContractGuardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContractGuard Load (0.3ms)[0m  [1m[34mSELECT  `contract_guards`.* FROM `contract_guards` WHERE `contract_guards`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering contract_guards/show.html.erb within layouts/application
+  [1m[36mContractGuard Load (0.4ms)[0m  [1m[34mSELECT `contract_guards`.* FROM `contract_guards` WHERE `contract_guards`.`guard_id` = 1[0m
+  Rendered contract_guards/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 65ms (Views: 58.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/contract_guards/1" for 127.0.0.1 at 2018-06-25 23:32:51 -0400
+Processing by ContractGuardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContractGuard Load (0.5ms)[0m  [1m[34mSELECT  `contract_guards`.* FROM `contract_guards` WHERE `contract_guards`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering contract_guards/show.html.erb within layouts/application
+  [1m[36mContractGuard Load (0.3ms)[0m  [1m[34mSELECT `contract_guards`.* FROM `contract_guards` WHERE `contract_guards`.`guard_id` = 1[0m
+  Rendered contract_guards/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 55ms (Views: 47.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/contract_guards/1" for 127.0.0.1 at 2018-06-25 23:33:02 -0400
+Processing by ContractGuardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContractGuard Load (0.5ms)[0m  [1m[34mSELECT  `contract_guards`.* FROM `contract_guards` WHERE `contract_guards`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering contract_guards/show.html.erb within layouts/application
+  [1m[36mContractGuard Load (0.5ms)[0m  [1m[34mSELECT `contract_guards`.* FROM `contract_guards` WHERE `contract_guards`.`guard_id` = 1[0m
+  Rendered contract_guards/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 62ms (Views: 54.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/contract_guards/1" for 127.0.0.1 at 2018-06-25 23:33:27 -0400
+Processing by ContractGuardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContractGuard Load (0.4ms)[0m  [1m[34mSELECT  `contract_guards`.* FROM `contract_guards` WHERE `contract_guards`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering contract_guards/show.html.erb within layouts/application
+  [1m[36mContractGuard Load (0.4ms)[0m  [1m[34mSELECT `contract_guards`.* FROM `contract_guards` WHERE `contract_guards`.`guard_id` = 1[0m
+  Rendered contract_guards/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 65ms (Views: 57.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/contract_guards/1" for 127.0.0.1 at 2018-06-25 23:33:49 -0400
+Processing by ContractGuardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContractGuard Load (0.3ms)[0m  [1m[34mSELECT  `contract_guards`.* FROM `contract_guards` WHERE `contract_guards`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering contract_guards/show.html.erb within layouts/application
+  [1m[36mContractGuard Load (0.7ms)[0m  [1m[34mSELECT `contract_guards`.* FROM `contract_guards` WHERE `contract_guards`.`guard_id` = 1[0m
+  Rendered contract_guards/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 58ms (Views: 51.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/contract_guards/1" for 127.0.0.1 at 2018-06-25 23:33:51 -0400
+Processing by ContractGuardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContractGuard Load (0.4ms)[0m  [1m[34mSELECT  `contract_guards`.* FROM `contract_guards` WHERE `contract_guards`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering contract_guards/show.html.erb within layouts/application
+  [1m[36mContractGuard Load (0.4ms)[0m  [1m[34mSELECT `contract_guards`.* FROM `contract_guards` WHERE `contract_guards`.`guard_id` = 1[0m
+  Rendered contract_guards/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 62ms (Views: 55.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/contract_guards/1" for 127.0.0.1 at 2018-06-25 23:34:41 -0400
+Processing by ContractGuardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContractGuard Load (0.5ms)[0m  [1m[34mSELECT  `contract_guards`.* FROM `contract_guards` WHERE `contract_guards`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering contract_guards/show.html.erb within layouts/application
+  [1m[36mContractGuard Load (0.4ms)[0m  [1m[34mSELECT `contract_guards`.* FROM `contract_guards` WHERE `contract_guards`.`guard_id` = 1[0m
+  Rendered contract_guards/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 68ms (Views: 56.9ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/contrato_docs/original/missing.png&embedded=true%22" for 127.0.0.1 at 2018-06-25 23:34:46 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/contrato_docs/original/missing.png&embedded=true%22"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/contract_guards/1" for 127.0.0.1 at 2018-06-25 23:35:29 -0400
+Processing by ContractGuardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContractGuard Load (0.5ms)[0m  [1m[34mSELECT  `contract_guards`.* FROM `contract_guards` WHERE `contract_guards`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering contract_guards/show.html.erb within layouts/application
+  [1m[36mContractGuard Load (0.6ms)[0m  [1m[34mSELECT `contract_guards`.* FROM `contract_guards` WHERE `contract_guards`.`guard_id` = 1[0m
+  Rendered contract_guards/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 60ms (Views: 51.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-06-25 23:48:04 -0400
+Processing by GuardsController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 75ms (Views: 68.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/guard/1" for 127.0.0.1 at 2018-06-25 23:48:06 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGuard Load (1.0ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Guard Load (0.1ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 80ms (Views: 71.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/vacations/1" for 127.0.0.1 at 2018-06-25 23:48:12 -0400
+Processing by VacationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVacation Load (0.5ms)[0m  [1m[34mSELECT  `vacations`.* FROM `vacations` WHERE `vacations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.7ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering vacations/show.html.erb within layouts/application
+  [1m[36mVacation Load (0.4ms)[0m  [1m[34mSELECT `vacations`.* FROM `vacations` WHERE `vacations`.`guard_id` = 1[0m
+  Rendered vacations/show.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 100ms (Views: 63.7ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/vacations/new?id=1" for 127.0.0.1 at 2018-06-25 23:48:18 -0400
+Processing by VacationsController#new as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering vacations/new.html.erb within layouts/application
+  Rendered vacations/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 68ms (Views: 62.0ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/vacations?id=1" for 127.0.0.1 at 2018-06-25 23:48:34 -0400
+Processing by VacationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Jgyj06ObZ1pfanQzfvDGCnDg1AalqwUh8SHR2S1bFMigse2dCKwuW1npTWOnFuq9tuLCSo1jpaGyivi5ih8qWg==", "vacation"=>{"days_taken"=>"3", "vacacion_doc"=>[#<ActionDispatch::Http::UploadedFile:0x007fc67c2fe398 @tempfile=#<Tempfile:/tmp/RackMultipart20180625-5368-q5zhqc.jpg>, @original_filename="paper-sizes-large.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"vacation[vacacion_doc][]\"; filename=\"paper-sizes-large.jpg\"\r\nContent-Type: image/jpeg\r\n">]}, "commit"=>"Create Vacation", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.7ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.1ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1..2)):
+  
+app/controllers/vacations_controller.rb:86:in `[]'
+app/controllers/vacations_controller.rb:86:in `vacation_params'
+app/controllers/vacations_controller.rb:18:in `create'
+Started POST "/vacations?id=1" for 127.0.0.1 at 2018-06-25 23:48:45 -0400
+Processing by VacationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Jgyj06ObZ1pfanQzfvDGCnDg1AalqwUh8SHR2S1bFMigse2dCKwuW1npTWOnFuq9tuLCSo1jpaGyivi5ih8qWg==", "vacation"=>{"days_taken"=>"3", "vacacion_doc"=>[#<ActionDispatch::Http::UploadedFile:0x005583be50e988 @tempfile=#<Tempfile:/tmp/RackMultipart20180625-5368-15q822e.jpg>, @original_filename="paper-sizes-large.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"vacation[vacacion_doc][]\"; filename=\"paper-sizes-large.jpg\"\r\nContent-Type: image/jpeg\r\n">]}, "commit"=>"Create Vacation", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.3ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+Unpermitted parameter: :vacacion_doc
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (6.3ms)[0m  [1m[32mINSERT INTO `vacations` (`days_taken`, `created_at`, `updated_at`, `guard_id`) VALUES (3, '2018-06-26 03:48:45', '2018-06-26 03:48:45', 1)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/vacations/new?id=1
+Completed 302 Found in 145ms (ActiveRecord: 14.5ms)
+
+
+Started GET "/vacations/new?id=1" for 127.0.0.1 at 2018-06-25 23:48:45 -0400
+Processing by VacationsController#new as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.8ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering vacations/new.html.erb within layouts/application
+  Rendered vacations/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 61ms (Views: 52.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/guard/1" for 127.0.0.1 at 2018-06-25 23:48:50 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGuard Load (5.3ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Guard Load (0.0ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 80ms (Views: 67.9ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/vacations/1" for 127.0.0.1 at 2018-06-25 23:48:53 -0400
+Processing by VacationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVacation Load (0.5ms)[0m  [1m[34mSELECT  `vacations`.* FROM `vacations` WHERE `vacations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (1.1ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering vacations/show.html.erb within layouts/application
+  [1m[36mVacation Load (0.5ms)[0m  [1m[34mSELECT `vacations`.* FROM `vacations` WHERE `vacations`.`guard_id` = 1[0m
+  Rendered vacations/show.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 97ms (Views: 87.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/vacations/new?id=1" for 127.0.0.1 at 2018-06-25 23:52:23 -0400
+Processing by VacationsController#new as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering vacations/new.html.erb within layouts/application
+  Rendered vacations/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 184ms (Views: 62.7ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/vacations?id=1" for 127.0.0.1 at 2018-06-25 23:52:31 -0400
+Processing by VacationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VHBWKxitX7AXRiclhpoNiRJYRVcmbWpKtTNRS3a9VfnSzRhls5oWsRHFHnVffCE+1FpTGw6lysr2mHgr0flraw==", "vacation"=>{"days_taken"=>"25", "vacacion_doc"=>[#<ActionDispatch::Http::UploadedFile:0x007fc6740ec580 @tempfile=#<Tempfile:/tmp/RackMultipart20180625-5368-1bbztai.jpg>, @original_filename="paper-sizes-large.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"vacation[vacacion_doc][]\"; filename=\"paper-sizes-large.jpg\"\r\nContent-Type: image/jpeg\r\n">]}, "commit"=>"Create Vacation", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+Unpermitted parameter: :vacacion_doc
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `vacations` (`days_taken`, `created_at`, `updated_at`, `guard_id`) VALUES (25, '2018-06-26 03:52:31', '2018-06-26 03:52:31', 1)[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/vacations/new?id=1
+Completed 302 Found in 16ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/vacations/new?id=1" for 127.0.0.1 at 2018-06-25 23:52:31 -0400
+Processing by VacationsController#new as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (1.0ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering vacations/new.html.erb within layouts/application
+  Rendered vacations/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 60ms (Views: 53.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/guard/1" for 127.0.0.1 at 2018-06-25 23:52:37 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Guard Load (0.0ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 72ms (Views: 64.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/vacations/1" for 127.0.0.1 at 2018-06-25 23:52:39 -0400
+Processing by VacationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVacation Load (0.6ms)[0m  [1m[34mSELECT  `vacations`.* FROM `vacations` WHERE `vacations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.6ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering vacations/show.html.erb within layouts/application
+  [1m[36mVacation Load (1.0ms)[0m  [1m[34mSELECT `vacations`.* FROM `vacations` WHERE `vacations`.`guard_id` = 1[0m
+  Rendered vacations/show.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 86ms (Views: 75.0ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/vacations/new?id=1" for 127.0.0.1 at 2018-06-25 23:53:47 -0400
+Processing by VacationsController#new as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering vacations/new.html.erb within layouts/application
+  Rendered vacations/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 73ms (Views: 67.2ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/vacations?id=1" for 127.0.0.1 at 2018-06-25 23:53:59 -0400
+Processing by VacationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ap3XCE3+goBd1lNUgCyzlydJnhhd+XEy8fSQK9SzAnyEIJlG5snLgVtVagRZyp8g4UuIVHUx0bKyX7lLc/c87g==", "vacation"=>{"days_taken"=>"1", "vacacion_doc"=>#<ActionDispatch::Http::UploadedFile:0x007fc66c2ac968 @tempfile=#<Tempfile:/tmp/RackMultipart20180625-5368-nfzaxw.jpg>, @original_filename="paper-sizes-large.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"vacation[vacacion_doc]\"; filename=\"paper-sizes-large.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Vacation", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+[paperclip] Trying to link /tmp/RackMultipart20180625-5368-nfzaxw.jpg to /tmp/e5346eba614c451f9ad054f5ec678ccf20180625-5368-16s9n1s.jpg
+[paperclip] Trying to link /tmp/e5346eba614c451f9ad054f5ec678ccf20180625-5368-16s9n1s.jpg to /tmp/e5346eba614c451f9ad054f5ec678ccf20180625-5368-rvd3ee.jpg
+Command :: PATH=/usr/bin/:$PATH; file -b --mime '/tmp/e5346eba614c451f9ad054f5ec678ccf20180625-5368-rvd3ee.jpg'
+Command :: PATH=/usr/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/e5346eba614c451f9ad054f5ec678ccf20180625-5368-16s9n1s.jpg[0]' 2>/dev/null
+Command :: PATH=/usr/bin/:$PATH; identify -format %m '/tmp/e5346eba614c451f9ad054f5ec678ccf20180625-5368-16s9n1s.jpg[0]'
+Command :: PATH=/usr/bin/:$PATH; convert '/tmp/e5346eba614c451f9ad054f5ec678ccf20180625-5368-16s9n1s.jpg[0]' -auto-orient -resize "x1200" -crop "800x1200+4+0" +repage '/tmp/4b79be96fe022cc47db9859569c27b2d20180625-5368-u8mfck'
+[paperclip] Trying to link /tmp/4b79be96fe022cc47db9859569c27b2d20180625-5368-u8mfck to /tmp/855670e680c7ea3f22e0196e6bbf157b20180625-5368-dyjtjo
+Command :: PATH=/usr/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/e5346eba614c451f9ad054f5ec678ccf20180625-5368-16s9n1s.jpg[0]' 2>/dev/null
+Command :: PATH=/usr/bin/:$PATH; identify -format %m '/tmp/e5346eba614c451f9ad054f5ec678ccf20180625-5368-16s9n1s.jpg[0]'
+Command :: PATH=/usr/bin/:$PATH; convert '/tmp/e5346eba614c451f9ad054f5ec678ccf20180625-5368-16s9n1s.jpg[0]' -auto-orient -resize "x1200" -crop "800x1200+4+0" +repage '/tmp/4b79be96fe022cc47db9859569c27b2d20180625-5368-g26p2n'
+[paperclip] Trying to link /tmp/4b79be96fe022cc47db9859569c27b2d20180625-5368-g26p2n to /tmp/be665d83fe222fd5c896da2576f6d32d20180625-5368-s1w2zc
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[paperclip] Trying to link /tmp/e5346eba614c451f9ad054f5ec678ccf20180625-5368-16s9n1s.jpg to /tmp/e5346eba614c451f9ad054f5ec678ccf20180625-5368-14muoow.jpg
+Command :: PATH=/usr/bin/:$PATH; file -b --mime '/tmp/e5346eba614c451f9ad054f5ec678ccf20180625-5368-14muoow.jpg'
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO `vacations` (`days_taken`, `created_at`, `updated_at`, `vacacion_doc_file_name`, `vacacion_doc_content_type`, `vacacion_doc_file_size`, `vacacion_doc_updated_at`, `guard_id`) VALUES (1, '2018-06-26 03:53:59', '2018-06-26 03:53:59', 'paper-sizes-large.jpg', 'image/jpeg', 101436, '2018-06-26 03:53:59', 1)[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/vacations/new?id=1
+Completed 302 Found in 383ms (ActiveRecord: 7.4ms)
+
+
+Started GET "/vacations/new?id=1" for 127.0.0.1 at 2018-06-25 23:53:59 -0400
+Processing by VacationsController#new as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (0.5ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering vacations/new.html.erb within layouts/application
+  Rendered vacations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 60ms (Views: 51.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/guard/1" for 127.0.0.1 at 2018-06-25 23:54:03 -0400
+Processing by GuardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Guard Load (0.0ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering guards/show.html.erb within layouts/application
+  Rendered guards/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 68ms (Views: 62.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/vacations/1" for 127.0.0.1 at 2018-06-25 23:54:06 -0400
+Processing by VacationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVacation Load (0.4ms)[0m  [1m[34mSELECT  `vacations`.* FROM `vacations` WHERE `vacations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGuard Load (1.1ms)[0m  [1m[34mSELECT  `guards`.* FROM `guards` WHERE `guards`.`id` = 1 LIMIT 1[0m
+  Rendering vacations/show.html.erb within layouts/application
+  [1m[36mVacation Load (0.5ms)[0m  [1m[34mSELECT `vacations`.* FROM `vacations` WHERE `vacations`.`guard_id` = 1[0m
+  Rendered vacations/show.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 85ms (Views: 75.6ms | ActiveRecord: 2.4ms)
+
+

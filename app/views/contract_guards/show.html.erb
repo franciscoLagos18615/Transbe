@@ -1,0 +1,11 @@
+
+<%if !@guard.contract_guards.nil?%>
+	<% for item in @guard.contract_guards%>
+		<p>Fecha de inicio</p>
+		    <%=item.start_date%>
+		<p>Fecha de termino</p>
+		    <%=item.finish_date%>
+		<p>Documento asociado</p>
+		<a href=<%=item.contrato_doc%>&embedded=true">Visualizar Contrato PDF</a>
+	<%end%>
+<%end%>

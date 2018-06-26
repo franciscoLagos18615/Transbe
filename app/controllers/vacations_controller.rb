@@ -2,8 +2,6 @@ class VacationsController < ApplicationController
   #permisos para la gem cancancan para que no todos lo usuarios realizen las mismas acciones
   before_action :set_vacation, only: [:show, :edit, :update, :destroy]
   authorize_resource
-
-
   def index
     @vacations = Vacation.all
   end
@@ -83,6 +81,6 @@ class VacationsController < ApplicationController
 
 
   def vacation_params
-    params.require(:vacation).permit(:days_taken,:vacacion_doc)
+    params.require(:vacation).permit(:days_taken, :vacacion_doc)
   end
 end

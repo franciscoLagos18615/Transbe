@@ -153,6 +153,8 @@
 					<%= link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Agregar Vacaciones</span>'.html_safe, :controller => :vacations, :action => :new, :id => @guard.id%>
 					<%= link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Ver vacaciones</span>'.html_safe, :controller => :vacations, :action => :show, :id => @guard.id%>
 
+					<%= link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Agregar Contrato</span>'.html_safe, :controller => :contract_guards, :action => :new, :id => @guard.id%>
+					<%= link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Ver Contratos</span>'.html_safe, :controller => :contract_guards, :action => :show, :id => @guard.id%>
 	    	</tr>
 	  	</thead>
 	</table>

@@ -64,7 +64,7 @@ Rails.application.routes.draw do
   #put '/vacation/:id', to: 'vacations#update'
   #delete '/vacation/:id', to: 'vacations#delete'
   resources :vacations
-
+  resources :contract_guards
   #rutas de liquidaciones
   get '/sallary_settlements', to: 'sallary_settlements#index'
   get '/sallary_settlements/new', to: 'sallary_settlements#new'

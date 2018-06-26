@@ -56935,3 +56935,179 @@ Processing by SettlementsController#show as HTML
 Completed 200 OK in 67ms (Views: 60.3ms | ActiveRecord: 1.6ms)
 
 
+Started GET "/installations/new" for 127.0.0.1 at 2018-06-26 02:30:39 -0400
+Processing by InstallationsController#new as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering installations/new.html.erb within layouts/application
+  Rendered installations/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 140ms (Views: 69.0ms | ActiveRecord: 35.4ms)
+
+
+Started GET "/installations" for 127.0.0.1 at 2018-06-26 02:30:41 -0400
+Processing by InstallationsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering installations/index.html.erb within layouts/application
+  [1m[36mInstallation Load (0.4ms)[0m  [1m[34mSELECT `installations`.* FROM `installations`[0m
+  Rendered installations/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 75ms (Views: 70.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/installations" for 127.0.0.1 at 2018-06-26 02:30:45 -0400
+Processing by InstallationsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering installations/index.html.erb within layouts/application
+  [1m[36mInstallation Load (0.5ms)[0m  [1m[34mSELECT `installations`.* FROM `installations`[0m
+  Rendered installations/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 61ms (Views: 57.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/installation/1" for 127.0.0.1 at 2018-06-26 02:30:52 -0400
+Processing by InstallationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mInstallation Load (0.3ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Installation Load (0.0ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering installations/show.html.erb within layouts/application
+  Rendered installations/show.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"new", :controller=>"contract_installations", :id=>1}):
+    42: 	</table>
+    43: </div>
+    44: 
+    45: 	<%= link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Agregar Contrato</span>'.html_safe, :controller => :contract_installations, :action => :new, :id => @installation.id%>
+    46: 	<%= link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Ver Contratos</span>'.html_safe, :controller => :contract_installations, :action => :show, :id => @installation.id%>
+    47: 
+    48: <div align="center">
+  
+app/views/installations/show.html.erb:45:in `_app_views_installations_show_html_erb___1392530578040081334_47390093473120'
+Started GET "/installations" for 127.0.0.1 at 2018-06-26 02:31:35 -0400
+Processing by InstallationsController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering installations/index.html.erb within layouts/application
+  [1m[36mInstallation Load (0.5ms)[0m  [1m[34mSELECT `installations`.* FROM `installations`[0m
+  Rendered installations/index.html.erb within layouts/application (28.2ms)
+Completed 200 OK in 122ms (Views: 81.8ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/installation/1" for 127.0.0.1 at 2018-06-26 02:31:38 -0400
+Processing by InstallationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mInstallation Load (0.3ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Installation Load (0.0ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering installations/show.html.erb within layouts/application
+  Rendered installations/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 68ms (Views: 61.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/contract_installations/new?id=1" for 127.0.0.1 at 2018-06-26 02:31:45 -0400
+Processing by ContractInstallationsController#new as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (0.4ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.9ms)
+
+
+  
+NoMethodError (undefined method `contract_installations' for #<Installation:0x007f611c0f7c90>
+Did you mean?  contract_intallation_ids
+               contract_intallation_ids=
+               contract_intallations
+               contract_intallations=):
+  
+app/controllers/contract_installations_controller.rb:11:in `new'
+Started GET "/installation/1" for 127.0.0.1 at 2018-06-26 02:32:42 -0400
+Processing by InstallationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mInstallation Load (0.3ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Installation Load (0.0ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering installations/show.html.erb within layouts/application
+  Rendered installations/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 106ms (Views: 55.2ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/contract_installations/new?id=1" for 127.0.0.1 at 2018-06-26 02:32:46 -0400
+Processing by ContractInstallationsController#new as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (0.5ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  Rendering contract_installations/new.html.erb within layouts/application
+  Rendered contract_installations/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 77ms (Views: 50.5ms | ActiveRecord: 3.9ms)
+
+
+Started POST "/contract_installations?id=1" for 127.0.0.1 at 2018-06-26 02:32:59 -0400
+Processing by ContractInstallationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AVj78qcDDzVqYsup//AG8VOUclWDctbsO6d8YWC3ZRY3OxDFN7apI/L5gzJCsqKeq7RHwmE1BHhGo6yu64iu1g==", "contract_installation"=>{"start_date"=>"2018-06-27", "finish_date"=>"2018-06-28", "contrato_de_instalacion_doc"=>#<ActionDispatch::Http::UploadedFile:0x007f61220ddb78 @tempfile=#<Tempfile:/tmp/RackMultipart20180626-15230-1s4amnl.pdf>, @original_filename="jurasica1.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"contract_installation[contrato_de_instalacion_doc]\"; filename=\"jurasica1.pdf\"\r\nContent-Type: application/pdf\r\n">}, "commit"=>"Create Contract installation", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (0.4ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+[paperclip] Trying to link /tmp/RackMultipart20180626-15230-1s4amnl.pdf to /tmp/68d674416f75ab726d5c5fd17b54ee2e20180626-15230-14qsb1a.pdf
+[paperclip] Trying to link /tmp/68d674416f75ab726d5c5fd17b54ee2e20180626-15230-14qsb1a.pdf to /tmp/68d674416f75ab726d5c5fd17b54ee2e20180626-15230-17bc1w6.pdf
+Command :: PATH=/usr/bin/:$PATH; file -b --mime '/tmp/68d674416f75ab726d5c5fd17b54ee2e20180626-15230-17bc1w6.pdf'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[paperclip] Trying to link /tmp/68d674416f75ab726d5c5fd17b54ee2e20180626-15230-14qsb1a.pdf to /tmp/68d674416f75ab726d5c5fd17b54ee2e20180626-15230-1plspv2.pdf
+Command :: PATH=/usr/bin/:$PATH; file -b --mime '/tmp/68d674416f75ab726d5c5fd17b54ee2e20180626-15230-1plspv2.pdf'
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO `contract_installations` (`start_date`, `finish_date`, `created_at`, `updated_at`, `contrato_de_instalacion_doc_file_name`, `contrato_de_instalacion_doc_content_type`, `contrato_de_instalacion_doc_file_size`, `contrato_de_instalacion_doc_updated_at`, `installation_id`) VALUES ('2018-06-27 00:00:00', '2018-06-28 00:00:00', '2018-06-26 06:32:59', '2018-06-26 06:32:59', 'jurasica1.pdf', 'application/pdf', 142351, '2018-06-26 06:32:59', 1)[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/contract_installations/new?id=1
+Completed 302 Found in 44ms (ActiveRecord: 5.8ms)
+
+
+Started GET "/contract_installations/new?id=1" for 127.0.0.1 at 2018-06-26 02:32:59 -0400
+Processing by ContractInstallationsController#new as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (0.8ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  Rendering contract_installations/new.html.erb within layouts/application
+  Rendered contract_installations/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 53ms (Views: 46.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/installations" for 127.0.0.1 at 2018-06-26 02:33:01 -0400
+Processing by InstallationsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering installations/index.html.erb within layouts/application
+  [1m[36mInstallation Load (0.4ms)[0m  [1m[34mSELECT `installations`.* FROM `installations`[0m
+  Rendered installations/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 65ms (Views: 61.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/installation/1" for 127.0.0.1 at 2018-06-26 02:33:04 -0400
+Processing by InstallationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mInstallation Load (0.4ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Installation Load (0.0ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering installations/show.html.erb within layouts/application
+  Rendered installations/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 58ms (Views: 52.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/contract_installations/1" for 127.0.0.1 at 2018-06-26 02:33:06 -0400
+Processing by ContractInstallationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContractInstallation Load (0.3ms)[0m  [1m[34mSELECT  `contract_installations`.* FROM `contract_installations` WHERE `contract_installations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (0.5ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  Rendering contract_installations/show.html.erb within layouts/application
+  [1m[36mContractInstallation Load (0.5ms)[0m  [1m[34mSELECT `contract_installations`.* FROM `contract_installations` WHERE `contract_installations`.`installation_id` = 1[0m
+  Rendered contract_installations/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 77ms (Views: 69.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/contract_installations/1" for 127.0.0.1 at 2018-06-26 02:33:13 -0400
+Processing by ContractInstallationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContractInstallation Load (0.4ms)[0m  [1m[34mSELECT  `contract_installations`.* FROM `contract_installations` WHERE `contract_installations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (0.5ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  Rendering contract_installations/show.html.erb within layouts/application
+  [1m[36mContractInstallation Load (0.7ms)[0m  [1m[34mSELECT `contract_installations`.* FROM `contract_installations` WHERE `contract_installations`.`installation_id` = 1[0m
+  Rendered contract_installations/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 70ms (Views: 61.7ms | ActiveRecord: 2.1ms)
+
+

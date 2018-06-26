@@ -1,0 +1,17 @@
+<%= form_for @contract_installation do |f| %>
+  <div>
+    <%= f.label :start_date, "Fecha de Inicio" %>
+    <%= f.date_field :start_date %>
+  </div>
+  <div>
+    <%= f.label :finish_date, "Fecha de Termino" %>
+    <%= f.date_field :finish_date %>
+  </div>
+  <div>
+    <%= f.label :contrato_de_instalacion_doc,"Contrato:" %>
+    <%= f.file_field :contrato_de_instalacion_doc%>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>

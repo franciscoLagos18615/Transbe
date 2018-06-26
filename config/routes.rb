@@ -67,6 +67,7 @@ Rails.application.routes.draw do
   resources :contract_guards
   resources :osdocumentations
   resources :settlements
+  resources :contract_installations
   #rutas de liquidaciones
   get '/sallary_settlements', to: 'sallary_settlements#index'
   get '/sallary_settlements/new', to: 'sallary_settlements#new'

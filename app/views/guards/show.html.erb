@@ -27,6 +27,19 @@
 			</tr>
 			<tr>
 				<td>
+					<small>Estado</small>
+				</td>
+				<td>
+				
+						<% if @guard.active == false %>
+							<small>Desvinculado</small>
+       	 		<% else %>
+							<small>Activo</small>
+        		<% end %>
+				</td>
+			</tr>
+			<tr>
+				<td>
 					<small>Edad</small>
 				</td>
 				<td>
@@ -82,7 +95,30 @@
 					<small><%=@guard.address%> <%=@guard.commune%> <%=@guard.city%></small>
 				</td>
 			</tr>
-
+			<tr>
+				<td>
+					<small>Tipo de Contrato</small>
+				</td>
+				<td>
+					<small><%=@guard.contract_type%></small>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<small>Prevision de Salud</small>
+				</td>
+				<td>
+					<small><%=@guard.prevision%></small>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<small>Afiliacion AFP</small>
+				</td>
+				<td>
+					<small><%=@guard.afiliation%></small>
+				</td>
+			</tr>
 		</tbody>
 	</table>
 </div>
@@ -94,8 +130,16 @@
 	  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#cedula" aria-expanded="false" aria-controls="cedula">Cédula</button>
 	  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#pacto" aria-expanded="false" aria-controls="pacto">Pacto de horas</button>
 	  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#credencial" aria-expanded="false" aria-controls="credencial">Credencial</button>
+		<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#derecho" aria-expanded="false" aria-controls="derecho">Derecho Saber</button>
 	  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".cert" aria-expanded="false" aria-controls="estudios residencia antecedentes">Certificados</button>
-	  <button class="btn btn-info" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="ficha cedula pacto credencial estudios residencia antecedentes">Mostrar todo</button>
+		<!--los h1 es solo para generar espacios-->
+		<h1></h1>
+		<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#eppEntrega" aria-expanded="false" aria-controls="eppEntrega">EPP Entrega</button>
+		<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#eppRecibo" aria-expanded="false" aria-controls="eppRecibo">EPP Recibo</button>
+		<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#autorizacion" aria-expanded="false" aria-controls="autorizacion">Autorizacion 4x4</button>
+		<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#reglamento" aria-expanded="false" aria-controls="reglamento">Reglamento Interno</button>
+		<h1></h1>
+		<button class="btn btn-info" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="ficha cedula pacto credencial estudios residencia antecedentes">Mostrar todo</button>
 	</p>
 
 
@@ -132,6 +176,31 @@
     <div class="collapse multi-collapse" id="credencial" data-parent="#accord">
       <div class="card card-body">
         <p align="center"> <%= image_tag @guard.credencial_doc.url(:thumb) %></p>
+      </div>
+    </div>
+		<div class="collapse multi-collapse" id="derecho" data-parent="#accord">
+      <div class="card card-body">
+        <p align="center"> <%= image_tag @guard.derecho_saber_doc.url(:thumb) %></p>
+      </div>
+    </div>
+		<div class="collapse multi-collapse" id="eppEntrega" data-parent="#accord">
+      <div class="card card-body">
+        <p align="center"> <%= image_tag @guard.epp_entrega_doc.url(:thumb) %></p>
+      </div>
+    </div>
+		<div class="collapse multi-collapse" id="eppRecibo" data-parent="#accord">
+      <div class="card card-body">
+        <p align="center"> <%= image_tag @guard.epp_recibo_doc.url(:thumb) %></p>
+      </div>
+    </div>
+		<div class="collapse multi-collapse" id="autorizacion" data-parent="#accord">
+      <div class="card card-body">
+        <p align="center"> <%= image_tag @guard.auth_turno_doc.url(:thumb) %></p>
+      </div>
+    </div>
+		<div class="collapse multi-collapse" id="reglamento" data-parent="#accord">
+      <div class="card card-body">
+        <p align="center"> <%= image_tag @guard.reg_interno_doc.url(:thumb) %></p>
       </div>
     </div>
 </div>  

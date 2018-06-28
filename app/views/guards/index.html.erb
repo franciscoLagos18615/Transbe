@@ -34,9 +34,15 @@
       <% if can? :edit, t %>
           <%=link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip"></span>'.html_safe , edit_guard_path(t), class: "btn btn-success"%>
       <% end %>
-        
+        <span> &nbsp </span>
+        <span> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  </span>
       <% if can? :delete,t %>    
-        <%= link_to '<span class="fa fa-window-close" data-original-title="Eliminar" data-toggle="tooltip"></span>'.html_safe , t, method: :delete, data: { confirm: "¿Esta seguro que desea eliminar el registro de este guardia?"} , class: "btn btn-danger"%>
+        <!--%= link_to '<span class="fa fa-window-close" data-original-title="Desvincular" data-toggle="tooltip"></span>'.html_safe , t, method: :cambiarEstado, data: { confirm: "¿Esta seguro que desea cambiar el estado de este guardia?"} , class: "btn btn-danger"%-->
+          <% if t.active == false %>
+							<%= link_to '<span class="fa fa-window-close" data-original-title="Vincular" data-toggle="tooltip"></span>'.html_safe , t, method: :cambiarEstado, data: { confirm: "¿Esta seguro que desea vincular este guardia?"} , class: "btn btn-danger"%>
+       	 		<% else %>
+							<%= link_to '<span class="fa fa-window-close" data-original-title="Desvincular" data-toggle="tooltip"></span>'.html_safe , t, method: :cambiarEstado, data: { confirm: "¿Esta seguro que desea Desvincular el estado de este guardia?"} , class: "btn btn-danger"%>
+        		<% end %>
       <% end %>
       </td>
     

@@ -45,6 +45,9 @@
 	<%= link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Agregar Contrato</span>'.html_safe, :controller => :contract_installations, :action => :new, :id => @installation.id%>
 	<%= link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Ver Contratos</span>'.html_safe, :controller => :contract_installations, :action => :show, :id => @installation.id%>
 
+	<%= link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Agregar Evento</span>'.html_safe, :controller => :events, :action => :new, :id => @installation.id%>
+	<%= link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Ver Eventos</span>'.html_safe, :controller => :events, :action => :show, :id => @installation.id%>
+
 <div align="center">
 <table>
   <thead>

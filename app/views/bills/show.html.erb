@@ -1,0 +1,11 @@
+
+<%if !@contract_installation.bills.nil?%>
+	<% for item in @contract_installation.bills%>
+		<p>Descripcion</p>
+		    <%=item.description%>
+        <p>Ingreso</p>
+		    <%=item.ingress%>
+		<p>Documento asociado</p>
+		    <a href=<%=item.factura_doc%>&embedded=true">Visualizar Factura PDF</a>
+	<%end%>
+<%end%>

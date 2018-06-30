@@ -1,43 +1,11 @@
 
-
-<h1 align="center" class="mb-0">Detalle del
-    <span class="text-primary">Evento</span>
-</h1>
-<div class="container">
-	<table class="table table-striped table-hover medium">
-		<tbody>
-			<tr>
-				<td>
-					<medium><strong>Nombre del evento</strong></medium>
-				</td>
-				<td>
-					<medium><%=@event.name%></medium>
-				</td>
-			</tr>
-			
-            <tr>
-				<td>
-					<medium><strong>Fecha de inicio</strong></medium>
-				</td>
-				<td>
-					<medium><%=@event.date%></medium>
-				</td>
-			</tr>
-
-		</tbody>
-	</table>
-</div>
-
-<div align="center">
-<table>
-  <thead>
-    <tr>
-      <th scope="col"><a class="btn btn-secondary" href="/events"><i class="fa fa-arrow-circle-left"></i> Volver       </a></th>
-				<th scope="col">
-					<%=link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Editar Evento</span>'.html_safe , edit_event_path(@event), class: "btn btn-success"%>
-				</th>
-			<th scope="col"><a class="btn btn-primary" href="/events/new"><i class="fa fa-plus-square"></i> Crear nuevo Evento</a></th>
-    </tr>
-  </thead>
-</table>
-</div>
+<%if !@installation.events.nil?%>
+	<% for item in @installation.events%>
+		<p>Nombre</p>
+		    <%=item.name%>
+		<p>Fecha</p>
+		    <%=item.date%>
+		<p>Documento asociado</p>
+		    <%=image_tag item.factura_evento_doc%>
+	<%end%>
+<%end%>

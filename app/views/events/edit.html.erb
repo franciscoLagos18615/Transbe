@@ -18,6 +18,10 @@
               <%= e.text_field :name, type:"text",class:"form-control is-valid", :required=> true %>
             </div>
           </div>
+
+          <%= e.label :factura_evento_doc,"Factura de Evento:" %>
+      
+          <%= e.file_field :factura_evento_doc%> 
           
           <div class="col-md-10 col-center">
             <label for="validationServer01" >Fecha Inicio</label>

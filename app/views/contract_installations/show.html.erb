@@ -3,9 +3,12 @@
 	<% for item in @installation.contract_installations%>
 		<p>Fecha de inicio</p>
 		    <%=item.start_date%>
+			<%=item.id%>
 		<p>Fecha de termino</p>
 		    <%=item.finish_date%>
 		<p>Documento asociado</p>
 		<a href=<%=item.contrato_de_instalacion_doc%>&embedded=true">Visualizar Contrato PDF</a>
+		
 	<%end%>
+	<%= link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Agregar Factura</span>'.html_safe, :controller => :bills, :action => :new, :id => @contract_installation.id%>
 <%end%>

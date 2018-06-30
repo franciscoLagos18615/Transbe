@@ -1,0 +1,17 @@
+<%= form_for @bill do |f| %>
+  <div>
+    <%= f.label :description, "Descripcion" %>
+    <%= f.text_field :description %>
+  </div>
+  <div>
+    <%= f.label :ingress %>
+    <%= f.number_field :ingress %>
+  </div>
+  <div>
+    <%= f.label :factura_doc,"Factura:" %>
+    <%= f.file_field :factura_doc%>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>

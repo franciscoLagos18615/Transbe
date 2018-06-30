@@ -57111,3 +57111,862 @@ Processing by ContractInstallationsController#show as HTML
 Completed 200 OK in 70ms (Views: 61.7ms | ActiveRecord: 2.1ms)
 
 
+Started GET "/installations" for 127.0.0.1 at 2018-06-26 03:05:05 -0400
+Processing by InstallationsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering installations/index.html.erb within layouts/application
+  [1m[36mInstallation Load (0.3ms)[0m  [1m[34mSELECT `installations`.* FROM `installations`[0m
+  Rendered installations/index.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 99ms (Views: 67.0ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/installation/1" for 127.0.0.1 at 2018-06-26 03:05:08 -0400
+Processing by InstallationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mInstallation Load (0.3ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Installation Load (0.0ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering installations/show.html.erb within layouts/application
+  Rendered installations/show.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 72ms (Views: 67.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/contract_installations/1" for 127.0.0.1 at 2018-06-26 03:05:09 -0400
+Processing by ContractInstallationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContractInstallation Load (0.4ms)[0m  [1m[34mSELECT  `contract_installations`.* FROM `contract_installations` WHERE `contract_installations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (0.3ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  Rendering contract_installations/show.html.erb within layouts/application
+  [1m[36mContractInstallation Load (0.4ms)[0m  [1m[34mSELECT `contract_installations`.* FROM `contract_installations` WHERE `contract_installations`.`installation_id` = 1[0m
+  Rendered contract_installations/show.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 137ms (Views: 101.1ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/contract_installations/1" for 127.0.0.1 at 2018-06-26 03:05:17 -0400
+Processing by ContractInstallationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContractInstallation Load (0.4ms)[0m  [1m[34mSELECT  `contract_installations`.* FROM `contract_installations` WHERE `contract_installations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (0.3ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  Rendering contract_installations/show.html.erb within layouts/application
+  [1m[36mContractInstallation Load (0.6ms)[0m  [1m[34mSELECT `contract_installations`.* FROM `contract_installations` WHERE `contract_installations`.`installation_id` = 1[0m
+  Rendered contract_installations/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 108ms (Views: 96.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/contract_installations/1" for 127.0.0.1 at 2018-06-26 03:06:47 -0400
+Processing by ContractInstallationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContractInstallation Load (0.4ms)[0m  [1m[34mSELECT  `contract_installations`.* FROM `contract_installations` WHERE `contract_installations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (0.5ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  Rendering contract_installations/show.html.erb within layouts/application
+  [1m[36mContractInstallation Load (0.5ms)[0m  [1m[34mSELECT `contract_installations`.* FROM `contract_installations` WHERE `contract_installations`.`installation_id` = 1[0m
+  Rendered contract_installations/show.html.erb within layouts/application (5.4ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"bills", :id=>nil}):
+     8: 		<p>Documento asociado</p>
+     9: 		<a href=<%=item.contrato_de_instalacion_doc%>&embedded=true">Visualizar Contrato PDF</a>
+    10: 		<%= link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Agregar Factura</span>'.html_safe, :controller => :bills, :action => :new, :id => item.id%>
+    11: 					<%= link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Ver Facturas</span>'.html_safe, :controller => :bills, :action => :show, :id => item.id%>
+    12: 	<%end%>
+    13: <%end%>
+  
+app/views/contract_installations/show.html.erb:11:in `block in _app_views_contract_installations_show_html_erb__2230058672315125757_70027497680980'
+app/views/contract_installations/show.html.erb:3:in `_app_views_contract_installations_show_html_erb__2230058672315125757_70027497680980'
+Started GET "/contract_installations/1" for 127.0.0.1 at 2018-06-26 03:07:03 -0400
+Processing by ContractInstallationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContractInstallation Load (0.3ms)[0m  [1m[34mSELECT  `contract_installations`.* FROM `contract_installations` WHERE `contract_installations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (0.4ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  Rendering contract_installations/show.html.erb within layouts/application
+  [1m[36mContractInstallation Load (0.5ms)[0m  [1m[34mSELECT `contract_installations`.* FROM `contract_installations` WHERE `contract_installations`.`installation_id` = 1[0m
+  Rendered contract_installations/show.html.erb within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+     7: 		    <%=item.finish_date%>
+     8: 		<p>Documento asociado</p>
+     9: 		<a href=<%=item.contrato_de_instalacion_doc%>&embedded=true">Visualizar Contrato PDF</a>
+    10: 		<%= link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Agregar Factura</span>'.html_safe, :controller => :bills, :action => :new, :id => @contract_guard.id%>
+    11: 					<%= link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Ver Facturas</span>'.html_safe, :controller => :bills, :action => :show, :id => @contract_guard.id%>
+    12: 	<%end%>
+    13: <%end%>
+  
+app/views/contract_installations/show.html.erb:10:in `block in _app_views_contract_installations_show_html_erb__2230058672315125757_70027567284380'
+app/views/contract_installations/show.html.erb:3:in `_app_views_contract_installations_show_html_erb__2230058672315125757_70027567284380'
+Started GET "/contract_installations/1" for 127.0.0.1 at 2018-06-26 03:08:24 -0400
+Processing by ContractInstallationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContractInstallation Load (0.3ms)[0m  [1m[34mSELECT  `contract_installations`.* FROM `contract_installations` WHERE `contract_installations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (0.5ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  Rendering contract_installations/show.html.erb within layouts/application
+  [1m[36mContractInstallation Load (1.0ms)[0m  [1m[34mSELECT `contract_installations`.* FROM `contract_installations` WHERE `contract_installations`.`installation_id` = 1[0m
+  Rendered contract_installations/show.html.erb within layouts/application (5.9ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 2.3ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"bills", :id=>nil}):
+     8: 		<p>Documento asociado</p>
+     9: 		<a href=<%=item.contrato_de_instalacion_doc%>&embedded=true">Visualizar Contrato PDF</a>
+    10: 		<%= link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Agregar Factura</span>'.html_safe, :controller => :bills, :action => :new, :id => item.id%>
+    11: 		<%= link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Ver Facturas</span>'.html_safe, :controller => :bills, :action => :show, :id => item.id%>
+    12: 	<%end%>
+    13: <%end%>
+  
+app/views/contract_installations/show.html.erb:11:in `block in _app_views_contract_installations_show_html_erb__2230058672315125757_70027596312040'
+app/views/contract_installations/show.html.erb:3:in `_app_views_contract_installations_show_html_erb__2230058672315125757_70027596312040'
+Started GET "/installation/1" for 127.0.0.1 at 2018-06-26 03:10:22 -0400
+Processing by InstallationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mInstallation Load (0.4ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Installation Load (0.0ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering installations/show.html.erb within layouts/application
+  Rendered installations/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 56ms (Views: 50.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/contract_installations/new?id=1" for 127.0.0.1 at 2018-06-26 03:10:25 -0400
+Processing by ContractInstallationsController#new as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (0.5ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  Rendering contract_installations/new.html.erb within layouts/application
+  Rendered contract_installations/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 58ms (Views: 51.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/contract_installations/1" for 127.0.0.1 at 2018-06-26 03:10:29 -0400
+Processing by ContractInstallationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContractInstallation Load (0.4ms)[0m  [1m[34mSELECT  `contract_installations`.* FROM `contract_installations` WHERE `contract_installations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (0.6ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  Rendering contract_installations/show.html.erb within layouts/application
+  [1m[36mContractInstallation Load (0.4ms)[0m  [1m[34mSELECT `contract_installations`.* FROM `contract_installations` WHERE `contract_installations`.`installation_id` = 1[0m
+  Rendered contract_installations/show.html.erb within layouts/application (5.4ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"bills", :id=>nil}):
+     9: 		<p>Documento asociado</p>
+    10: 		<a href=<%=item.contrato_de_instalacion_doc%>&embedded=true">Visualizar Contrato PDF</a>
+    11: 		<%= link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Agregar Factura</span>'.html_safe, :controller => :bills, :action => :new, :id => item.id%>
+    12: 		<%= link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Ver Facturas</span>'.html_safe, :controller => :bills, :action => :show, :id => item.id%>
+    13: 	<%end%>
+    14: <%end%>
+  
+app/views/contract_installations/show.html.erb:12:in `block in _app_views_contract_installations_show_html_erb__2230058672315125757_70027580339660'
+app/views/contract_installations/show.html.erb:3:in `_app_views_contract_installations_show_html_erb__2230058672315125757_70027580339660'
+Started GET "/contract_installations/1" for 127.0.0.1 at 2018-06-26 03:10:40 -0400
+Processing by ContractInstallationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContractInstallation Load (0.3ms)[0m  [1m[34mSELECT  `contract_installations`.* FROM `contract_installations` WHERE `contract_installations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (0.4ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  Rendering contract_installations/show.html.erb within layouts/application
+  [1m[36mContractInstallation Load (0.5ms)[0m  [1m[34mSELECT `contract_installations`.* FROM `contract_installations` WHERE `contract_installations`.`installation_id` = 1[0m
+  Rendered contract_installations/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 57ms (Views: 50.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/contract_installations/1" for 127.0.0.1 at 2018-06-26 03:12:45 -0400
+Processing by ContractInstallationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContractInstallation Load (0.3ms)[0m  [1m[34mSELECT  `contract_installations`.* FROM `contract_installations` WHERE `contract_installations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (0.4ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  Rendering contract_installations/show.html.erb within layouts/application
+  [1m[36mContractInstallation Load (0.7ms)[0m  [1m[34mSELECT `contract_installations`.* FROM `contract_installations` WHERE `contract_installations`.`installation_id` = 1[0m
+  Rendered contract_installations/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 59ms (Views: 52.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/contract_installations/1" for 127.0.0.1 at 2018-06-26 03:12:47 -0400
+Processing by ContractInstallationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContractInstallation Load (0.4ms)[0m  [1m[34mSELECT  `contract_installations`.* FROM `contract_installations` WHERE `contract_installations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (0.3ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  Rendering contract_installations/show.html.erb within layouts/application
+  [1m[36mContractInstallation Load (0.5ms)[0m  [1m[34mSELECT `contract_installations`.* FROM `contract_installations` WHERE `contract_installations`.`installation_id` = 1[0m
+  Rendered contract_installations/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 65ms (Views: 56.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/contract_installations/1" for 127.0.0.1 at 2018-06-26 03:13:53 -0400
+Processing by ContractInstallationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContractInstallation Load (0.4ms)[0m  [1m[34mSELECT  `contract_installations`.* FROM `contract_installations` WHERE `contract_installations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (0.4ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  Rendering contract_installations/show.html.erb within layouts/application
+  [1m[36mContractInstallation Load (0.6ms)[0m  [1m[34mSELECT `contract_installations`.* FROM `contract_installations` WHERE `contract_installations`.`installation_id` = 1[0m
+  Rendered contract_installations/show.html.erb within layouts/application (5.5ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    10: 		<a href=<%=item.contrato_de_instalacion_doc%>&embedded=true">Visualizar Contrato PDF</a>
+    11: 		
+    12: 	<%end%>
+    13: 	<%= link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Agregar Factura</span>'.html_safe, :controller => :bills, :action => :new, :id => @contract_guard.id%>
+    14: 		<%= link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Ver Facturas</span>'.html_safe, :controller => :bills, :action => :show, :id => @contract_guard.id%>
+    15: <%end%>
+  
+app/views/contract_installations/show.html.erb:13:in `_app_views_contract_installations_show_html_erb__2230058672315125757_47390091721720'
+Started GET "/contract_installations/1" for 127.0.0.1 at 2018-06-26 03:15:59 -0400
+Processing by ContractInstallationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContractInstallation Load (0.5ms)[0m  [1m[34mSELECT  `contract_installations`.* FROM `contract_installations` WHERE `contract_installations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (0.6ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  Rendering contract_installations/show.html.erb within layouts/application
+  [1m[36mContractInstallation Load (0.8ms)[0m  [1m[34mSELECT `contract_installations`.* FROM `contract_installations` WHERE `contract_installations`.`installation_id` = 1[0m
+  Rendered contract_installations/show.html.erb within layouts/application (5.8ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 2.3ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"bills", :id=>nil}):
+    11: 		
+    12: 	<%end%>
+    13: 	<%= link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Agregar Factura</span>'.html_safe, :controller => :bills, :action => :new, :id => @contract_installation.id%>
+    14: 		<%= link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Ver Facturas</span>'.html_safe, :controller => :bills, :action => :show, :id => @contract_installation.id%>
+    15: <%end%>
+  
+app/views/contract_installations/show.html.erb:14:in `_app_views_contract_installations_show_html_erb__2230058672315125757_70027576282040'
+Started GET "/contract_installations/1" for 127.0.0.1 at 2018-06-26 03:17:28 -0400
+Processing by ContractInstallationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContractInstallation Load (0.4ms)[0m  [1m[34mSELECT  `contract_installations`.* FROM `contract_installations` WHERE `contract_installations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (0.4ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  Rendering contract_installations/show.html.erb within layouts/application
+  [1m[36mContractInstallation Load (0.5ms)[0m  [1m[34mSELECT `contract_installations`.* FROM `contract_installations` WHERE `contract_installations`.`installation_id` = 1[0m
+  Rendered contract_installations/show.html.erb within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.8ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"bills", :id=>nil}):
+    11: 		
+    12: 	<%end%>
+    13: 	<%= link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Agregar Factura</span>'.html_safe, :controller => :bills, :action => :new, :id => @contract_installation.id%>
+    14: 		<%= link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Ver Facturas</span>'.html_safe, :controller => :bills, :action => :show, :id => @contract_installation.id%>
+    15: <%end%>
+  
+app/views/contract_installations/show.html.erb:14:in `_app_views_contract_installations_show_html_erb__2230058672315125757_70027596499620'
+Started GET "/installations" for 127.0.0.1 at 2018-06-26 03:17:31 -0400
+Processing by InstallationsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering installations/index.html.erb within layouts/application
+  [1m[36mInstallation Load (0.4ms)[0m  [1m[34mSELECT `installations`.* FROM `installations`[0m
+  Rendered installations/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 53ms (Views: 48.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/installations" for 127.0.0.1 at 2018-06-26 03:17:32 -0400
+Processing by InstallationsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering installations/index.html.erb within layouts/application
+  [1m[36mInstallation Load (0.4ms)[0m  [1m[34mSELECT `installations`.* FROM `installations`[0m
+  Rendered installations/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 67ms (Views: 62.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/installation/1" for 127.0.0.1 at 2018-06-26 03:17:35 -0400
+Processing by InstallationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mInstallation Load (0.4ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Installation Load (0.0ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering installations/show.html.erb within layouts/application
+  Rendered installations/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 58ms (Views: 51.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/contract_installations/1" for 127.0.0.1 at 2018-06-26 03:17:37 -0400
+Processing by ContractInstallationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContractInstallation Load (0.3ms)[0m  [1m[34mSELECT  `contract_installations`.* FROM `contract_installations` WHERE `contract_installations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (0.3ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  Rendering contract_installations/show.html.erb within layouts/application
+  [1m[36mContractInstallation Load (0.6ms)[0m  [1m[34mSELECT `contract_installations`.* FROM `contract_installations` WHERE `contract_installations`.`installation_id` = 1[0m
+  Rendered contract_installations/show.html.erb within layouts/application (5.4ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"bills", :id=>nil}):
+    11: 		
+    12: 	<%end%>
+    13: 	<%= link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Agregar Factura</span>'.html_safe, :controller => :bills, :action => :new, :id => @contract_installation.id%>
+    14: 		<%= link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Ver Facturas</span>'.html_safe, :controller => :bills, :action => :show, :id => @contract_installation.id%>
+    15: <%end%>
+  
+app/views/contract_installations/show.html.erb:14:in `_app_views_contract_installations_show_html_erb__2230058672315125757_70027572336980'
+Started GET "/contract_installations/1" for 127.0.0.1 at 2018-06-26 03:18:07 -0400
+Processing by ContractInstallationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContractInstallation Load (0.3ms)[0m  [1m[34mSELECT  `contract_installations`.* FROM `contract_installations` WHERE `contract_installations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (0.3ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  Rendering contract_installations/show.html.erb within layouts/application
+  [1m[36mContractInstallation Load (0.5ms)[0m  [1m[34mSELECT `contract_installations`.* FROM `contract_installations` WHERE `contract_installations`.`installation_id` = 1[0m
+  Rendered contract_installations/show.html.erb within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"bills", :id=>nil}):
+    11: 		
+    12: 	<%end%>
+    13: 	<%= link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Agregar Factura</span>'.html_safe, :controller => :bills, :action => :new, :id => @contract_installation.id%>
+    14: 	<%= link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Ver Facturas</span>'.html_safe, :controller => :bills, :action => :show, :id => @contract_installation.id%>
+    15: <%end%>
+  
+app/views/contract_installations/show.html.erb:14:in `_app_views_contract_installations_show_html_erb__2230058672315125757_70027579731960'
+Started GET "/contract_installations/1" for 127.0.0.1 at 2018-06-26 03:18:18 -0400
+Processing by ContractInstallationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContractInstallation Load (0.4ms)[0m  [1m[34mSELECT  `contract_installations`.* FROM `contract_installations` WHERE `contract_installations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (0.4ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  Rendering contract_installations/show.html.erb within layouts/application
+  [1m[36mContractInstallation Load (0.4ms)[0m  [1m[34mSELECT `contract_installations`.* FROM `contract_installations` WHERE `contract_installations`.`installation_id` = 1[0m
+  Rendered contract_installations/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 67ms (Views: 60.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/bills/new" for 127.0.0.1 at 2018-06-26 03:18:29 -0400
+Processing by BillsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mContractGuard Load (0.2ms)[0m  [1m[34mSELECT  `contract_guards`.* FROM `contract_guards` WHERE `contract_guards`.`id` = NULL LIMIT 1[0m
+Completed 404 Not Found in 17ms (ActiveRecord: 1.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find ContractGuard with 'id'=):
+  
+app/controllers/bills_controller.rb:9:in `new'
+Started GET "/guards/" for 127.0.0.1 at 2018-06-29 21:11:15 -0400
+  [1m[35m (4.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by GuardsController#index as HTML
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (1.4ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (106.2ms)
+Completed 200 OK in 415ms (Views: 323.5ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-06-29 21:11:19 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/devise
+  Rendered users/shared/_links.html.erb (0.9ms)
+  Rendered users/sessions/new.html.erb within layouts/devise (13.7ms)
+Completed 200 OK in 51ms (Views: 48.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-06-29 21:11:21 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RnDUkewOPQqp8si7po2M7Q5qkgP8tGWJzopa6GH/JcHsm+qWHMEh7HF1Z4WtrxuPJEF3JO/3S6SVRWolswl+TA==", "user"=>{"email"=>"cristianfervas1992@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'cristianfervas1992@gmail.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[33mUPDATE `users` SET `current_sign_in_at` = '2018-06-30 01:11:21', `last_sign_in_at` = '2018-06-26 02:45:54', `sign_in_count` = 10, `updated_at` = '2018-06-30 01:11:21' WHERE `users`.`id` = 1[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 173ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-29 21:11:21 -0400
+Processing by BienvenidaController#index as HTML
+  Rendering bienvenida/index.html.erb within layouts/application
+  Rendered bienvenida/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 47ms (Views: 45.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/guards" for 127.0.0.1 at 2018-06-29 21:11:24 -0400
+Processing by GuardsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering guards/index.html.erb within layouts/application
+  [1m[36mGuard Load (0.4ms)[0m  [1m[34mSELECT `guards`.* FROM `guards`[0m
+  Rendered guards/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 73ms (Views: 67.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/installations" for 127.0.0.1 at 2018-06-29 21:11:54 -0400
+Processing by InstallationsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering installations/index.html.erb within layouts/application
+  [1m[36mInstallation Load (0.5ms)[0m  [1m[34mSELECT `installations`.* FROM `installations`[0m
+  Rendered installations/index.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 73ms (Views: 67.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/installation/1" for 127.0.0.1 at 2018-06-29 21:11:59 -0400
+Processing by InstallationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mInstallation Load (0.5ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Installation Load (0.0ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering installations/show.html.erb within layouts/application
+  Rendered installations/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 85ms (Views: 73.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/contract_installations/new?id=1" for 127.0.0.1 at 2018-06-29 21:12:04 -0400
+Processing by ContractInstallationsController#new as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (0.4ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  Rendering contract_installations/new.html.erb within layouts/application
+  Rendered contract_installations/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 107ms (Views: 61.5ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/contract_installations/1" for 127.0.0.1 at 2018-06-29 21:12:07 -0400
+Processing by ContractInstallationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContractInstallation Load (0.5ms)[0m  [1m[34mSELECT  `contract_installations`.* FROM `contract_installations` WHERE `contract_installations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (0.4ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  Rendering contract_installations/show.html.erb within layouts/application
+  [1m[36mContractInstallation Load (0.5ms)[0m  [1m[34mSELECT `contract_installations`.* FROM `contract_installations` WHERE `contract_installations`.`installation_id` = 1[0m
+  Rendered contract_installations/show.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 75ms (Views: 66.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/contract_installations/1" for 127.0.0.1 at 2018-06-29 21:17:57 -0400
+Processing by ContractInstallationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContractInstallation Load (0.4ms)[0m  [1m[34mSELECT  `contract_installations`.* FROM `contract_installations` WHERE `contract_installations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (0.5ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  Rendering contract_installations/show.html.erb within layouts/application
+  [1m[36mContractInstallation Load (0.5ms)[0m  [1m[34mSELECT `contract_installations`.* FROM `contract_installations` WHERE `contract_installations`.`installation_id` = 1[0m
+  Rendered contract_installations/show.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 64ms (Views: 55.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/installation/1" for 127.0.0.1 at 2018-06-29 21:26:50 -0400
+Processing by InstallationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mInstallation Load (0.3ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Installation Load (0.0ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering installations/show.html.erb within layouts/application
+  Rendered installations/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 91ms (Views: 51.9ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/contract_installations/1" for 127.0.0.1 at 2018-06-29 21:26:51 -0400
+Processing by ContractInstallationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContractInstallation Load (0.3ms)[0m  [1m[34mSELECT  `contract_installations`.* FROM `contract_installations` WHERE `contract_installations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (0.5ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  Rendering contract_installations/show.html.erb within layouts/application
+  [1m[36mContractInstallation Load (0.4ms)[0m  [1m[34mSELECT `contract_installations`.* FROM `contract_installations` WHERE `contract_installations`.`installation_id` = 1[0m
+  Rendered contract_installations/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 85ms (Views: 54.9ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/bills/new" for 127.0.0.1 at 2018-06-29 21:26:55 -0400
+Processing by BillsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.4ms)
+
+
+  
+NameError (uninitialized constant BillsController::ContratcInstallation):
+  
+app/controllers/bills_controller.rb:9:in `new'
+Started GET "/contract_installations/1" for 127.0.0.1 at 2018-06-29 21:27:54 -0400
+Processing by ContractInstallationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContractInstallation Load (0.3ms)[0m  [1m[34mSELECT  `contract_installations`.* FROM `contract_installations` WHERE `contract_installations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (0.3ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  Rendering contract_installations/show.html.erb within layouts/application
+  [1m[36mContractInstallation Load (0.8ms)[0m  [1m[34mSELECT `contract_installations`.* FROM `contract_installations` WHERE `contract_installations`.`installation_id` = 1[0m
+  Rendered contract_installations/show.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 126ms (Views: 62.9ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/bills/new" for 127.0.0.1 at 2018-06-29 21:27:57 -0400
+Processing by BillsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mContractInstallation Load (0.3ms)[0m  [1m[34mSELECT  `contract_installations`.* FROM `contract_installations` WHERE `contract_installations`.`id` = NULL LIMIT 1[0m
+Completed 404 Not Found in 6ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find ContractInstallation with 'id'=):
+  
+app/controllers/bills_controller.rb:9:in `new'
+Started GET "/contract_installations/1" for 127.0.0.1 at 2018-06-29 21:29:59 -0400
+Processing by ContractInstallationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContractInstallation Load (0.9ms)[0m  [1m[34mSELECT  `contract_installations`.* FROM `contract_installations` WHERE `contract_installations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (0.3ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  Rendering contract_installations/show.html.erb within layouts/application
+  [1m[36mContractInstallation Load (0.4ms)[0m  [1m[34mSELECT `contract_installations`.* FROM `contract_installations` WHERE `contract_installations`.`installation_id` = 1[0m
+  Rendered contract_installations/show.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 110ms (Views: 48.7ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/installations/new" for 127.0.0.1 at 2018-06-29 21:30:39 -0400
+Processing by InstallationsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering installations/new.html.erb within layouts/application
+  Rendered installations/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 44ms (Views: 40.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/installations" for 127.0.0.1 at 2018-06-29 21:30:48 -0400
+Processing by InstallationsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering installations/index.html.erb within layouts/application
+  [1m[36mInstallation Load (0.3ms)[0m  [1m[34mSELECT `installations`.* FROM `installations`[0m
+  Rendered installations/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 58ms (Views: 54.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/installations" for 127.0.0.1 at 2018-06-29 21:51:07 -0400
+Processing by InstallationsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering installations/index.html.erb within layouts/application
+  [1m[36mInstallation Load (0.3ms)[0m  [1m[34mSELECT `installations`.* FROM `installations`[0m
+  Rendered installations/index.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 85ms (Views: 59.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/installations/1" for 127.0.0.1 at 2018-06-29 21:51:11 -0400
+Processing by InstallationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mInstallation Load (0.3ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Installation Load (0.0ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering installations/show.html.erb within layouts/application
+  Rendered installations/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 56ms (Views: 51.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events/new?id=1" for 127.0.0.1 at 2018-06-29 21:51:14 -0400
+Processing by EventsController#new as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (0.3ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 83ms (Views: 59.3ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/events?id=1" for 127.0.0.1 at 2018-06-29 21:51:27 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hMXs6KHcsVzOixfY86PzpTnbS72ZisvGeTR9frqNqedbQ7VJJfJOVN0+mPRk+MJ2+oqWPEaPZ7od38yf3TWnhA==", "event"=>{"name"=>"Comic Con", "date"=>"2018-06-30"}, "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (0.3ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 170ms (ActiveRecord: 0.5ms)
+
+
+  
+NameError (undefined local variable or method `event_params' for #<EventsController:0x007f94c83c0708>
+Did you mean?  events_params):
+  
+app/controllers/events_controller.rb:19:in `create'
+Started POST "/events?id=1" for 127.0.0.1 at 2018-06-29 21:52:57 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hMXs6KHcsVzOixfY86PzpTnbS72ZisvGeTR9frqNqedbQ7VJJfJOVN0+mPRk+MJ2+oqWPEaPZ7od38yf3TWnhA==", "event"=>{"name"=>"Comic Con", "date"=>"2018-06-30"}, "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (0.2ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO `events` (`name`, `date`, `installation_id`, `created_at`, `updated_at`) VALUES ('Comic Con', '2018-06-30 00:00:00', 1, '2018-06-30 01:52:57', '2018-06-30 01:52:57')[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/events/new?id=1
+Completed 302 Found in 103ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/events/new?id=1" for 127.0.0.1 at 2018-06-29 21:52:57 -0400
+Processing by EventsController#new as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (0.3ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 79ms (Views: 74.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/installations/1" for 127.0.0.1 at 2018-06-29 21:53:03 -0400
+Processing by InstallationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mInstallation Load (0.4ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Installation Load (0.0ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering installations/show.html.erb within layouts/application
+  Rendered installations/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 62ms (Views: 54.5ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2018-06-29 21:53:05 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (0.4ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (5.7ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `event' for #<Installation:0x007f94d011e1f0>
+Did you mean?  events
+               events=):
+    10: 					<medium><strong>Nombre del evento</strong></medium>
+    11: 				</td>
+    12: 				<td>
+    13: 					<medium><%=@installation.event.name%></medium>
+    14: 				</td>
+    15: 			</tr>
+    16: 			
+  
+app/views/events/show.html.erb:13:in `_app_views_events_show_html_erb___3958546234013823389_70138561347920'
+Started GET "/installations/1" for 127.0.0.1 at 2018-06-29 21:53:33 -0400
+Processing by InstallationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mInstallation Load (0.3ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Installation Load (0.0ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering installations/show.html.erb within layouts/application
+  Rendered installations/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 67ms (Views: 52.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2018-06-29 21:53:36 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (0.4ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"events", :id=>nil}, missing required keys: [:id]):
+    33:     <tr>
+    34:       <th scope="col"><a class="btn btn-secondary" href="/events"><i class="fa fa-arrow-circle-left"></i> Volver       </a></th>
+    35: 				<th scope="col">
+    36: 					<%=link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Editar Evento</span>'.html_safe , edit_event_path(@event), class: "btn btn-success"%>
+    37: 				</th>
+    38: 			<th scope="col"><a class="btn btn-primary" href="/events/new"><i class="fa fa-plus-square"></i> Crear nuevo Evento</a></th>
+    39:     </tr>
+  
+app/views/events/show.html.erb:36:in `_app_views_events_show_html_erb___3958546234013823389_47204363378000'
+Started GET "/installations/1" for 127.0.0.1 at 2018-06-29 21:56:22 -0400
+Processing by InstallationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mInstallation Load (0.3ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Installation Load (0.0ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering installations/show.html.erb within layouts/application
+  Rendered installations/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 59ms (Views: 54.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2018-06-29 21:56:25 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (0.4ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT `events`.* FROM `events` WHERE `events`.`installation_id` = 1[0m
+  Rendered events/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 59ms (Views: 51.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/events/new?id=1" for 127.0.0.1 at 2018-06-29 22:03:32 -0400
+Processing by EventsController#new as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (0.3ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 99ms (Views: 46.9ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/events?id=1" for 127.0.0.1 at 2018-06-29 22:03:42 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qj43GRr8qBrrAKeVx0g5mtTqkKz2cwZckLWIRekvWQ11uG64ntJXEvi1KLlQEwhJF7tNLSl2qiD0XjmkjpdXbg==", "event"=>{"name"=>"Comic Con", "factura_evento_doc"=>#<ActionDispatch::Http::UploadedFile:0x007f94d5f50278 @tempfile=#<Tempfile:/tmp/RackMultipart20180629-7664-v7nqpp.pdf>, @original_filename="jurasica1.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"event[factura_evento_doc]\"; filename=\"jurasica1.pdf\"\r\nContent-Type: application/pdf\r\n">, "date"=>"2018-06-30"}, "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (0.4ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+[paperclip] Trying to link /tmp/RackMultipart20180629-7664-v7nqpp.pdf to /tmp/68d674416f75ab726d5c5fd17b54ee2e20180629-7664-qn8el5.pdf
+[paperclip] Trying to link /tmp/68d674416f75ab726d5c5fd17b54ee2e20180629-7664-qn8el5.pdf to /tmp/68d674416f75ab726d5c5fd17b54ee2e20180629-7664-v6k39r.pdf
+Command :: PATH=/usr/bin/:$PATH; file -b --mime '/tmp/68d674416f75ab726d5c5fd17b54ee2e20180629-7664-v6k39r.pdf'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[paperclip] Trying to link /tmp/68d674416f75ab726d5c5fd17b54ee2e20180629-7664-qn8el5.pdf to /tmp/68d674416f75ab726d5c5fd17b54ee2e20180629-7664-49lgyf.pdf
+Command :: PATH=/usr/bin/:$PATH; file -b --mime '/tmp/68d674416f75ab726d5c5fd17b54ee2e20180629-7664-49lgyf.pdf'
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+No template found for EventsController#create, rendering head :no_content
+Completed 204 No Content in 56ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2018-06-29 22:03:46 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (1.3ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT `events`.* FROM `events` WHERE `events`.`installation_id` = 1[0m
+  Rendered events/show.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 70ms (Views: 60.4ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/events/new?id=1" for 127.0.0.1 at 2018-06-29 22:05:41 -0400
+Processing by EventsController#new as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (0.7ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 78ms (Views: 72.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/events/new?id=1" for 127.0.0.1 at 2018-06-29 22:08:53 -0400
+Processing by EventsController#new as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (0.5ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 52ms (Views: 47.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events/new?id=1" for 127.0.0.1 at 2018-06-29 22:08:57 -0400
+Processing by EventsController#new as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (0.4ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 52ms (Views: 47.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events/new?id=1" for 127.0.0.1 at 2018-06-29 22:09:20 -0400
+Processing by EventsController#new as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (0.3ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 1 LIMIT 1[0m
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 56ms (Views: 51.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/installations" for 127.0.0.1 at 2018-06-29 22:11:10 -0400
+Processing by InstallationsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering installations/index.html.erb within layouts/application
+  [1m[36mInstallation Load (0.4ms)[0m  [1m[34mSELECT `installations`.* FROM `installations`[0m
+  Rendered installations/index.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 95ms (Views: 60.6ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/installations/2" for 127.0.0.1 at 2018-06-29 22:11:13 -0400
+Processing by InstallationsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mInstallation Load (0.3ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 2 LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Installation Load (0.0ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering installations/show.html.erb within layouts/application
+  Rendered installations/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 56ms (Views: 50.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events/new?id=2" for 127.0.0.1 at 2018-06-29 22:11:14 -0400
+Processing by EventsController#new as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (0.4ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 2 LIMIT 1[0m
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 72ms (Views: 50.6ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/events?id=2" for 127.0.0.1 at 2018-06-29 22:12:08 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bPYY0NOJur062tE041gwxKeTsZ8lOaclz4dyDAgzs3qzcEFxV6dFtSlvXhh0AwEXZMJsHvo8C1mrbMPtb4u9GQ==", "event"=>{"name"=>"Comic Con", "date"=>"2018-06-30", "factura_evento_doc"=>#<ActionDispatch::Http::UploadedFile:0x007f94d48eb2a8 @tempfile=#<Tempfile:/tmp/RackMultipart20180629-7664-leeqie.jpg>, @original_filename="paper-sizes-large.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"event[factura_evento_doc]\"; filename=\"paper-sizes-large.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (0.4ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 2 LIMIT 1[0m
+[paperclip] Trying to link /tmp/RackMultipart20180629-7664-leeqie.jpg to /tmp/e5346eba614c451f9ad054f5ec678ccf20180629-7664-17g626d.jpg
+[paperclip] Trying to link /tmp/e5346eba614c451f9ad054f5ec678ccf20180629-7664-17g626d.jpg to /tmp/e5346eba614c451f9ad054f5ec678ccf20180629-7664-q8p775.jpg
+Command :: PATH=/usr/bin/:$PATH; file -b --mime '/tmp/e5346eba614c451f9ad054f5ec678ccf20180629-7664-q8p775.jpg'
+Command :: PATH=/usr/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/e5346eba614c451f9ad054f5ec678ccf20180629-7664-17g626d.jpg[0]' 2>/dev/null
+Command :: PATH=/usr/bin/:$PATH; identify -format %m '/tmp/e5346eba614c451f9ad054f5ec678ccf20180629-7664-17g626d.jpg[0]'
+Command :: PATH=/usr/bin/:$PATH; convert '/tmp/e5346eba614c451f9ad054f5ec678ccf20180629-7664-17g626d.jpg[0]' -auto-orient -resize "x1200" -crop "800x1200+4+0" +repage '/tmp/36b8329aba92cc0f0fb37a4ee7b18c6320180629-7664-vxzz2b'
+[paperclip] Trying to link /tmp/36b8329aba92cc0f0fb37a4ee7b18c6320180629-7664-vxzz2b to /tmp/3f86e4b34c134ccf36592c6a7a41b8df20180629-7664-2231ys
+Command :: PATH=/usr/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/e5346eba614c451f9ad054f5ec678ccf20180629-7664-17g626d.jpg[0]' 2>/dev/null
+Command :: PATH=/usr/bin/:$PATH; identify -format %m '/tmp/e5346eba614c451f9ad054f5ec678ccf20180629-7664-17g626d.jpg[0]'
+Command :: PATH=/usr/bin/:$PATH; convert '/tmp/e5346eba614c451f9ad054f5ec678ccf20180629-7664-17g626d.jpg[0]' -auto-orient -resize "x1200" -crop "800x1200+4+0" +repage '/tmp/36b8329aba92cc0f0fb37a4ee7b18c6320180629-7664-ocswgy'
+[paperclip] Trying to link /tmp/36b8329aba92cc0f0fb37a4ee7b18c6320180629-7664-ocswgy to /tmp/768fccc20fabc927cbd713cb317303ab20180629-7664-108ol58
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[paperclip] Trying to link /tmp/e5346eba614c451f9ad054f5ec678ccf20180629-7664-17g626d.jpg to /tmp/e5346eba614c451f9ad054f5ec678ccf20180629-7664-1suf1mk.jpg
+Command :: PATH=/usr/bin/:$PATH; file -b --mime '/tmp/e5346eba614c451f9ad054f5ec678ccf20180629-7664-1suf1mk.jpg'
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `events` (`name`, `factura_evento_doc_file_name`, `factura_evento_doc_content_type`, `factura_evento_doc_file_size`, `factura_evento_doc_updated_at`, `date`, `installation_id`, `created_at`, `updated_at`) VALUES ('Comic Con', 'paper-sizes-large.jpg', 'image/jpeg', 101436, '2018-06-30 02:12:08', '2018-06-30 00:00:00', 2, '2018-06-30 02:12:09', '2018-06-30 02:12:09')[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/events/new?id=2
+Completed 302 Found in 389ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/events/new?id=2" for 127.0.0.1 at 2018-06-29 22:12:09 -0400
+Processing by EventsController#new as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (0.4ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 2 LIMIT 1[0m
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 72ms (Views: 67.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/installations/2" for 127.0.0.1 at 2018-06-29 22:12:14 -0400
+Processing by InstallationsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mInstallation Load (0.3ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 2 LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE Installation Load (0.0ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering installations/show.html.erb within layouts/application
+  Rendered installations/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 62ms (Views: 58.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events/2" for 127.0.0.1 at 2018-06-29 22:12:15 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  `events`.* FROM `events` WHERE `events`.`id` = 2 LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mInstallation Load (0.3ms)[0m  [1m[34mSELECT  `installations`.* FROM `installations` WHERE `installations`.`id` = 2 LIMIT 1[0m
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT `events`.* FROM `events` WHERE `events`.`installation_id` = 2[0m
+  Rendered events/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 58ms (Views: 50.3ms | ActiveRecord: 1.5ms)
+
+

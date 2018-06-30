@@ -36,24 +36,24 @@ Rails.application.routes.draw do
   post '/guard/:id', to: 'guards#cambiarEstado'
 
   #rutas de installaciones
-  get '/installations', to: 'installations#index'
-  get '/installations/new', to: 'installations#new'
-  post '/installations', to: 'installations#create'
-  get '/installation/:id', to: 'installations#show', as: 'installation'
-  get '/installations/:id/edit', to: 'installations#edit', as: 'edit_installation'
-  patch '/installation/:id', to: 'installations#update'
-  put '/installation/:id', to: 'installations#update'
-  delete '/installation/:id', to: 'installations#delete'
+  #get '/installations', to: 'installations#index'
+  #get '/installations/new', to: 'installations#new'
+  #post '/installations', to: 'installations#create'
+  #get '/installation/:id', to: 'installations#show', as: 'installation'
+  #get '/installations/:id/edit', to: 'installations#edit', as: 'edit_installation'
+  #patch '/installation/:id', to: 'installations#update'
+  #put '/installation/:id', to: 'installations#update'
+  #delete '/installation/:id', to: 'installations#delete'
 
   #rutas de eventos
-  get '/events', to: 'events#index'
-  get '/events/new', to: 'events#new'
-  post '/events', to: 'events#create'
-  get '/event/:id', to: 'events#show', as: 'event'
-  get '/events/:id/edit', to: 'events#edit', as: 'edit_event'
-  patch '/event/:id', to: 'events#update'
-  put '/event/:id', to: 'events#update'
-  delete '/event/:id', to: 'events#delete'
+  #get '/events', to: 'events#index'
+  #get '/events/new', to: 'events#new'
+  #post '/events', to: 'events#create'
+  #get '/event/:id', to: 'events#show', as: 'event'
+  #get '/events/:id/edit', to: 'events#edit', as: 'edit_event'
+  #patch '/event/:id', to: 'events#update'
+  #put '/event/:id', to: 'events#update'
+  #delete '/event/:id', to: 'events#delete'
 
   #rutas de vacaciones
   #get '/vacations', to: 'vacations#index'
@@ -69,6 +69,9 @@ Rails.application.routes.draw do
   resources :osdocumentations
   resources :settlements
   resources :contract_installations
+  resources :bills
+  resources :installations
+  resources :events
   #rutas de liquidaciones
   get '/sallary_settlements', to: 'sallary_settlements#index'
   get '/sallary_settlements/new', to: 'sallary_settlements#new'

@@ -4,7 +4,7 @@
 </h1>
 
 <div class="col-md-10 col-center" align="left">
-  <%= form_for @event do |l| %>
+  <%= form_for @event, :url =>{:action =>:create, :id=>@installation.id} do |l| %>
   <div class="form-group" align="center">
     <!--FORMULARIO DEL TIPO BOOSTRAP QUE INCLUYE VALIDACIONES-->
     <div lang="es" class="col-md-12 col-center" align="left">
@@ -19,6 +19,8 @@
             </div>
           </div>
           
+          
+          
           <div class="col-md-10 col-center">
             <label for="validationServer01" >Fecha Inicio</label>
             <div class="input-group-prepend">
@@ -27,6 +29,22 @@
             </div>
           </div>
         </div>
+
+
+      <h1></h1>
+      <div class="form-row">
+        <div class="col-md-8 mb-6">
+          <div class="custom-file">
+          
+            <%= l.label :factura_evento_doc,"Factura de Evento:" %>
+            <%= l.file_field :factura_evento_doc%> 
+      </div>
+      </div>
+      </div>
+
+
+
+        
     <div align="center">
         <h1> </h1>
       <table>

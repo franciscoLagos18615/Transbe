@@ -9,34 +9,25 @@ class EventsController < ApplicationController
   end
   #metodo new
   def new
+    @installation = Installation.find(params[:id])
     @event = Event.new
   end
   #metodo create for event
   def create
-    @event = Event.new(events_params)
-    @event.installation_id = 1
-    respond_to do |format|
-      if @event.valid? 
-        if @event.save
-         
-          format.html { redirect_to events_path, notice: 'Evento Creado Exitosamente.' }
-          format.json { render :show, status: :created, location: @event }
-        else
-          format.html { render :new }
-          format.json { render json: @event.errors, status: :unprocessable_entity }
-        end
-      else
-        format.html { render :new }
-        format.json { render json: @event.errors, status: :unprocessable_entity }
-      end
+
+    @installation = Installation.find(params[:id])
+    @event = @installation.events.build(events_params)
+    if @event.save
+      redirect_to new_event_path(:id => @installation.id)
     end
   end
+
   #metodo buscar
-  def search 
-    q = params[:name]
-    @events = Event.find(:all, :conditions => ["name LIKE %?%",q])
-    redirect_to events_path
-  end
+  #def search 
+  #  q = params[:name]
+  #  @events = Event.find(:all, :conditions => ["name LIKE %?%",q])
+  #  redirect_to events_path
+  #end
   #metodo editar
   def edit 
     @event = Event.find(params[:id])
@@ -60,12 +51,14 @@ class EventsController < ApplicationController
   end
   #metodo show
   def show
-    @event=Event.find(params[:id])
+    @installation = Installation.find(params[:id])
+    @event = @installation.events.build
+    #@event=Event.find(params[:id])
     #authorize! :all, @event
   end
 
   ####
-  private
+  #private
 
   #set event
   def set_event
@@ -73,7 +66,7 @@ class EventsController < ApplicationController
   end
 
   def events_params
-    params.require(:event).permit(:name, :date)
+    params.require(:event).permit(:name, :date, :factura_evento_doc)
   end
  
 end

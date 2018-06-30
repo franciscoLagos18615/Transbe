@@ -33,6 +33,7 @@ Rails.application.routes.draw do
   patch '/guard/:id', to: 'guards#update'
   put '/guard/:id', to: 'guards#update'
   delete '/guard/:id', to: 'guards#delete'
+  post '/guard/:id', to: 'guards#cambiarEstado'
 
   #rutas de installaciones
   get '/installations', to: 'installations#index'

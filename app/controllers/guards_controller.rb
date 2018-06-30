@@ -14,6 +14,7 @@ class GuardsController < ApplicationController
 
   def create
      @guard = Guard.new(guard_params)
+     @guard.active = true
      respond_to do |format|
        if @guard.valid? 
          if @guard.save
@@ -49,6 +50,23 @@ class GuardsController < ApplicationController
       render :edit
     end
   end
+
+  #metodo para activar o desactivar el estado del guardia
+  def cambiarEstado
+    @guard = Guard.find(params[:id])
+    if @guard.active == false
+      @guard.update(active: true)
+      redirect_to @guard, notice: 'Se ha vinculado correctamente el guardia'
+    else
+      if @guard.active == true
+        @guard.update(active: false)
+        redirect_to @guard, notice: 'Se ha desvinculado correctamente el guardia'
+      else
+        redirect_to guards_path
+      end 
+    end
+
+  end #fin del metodo
   
   def delete
     @guard = Guard.find(params[:id])
@@ -68,6 +86,6 @@ class GuardsController < ApplicationController
 
 
   def guard_params
-    params.require(:guard).permit(:firstname, :lastname,:surname, :rut, :email, :phone_number, :nationality, :second_phone, :age, :city, :commune, :address, :educational_level, :sex, :avatar, :ficha_guardia_doc, :cert_estudio_doc, :cert_residencia_doc, :cedula_identidad_doc, :pacto_horas_doc, :cert_antecedentes_doc, :credencial_doc)
+    params.require(:guard).permit(:firstname, :lastname,:surname, :rut, :email, :phone_number, :nationality, :second_phone, :age, :city, :commune, :address, :educational_level, :sex,:contract_type,:prevision,:afiliation, :avatar, :ficha_guardia_doc, :cert_estudio_doc, :cert_residencia_doc, :cedula_identidad_doc, :pacto_horas_doc, :cert_antecedentes_doc, :credencial_doc, :derecho_saber_doc,:epp_entrega_doc,:epp_recibo_doc,:auth_turno_doc,:reg_interno_doc,:active)
   end
 end

@@ -40,6 +40,9 @@ class Guard < ApplicationRecord
     has_attached_file :credencial_doc, styles: { medium: "800x1200#", thumb: "800x1200#" }, default_url: "/images/:style/file-add-icon.png"
     validates_attachment_content_type :credencial_doc, content_type: /\Aimage\/.*\z/
 
+    #Documentos Faltantes
+    
+
     #Derecho  a Saber
     has_attached_file :derecho_saber_doc, styles: { medium: "800x1200#", thumb: "800x1200#" }, default_url: "/images/:style/file-add-icon.png"
     validates_attachment_content_type :derecho_saber_doc, content_type: /\Aimage\/.*\z/
@@ -51,6 +54,7 @@ class Guard < ApplicationRecord
     #EPP recibo
     has_attached_file :epp_recibo_doc, styles: { medium: "800x1200#", thumb: "800x1200#" }, default_url: "/images/:style/file-add-icon.png"
     validates_attachment_content_type :epp_recibo_doc, content_type: /\Aimage\/.*\z/
+
 
     #Autorizacion de turno
     has_attached_file :auth_turno_doc, styles: { medium: "800x1200#", thumb: "800x1200#" }, default_url: "/images/:style/file-add-icon.png"

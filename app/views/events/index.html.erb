@@ -57,7 +57,10 @@ $(document).ready(function(){
     <thead>
       <tr>
         <th scope="col"><a class="btn btn-secondary" href="/"><i class="fa fa-home"></i> Volver al Inicio</a></th>
-        <th scope="col"><a class="btn btn-primary" href="/events/new"><i class="fa fa-plus-square"></i> Crear nuevo Evento</a></th>
+        <th>
+        <%= link_to '<span class="fa fa-plus-square"  data-toggle="tooltip">Agregar Nuevo Evento</span>'.html_safe , class: "btn btn-primary", :controller => :contract_installations, :action => :new, :id => @installation.id ,class: "btn btn-primary" %>
+        </th>
+        
       </tr>
     </thead>
   </table>

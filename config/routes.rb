@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   get 'sallary_settlements/index'
 
-  get 'contract_installations/index'
+  #get 'contract_installations/index'
 
   get 'contract_guards/index'
 
@@ -64,13 +64,13 @@ Rails.application.routes.draw do
   #patch '/vacation/:id', to: 'vacations#update'
   #put '/vacation/:id', to: 'vacations#update'
   #delete '/vacation/:id', to: 'vacations#delete'
+  resources :installations
   resources :vacations
   resources :contract_guards
   resources :osdocumentations
   resources :settlements
   resources :contract_installations
   resources :bills
-  resources :installations
   resources :events
   #rutas de liquidaciones
   get '/sallary_settlements', to: 'sallary_settlements#index'

@@ -1,11 +1,17 @@
 class SettlementsController < ApplicationController
   before_action :set_settlement, only: [:show, :edit, :update, :destroy]
   authorize_resource
+
+  #method index settlement
   def index
     @settlements = Settlement.all
+    @settlements = Settlement.search(params[:name]).all
     @guard = Guard.find(params[:id])
-    @settlements2 = @Guard.settlements.all
+    @settlement2 = @guard.settlements.all
   end
+
+
+
   def new
     #@vacation = Vacation.new
     @guard = Guard.find(params[:id])
@@ -16,9 +22,12 @@ class SettlementsController < ApplicationController
     @guard = Guard.find(params[:id])
     @settlement = @guard.settlements.build(settlement_params)
     if @settlement.save
-      redirect_to new_settlement_path(:id => @guard.id)
+      redirect_to @settlement, notice: "Finiquito guardado correctamente"
     end
   end
+
+  
+
 
   def edit 
     @settlement = Settlement.find(params[:id])
@@ -27,7 +36,7 @@ class SettlementsController < ApplicationController
   def update
     @settlement = Settlement.find(params[:id])
     if @settlement.update(settlement_params)
-      redirect_to settlements_path, notice: 'Documento de Finiquito Actualizado correctamente'
+      redirect_to @settlement, notice: 'Finiquito Actualizado correctamente'
     else
       render :edit
     end
@@ -40,6 +49,7 @@ class SettlementsController < ApplicationController
   end
 
   def show
+    
     @settlement = Settlement.find(params[:id])
   end
   private
@@ -48,6 +58,6 @@ class SettlementsController < ApplicationController
     @settlement = Settlement.find(params[:id])
   end
   def settlement_params
-    params.require(:settlement).permit(:date, :finiquito_doc, :observation)
+    params.require(:settlement).permit(:date, :finiquito_doc, :observation, :name)
   end
 end

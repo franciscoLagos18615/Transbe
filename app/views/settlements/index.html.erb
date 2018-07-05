@@ -1,3 +1,4 @@
+
 <h1 align="center" class="mb-0">Lista de
     <span class="text-primary">Finiquitos</span>
 </h1>
@@ -9,7 +10,7 @@
 <table class="table table-hover">
   <thead>
   <tr>
-      <th scope="col">observacion</th>
+      <th scope="col">Nombre del Finiquto</th>
       <th scope="col">Fecha</th>
       <th scope="col">Accion</th>
     </tr>
@@ -17,22 +18,22 @@
  <tbody>
  <tr>
  
-  <%@events2.each do |even|%>
+  <%@settlement2.each do |contr_inst|%>
     
-      <th><%=even.cost%>
+      <th><%=contr_inst.name%>
       
       </th>
       <th>
       
-      <%=even.date%>
+      <%=contr_inst.date%>
       
       </th>
       <td>
-      <% if can? :show, even %>
-           <%=link_to '<span class="fa fa-align-justify" data-original-title="Detalles" data-toggle="tooltip"></span>'.html_safe , settlement_path(even),class: "btn btn-info" %>
+      <% if can? :show, contr_inst %>
+           <%=link_to '<span class="fa fa-align-justify" data-original-title="Detalles" data-toggle="tooltip"></span>'.html_safe , settlement_path(contr_inst),class: "btn btn-info" %>
       <% end %>
-      <% if can? :edit, even %>
-          <%=link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip"></span>'.html_safe , edit_settlement_path(even), class: "btn btn-success"%>
+      <% if can? :edit, contr_inst %>
+          <%=link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip"></span>'.html_safe , edit_settlement_path(contr_inst), class: "btn btn-success"%>
       <% end %>
        
         
@@ -43,3 +44,22 @@
   <%end%>
 </table>
 
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>
+
+
+<div align="center">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col"><a class="btn btn-secondary" href="/guards"><i class="fa fa-home"></i> Volver al listado Guardias</a></th>
+        <th>
+        <%= link_to '<span class="fa fa-plus-square"  data-toggle="tooltip">Agregar Finiquito</span>'.html_safe , class: "btn btn-primary", :controller => :settlements, :action => :new, :id => @guard.id ,class: "btn btn-primary" %>
+        </th>
+      </tr>
+    </thead>
+  </table>
+</div>

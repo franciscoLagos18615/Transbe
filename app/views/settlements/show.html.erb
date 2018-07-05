@@ -7,21 +7,28 @@
 		<tbody>
 			<tr>
 				<td>
-					<medium><strong>Observacion</strong></medium>
+					<medium><strong>Nombre Finiquito</strong></medium>
 				</td>
 				<td>
-					<medium><%=@event.observation%></medium>
+					<medium><%=@settlement.name%></medium>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<medium><strong>Fecha de inicio</strong></medium>
+					<medium><strong>Fecha</strong></medium>
 				</td>
 				<td>
-					<medium><%=@event.date%></medium>
+					<medium><%=@settlement.date%></medium>
 				</td>
 			</tr>
-			
+			<tr>
+				<td>
+					<medium><strong>Observacion</strong></medium>
+				</td>
+				<td>
+					<medium><%=@settlement.observation%></medium>
+				</td>
+			</tr>
 
 		</tbody>
 	</table>
@@ -29,13 +36,34 @@
 <!--Aqui se mostrara la factura del evento-->
 <div class="accordion" id="accord">
 	<p>
-		<a class="btn btn-primary" data-toggle="collapse" href="#factura" role="button" aria-expanded="false" aria-controls="factura">Factura Evento</a>
+		<a class="btn btn-primary" data-toggle="collapse" href="#factura" role="button" aria-expanded="false" aria-controls="factura">Ver Finiquito PDF</a>
 	</p>
     <div class="collapse multi-collapse" id="factura" data-parent="#accord">
       <div class="card card-body">
-        <p align="center"> <%= image_tag @event.finiquito_doc.url(:thumb) %></p>
+      <a href=<%= @settlement.finiquito_doc%>&embedded=true">Visualizar Finiquito PDF</a>
+        <!--p align="center"> <%= image_tag @settlement.finiquito_doc.url(:thumb) %></p-->
       </div>
     </div>
     
 		
 </div>  
+
+
+
+	<div align="center">
+          <h1></h1>
+		  <h1>&nbsp </h1>
+        
+          <table>
+          <thead>
+            <tr>
+              <th scope="col"><a class="btn btn-primary" href="/guards"><i class="fa fa-arrow-circle-left"></i> Volver al listado de guardias</a></th>
+              <th>
+			  <%=link_to '<span class="fa fa-plus-square" data-original-title="Editar">Ir a Editar Finiquito</span>'.html_safe , edit_settlement_path(@settlement), class: "btn btn-success"%>
+			  </th>
+			  
+            </tr>
+          </thead>
+        </table>
+</div>
+</div>

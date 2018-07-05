@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180705193050) do
+ActiveRecord::Schema.define(version: 20180705210332) do
 
   create_table "bills", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text "description"
@@ -204,6 +204,7 @@ ActiveRecord::Schema.define(version: 20180705193050) do
     t.bigint "guard_id"
     t.datetime "date"
     t.text "observation"
+    t.string "name"
     t.index ["guard_id"], name: "index_settlements_on_guard_id"
   end
 

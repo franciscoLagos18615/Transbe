@@ -14,30 +14,39 @@
           <div class="col-md-10 col-center">
             <label for="validationServer01" >Nombre del Evento</label>
             <div class="input-group-prepend">
-              <span class="icon-case"><i class="fa fa-user"></i></span>
+              
               <%= e.text_field :name, type:"text",class:"form-control is-valid", :required=> true %>
             </div>
           </div>
 
-          <%= e.label :factura_evento_doc,"Factura de Evento:" %>
-      
-          <%= e.file_field :factura_evento_doc%> 
           
           <div class="col-md-10 col-center">
             <label for="validationServer01" >Fecha Inicio</label>
             <div class="input-group-prepend">
-              <span class="icon-case"><i class="fa fa-user"></i></span>
+             
               <%= e.date_field :date, type:"date",class:"form-control is-valid", :required=> true %>
             </div>
           </div>
         </div>
        
+       <h1></h1>
+      
+        <div class="col-md-10 col-center">
+          <div class="custom-file">
+     
+          <%= e.label :factura_evento_doc,"Factura del evento:" %>
+      
+          <%= e.file_field :factura_evento_doc%> 
+        </div>
+      </div>
+  
+
         <div align="center">
           <h1></h1>
           <table>
           <thead>
             <tr>
-              <th scope="col"><a class="btn btn-primary" href="/events"><i class="fa fa-arrow-circle-left"></i> Volver       </a></th>
+              <th scope="col"><a class="btn btn-primary" href="/installations"><i class="fa fa-arrow-circle-left"></i> Volver al listado instalaciones     </a></th>
               <th scope="col"><button type="submit" class="btn btn-success" %="e.submit"% ><i class="fa fa-plus-square"></i> Actualizar Evento</button></th>
             </tr>
           </thead>

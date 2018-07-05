@@ -1,9 +1,13 @@
 
 <%if !@guard.vacations.nil?%>
-	<% for item in @guard.vacations%>
+	<% for item in @guard.vacations %>
 		<p>Dias tomados</p>
 		    <%=item.days_taken%>
 		<p>Documento asociado</p>
 		    <%=image_tag item.vacacion_doc%>
+	<% else %>
+
+	<h1>No tiene Vacaciones actualmente</h1>
 	<%end%>
+
 <%end%>

@@ -4,8 +4,12 @@ class EventsController < ApplicationController
   authorize_resource
   #metodo index
   def index
+    
+    
     @events=Event.all
     @events=Event.search(params[:name]).all
+    @installation = Installation.find(params[:id])
+    @events2 = @installation.events.all
   end
   #metodo new
   def new
@@ -18,7 +22,7 @@ class EventsController < ApplicationController
     @installation = Installation.find(params[:id])
     @event = @installation.events.build(events_params)
     if @event.save
-      redirect_to new_event_path(:id => @installation.id)
+      redirect_to @event, notice: "Evento Creado Correctamente"
     end
   end
 
@@ -36,7 +40,7 @@ class EventsController < ApplicationController
   def update
     @event = Event.find(params[:id])
     if @event.update(events_params)
-      redirect_to events_path, notice: 'Evento Actualizado correctamente'
+      redirect_to @event, notice: 'Evento Actualizado correctamente'
     else
       render :edit
     end
@@ -51,11 +55,15 @@ class EventsController < ApplicationController
   end
   #metodo show
   def show
-    @installation = Installation.find(params[:id])
-    @event = @installation.events.build
-    #@event=Event.find(params[:id])
+    #@installation = Installation.find(params[:id])
+    #@event = @installation.events.build
+    @event=Event.find(params[:id])
+    
     #authorize! :all, @event
   end
+
+  #metodo que busca el nombre de la instalacion
+  
 
   ####
   #private

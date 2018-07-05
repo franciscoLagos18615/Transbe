@@ -1,15 +1,60 @@
 
-<%= form_for @vacation, :url =>{:action =>:create, :id=>@guard.id} do |f| %>
-  <div>
-    <%= f.label :days_taken, "Numero de dias" %>
-    <%= f.number_field :days_taken %>
-  </div>
-  <div>
-    <%= f.label :vacacion_doc,"Vacacion:" %>
-    <%= f.file_field :vacacion_doc%>
 
+
+<h1 align="center" class="col-md-10 col-center">Agregar
+    <span class="text-primary">Vacaciones</span>
+</h1>
+
+<div class="col-md-10 col-center" align="left">
+  <%= form_for @vacation, :url =>{:action =>:create, :id=>@guard.id} do |l| %>
+  <div class="form-group" align="center">
+    <!--FORMULARIO DEL TIPO BOOSTRAP QUE INCLUYE VALIDACIONES-->
+    <div lang="es" class="col-md-12 col-center" align="left">
+      <form>
+ 
+        <div class="form-row">
+          <div class="col-md-10 col-center">
+            <label for="validationServer01" >Numero de dias</label>
+            <div class="input-group-prepend">
+              
+              <%= l.number_field :days_taken, type:"number",class:"form-control is-valid", placeholder:"7", :required=> true %>
+            </div>
+          </div>
+          
+          
+
+
+      <h1></h1>
+      <div class="form-row">
+        <div class="col-md-8 mb-6">
+          <div class="custom-file">
+          
+            <%= l.label :vacacion_doc,"Documento de vacaciones asociado:" %>
+            <%= l.file_field :vacacion_doc%> 
+      </div>
+      </div>
+      </div>
+
+
+
+        
+    <div align="center">
+        <h1>&nbsp &nbsp </h1>
+        <h1> </h1>
+        <h1> </h1>
+        <h1> </h1>
+        <h1> </h1>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col"><a class="btn btn-secondary" href="/guards"><i class="fa fa-arrow-circle-left"></i> Volver al listado de guardias </a></th>
+            <th scope="col"><button  type="submit" class="btn btn-primary" %="l.submit"%><i class="fa fa-plus-square"></i> Agregar Vacaciones</button></th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+      </form>
+    </div>
   </div>
-  <div>
-    <%= f.submit %>
-  </div>
-<% end %>
+  <%end%>
+</div>

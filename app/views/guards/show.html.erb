@@ -230,6 +230,10 @@
 
 					<%= link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Agregar Finiquito</span>'.html_safe, :controller => :settlements, :action => :new, :id => @guard.id%>
 					<%= link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Ver Finiquitos</span>'.html_safe, :controller => :settlements, :action => :edit, :id => @guard.id%>
+
+					<%= link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Agregar Liquidaciones</span>'.html_safe, :controller => :sallary_settlements, :action => :new, :id => @guard.id%>
+					<%= link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Ver Liquidaciones</span>'.html_safe, :controller => :sallary_settlements, :action => :index, :id => @guard.id%>
+
 	    	</tr>
 	  	</thead>
 	</table>

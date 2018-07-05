@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get 'settlements/index'
 
-  get 'sallary_settlements/index'
+  #get 'sallary_settlements/index'
 
   #get 'contract_installations/index'
 
@@ -65,6 +65,7 @@ Rails.application.routes.draw do
   #put '/vacation/:id', to: 'vacations#update'
   #delete '/vacation/:id', to: 'vacations#delete'
   resources :installations
+  resources :sallary_settlements
   resources :vacations
   resources :contract_guards
   resources :osdocumentations
@@ -72,15 +73,16 @@ Rails.application.routes.draw do
   resources :contract_installations
   resources :bills
   resources :events
+  
   #rutas de liquidaciones
-  get '/sallary_settlements', to: 'sallary_settlements#index'
-  get '/sallary_settlements/new', to: 'sallary_settlements#new'
-  post '/sallary_settlements', to: 'sallary_settlements#create'
-  get '/sallary_settlement/:id', to: 'sallary_settlements#show', as: 'sallary_settlement'
-  get '/sallary_settlements/:id/edit', to: 'sallary_settlements#edit', as: 'edit_sallary_settlement'
-  patch '/sallary_settlement/:id', to: 'sallary_settlements#update'
-  put '/sallary_settlement/:id', to: 'sallary_settlements#update'
-  delete '/sallary_settlement/:id', to: 'sallary_settlements#delete'
+  # get '/sallary_settlements', to: 'sallary_settlements#index'
+  # get '/sallary_settlements/new', to: 'sallary_settlements#new'
+  # post '/sallary_settlements', to: 'sallary_settlements#create'
+  # get '/sallary_settlement/:id', to: 'sallary_settlements#show', as: 'sallary_settlement'
+  # get '/sallary_settlements/:id/edit', to: 'sallary_settlements#edit', as: 'edit_sallary_settlement'
+  # patch '/sallary_settlement/:id', to: 'sallary_settlements#update'
+  # put '/sallary_settlement/:id', to: 'sallary_settlements#update'
+  # delete '/sallary_settlement/:id', to: 'sallary_settlements#delete'
 
   #rutas de la documentacion 0s10
   #get '/osdocumentations', to: 'osdocumentations#index'

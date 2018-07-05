@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180705172341) do
+ActiveRecord::Schema.define(version: 20180705193050) do
 
   create_table "bills", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text "description"
@@ -190,6 +190,7 @@ ActiveRecord::Schema.define(version: 20180705172341) do
     t.integer "liquidacion_doc_file_size"
     t.datetime "liquidacion_doc_updated_at"
     t.bigint "guard_id"
+    t.string "name"
     t.index ["guard_id"], name: "index_sallary_settlements_on_guard_id"
   end
 

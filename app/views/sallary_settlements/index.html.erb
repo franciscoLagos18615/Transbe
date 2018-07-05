@@ -1,2 +1,65 @@
-<h1>SallarySettlements#index</h1>
-<p>Find me in app/views/sallary_settlements/index.html.erb</p>
+<h1 align="center" class="mb-0">Lista de
+    <span class="text-primary">Liquidaciones</span>
+</h1>
+
+
+
+
+
+<table class="table table-hover">
+  <thead>
+  <tr>
+      <th scope="col">Nombre de liquidacion</th>
+      <th scope="col">Fecha</th>
+      <th scope="col">Accion</th>
+    </tr>
+  </thead>
+ <tbody>
+ <tr>
+ 
+  <%@sallary_settlement2.each do |sal|%>
+    
+      <th><%=sal.name%>
+      
+      </th>
+      <th>
+      
+      <%=sal.date%>
+      
+      </th>
+      <td>
+      <% if can? :show, sal %>
+           <%=link_to '<span class="fa fa-align-justify" data-original-title="Detalles" data-toggle="tooltip"></span>'.html_safe , sallary_settlement_path(sal),class: "btn btn-info" %>
+      <% end %>
+      <% if can? :edit, sal %>
+          <%=link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip"></span>'.html_safe , edit_sallary_settlement_path(sal), class: "btn btn-success"%>
+      <% end %>
+       
+        
+      </td>
+    
+  </tr>
+  </tbody>
+  <%end%>
+</table>
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>
+
+
+<div align="center">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col"><a class="btn btn-secondary" href="/"><i class="fa fa-home"></i> Volver al Inicio</a></th>
+        <th>
+        <%= link_to '<span class="fa fa-plus-square"  data-toggle="tooltip">Agregar Nueva Liquidacion</span>'.html_safe , class: "btn btn-primary", :controller => :sallary_settlements, :action => :new, :id => @guard.id ,class: "btn btn-primary" %>
+        </th>
+        
+      </tr>
+    </thead>
+  </table>
+</div>

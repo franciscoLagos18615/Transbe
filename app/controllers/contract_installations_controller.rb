@@ -10,19 +10,7 @@ class ContractInstallationsController < ApplicationController
     @contract_installation2 = @installation.contract_installations.all
 
   end
-  def new
-    @installation = Installation.find(params[:id])
-    @event = Event.new
-  end
-  #metodo create for event
-  def create
-
-    @installation = Installation.find(params[:id])
-    @event = @installation.events.build(events_params)
-    if @event.save
-      redirect_to @event, notice: "Evento Creado Correctamente"
-    end
-  end
+  
  
   def new
     @installation = Installation.find(params[:id])

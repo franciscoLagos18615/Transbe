@@ -1,2 +1,38 @@
-<h1>Vacations#index</h1>
-<p>Find me in app/views/vacations/index.html.erb</p>
+<h1 align="center" class="mb-0">Lista de
+    <span class="text-primary">Eventos</span>
+</h1>
+
+
+
+
+
+<table class="table table-hover">
+  <thead>
+  <tr>
+      <th scope="col">Nombre del evento</th>
+      <th scope="col">Accion</th>
+    </tr>
+  </thead>
+ <tbody>
+ <tr>
+ 
+  <%@vacations2.each do |even|%>
+    
+      <th><%=even.days_taken%>
+      
+      </th>
+      <td>
+      <% if can? :show, even %>
+           <%=link_to '<span class="fa fa-align-justify" data-original-title="Detalles" data-toggle="tooltip"></span>'.html_safe , vacation_path(even),class: "btn btn-info" %>
+      <% end %>
+      <% if can? :edit, even %>
+          <%=link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip"></span>'.html_safe , edit_vacation_path(even), class: "btn btn-success"%>
+      <% end %>
+       
+        
+      </td>
+    
+  </tr>
+  </tbody>
+  <%end%>
+</table>

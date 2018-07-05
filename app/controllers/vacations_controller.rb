@@ -4,11 +4,13 @@ class VacationsController < ApplicationController
   authorize_resource
   def index
     @vacations = Vacation.all
+    @guard = Guard.find(params[:id])
+    @vacations2 = @guard.vacations.all
   end
   def new
     #@vacation = Vacation.new
     @guard = Guard.find(params[:id])
-    @vacation = @guard.vacations.build
+    @vacation = Vacation.new
   end
 
   def create
@@ -53,7 +55,7 @@ class VacationsController < ApplicationController
   def update
     @vacation = Vacation.find(params[:id])
     if @vacation.update(vacation_params)
-      redirect_to vacations_path, notice: 'Documento de  Vacacion Actualizado correctamente'
+      redirect_to guards_path, notice: 'Documento de  Vacacion Actualizado correctamente'
     else
       render :edit
     end
@@ -70,8 +72,7 @@ class VacationsController < ApplicationController
   end
 =end
   def show
-    @guard = Guard.find(params[:id])
-    @vacation = @guard.vacations.build
+    @vacation=Vacation.find(params[:id])
   end
   private
   #set installation

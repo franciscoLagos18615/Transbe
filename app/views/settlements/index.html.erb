@@ -1,2 +1,45 @@
-<h1>Settlements#index</h1>
-<p>Find me in app/views/settlements/index.html.erb</p>
+<h1 align="center" class="mb-0">Lista de
+    <span class="text-primary">Finiquitos</span>
+</h1>
+
+
+
+
+
+<table class="table table-hover">
+  <thead>
+  <tr>
+      <th scope="col">observacion</th>
+      <th scope="col">Fecha</th>
+      <th scope="col">Accion</th>
+    </tr>
+  </thead>
+ <tbody>
+ <tr>
+ 
+  <%@events2.each do |even|%>
+    
+      <th><%=even.cost%>
+      
+      </th>
+      <th>
+      
+      <%=even.date%>
+      
+      </th>
+      <td>
+      <% if can? :show, even %>
+           <%=link_to '<span class="fa fa-align-justify" data-original-title="Detalles" data-toggle="tooltip"></span>'.html_safe , settlement_path(even),class: "btn btn-info" %>
+      <% end %>
+      <% if can? :edit, even %>
+          <%=link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip"></span>'.html_safe , edit_settlement_path(even), class: "btn btn-success"%>
+      <% end %>
+       
+        
+      </td>
+    
+  </tr>
+  </tbody>
+  <%end%>
+</table>
+

@@ -220,7 +220,7 @@
 					<th scope="col"><a class="btn btn-primary" href="/guards/new"><i class="fa fa-plus-square"></i> Crear nuevo Guardia</a></th>
 
 					<%= link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Agregar Vacaciones</span>'.html_safe, :controller => :vacations, :action => :new, :id => @guard.id%>
-					<%= link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Ver vacaciones</span>'.html_safe, :controller => :vacations, :action => :show, :id => @guard.id%>
+					<%= link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Ver vacaciones</span>'.html_safe, :controller => :vacations, :action => :index, :id => @guard.id%>
 
 					<%= link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Agregar Contrato</span>'.html_safe, :controller => :contract_guards, :action => :new, :id => @guard.id%>
 					<%= link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Ver Contratos</span>'.html_safe, :controller => :contract_guards, :action => :show, :id => @guard.id%>
@@ -229,7 +229,7 @@
 					<%= link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Ver Docs OS10</span>'.html_safe, :controller => :osdocumentations, :action => :show, :id => @guard.id%>
 
 					<%= link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Agregar Finiquito</span>'.html_safe, :controller => :settlements, :action => :new, :id => @guard.id%>
-					<%= link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Ver Finiquitos</span>'.html_safe, :controller => :settlements, :action => :show, :id => @guard.id%>
+					<%= link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Ver Finiquitos</span>'.html_safe, :controller => :settlements, :action => :edit, :id => @guard.id%>
 	    	</tr>
 	  	</thead>
 	</table>

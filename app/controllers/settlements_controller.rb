@@ -3,11 +3,13 @@ class SettlementsController < ApplicationController
   authorize_resource
   def index
     @settlements = Settlement.all
+    @guard = Guard.find(params[:id])
+    @settlements2 = @Guard.settlements.all
   end
   def new
     #@vacation = Vacation.new
     @guard = Guard.find(params[:id])
-    @settlement = @guard.settlements.build
+    @settlement = Settlement.new
   end
 
   def create
@@ -38,8 +40,7 @@ class SettlementsController < ApplicationController
   end
 
   def show
-    @guard = Guard.find(params[:id])
-    @settlement = @guard.settlements.build
+    @settlement = Settlement.find(params[:id])
   end
   private
   #set installation

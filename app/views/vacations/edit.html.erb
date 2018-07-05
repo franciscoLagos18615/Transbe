@@ -1,13 +1,48 @@
-<%= form_for @vacation do |f| %>
-  <div>
-    <%= f.label :days_taken %>
-    <%= f.number_field :days_taken %>
+<h1 align="center" class="col-md-10 col-center">Editar
+    <span class="text-primary">Vacaciones</span>
+</h1>
+
+<div class="col-md-10 col-center" align="left">
+  <%= form_for @vacation do |e| %>
+  <div class="form-group" align="center">
+    
+    <div lang="es" class="col-md-12 col-center" align="left">
+      <form>
+ 
+        <div class="form-row">
+          <div class="col-md-10 col-center">
+            <label for="validationServer01" >Dias tomados</label>
+            <div class="input-group-prepend">
+              
+              <%= e.text_field :days_taken, type:"text",class:"form-control is-valid", :required=> true %>
+            </div>
+          </div>
+        </div>
+       
+       <h1></h1>
+      
+        <div class="col-md-10 col-center">
+          <div class="custom-file">
+     
+          <%= e.label :vacacion_doc,"Factura del evento:" %>
+      
+          <%= e.file_field :factura_evento_doc%> 
+        </div>
+      </div>
+  
+
+        <div align="center">
+          <h1></h1>
+          <table>
+          <thead>
+            <tr>
+              <th scope="col"><button type="submit" class="btn btn-success" %="e.submit"% ><i class="fa fa-plus-square"></i> Actualizar vacaciones</button></th>
+            </tr>
+          </thead>
+        </table>
+        </div>
+      </form>
+    </div>
   </div>
-  <div>
-    <%= f.label :vacacion_doc,"Vacacion:" %>
-    <%= f.file_field :vacacion_doc%>
-  </div>
-  <div>
-    <%= f.submit %>
-  </div>
-<% end %>
+  <%end%>
+</div>

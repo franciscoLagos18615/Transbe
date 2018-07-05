@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180620145850) do
+ActiveRecord::Schema.define(version: 20180705172341) do
 
   create_table "bills", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text "description"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20180620145850) do
     t.integer "factura_doc_file_size"
     t.datetime "factura_doc_updated_at"
     t.bigint "contract_installation_id"
+    t.decimal "bill_mount", precision: 10
     t.index ["contract_installation_id"], name: "index_bills_on_contract_installation_id"
   end
 
@@ -48,6 +49,7 @@ ActiveRecord::Schema.define(version: 20180620145850) do
     t.integer "contrato_de_instalacion_doc_file_size"
     t.datetime "contrato_de_instalacion_doc_updated_at"
     t.bigint "installation_id"
+    t.string "name"
     t.index ["installation_id"], name: "index_contract_installations_on_installation_id"
   end
 
@@ -61,6 +63,8 @@ ActiveRecord::Schema.define(version: 20180620145850) do
     t.bigint "installation_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "bill_description"
+    t.decimal "bill_mount", precision: 10
     t.index ["installation_id"], name: "index_events_on_installation_id"
   end
 

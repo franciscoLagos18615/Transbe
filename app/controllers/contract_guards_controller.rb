@@ -5,17 +5,19 @@ class ContractGuardsController < ApplicationController
 
   def index
     @contract_guards = ContractGuard.all
+    @guard = Guard.find(params[:id])
+    @contract_guards2 = @guard.contract_guards.all
   end
   def new
     @guard = Guard.find(params[:id])
-    @contract_guard = @guard.contract_guards.build
+    @contract_guard = ContractGuard.new
   end
 
   def create
     @guard = Guard.find(params[:id])
     @contract_guard = @guard.contract_guards.build(contract_guard_params)
     if @contract_guard.save
-      redirect_to new_contract_guard_path(:id => @guard.id)
+      redirect_to @contract_guard, notice: "Contrato guardado correctamente"
     end
   end
 
@@ -26,7 +28,7 @@ class ContractGuardsController < ApplicationController
   def update
     @contract_guard = ContractGuard.find(params[:id])
     if @contract_guard.update(contract_guard_params)
-      redirect_to contract_guards_path, notice: 'Documento de contrato Actualizado correctamente'
+      redirect_to guards_path, notice: 'Documento de contrato Actualizado correctamente'
     else
       render :edit
     end
@@ -43,8 +45,7 @@ class ContractGuardsController < ApplicationController
   end
 =end
   def show
-    @guard = Guard.find(params[:id])
-    @contract_guard = @guard.contract_guards.build
+    @contract_guard = ContractGuard.find(params[:id])
   end
   private
   #set installation

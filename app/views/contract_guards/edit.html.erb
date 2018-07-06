@@ -1,17 +1,62 @@
-<%= form_for @contract_guard do |f| %>
-  <div>
-    <%= f.label :start_date, "Fecha de Inicio" %>
-    <%= f.date_field :start_date %>
+<h1 align="center" class="col-md-10 col-center">Editar
+    <span class="text-primary">el Contrato</span>
+</h1>
+
+<div class="col-md-10 col-center" align="left">
+
+  <%= form_for @contract_guard do |l| %>
+  <div class="form-group" align="center">
+    <!--FORMULARIO DEL TIPO BOOSTRAP QUE INCLUYE VALIDACIONES-->
+    <div lang="es" class="col-md-12 col-center" align="left">
+      <form>
+ 
+        <div class="form-row">
+
+          <div class="col-md-10 col-center">
+            <label for="validationServer01" >Fecha</label>
+            <div class="input-group-prepend">
+              <span class="icon-case"><i class="fa fa-calendar"></i></span>
+              <%= l.date_field :start_date, type:"date",class:"form-control is-valid", placeholder:"07/07/2018", :required=> true %>
+            </div>
+          </div>
+          <div class="col-md-10 col-center">
+            <label for="validationServer01" >Fecha</label>
+            <div class="input-group-prepend">
+              <span class="icon-case"><i class="fa fa-calendar"></i></span>
+              <%= l.date_field :finish_date, type:"date",class:"form-control is-valid", placeholder:"07/07/2018", :required=> true %>
+            </div>
+          </div>
+
+        </div>
+
+
+      <h1></h1>
+      <div class="form-row">
+        <div class="col-md-8 mb-6">
+          <div class="custom-file">
+          
+            <%= l.label :contrato_doc,"Documento Finiquito(Formato PDF):" %>
+            <%= l.file_field :contrato_doc%> 
+      </div>
+      </div>
+      </div>
+
+
+
+        
+    <div align="center">
+        
+      <table>
+        <thead>
+          <tr>
+            <th scope="col"><a class="btn btn-secondary" href="/guards"><i class="fa fa-arrow-circle-left"></i> Volver al listado de guardias</a></th>
+            <th scope="col"><button  type="submit" class="btn btn-success" %="l.submit"%><i class="fa fa-plus-square"></i> Actualizar Contrato</button></th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+      </form>
+    </div>
   </div>
-  <div>
-    <%= f.label :finish_date, "Fecha de Termino" %>
-    <%= f.date_field :finish_date %>
-  </div>
-  <div>
-    <%= f.label :contrato_doc,"Contrato:" %>
-    <%= f.file_field :contrato_doc%>
-  </div>
-  <div>
-    <%= f.submit %>
-  </div>
-<% end %>
+  <%end%>
+</div>

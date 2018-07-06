@@ -1,6 +1,6 @@
 
 <h1 align="center" class="col-md-10 col-center">Agregar
-    <span class="text-primary">Nuevo Contrato</span>
+    <span class="text-primary">Nueva Liquidacion</span>
 </h1>
 
 <div class="col-md-10 col-center" align="left">
@@ -12,7 +12,7 @@
  
         <div class="form-row">
           <div class="col-md-10 col-center">
-            <label for="validationServer01" >Nombre del Contrato(Max 200 caracteres)</label>
+            <label for="validationServer01" >Nombre de la Liquidacion(Max 200 caracteres)</label>
             <div class="input-group-prepend">
               <span class="icon-case"><i class="fa fa-user"></i></span>
               <%= salla.text_field :name, type:"text",class:"form-control is-valid", placeholder:"Liq.Mayo 2017 Pedro Gonzalez", :required=> true %>
@@ -42,11 +42,13 @@
 
 
       <h1></h1>
+      
+
       <div class="form-row">
         <div class="col-md-8 mb-6">
           <div class="custom-file">
           
-            <%= salla.label :liquidacion_doc,"Contrato Instalacion(Formato imagen png,jpeg):" %>
+            <%= salla.label :liquidacion_doc,"Imagen Liquidacion(Formato imagen png,jpeg):" %>
             <%= salla.file_field :liquidacion_doc%> 
       </div>
       </div>
@@ -54,7 +56,8 @@
 
 
 
-        
+    <h1></h1>
+      <h1>&nbsp</h1>
     <div align="center">
         
       <table>

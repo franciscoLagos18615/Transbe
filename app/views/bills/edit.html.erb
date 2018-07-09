@@ -1,17 +1,67 @@
-<%= form_for @bill do |f| %>
-  <div>
-    <%= f.label :description, "Descripcion" %>
-    <%= f.text_field :description %>
+
+
+<h1 align="center" class="col-md-10 col-center">Editar
+    <span class="text-primary">Factura</span>
+</h1>
+
+<div class="col-md-10 col-center" align="left">
+
+  <%= form_for @bill do |l| %>
+  <div class="form-group" align="center">
+    <!--FORMULARIO DEL TIPO BOOSTRAP QUE INCLUYE VALIDACIONES-->
+    <div lang="es" class="col-md-12 col-center" align="left">
+      <form>
+ 
+        <div class="form-row">
+          <div class="col-md-10 col-center">
+            <label for="validationServer01" >Descripcion(Max 200 caracteres):</label>
+            <div class="input-group-prepend">
+              
+              <%= l.text_field :description, type:"text",class:"form-control is-valid", placeholder:"Factura 3 espacio riesgo 2014", :required=> true %>
+            </div>
+          </div>
+          
+          
+          
+          
+
+          <div class="col-md-10 col-center">
+            <label for="validationServer01" >Ingreso($):</label>
+            <div class="input-group-prepend">
+              
+              <%= l.text_field :ingress, type:"number",class:"form-control is-valid", placeholder:"200343", :required=> true %>
+            </div>
+          </div>
+        </div>
+
+
+     <h1></h1> 
+      <div class="form-row">
+        <div class="col-md-8 mb-6">
+          <div class="custom-file">
+          
+            <%= l.label :factura_doc,"Factura Instalacion(Formato PDF):" %>
+            <%= l.file_field :factura_doc%> 
+      </div>
+      </div>
+      </div>
+
+
+
+        <h1>&nbsp</h1> 
+    <div align="center">
+        
+      <table>
+        <thead>
+          <tr>
+            <th scope="col"><a class="btn btn-secondary" href="/installations"><i class="fa fa-arrow-circle-left"></i> Volver al listado instalaciones</a></th>
+            <th scope="col"><button  type="submit" class="btn btn-success" %="l.submit"%><i class="fa fa-plus-square"></i> Actualizar Factura Instalacion</button></th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+      </form>
+    </div>
   </div>
-  <div>
-    <%= f.label :ingress %>
-    <%= f.number_field :ingress %>
-  </div>
-  <div>
-    <%= f.label :factura_doc,"Factura:" %>
-    <%= f.file_field :factura_doc%>
-  </div>
-  <div>
-    <%= f.submit %>
-  </div>
-<% end %>
+  <%end%>
+</div>

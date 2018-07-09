@@ -1,30 +1,46 @@
 class BillsController < ApplicationController
   before_action :set_bill, only: [:show, :edit, :update, :destroy]
   authorize_resource
+
+
+ 
+  
+  
   def index
     @bills = Bill.all
-  end
-  def new
+    @bills = Bill.search(params[:name]).all
     @contract_installation = ContractInstallation.find(params[:id])
-    @bill = @contract_installation.bills.build
+    @bills2 = @contract_installation.bills.all
   end
 
+  def new
+    @contract_installation = ContractInstallation.find(params[:id])
+    @bill = Bill.new
+  end
+
+  #method create
   def create
     @contract_installation = ContractInstallation.find(params[:id])
     @bill = @contract_installation.bills.build(bill_params)
     if @bill.save
-      redirect_to new_bill_path(:id => @contract_installation.id)
+      redirect_to @bill, notice: "Factura Creada Correctamente"
     end
   end
 
+  
+  
+  
+
+  #method edit
   def edit 
     @bill = Bill.find(params[:id])
   end
 
+  #method update
   def update
     @bill = Bill.find(params[:id])
     if @bill.update(bill_params)
-      redirect_to bills_path, notice: 'Documento de Factura Actualizado correctamente'
+      redirect_to @bill, notice: 'Documento de Factura Actualizado correctamente'
     else
       render :edit
     end
@@ -35,17 +51,16 @@ class BillsController < ApplicationController
     @bill.destroy
     redirect_to bills_path
   end
-=begin
+
+
+  
+  #method show
   def show
-    @vacation=Vacation.find(params[:id])
-  end
-=end
-  def show
-    @contract_installation = ContractInstallation.find(params[:id])
-    @bill = @contract_installation.bills.build
+    
+    @bill = Bill.find(params[:id])
   end
   private
-  #set installation
+  #set bill
   def set_bill
     @bill = Bill.find(params[:id])
   end

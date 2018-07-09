@@ -35,11 +35,11 @@
 <!--Aqui se mostrara la factura del evento-->
 <div class="accordion" id="accord">
 	<p>
-		<a class="btn btn-primary" data-toggle="collapse" href="#factura" role="button" aria-expanded="false" aria-controls="factura">Factura Evento</a>
+		<a class="btn btn-primary" data-toggle="collapse" href="#factura" role="button" aria-expanded="false" aria-controls="factura">Documento Contrato</a>
 	</p>
     <div class="collapse multi-collapse" id="factura" data-parent="#accord">
       <div class="card card-body">
-      <a href=<%= @contract_installation.contrato_de_instalacion_doc%>&embedded=true">Visualizar Factura PDF</a>
+      <a href=<%= @contract_installation.contrato_de_instalacion_doc%>&embedded=true">Visualizar Contrato en PDF</a>
         <!--p align="center"> <%= image_tag @contract_installation.contrato_de_instalacion_doc.url(:thumb) %></p-->
       </div>
     </div>
@@ -47,7 +47,9 @@
 		
 </div>  
 
-
+<%= link_to '<span class="fa fa-plus-square" data-original-title="Editar" data-toggle="tooltip">Agregar Factura</span>'.html_safe, :controller => :bills, :action => :new, :id => @contract_installation.id%>
+	
+	<%= link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip">Ver Factura</span>'.html_safe, :controller => :bills, :action => :index, :id => @contract_installation.id%>
 
 	<div align="center">
           <h1></h1>

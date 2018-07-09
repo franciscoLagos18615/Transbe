@@ -1,2 +1,59 @@
-<h1>Bills#index</h1>
-<p>Find me in app/views/bills/index.html.erb</p>
+
+<h1 align="center" class="mb-0">Lista de
+    <span class="text-primary">Facturas</span>
+</h1>
+
+
+
+
+
+<table class="table table-hover">
+  <thead>
+  <tr>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Accion</th>
+    </tr>
+  </thead>
+ <tbody>
+ <tr>
+ 
+  <%@bills2.each do |contr_inst|%>
+    
+      <th><%=contr_inst.description%>
+      
+      </th>
+      
+      <td>
+      <% if can? :show, contr_inst %>
+           <%=link_to '<span class="fa fa-align-justify" data-original-title="Detalles" data-toggle="tooltip"></span>'.html_safe , bill_path(contr_inst),class: "btn btn-info" %>
+      <% end %>
+      <% if can? :edit, contr_inst %>
+          <%=link_to '<span class="fa fa-pencil" data-original-title="Editar" data-toggle="tooltip"></span>'.html_safe , edit_bill_path(contr_inst), class: "btn btn-success"%>
+      <% end %>
+       
+        
+      </td>
+    
+  </tr>
+  </tbody>
+  <%end%>
+</table>
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>
+
+
+<div align="center">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col"><a class="btn btn-secondary" href="/installations"><i class="fa fa-home"></i> Volver al listado instalaciones</a></th>
+        
+      </tr>
+    </thead>
+  </table>
+</div>
+

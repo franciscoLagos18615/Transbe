@@ -1,18 +1,66 @@
-<%= form_for @bill, :url =>{:action =>:create, :id=>@contract_installation.id} do |f| %>
-  <div>
-    <%= f.label :description, "Descripcion" %>
-    <%= f.text_field :description %>
-  </div>
-  <div>
-    <%= f.label :ingress, "Ingreso" %>
-    <%= f.number_field :ingress %>
-  </div>
-  <div>
-    <%= f.label :factura_doc,"Factura:" %>
-    <%= f.file_field :factura_doc%>
 
+
+<h1 align="center" class="col-md-10 col-center">Agregar
+    <span class="text-primary">Nueva Factura</span>
+</h1>
+
+<div class="col-md-10 col-center" align="left">
+  <%= form_for @bill, :url =>{:action =>:create, :id=>@contract_installation.id} do |l| %>
+  <div class="form-group" align="center">
+    <!--FORMULARIO DEL TIPO BOOSTRAP QUE INCLUYE VALIDACIONES-->
+    <div lang="es" class="col-md-12 col-center" align="left">
+      <form>
+ 
+        <div class="form-row">
+          <div class="col-md-10 col-center">
+            <label for="validationServer01" >Descripcion Factura(Max 200 caracteres):</label>
+            <div class="input-group-prepend">
+              
+              <%= l.text_field :description, type:"text",class:"form-control is-valid", placeholder:"factura 12323 espacio riesgo 2017", :required=> true %>
+            </div>
+          </div>
+          
+          
+          
+          <div class="col-md-10 col-center">
+            <label for="validationServer01" >Ingreso($):</label>
+            <div class="input-group-prepend">
+              
+              <%= l.text_field :ingress, type:"number",class:"form-control is-valid", placeholder:"472650", :required=> true %>
+            </div>
+          </div>
+
+          
+        </div>
+
+
+     
+      <div class="form-row">
+        <div class="col-md-8 mb-6">
+          <div class="custom-file">
+          
+            <%= l.label :factura_doc,"Factura de la Instalacion(Formato PDF):" %>
+            <%= l.file_field :factura_doc%> 
+      </div>
+      </div>
+      </div>
+
+
+
+         <h1>&nbsp</h1>
+    <div align="center">
+        
+      <table>
+        <thead>
+          <tr>
+            <th scope="col"><a class="btn btn-secondary" href="/installations"><i class="fa fa-arrow-circle-left"></i> Volver al listado instalaciones</a></th>
+            <th scope="col"><button  type="submit" class="btn btn-primary" %="l.submit"%><i class="fa fa-plus-square"></i> Crear nueva Factura</button></th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+      </form>
+    </div>
   </div>
-  <div>
-    <%= f.submit %>
-  </div>
-<% end %>
+  <%end%>
+</div>

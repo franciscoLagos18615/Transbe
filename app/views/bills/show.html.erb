@@ -1,11 +1,64 @@
 
-<%if !@contract_installation.bills.nil?%>
-	<% for item in @contract_installation.bills%>
-		<p>Descripcion</p>
-		    <%=item.description%>
-        <p>Ingreso</p>
-		    <%=item.ingress%>
-		<p>Documento asociado</p>
-		    <a href=<%=item.factura_doc%>&embedded=true">Visualizar Factura PDF</a>
-	<%end%>
-<%end%>
+
+
+<h1 align="center" class="mb-0">Detalle de la
+    <span class="text-primary">Factura</span>
+</h1>
+<div class="container">
+	<table class="table table-striped table-hover medium">
+		<tbody>
+			<tr>
+				<td>
+					<medium><strong>Descripcion</strong></medium>
+				</td>
+				<td>
+					<medium><%=@bill.description%></medium>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<medium><strong>Ingreso</strong></medium>
+				</td>
+				<td>
+					<medium><%=@bill.ingress%></medium>
+				</td>
+			</tr>
+			
+
+		</tbody>
+	</table>
+
+<!--Aqui se mostrara la factura del evento-->
+<div class="accordion" id="accord">
+	<p>
+		<a class="btn btn-primary" data-toggle="collapse" href="#factura" role="button" aria-expanded="false" aria-controls="factura">Factura Instalacion</a>
+	</p>
+    <div class="collapse multi-collapse" id="factura" data-parent="#accord">
+      <div class="card card-body">
+      <a href=<%= @bill.factura_doc%>&embedded=true">Visualizar Factura en PDF</a>
+        <!--p align="center"> <%= image_tag @bill.factura_doc.url(:thumb) %></p-->
+      </div>
+    </div>
+    
+		
+</div>  
+
+
+
+	<div align="center">
+          <h1></h1>
+		  <h1>&nbsp </h1>
+        
+          <table>
+          <thead>
+            <tr>
+              <th scope="col"><a class="btn btn-primary" href="/installations"><i class="fa fa-arrow-circle-left"></i> Volver al listado instalaciones     </a></th>
+              <th>
+			  <%=link_to '<span class="fa fa-plus-square" data-original-title="Editar">Ir a Editar Factura instalacion</span>'.html_safe , edit_bill_path(@bill), class: "btn btn-success"%>
+			  </th>
+			  
+            </tr>
+          </thead>
+        </table>
+</div>
+</div>

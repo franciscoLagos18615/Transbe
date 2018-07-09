@@ -19,7 +19,8 @@ class Ability
     else
       if user.role == "secretaria"
         can [:create,:index], [Event,Installation]
-        can :manage, Guard
+        can :manage, [Guard,ContractGuard,Osdocumentation,Vacation,SallarySettlement,Settlement]
+        
       else
         can :read, Guard
         can :index, [Event,Installation]

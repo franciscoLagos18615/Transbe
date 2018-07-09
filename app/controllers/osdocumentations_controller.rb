@@ -3,6 +3,7 @@ class OsdocumentationsController < ApplicationController
   authorize_resource
   def index
     @osdocumentations = Osdocumentation.all
+    @osdocumentations=Osdocumentation.search(params[:expiration]).all
     @guard = Guard.find(params[:id])
     @osdocumentations2 = @guard.osdocumentations.all
   end
@@ -16,7 +17,7 @@ class OsdocumentationsController < ApplicationController
     @guard = Guard.find(params[:id])
     @osdocumentation = @guard.osdocumentations.build(osdocumentation_params)
     if @osdocumentation.save
-      redirect_to @osdocumentation, notice: "Certificado OS10 guardado correctamente"
+      redirect_to @osdocumentation, notice: 'Certificado OS10 guardado correctamente'
     end
   end
 

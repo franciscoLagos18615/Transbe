@@ -17,7 +17,13 @@
 					<medium><strong>Estado</strong></medium>
 				</td>
 				<td>
-					<medium><%=@osdocumentation.state%></medium>
+				
+					<% if @osdocumentation.state == false %>
+							<medium>Vencido</medium>
+       	 		<% else %>
+							<medium>Vigente</medium>
+        		<% end %>
+					
 				</td>
 			</tr>
 
@@ -31,8 +37,8 @@
 	</p>
     <div class="collapse multi-collapse" id="factura" data-parent="#accord">
       <div class="card card-body">
-      <a href=<%= @osdocumentation.certificado_os10_doc%>&embedded=true">Visualizar Finiquito PDF</a>
-        <!--p align="center"> <%= image_tag @osdocumentation.finiquito_doc.url(:thumb) %></p-->
+      <a href<%= @osdocumentation.certificado_os10_doc%>&embedded=true">Visualizar Documento os10 PDF</a>
+        <!--p align="center"> <%= image_tag @osdocumentation.certificado_os10_doc.url(:thumb) %></p-->
       </div>
     </div>
     
@@ -50,7 +56,7 @@
             <tr>
               <th scope="col"><a class="btn btn-primary" href="/guards"><i class="fa fa-arrow-circle-left"></i> Volver al listado de guardias</a></th>
               <th>
-			  <%=link_to '<span class="fa fa-plus-square" data-original-title="Editar">Ir a Editar Finiquito</span>'.html_safe , edit_osdocumentation_path(@osdocumentation), class: "btn btn-success"%>
+			  <%=link_to '<span class="fa fa-plus-square" data-original-title="Editar">Ir a Editar Documento os10</span>'.html_safe , edit_osdocumentation_path(@osdocumentation), class: "btn btn-success"%>
 			  </th>
 			  
             </tr>

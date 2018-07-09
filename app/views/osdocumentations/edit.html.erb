@@ -1,6 +1,6 @@
 
 <h1 align="center" class="col-md-10 col-center">Editar
-    <span class="text-primary">el Contrato</span>
+    <span class="text-primary">Documento os10</span>
 </h1>
 
 <div class="col-md-10 col-center" align="left">
@@ -15,16 +15,13 @@
             <label for="validationServer01" >Expira</label>
             <div class="input-group-prepend">
               <span class="icon-case"><i class="fa fa-calendar"></i></span>
-              <%= l.date_field :date, type:"date",class:"form-control is-valid", placeholder:"07/07/2018", :required=> true %>
+              <%= l.date_field :expiration, type:"date",class:"form-control is-valid", placeholder:"07/07/2018", :required=> false %>
             </div>
           </div>
-
-          <div class="col-md-10 col-center">
-            <label for="validationServer01" >Estado</label>
-            <div class="input-group-prepend">
-              
-              <%= l.check_box :state, type:"check_box",class:"form-control is-valid", :required=> true %>
-            </div>
+          <h1></h1>
+           <div class="col-md-10 col-center">
+            <%= l.label :state, "Estado(haz click si esta activo)" %>
+            <%= l.check_box :state %>
           </div>
         </div>
 
@@ -42,7 +39,7 @@
 
 
 
-        
+        <h1>&nbsp</h1>
     <div align="center">
         
       <table>

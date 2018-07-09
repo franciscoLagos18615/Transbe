@@ -1,17 +1,69 @@
-<%= form_for @osdocumentation, :url =>{:action =>:create, :id=>@guard.id} do |f| %>  
-  <div>
-    <%= f.label :expiration, "Fecha de Expiracion" %>
-    <%= f.date_field :expiration %>
+
+
+
+<h1 align="center" class="col-md-10 col-center">Agregar
+    <span class="text-primary">Nuevo OS10</span>
+</h1>
+
+<div class="col-md-10 col-center" align="left">
+  <%= form_for @osdocumentation, :url =>{:action =>:create, :id=>@guard.id} do |salla| %>
+  <div class="form-group" align="center">
+    <!--FORMULARIO DEL TIPO BOOSTRAP QUE INCLUYE VALIDACIONES-->
+    <div lang="es" class="col-md-12 col-center" align="left">
+      <form>
+ 
+        <div class="form-row">
+          
+          
+          
+          
+          <div class="col-md-10 col-center">
+            <label for="validationServer01" >Fecha Expiracion:</label>
+            <div class="input-group-prepend">
+              <span class="icon-case"><i class="fa fa-calendar"></i></span>
+              <%= salla.date_field :expiration, type:"date",class:"form-control is-valid", placeholder:"07/07/2018", :required=> true %>
+            </div>
+          </div>
+
+          <div class="col-md-10 col-center">
+            <%= salla.label :state, "Estado:" %>
+            <%= salla.check_box :state %>
+          </div>
+
+          
+        </div>
+
+
+      <h1></h1>
+      
+
+      <div class="form-row">
+        <div class="col-md-8 mb-6">
+          <div class="custom-file">
+          
+            <%= salla.label :certificado_os10_doc,"Documento OS10 PDF(Formato PDF):" %>
+            <%= salla.file_field :certificado_os10_doc%> 
+      </div>
+      </div>
+      </div>
+
+
+
+    <h1></h1>
+      <h1>&nbsp</h1>
+    <div align="center">
+        
+      <table>
+        <thead>
+          <tr>
+            <th scope="col"><a class="btn btn-secondary" href="/guards"><i class="fa fa-arrow-circle-left"></i> Volver al listado de Guardias</a></th>
+            <th scope="col"><button  type="submit" class="btn btn-primary" %="l.submit"%><i class="fa fa-plus-square"></i> Agregar Nuevo OS10</button></th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+      </form>
+    </div>
   </div>
-  <div>
-    <%= f.label :state, "Estado" %>
-    <%= f.check_box :state %>
-  </div>
-  <div>
-    <%= f.label :certificado_os10_doc,"Certificado OS10:" %>
-    <%= f.file_field :certificado_os10_doc%>
-  </div>
-  <div>
-    <%= f.submit %>
-  </div>
-<% end %>
+  <%end%>
+</div>

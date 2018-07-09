@@ -1,5 +1,5 @@
 <h1 align="center" class="col-md-10 col-center">Editar
-    <span class="text-primary">el Contrato</span>
+    <span class="text-primary">Contrato o anexo</span>
 </h1>
 
 <div class="col-md-10 col-center" align="left">
@@ -11,22 +11,33 @@
       <form>
  
         <div class="form-row">
-
           <div class="col-md-10 col-center">
-            <label for="validationServer01" >Fecha</label>
+            <label for="validationServer01" >Nombre Contrato o Anexo(Max 200 caracteres)</label>
             <div class="input-group-prepend">
-              <span class="icon-case"><i class="fa fa-calendar"></i></span>
-              <%= l.date_field :start_date, type:"date",class:"form-control is-valid", placeholder:"07/07/2018", :required=> true %>
+              
+              <%= l.text_field :name, type:"text",class:"form-control is-valid", placeholder:"Contrato Indef pedro morales", :required=> true %>
             </div>
           </div>
+          
+          
+          
           <div class="col-md-10 col-center">
-            <label for="validationServer01" >Fecha</label>
+            <label for="validationServer01" >Fecha Inicio</label>
             <div class="input-group-prepend">
               <span class="icon-case"><i class="fa fa-calendar"></i></span>
-              <%= l.date_field :finish_date, type:"date",class:"form-control is-valid", placeholder:"07/07/2018", :required=> true %>
+              <%= l.date_field :start_date, type:"date",class:"form-control is-valid", placeholder:"07/07/2018", :required=> false %>
             </div>
           </div>
 
+          <div class="col-md-10 col-center">
+            <label for="validationServer01" >Fecha Termino</label>
+            <div class="input-group-prepend">
+              <span class="icon-case"><i class="fa fa-calendar"></i></span>
+              <%= l.date_field :finish_date, type:"date",class:"form-control is-valid", placeholder:"07/07/2018", :required=> false %>
+            </div>
+          </div>
+
+        
         </div>
 
 
@@ -35,22 +46,23 @@
         <div class="col-md-8 mb-6">
           <div class="custom-file">
           
-            <%= l.label :contrato_doc,"Documento Finiquito(Formato PDF):" %>
+            <%= l.label :contrato_doc,"Imagen Contrato o Anexo(Formato imagen jpeg,png):" %>
             <%= l.file_field :contrato_doc%> 
       </div>
       </div>
       </div>
 
 
-
+    <h1>&nbsp</h1>
+    
         
     <div align="center">
         
       <table>
         <thead>
           <tr>
-            <th scope="col"><a class="btn btn-secondary" href="/guards"><i class="fa fa-arrow-circle-left"></i> Volver al listado de guardias</a></th>
-            <th scope="col"><button  type="submit" class="btn btn-success" %="l.submit"%><i class="fa fa-plus-square"></i> Actualizar Contrato</button></th>
+            <th scope="col"><a class="btn btn-secondary" href="/guards"><i class="fa fa-arrow-circle-left"></i> Volver al listado de Guardias</a></th>
+            <th scope="col"><button  type="submit" class="btn btn-success" %="l.submit"%><i class="fa fa-plus-square"></i> Actualizar Contrato o anexo</button></th>
           </tr>
         </thead>
       </table>

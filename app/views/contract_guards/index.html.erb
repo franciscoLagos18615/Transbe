@@ -1,10 +1,11 @@
 <h1 align="center" class="mb-0">Lista de
-    <span class="text-primary">Eventos</span>
+    <span class="text-primary">Contrato o Anexo</span>
 </h1>
 
 <table class="table table-hover">
   <thead>
   <tr>
+      <th scope="col">Nombre</th>
       <th scope="col">Fecha Inicio</th>
       <th scope="col">Fecha Termino</th>
       <th scope="col">Accion</th>
@@ -15,6 +16,9 @@
  
   <%@contract_guards2.each do |even|%>
     
+      <th><%=even.name%>
+      
+      </th>
       <th><%=even.start_date%>
       
       </th>
@@ -36,3 +40,17 @@
   </tbody>
   <%end%>
 </table>
+
+<div align="center">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col"><a class="btn btn-secondary" href="/"><i class="fa fa-home"></i> Volver al Inicio</a></th>
+        <th>
+        <%= link_to '<span class="fa fa-plus-square"  data-toggle="tooltip">Agregar Nuevo Contrato</span>'.html_safe , class: "btn btn-primary", :controller => :contract_guards, :action => :new, :id => @guard.id ,class: "btn btn-primary" %>
+        </th>
+        
+      </tr>
+    </thead>
+  </table>
+</div>

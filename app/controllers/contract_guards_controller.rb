@@ -24,11 +24,11 @@ class ContractGuardsController < ApplicationController
   def edit 
     @contract_guard = ContractGuard.find(params[:id])
   end
-
+  
   def update
     @contract_guard = ContractGuard.find(params[:id])
     if @contract_guard.update(contract_guard_params)
-      redirect_to guards_path, notice: 'Documento de contrato Actualizado correctamente'
+      redirect_to @contract_guard, notice: 'Documento de contrato Actualizado correctamente'
     else
       render :edit
     end
@@ -55,6 +55,6 @@ class ContractGuardsController < ApplicationController
 
 
   def contract_guard_params
-    params.require(:contract_guard).permit(:start_date, :finish_date, :contrato_doc)
+    params.require(:contract_guard).permit(:start_date, :finish_date, :contrato_doc, :name)
   end
 end

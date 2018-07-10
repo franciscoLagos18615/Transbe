@@ -13,6 +13,14 @@
       <form>
  
         <div class="form-row">
+
+        <div class="col-md-10 col-center">
+            <label for="validationServer01" >Nombre(Maximo 200 caracteres):</label>
+            <div class="input-group-prepend">
+              
+              <%= l.text_field :name, type:"text",class:"form-control is-valid", placeholder:"Vacaciones año 2017", :required=> true %>
+            </div>
+          </div>
           <div class="col-md-10 col-center">
             <label for="validationServer01" >Numero de dias</label>
             <div class="input-group-prepend">
@@ -29,7 +37,7 @@
         <div class="col-md-8 mb-6">
           <div class="custom-file">
           
-            <%= l.label :vacacion_doc,"Documento de vacaciones asociado:" %>
+            <%= l.label :vacacion_doc,"Documento de vacaciones asociado(formato imagen jpg,png):" %>
             <%= l.file_field :vacacion_doc%> 
       </div>
       </div>

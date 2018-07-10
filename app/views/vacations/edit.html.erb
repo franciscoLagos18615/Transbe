@@ -10,6 +10,14 @@
       <form>
  
         <div class="form-row">
+
+         <div class="col-md-10 col-center">
+            <label for="validationServer01" >Nombre(Maximo 200 caracteres):</label>
+            <div class="input-group-prepend">
+              
+              <%= e.text_field :name, type:"text",class:"form-control is-valid", :required=> true %>
+            </div>
+          </div>
           <div class="col-md-10 col-center">
             <label for="validationServer01" >Dias tomados</label>
             <div class="input-group-prepend">
@@ -24,9 +32,9 @@
         <div class="col-md-10 col-center">
           <div class="custom-file">
      
-          <%= e.label :vacacion_doc,"Factura del evento:" %>
+          <%= e.label :vacacion_doc,"Imagen Vacacion(Formato jpg,png):" %>
       
-          <%= e.file_field :factura_evento_doc%> 
+          <%= e.file_field :vacacion_doc%> 
         </div>
       </div>
   
@@ -35,7 +43,11 @@
           <h1></h1>
           <table>
           <thead>
+           
+              
+            
             <tr>
+              <th scope="col"><a class="btn btn-primary" href="/guards"><i class="fa fa-arrow-circle-left"></i> Volver al listado de guardias</a></th>
               <th scope="col"><button type="submit" class="btn btn-success" %="e.submit"% ><i class="fa fa-plus-square"></i> Actualizar vacaciones</button></th>
             </tr>
           </thead>

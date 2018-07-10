@@ -17,10 +17,10 @@ class VacationsController < ApplicationController
     @guard = Guard.find(params[:id])
     @vacation = @guard.vacations.build(vacation_params)
     if @vacation.save
-      redirect_to new_vacation_path(:id => @guard.id)
+      redirect_to @vacation, notice: "Vacaciones guardadas correctamente"
     end
   end
-
+  
 =begin
   def create
     @vacation = Vacation.new(vacation_params)
@@ -55,7 +55,7 @@ class VacationsController < ApplicationController
   def update
     @vacation = Vacation.find(params[:id])
     if @vacation.update(vacation_params)
-      redirect_to guards_path, notice: 'Documento de  Vacacion Actualizado correctamente'
+      redirect_to @vacation, notice: 'Vacaciones Actualizado correctamente'
     else
       render :edit
     end
@@ -82,6 +82,6 @@ class VacationsController < ApplicationController
 
 
   def vacation_params
-    params.require(:vacation).permit(:days_taken, :vacacion_doc)
+    params.require(:vacation).permit(:days_taken, :vacacion_doc,:name)
   end
 end

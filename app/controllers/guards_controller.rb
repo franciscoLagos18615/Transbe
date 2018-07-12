@@ -45,7 +45,7 @@ class GuardsController < ApplicationController
   def update
     @guard = Guard.find(params[:id])
     if @guard.update(guard_params)
-      redirect_to guards_path, notice: 'Guardia Actualizado correctamente'
+      redirect_to @guard, notice: 'Guardia Actualizado correctamente'
     else
       render :edit
     end

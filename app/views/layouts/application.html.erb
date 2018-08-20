@@ -20,12 +20,18 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.bundle.min.js" integrity="sha384-lZmvU/TzxoIQIOD9yQDEpvxp6wEU32Fy0ckUgOH4EIlMOCdR823rg4+3gWRwnX1M" crossorigin="anonymous"></script>
  
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
    
    
 
   </head>
 
-  <body>
+  <body >
+
+   <!-- <style padding-left=0px></style>-->
  
    
 <p class="notice"><%=notice %> </p>
@@ -43,25 +49,34 @@
 <% end %>
 </p>
  
+    <!--<div class="btn-group">
+      <button type="button" class="btn btn-primary dropdown-toggle"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Menú
+      </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">action</a>
+          <a class="dropdown-item" href="#">action</a>
+          <a class="dropdown-item" href="#">action</a>
 
+        </div>
+    </div>-->
     
-     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+     <!--<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
       <a class="navbar-brand js-scroll-trigger" href="/">
         <span class="d-block d-lg-none">Transbe Guardias</span>
         <span class="d-none d-lg-block">
           <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="<%= asset_path 'transbeLogo.png' %>" alt="">
    
         </span>
-      </a>
+      </a>-->
       
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <!--<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">Menu
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
 
-       
-        <li class="nav-item">
+      
+        <li class="nav-item dropdown">
             <a class="nav-link js-scroll-trigger" href="/">Inicio</a>
           </li>
         
@@ -85,26 +100,23 @@
           <a class="nav-link js-scroll-trigger" href="/installations">Lista de Instalaciones</a>
           
           </div>
+        </li>-->
+
+        
+        <li class="nav-item dropdown">
+                <a class="btn btn-primary dropdown-toggle" id="dropdown2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Menu</a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdown2">
+                    <li ><a href="/">Inicio</a></li>
+                    <li class="dropdown-header">Guardias</li>
+                    <li ><a href="/guards/new">Crear Guardias</a></li>
+                    <li ><a href="/guards">Lista de Guardias</a></li>
+                    <li class="dropdown-header">Instalacion</li>
+                    <li ><a href="/installations/new">Crear Instalacion</a></li>
+                    <li ><a href="/installations">Lista de Instalaciones</a></li>
+                </ul>
         </li>
-        <!--li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="/guards" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Eventos
-          </a>
-          <div class="dropdown">
-          <a class="nav-link js-scroll-trigger" href="/events/new">Crear Evento</a>
-          <a class="nav-link js-scroll-trigger" href="/events">Lista de Eventos</a>
-          
-          </div>
-        </li-->
-          
-          <!--li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="/">Ingresos</a>
-          </li-->
-          
-          
-        </ul>
-      </div>
-    </nav>
+
+    <!--</nav>-->
 
    
 
@@ -128,6 +140,31 @@ for (j = 0; j < drop.length; j++) {
     }
   });
 }
+</script>
+
+<script>
+  var el = $(this).children('.dropdown-toggle');
+        var parent = el.offsetParent(".dropdown-menu");
+        $(this).parent("li").toggleClass('open');
+
+        if (!parent.parent().hasClass('navbar-nav')) {
+            if (parent.hasClass('show')) {
+                parent.removeClass('show');
+                el.next().removeClass('show');
+                el.next().css({"top": -999, "left": -999});
+            } else {
+                parent.parent().find('.show').removeClass('show');
+                parent.addClass('show');
+                el.next().addClass('show');
+                el.next().css({"top": el[0].offsetTop, "left": parent.outerWidth() - 4});
+            }
+            e.preventDefault();
+            e.stopPropagation();
+        }
+        $(".dropdown-toggle").click(function(){
+        var url = $(this).attr("href");
+        $(location).attr('href',url);})
+        
 </script>
   </body>
 </html>

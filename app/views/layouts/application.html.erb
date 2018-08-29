@@ -33,22 +33,33 @@
 
    <!-- <style padding-left=0px></style>-->
  
-   
+<nav class= "navbar navbar-expand-lg navbar-light bg-light">
+  <div class ="collapse navbar-collapse" id="navbarToggler">
+    <a class="navbar.brand" href="/">Inicio</a>
+    <a class="nav-link" href="/guards/new">Crear guardia</a>
+    <a class="nav-link" href="/guards">Lista de guardias</a>
+    <a class="nav-link" href="/installations/new">Crear instalacion</a>
+    <a class="nav-link" href="/installations">Lista de instalaciones</a>
+  </div>
+</nav>
+
 <p class="notice"><%=notice %> </p>
 <p class="alert"> <%=alert %> </p>
 
 
+
+
+
 <p class="navbar-text pull-right">
-<% if user_signed_in? %>
-  Hola, <strong><%= current_user.email %></strong>.
-  <%= link_to 'Edita tu Perfil', edit_user_registration_path, :class => 'navbar-link' %> | 
-  <%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-<% else %>
-  <%= link_to "Registrarse", new_user_registration_path, :class => 'navbar-link'  %> |
-  <%= link_to "Iniciar Sesión", new_user_session_path, :class => 'navbar-link'  %>
-<% end %>
+  <% if user_signed_in? %>
+    Hola, <strong><%= current_user.email %></strong>.
+    <%= link_to 'Edita tu Perfil', edit_user_registration_path, :class => 'navbar-link' %> | 
+    <%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+  <% else %>
+    <%= link_to "Registrarse", new_user_registration_path, :class => 'navbar-link'  %> |
+    <%= link_to "Iniciar Sesión", new_user_session_path, :class => 'navbar-link'  %>
+  <% end %>
 </p>
- 
     <!--<div class="btn-group">
       <button type="button" class="btn btn-primary dropdown-toggle"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Menú
       </button>
@@ -103,7 +114,7 @@
         </li>-->
 
         
-        <li class="nav-item dropdown">
+       <!-- <li class="nav-item dropdown">
                 <a class="btn btn-primary dropdown-toggle" id="dropdown2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Menu</a>
                 <ul class="dropdown-menu" role="menu" aria-labelledby="dropdown2">
                     <li ><a href="/">Inicio</a></li>
@@ -114,7 +125,7 @@
                     <li ><a href="/installations/new">Crear Instalacion</a></li>
                     <li ><a href="/installations">Lista de Instalaciones</a></li>
                 </ul>
-        </li>
+        </li>-->
 
     <!--</nav>-->
 

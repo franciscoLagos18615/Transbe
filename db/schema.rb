@@ -12,9 +12,12 @@
 
 ActiveRecord::Schema.define(version: 20180710165229) do
 
-  create_table "bills", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "bills", force: :cascade do |t|
     t.text "description"
-    t.decimal "ingress", precision: 10
+    t.decimal "ingress"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "factura_doc_file_name"
@@ -22,11 +25,11 @@ ActiveRecord::Schema.define(version: 20180710165229) do
     t.integer "factura_doc_file_size"
     t.datetime "factura_doc_updated_at"
     t.bigint "contract_installation_id"
-    t.decimal "bill_mount", precision: 10
+    t.decimal "bill_mount"
     t.index ["contract_installation_id"], name: "index_bills_on_contract_installation_id"
   end
 
-  create_table "contract_guards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "contract_guards", force: :cascade do |t|
     t.datetime "start_date"
     t.datetime "finish_date"
     t.datetime "created_at", null: false
@@ -40,7 +43,7 @@ ActiveRecord::Schema.define(version: 20180710165229) do
     t.index ["guard_id"], name: "index_contract_guards_on_guard_id"
   end
 
-  create_table "contract_installations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "contract_installations", force: :cascade do |t|
     t.datetime "start_date"
     t.datetime "finish_date"
     t.datetime "created_at", null: false
@@ -54,7 +57,7 @@ ActiveRecord::Schema.define(version: 20180710165229) do
     t.index ["installation_id"], name: "index_contract_installations_on_installation_id"
   end
 
-  create_table "events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "events", force: :cascade do |t|
     t.string "name"
     t.string "factura_evento_doc_file_name"
     t.string "factura_evento_doc_content_type"
@@ -65,11 +68,11 @@ ActiveRecord::Schema.define(version: 20180710165229) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "bill_description"
-    t.decimal "bill_mount", precision: 10
+    t.decimal "bill_mount"
     t.index ["installation_id"], name: "index_events_on_installation_id"
   end
 
-  create_table "guards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "guards", force: :cascade do |t|
     t.string "rut"
     t.string "phone_number"
     t.string "email"
@@ -145,12 +148,12 @@ ActiveRecord::Schema.define(version: 20180710165229) do
     t.boolean "active"
   end
 
-  create_table "guards_installations", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "guards_installations", id: false, force: :cascade do |t|
     t.bigint "guard_id", null: false
     t.bigint "installation_id", null: false
   end
 
-  create_table "installations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "installations", force: :cascade do |t|
     t.string "name"
     t.integer "number_guards"
     t.integer "additional_guards"
@@ -159,7 +162,7 @@ ActiveRecord::Schema.define(version: 20180710165229) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "modifications", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "modifications", force: :cascade do |t|
     t.bigint "contract_guard_id"
     t.string "modificacion_doc_file_name"
     t.string "modificacion_doc_content_type"
@@ -170,7 +173,7 @@ ActiveRecord::Schema.define(version: 20180710165229) do
     t.index ["contract_guard_id"], name: "index_modifications_on_contract_guard_id"
   end
 
-  create_table "osdocumentations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "osdocumentations", force: :cascade do |t|
     t.bigint "guard_id"
     t.datetime "expiration"
     t.string "certificado_os10_doc_file_name"
@@ -181,7 +184,7 @@ ActiveRecord::Schema.define(version: 20180710165229) do
     t.index ["guard_id"], name: "index_osdocumentations_on_guard_id"
   end
 
-  create_table "sallary_settlements", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "sallary_settlements", force: :cascade do |t|
     t.integer "cost"
     t.datetime "date"
     t.datetime "created_at", null: false
@@ -195,7 +198,7 @@ ActiveRecord::Schema.define(version: 20180710165229) do
     t.index ["guard_id"], name: "index_sallary_settlements_on_guard_id"
   end
 
-  create_table "settlements", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "settlements", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "finiquito_doc_file_name"
@@ -209,7 +212,7 @@ ActiveRecord::Schema.define(version: 20180710165229) do
     t.index ["guard_id"], name: "index_settlements_on_guard_id"
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -227,7 +230,7 @@ ActiveRecord::Schema.define(version: 20180710165229) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "vacations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "vacations", force: :cascade do |t|
     t.integer "days_taken"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

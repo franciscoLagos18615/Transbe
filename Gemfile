@@ -68,4 +68,4 @@ gem 'rut_validation', '1.1.0'
 #gem cancancan version actualizada de la gema cancan para la administracion de usuarios
 
 gem 'cancancan', '~> 2.0'
-
+gem 'rails_12_factor'
